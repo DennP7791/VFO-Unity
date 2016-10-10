@@ -1,0 +1,4406 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<texts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<text>
+		<id>mouse_over_assistant</id>
+		<string>Left-click to start a conversation with your co-worker.</string>
+	</text>
+	<text>
+		<id>mouse_over_patient_head</id>
+		<string>Left-click to start a conversation with the patient.</string>
+	</text>
+	<text>
+		<id>mouse_over_sling</id>
+		<string>Left-click to activate the sling.</string>
+	</text>
+	<text>
+		<id>mouse_over_drawsheet</id>
+		<string>Left-click to activate the draw sheet.</string>
+	</text>
+	<text>
+		<id>mouse_over_bed</id>
+		<string>Left-click to activate the bed.</string>
+	</text>
+	<text>
+		<id>mouse_over_wheelchair</id>
+		<string>Left-click to activate the wheelchair.</string>
+	</text>
+	<text>
+		<id>mouse_over_slidemat</id>
+		<string>Left-click to activate the spinnaker glide sheet.</string>
+	</text>
+	<text>
+		<id>mouse_over_antislidemat</id>
+		<string>Left-click to remove the anti-slip mat.</string>
+	</text>
+	<text>
+		<id>mouse_over_walker</id>
+		<string>Left-click to lock the walker.</string>
+	</text>
+	<text>
+		<id>talk_dialog_undo</id>
+		<string>Cancel</string>
+	</text>
+	<text>
+		<id>talk_dialog_ok</id>
+		<string>OK</string>
+	</text>
+	<text>
+		<id>results_headline</id>
+		<string>Results</string>
+	</text>
+	<text>
+		<id>results_failed</id>
+		<string>You did not pass the exercise.</string>
+	</text>
+	<text>
+		<id>results_passed_help</id>
+		<string>Congratulations!
+You passed the program with help. If you wish, you can take the program as a test.
+
+Remember to remove all assistive devices before leaving the patient.</string>
+		<speak>1701.ogg</speak>
+	</text>
+	<text>
+		<id>results_passed_test</id>
+		<string>Congratulations!
+You passed the program as a test. If you wish, you can go to the main menu and select a new task.
+
+Remember to remove all assistive devices before leaving the patient.</string>
+		<speak>1702.ogg</speak>
+	</text>
+	<text>
+		<id>results_start_over</id>
+		<string>Click OK to start the exercise from the beginning.</string>
+	</text>
+	<text>
+		<id>results_main_menu</id>
+		<string>Click OK to go to the main menu.</string>
+	</text>
+	<text>
+		<id>results_comment</id>
+		<string>Comments on the exercise:</string>
+	</text>
+	<text>
+		<id>results_too_many_errors</id>
+		<string>You completed the exercise, but you made too many mistakes along the way and therefore you did not pass.</string>
+		<speak>1703.ogg</speak>
+	</text>
+	<text>
+		<id>welcome_1</id>
+		<string>Introduction
+This program is for employees who work with the transfer of individuals. Clients/patients who need help, guidance and support during transfers. This could be at a hospital, a nursing home, an institution or in the client’s own home.
+
+As this is a basic patient-transfer program, the solutions are preselected for you. You have to perform these tasks by following a logical sequence in the form of dialogue with the patient and your co-worker and by using assistive devices.  
+
+There are many possible transfer solutions, depending on the patient’s level of functioning.</string>
+		<speak>2000.ogg</speak>
+	</text>
+	<text>
+		<id>welcome_2</id>
+		<string>In the transfer program, you carry out tasks within four different levels of functioning. 
+At the end, you can take a test without help from the program to show that you can carry out tasks at the four levels of functioning.</string>
+		<speak>2001.ogg</speak>
+	</text>
+	<text>
+		<id>welcome_3</id>
+		<string>It is possible to carry out the transfer program with help or as a test. See the instructions.</string>
+		<speak>2002.ogg</speak>
+	</text>
+	<text>
+		<id>global_place_helper</id>
+		<string>Position a co-worker.</string>
+	</text>
+	<text>
+		<id>global_place_sling</id>
+		<string>Position a sling.</string>
+	</text>
+	<text>
+		<id>global_place_floorlift</id>
+		<string>Position a floor lift.</string>
+	</text>
+	<text>
+		<id>global_place_chair</id>
+		<string>Position a footstool.</string>
+	</text>
+	<text>
+		<id>global_place_wheelchair</id>
+		<string>Position a wheelchair.</string>
+	</text>
+	<text>
+		<id>global_back_to_home</id>
+		<string>Are you sure you wish to leave the exercise and go to the start menu?</string>
+	</text>
+	<text>
+		<id>global_start_over</id>
+		<string>Are you sure you want to start from the beginning?</string>
+	</text>
+	<text>
+		<id>help_or_test_help</id>
+		<string>Start with help</string>
+	</text>
+	<text>
+		<id>help_or_test_test</id>
+		<string>Start as a test</string>
+	</text>
+	<text>
+		<id>hud_wrong_placement</id>
+		<string>You have selected an incorrect position: please try again.</string>
+	</text>
+	<text>
+		<id>hud_must_choose_placement</id>
+		<string>Please select one of the positions before you click OK.</string>
+	</text>
+	<text>
+		<id>hud_tiled_wrong_placement</id>
+		<string>Wrong position. Please try again.</string>
+	</text>
+	<text>
+		<id>help_box_ok_button</id>
+		<string>OK</string>
+	</text>
+	<text>
+		<id>message_box_ok</id>
+		<string>OK</string>
+	</text>
+	<text>
+		<id>message_box_undo</id>
+		<string>Cancel</string>
+	</text>
+	<text>
+		<id>sceneloader_downloading</id>
+		<string>Retrieving…</string>
+	</text>
+	<text>
+		<id>data_loader_getting_data</id>
+		<string>Retrieving data… Please wait!</string>
+	</text>
+	<text>
+		<id>data_manager_wrong_username_password</id>
+		<string>Error: Incorrect username or password.</string>
+	</text>
+	<text>
+		<id>data_manager_admin_loging_error</id>
+		<string>You cannot log in with your administrator login</string>
+	</text>
+	<text>
+		<id>data_manager_general_error</id>
+		<string>An error occurred: please try logging in again.
+If the error continues, please contact support.</string>
+	</text>
+	<text>
+		<id>data_manager_connect_error</id>
+		<string>Error: Could not connect to the server</string>
+	</text>
+	<text>
+		<id>login_form_remember</id>
+		<string>Remember me:</string>
+	</text>
+	<text>
+		<id>login_form_username</id>
+		<string>Username:</string>
+	</text>
+	<text>
+		<id>login_form_password</id>
+		<string>Password:</string>
+	</text>
+	<text>
+		<id>login_form_checking_loging_data</id>
+		<string>Checking login data.</string>
+	</text>
+	<text>
+		<id>resolution_check_too_low</id>
+		<string>Your screen resolution is too low for running the program. Click OK to switch to full-screen view.</string>
+	</text>
+	<text>
+		<id>resolution_check_can_not_change</id>
+		<string>Unable to switch to full-screen view. Please change your screen resolution or select full-screen view in your internet browser.</string>
+	</text>
+	<text>
+		<id>tool_button_not_needed_tool</id>
+		<string>The tool selected is not required for this exercise.</string>
+	</text>
+	<text>
+		<id>tool_grid_wrong_tool_test</id>
+		<string>You have not selected the correct tools for making the transfer. If you are uncertain about what you need to use, re-start the exercise, this time with assistance.</string>
+	</text>
+	<text>
+		<id>tool_grid_wrong_tool_help</id>
+		<string>You have not selected the correct tools for making the transfer. See the help text to find out which tools you need.</string>
+	</text>
+	<text>
+		<id>tool_grid_continue</id>
+		<string>Continue</string>
+	</text>
+	<text>
+		<id>introduction_guide_0</id>
+		<string>You will now receive an introduction to the “Virtual Transfer” program. This introduction will show you how to use the program and present the functions it contains. Click “OK” to continue.</string>
+		<speak>2003.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_1</id>
+		<string>On the main menu, transfers are divided into the four levels of functioning. Each level of functioning contains several exercises, and the average number of stars for all exercises is shown next to each level of functioning. Click the top level of functioning to continue.</string>
+		<speak>2004.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_2</id>
+		<string>After clicking a level of functioning, a list of exercises will appear. Based on the number of stars next to each exercise, you can see how well you did in the exercise. Click “Rise and sit on the edge of the bed” to continue.</string>
+		<speak>2005.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_3</id>
+		<string>After selecting an exercise from the list, you will be asked whether you want to start the exercise with help or as a test. By choosing help, you receive an ongoing description of what to do in the exercise, and your results will not be logged or saved. Click “Start with help” to continue.</string>
+		<speak>2006.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_4</id>
+		<string>If you choose to start an exercise as a test, you will not receive a description during the exercise and your results will be logged and saved. If you do not pass the exercise as a test, or if you wish to improve your results, you can always try again. Click “Start as a test” to continue.</string>
+		<speak>1004.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_5</id>
+		<string>You will receive a brief description of what the exercise entails. Click “OK” to continue.</string>
+		<speak>1005.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_6</id>
+		<string>Depending on the exercise, you will start by having to select the tools you will need for the exercise. Click the bed controls to continue.</string>
+		<speak>1006.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_7</id>
+		<string>In this example, the patient is lying in bed, and you are to imagine that you are the standing caregiver and that is through her that you are to carry out the transfer. In some exercises, a co-worker will be present to assist you. Click the caregiver to continue.</string>
+		<speak>2007.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_8</id>
+		<string>You will have to carry out some actions to complete the exercise. These actions are to be carried out either by using the tools you have selected or by holding the cursor over various points of interest. Click the patient’s head to continue.</string>
+		<speak>1008.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_9</id>
+		<string>When you hold the cursor over a point which can trigger an action, it will become brighter and a description of the point will appear in the upper right corner. Click the patient’s head again to continue.</string>
+		<speak>1009.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_10</id>
+		<string>In instances where you click the patient’s head, you will be presented with possible dialogues you could have with the patient. After this, you must select the dialogue that goes with the transfer step you are engaged with. Click one of the dialogues to continue.</string>
+		<speak>1010.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_11</id>
+		<string>If you have selected a tool for the exercise, you can use this through your toolbox. Click the psoas cushion to continue.</string>
+		<speak>1011.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_12</id>
+		<string>For some the tools, you will have to select a correct position. This is done by clicking the image which shows and describes the position. Click the middle image “By torso” to continue.</string>
+		<speak>1012.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_13</id>
+		<string>If you incorrectly perform an action or perform it in the wrong sequence, you will be notified to this effect and it will be possible to choose the correct action/sequence. A star will be deducted from your results for each incorrect action. Click the “OK” button to continue.</string>
+		<speak>1013.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_14</id>
+		<string>After completing the exercise, your results will appear. When you carry out the exercise with help, your results will not be saved, but if you complete the exercise as a test, your supervisor will be able to see your results. Click the “OK” button to continue.</string>
+		<speak>1014.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_15</id>
+		<string>If you want to improve your results, you can go through the program with help and then re-take the test. Your new results will subsequently be saved and the old results will be deleted. The introduction is finished. Click the “Home” icon to finish and go to the menu.</string>
+		<speak>1015.ogg</speak>
+	</text>
+	<text>
+		<id>function_level_0</id>
+		<string>This is an introduction to the levels of functioning. There are five levels of functioning to describe the patient’s functional mobility and thus which patient needs have to be met for a transfer.
+In the “Virtual Transfer” program, you will learn about levels of functioning 1 to 4. Level of functioning “0” denotes a patient with insignificant or no limitations, which means that the patient does not require help for transfer.</string>
+		<speak>1501.ogg</speak>
+	</text>
+	<text>
+		<id>function_level_1</id>
+		<string>Patients at level of functioning 1 have minor limitations. The patient is the active party and can carry out the activity with light personal assistance. Your task with a patient at level of functioning 1 is therefore to guide the patient to carry out the transfer in the most appropriate manner possible.</string>
+		<speak>2008.ogg</speak>
+	</text>
+	<text>
+		<id>function_level_2</id>
+		<string>Patients at level of functioning 2 have moderate limitations. The patient is the active party and can carry out the activity with moderate personal assistance.
+Your job for patients at level of functioning 2 is therefore to support the patient and use simple assistive devices to enable the patient to perform the transfer herself.</string>
+		<speak>2009.ogg</speak>
+	</text>
+	<text>
+		<id>function_level_3</id>
+		<string>Patients at level of functioning 3 have severe limitations. The patient takes part and can carry out the activity provided that extensive personal assistance is available.
+Your job is to transfer the patient, while being aware of the patient’s pressure points and especially of your own working position.</string>
+		<speak>2010.ogg</speak>
+	</text>
+	<text>
+		<id>function_level_4</id>
+		<string>Users at level of functioning 4 have total limitations. The patient is incapable of carrying out the activity and needs complete personal assistance.
+For transferring a patient at level of functioning 4, you must be keenly aware of the patient’s pressure points and your own working position.</string>
+		<speak>2011.ogg</speak>
+	</text>
+	<text>
+		<id>preasurepoints_elearning_0</id>
+		<string>1. Pressure points and transferring persons. 
+Lying in bed or sitting on a chair creates pressure at the points where a person’s body is in contact with the underlying surface. Pressure sores can develop at these pressure points if they are subjected to prolonged pressure.</string>
+		<speak>1601.ogg</speak>
+	</text>
+	<text>
+		<id>preasurepoints_elearning_1</id>
+		<string>2. Pressure points become areas of friction during movement.    
+When a person is moved along an underlying surface, the movement creates frictional resistance where the pressure sore rubs against the underlying surface.
+This is why we use assistive devices to reduce the frictional resistance under all pressure points.</string>
+		<speak>2012.ogg</speak>
+	</text>
+	<text>
+		<id>preasurepoints_elearning_2</id>
+		<string>3. Everyone who works with patients should know where frictional resistance occurs on the body and should know how to protect the patient’s skin and prevent the development of sores and discomfort. 
+The best way to determine this is to lie in a bed or sit on a chair yourself and experience this on your own body. 
+Try different prone and seated positions and then observe your pressure points before continuing the program.</string>
+		<speak>2013.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_back_in_chair_a</id>
+		<string>Further back in a chair
+Level of functioning 1
+
+The patient is seated on a chair and needs to move further back.
+
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.</string>
+		<speak>2014.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_back_in_chair_b</id>
+		<string>Further back in a chair
+Level of functioning 2
+
+The patient is seated on a chair and needs to move further back.
+
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.</string>
+		<speak>2015.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_back_in_chair_c</id>
+		<string>Further back in a chair
+Level of functioning 2
+
+The patient is seated on a chair and needs to move further back.
+
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.</string>
+		<speak>2016.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_higher_in_bed_a_almbed</id>
+		<string>Reposition towards the head of the bed
+Level of functioning 1
+
+The patient is lying on her back in bed and has slid down towards the foot of the bed.
+
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.</string>
+		<speak>2017.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_higher_in_bed_a</id>
+		<string>Reposition towards the head of the bed
+Level of functioning 1
+
+The patient is lying on her back in bed and has slid down towards the foot of the bed.
+
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2018.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_higher_in_bed_b</id>
+		<string>Reposition towards the head of the bed
+Level of functioning 2
+
+The patient is lying on her back in bed and has slid down towards the foot of the bed.
+
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2019.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_higher_in_bed_c</id>
+		<string>Reposition towards the head of the bed
+Level of functioning 3
+
+The patient is lying on her back in bed and has slid down towards the foot of the bed.
+She cannot move by herself, and you rely on a co-worker and a few assistive devices to transfer her.
+
+Pressure points
+Be aware of pressure points which create frictional resistance and make it more difficult to transfer the patient without smooth assistive devices. 
+
+Your job is to guide her and your co-worker. You must use assistive devices to facilitate the transfer and use the bed as an assistive device to reposition her to the head of the bed.
+
+Working positions and movements during the transfer
+Be aware of the working positions and movements used for this transfer. This patient needs comprehensive personal assistance which can be challenging to your body if you do not use the most expedient working positions possible.</string>
+		<speak>2020.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_higher_in_bed_drawsheet</id>
+		<string>Reposition to the head of the bed with a draw sheet.
+Level of functioning 4
+
+The patient is lying on her back and has slid down in the bed.
+
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2021.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_lie_down_a</id>
+		<string>From a seated to a prone position
+Level of functioning 1
+
+The patient is sitting on the edge of the bed and needs to lie down in the bed. 
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.</string>
+		<speak>2022.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_lie_down_b</id>
+		<string>From a seated to a prone position
+Level of functioning 2
+
+The patient is sitting on the edge of the bed. 
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2023.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_lie_down_c</id>
+		<string>From a seated to a prone position
+Level of functioning 3
+
+The patient is sitting on the edge of the bed. 
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2024.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_lifting_bed_chair_floorlift</id>
+		<string>Lifting from bed to wheelchair: floor lift
+Level of functioning 4
+
+The patient is lying in bed and needs to be lifted over to a wheelchair. 
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2025.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_lifting_bed_chair_rooflift</id>
+		<string>Lifting from bed to wheelchair: ceiling lift
+Level of functioning 4
+
+The patient is lying in bed and needs to be lifted over to a wheelchair. 
+She cannot move by herself, and you must use assistive devices and a co-worker to transfer her.
+
+Your job is to guide her and your co-worker. You must use assistive devices which make the transfer easy, smart and comfortable.
+
+Working positions and movements during the transfer
+Be aware of the working positions and movements used for this transfer. The job of transferring a patient who requires lots of assistance can be physically challenging to you and your co-worker if you do not move in a smart, secure and safe manner.</string>
+		<speak>breaf_roof_lift_bed_to_chair.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_lifting_bed_chair_rooflift_single</id>
+		<string>Lifting from bed to wheelchair: ceiling lift
+Level of functioning 4
+
+The patient is lying in bed and needs to be lifted over to a wheelchair. 
+
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2026.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_lifting_chair_bed_floorlift</id>
+		<string>Lifting from wheelchair to bed: floor lift
+Level of functioning 4
+
+The patient is sitting in a wheelchair and needs to be lifted over to the bed. 
+
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2027.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_place_sling_in_bed</id>
+		<string>Attaching the sling in bed:
+Level of functioning 4
+
+The patient is lying in bed and needs to be lifted.
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2028.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_place_sling_in_bed_single</id>
+		<string>Attaching the sling in bed:
+Level of functioning 4
+
+The patient is lying in bed and needs to be lifted. 
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2029.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_remove_sling_in_bed</id>
+		<string>Removing the sling in bed
+Level of functioning 4
+
+The patient is lying in bed and needs to have the sling removed. 
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2030.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_place_drawsheet_in_bed</id>
+		<string>Positioning a draw sheet in bed
+Level of functioning 4
+
+The patient is lying in bed. 
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2031.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_place_sling_in_chair</id>
+		<string>Attaching a sling in a wheelchair
+Level of functioning 4
+
+The patient is sitting in a wheelchair. 
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.</string>
+		<speak>2032.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_remove_sling_in_chair</id>
+		<string>Removing a sling in a wheelchair
+Level of functioning 4
+
+The patient is sitting in a wheelchair and needs to have a sling removed.
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.</string>
+		<speak>2033.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_remove_sling_in_chair_single</id>
+		<string>Removing a sling in a wheelchair
+Level of functioning 4
+
+The patient is sitting in a wheelchair and needs to have a sling removed. 
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.</string>
+		<speak>2034.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_sit_up_a</id>
+		<string>Rising and sitting on the edge of the bed:
+Level of functioning 1
+
+The patient is lying on her side in bed and needs to rise up and sit on the edge of the bed.
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.</string>
+		<speak>2035.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_sit_up_b</id>
+		<string>Rising and sitting on the edge of the bed:
+Level of functioning 2
+
+The patient is lying on her side in bed and needs to rise up and sit on the edge of the bed.
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2036.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_sit_up_c</id>
+		<string>From a prone to a seated position – using the psoas cushion
+Level of functioning 2
+
+The patient is lying on her side in bed and needs to rise up and sit on the edge of the bed. 
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2037.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_stand_up_a</id>
+		<string>From the edge of the bed to standing
+Level of functioning 1
+
+The patient is sitting on the edge of the bed. 
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.</string>
+		<speak>2038.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_stand_up_b</id>
+		<string>From the edge of the bed to standing
+Level of functioning 2
+
+The patient is sitting on the edge of the bed. 
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2039.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_stand_up_c</id>
+		<string>From the edge of the bed to standing
+Level of functioning 2
+
+The patient is sitting on the edge of the bed. 
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2040.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_side_a</id>
+		<string>Turn over onto side in bed. 
+Level of functioning 1
+
+The patient is lying on her back in bed and needs to turn over onto her side. 
+
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.</string>
+		<speak>2041.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_side_b</id>
+		<string>Turn over onto side in bed.
+Level of functioning 2
+
+The patient is lying on her back in bed and needs to turn over onto her side. 
+
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2042.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_side_c</id>
+		<string>Turn over onto side in bed.
+Level of functioning 3
+
+The patient is lying on her back in bed and needs to turn over onto her side. 
+
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2043.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_turn_a</id>
+		<string>Turning over onto side in bed
+Level of functioning 1
+
+The patient is lying on her back in bed and needs to turn over onto her side. 
+
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.</string>
+		<speak>2044.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_turn_b</id>
+		<string>Turning over onto side in bed
+Level of functioning 1
+
+The patient is lying on her back in bed and needs to turn over onto her side. 
+
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2045.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_turn_c</id>
+		<string>Turning over onto side in bed
+Level of functioning 3
+
+The patient is lying on her back in bed and needs to be turned over onto her side. 
+
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2046.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_walk_a</id>
+		<string>Walking with the patient
+Level of functioning 1
+
+The patient is standing on the floor and needs to walk forward.</string>
+		<speak>2047.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_walk_b</id>
+		<string>Walking with the patient
+Level of functioning 1
+
+The patient is standing on the floor and needs to walk forward.</string>
+		<speak>2047.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_walk_c</id>
+		<string>Walking with the patient
+Level of functioning 2
+
+The patient is standing on the floor with a walker.</string>
+		<speak>2049.ogg</speak>
+	</text>
+	<text>
+		<id>breefing_hor_higer_in_bed_pillow</id>
+		<string>Reposition towards the head of the bed – spinnaker glide sheet under the pillow:
+
+The patient is lying on her back in bed and has slid down towards the foot of the bed.
+
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2050.ogg</speak>
+	</text>
+	<text>
+		<id>breefing_hor_higer_in_bed_slidemat</id>
+		<string>Reposition towards the head of the bed 2 – spinnaker glide sheet under the whole body.
+
+The patient is lying on her back in bed and has slid down towards the foot of the bed.
+
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2051.ogg</speak>
+	</text>
+	<text>
+		<id>breefing_hor_turn_to_side</id>
+		<string>Turning over in bed:
+
+The patient is lying on her back in bed and needs to be turned over onto her side. 
+
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2052.ogg</speak>
+	</text>
+	<text>
+		<id>breefing_hor_sit_up_in_bed</id>
+		<string>Rising and sitting on the edge of the bed: 
+
+The patient is lying on her side in bed and needs to rise up and sit on the edge of the bed.
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2053.ogg</speak>
+	</text>
+	<text>
+		<id>breefing_hor_sitting_to_standing</id>
+		<string>From sitting on the bed to a standing position:
+
+The patient is sitting on the edge of the bed. 
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2054.ogg</speak>
+	</text>
+	<text>
+		<id>breefing_hor_sitting_to_lying</id>
+		<string>From sitting on the bed to a prone position:
+
+The patient is sitting on the edge of the bed. 
+Be aware of pressure points which create frictional resistance. 
+Your job is to guide the patient based on natural movement patterns to maximize the use of the patient’s resources during the transfer.
+Transfer the patient with the help of the bed’s functions and a few assistive devices.</string>
+		<speak>2055.ogg</speak>
+	</text>
+	<text>
+		<id>sim_walk_a_help_walk_forward</id>
+		<string>Move the cursor over the patient’s head and left-click. Tell the patient to “start by walking forward”.</string>
+		<speak>1.ogg</speak>
+	</text>
+	<text>
+		<id>sim_walk_a_talk_walk_forward</id>
+		<string>Walk forward.</string>
+	</text>
+	<text>
+		<id>sim_walk_b_state_place_hand</id>
+		<string>Remember to click on the patient’s torso to place your hand there and support the patient.</string>
+	</text>
+	<text>
+		<id>sim_walk_b_remember_place_hand</id>
+		<string>For this exercise, you should place your hand on the patient’s shoulder to provide better support to the patient.</string>
+	</text>
+	<text>
+		<id>sim_walk_b_state_walk_forward</id>
+		<string>Remember to click on the patient’s head and then click the button which tells the patient to walk forward.</string>
+	</text>
+	<text>
+		<id>sim_walk_b_help_place_hand</id>
+		<string>Move the cursor over the patient’s torso and left-click to lift up your hand and make the patient feel secure.</string>
+		<speak>2.ogg</speak>
+	</text>
+	<text>
+		<id>sim_walk_b_help_walk_forward</id>
+		<string>Move the cursor over the patient’s head and left-click. Tell the patient to “start by walking forward”.</string>
+		<speak>1.ogg</speak>
+	</text>
+	<text>
+		<id>sim_walk_b_talk_walk_forward</id>
+		<string>Walk forward.</string>
+	</text>
+	<text>
+		<id>sim_walk_c_state_place_hand</id>
+		<string>Remember to click on the patient’s torso to place your hand there and support the patient.</string>
+	</text>
+	<text>
+		<id>sim_walk_c_remember_place_hand</id>
+		<string>For this exercise, you should place your hand on the patient’s shoulder to provide better support to the patient.</string>
+	</text>
+	<text>
+		<id>sim_walk_c_state_walk_helper</id>
+		<string>Remember to click on your co-worker and ask him to be ready to follow the patient.</string>
+	</text>
+	<text>
+		<id>sim_walk_c_state_walk_borger</id>
+		<string>Remember to click on the patient’s head and then click the button which tells the patient to walk forward.</string>
+	</text>
+	<text>
+		<id>sim_walk_c_help_place_hand</id>
+		<string>Move the cursor over the patient’s torso and left-click to lift up your hand and make the patient feel secure.</string>
+		<speak>2.ogg</speak>
+	</text>
+	<text>
+		<id>sim_walk_c_help_walk_helper</id>
+		<string>Move the cursor over your co-worker and left-click.
+Tell your co-worker to be “ready to follow the patient with the wheelchair”.</string>
+		<speak>3.ogg</speak>
+	</text>
+	<text>
+		<id>sim_walk_c_help_walk_borger</id>
+		<string>Move the cursor over the patient’s head and left-click. Tell the patient to “start by walking forward”.</string>
+		<speak>1.ogg</speak>
+	</text>
+	<text>
+		<id>sim_walk_c_talk_walk_helper</id>
+		<string>Be ready to move forward with the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_walk_c_talk_walk_borger</id>
+		<string>Walk forward.</string>
+	</text>
+	<text>
+		<id>sim_turn_a_state_bendlegs</id>
+		<string>Remember to ask the patient to bend her legs.</string>
+	</text>
+	<text>
+		<id>sim_turn_a_state_turnhead</id>
+		<string>Remember to ask the patient to turn her head.</string>
+	</text>
+	<text>
+		<id>sim_turn_a_state_movearm</id>
+		<string>Remember to ask the patient to lift her left arm over her body.</string>
+	</text>
+	<text>
+		<id>sim_turn_a_state_moveover</id>
+		<string>Remember to ask the patient to push off and turn around.</string>
+	</text>
+	<text>
+		<id>sim_turn_a_help_bedhead</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “bend your legs”.</string>
+		<speak>4.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_a_help_bendlegs</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “turn your head to the right”.</string>
+		<speak>5.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_a_help_turnhead</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “reach out with your left arm and put your hand on the mattress”.</string>
+		<speak>6.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_a_help_movearm</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “push down with your feet and turn over”.</string>
+		<speak>7.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_a_talk_bendlegs</id>
+		<string>Bend your legs.</string>
+	</text>
+	<text>
+		<id>sim_turn_a_talk_turnhead</id>
+		<string>Turn your head to the right.</string>
+	</text>
+	<text>
+		<id>sim_turn_a_talk_movearm</id>
+		<string>Reach out with your left arm and put your hand on the mattress.</string>
+	</text>
+	<text>
+		<id>sim_turn_a_talk_moveover</id>
+		<string>Turn over onto your side and push your pelvis to the rear at the same time.</string>
+	</text>
+	<text>
+		<id>sim_side_a_state_liftlegs</id>
+		<string>Remember to ask the patient to lift her legs.</string>
+	</text>
+	<text>
+		<id>sim_side_a__state_placeslide</id>
+		<string>Remember to position the anti-slip mat.</string>
+	</text>
+	<text>
+		<id>sim_side_a_state_moveside</id>
+		<string>Remember to ask the patient to move over to one side in the bed.</string>
+	</text>
+	<text>
+		<id>sim_side_a_state_removeslide</id>
+		<string>Remember to remove the anti-slip mat.</string>
+	</text>
+	<text>
+		<id>sim_side_a_help_bendlegs</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “bend your legs”.</string>
+		<speak>4.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_a_help_moveside</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “move over to one side in the bed”.</string>
+		<speak>11.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_a_talk_liftlegs</id>
+		<string>Lift your legs</string>
+	</text>
+	<text>
+		<id>sim_side_a_talk_moveside</id>
+		<string>Move to one side in the bed.</string>
+	</text>
+	<text>
+		<id>sim_stand_a_help_forward</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “move forward to the edge of the bed”.</string>
+		<speak>13.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_a_help_legback</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “stand with your feet slightly apart”.</string>
+		<speak>14.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_a_help_lean</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “lean forward”.</string>
+		<speak>15.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_a_help_stand</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that she must “push down on the mattress with her hands and stand up”.</string>
+		<speak>16.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_a_state_forward</id>
+		<string>Remember to ask the patient to move to the edge of the bed.</string>
+	</text>
+	<text>
+		<id>sim_stand_a_state_legback</id>
+		<string>Remember to ask the patient to stand with her feet slightly apart.</string>
+	</text>
+	<text>
+		<id>sim_stand_a_state_lean</id>
+		<string>Remember to ask the patient to lean forward.</string>
+	</text>
+	<text>
+		<id>sim_stand_a_talk_forward</id>
+		<string>Move to the edge of the bed.</string>
+	</text>
+	<text>
+		<id>sim_stand_a_talk_legback</id>
+		<string>Stand with your feet slightly apart.</string>
+	</text>
+	<text>
+		<id>sim_stand_a_talk_lean</id>
+		<string>Lean forward.</string>
+	</text>
+	<text>
+		<id>sim_stand_a_talk_stand</id>
+		<string>Push down with your hands on the mattress and stand up.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_beddown</id>
+		<string>Remember to lower the bed.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_forward</id>
+		<string>Remember to ask the patient to move to the edge of the bed.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_walker</id>
+		<string>Remember to move the walker into position.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_feet</id>
+		<string>Remember to ask the patient to position her feet.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_hand</id>
+		<string>Remember to ask the patient to put one hand on the walker.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_lean</id>
+		<string>Remember to ask the patient to lean forward.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_stand</id>
+		<string>Remember to ask the patient to get ready to stand up.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_help_toolbox</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the bed controls and the walker.</string>
+		<speak>17.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_forward</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “move forward to the edge of the bed”.</string>
+		<speak>13.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_walker</id>
+		<string>Select the walker and position it about 50 cm from the patient.</string>
+		<speak>18.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_feet</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “stand with your feet slightly apart”.</string>
+		<speak>14.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_hand</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “place one hand on the walker and one on the bed”.</string>
+		<speak>19.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_lean</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “lean forward”.</string>
+		<speak>15.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_prepare</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that she must “get ready to stand up” when I raise the bed.</string>
+		<speak>20.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_stand</id>
+		<string>Select the bed controls and raise the bed slightly to help the patient stand up.</string>
+		<speak>21.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_talk_forward</id>
+		<string>Move to the edge of the bed.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_talk_feet</id>
+		<string>Stand with your feet slightly apart.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_talk_hand</id>
+		<string>Place one hand on the walker and one on
+the bed.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_talk_lean</id>
+		<string>Lean forward.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_talk_stand</id>
+		<string>Get ready to stand up when I raise
+the bed.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_beddown</id>
+		<string>Remember to lower the bed.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_assisthand</id>
+		<string>Remember to ask your co-worker to put one hand on the patient’s shoulder.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_forward</id>
+		<string>Remember to ask the patient to move to the edge of the bed.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_walker</id>
+		<string>Remember to move the walker into position.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_feet</id>
+		<string>Remember to ask the patient to position her feet.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_hand</id>
+		<string>Remember to ask the patient to put one hand on the walker.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_lean</id>
+		<string>Remember to ask the patient to lean forward.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_stand</id>
+		<string>Remember to ask the patient to get ready to stand up.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_help_toolbox</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the bed controls and the walker.</string>
+		<speak>17.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_assisthand</id>
+		<string>Move the cursor over your co-worker and left-click.
+Instruct your co-worker to “place your hand on the patient’s shoulder”.</string>
+		<speak>2056.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_forward</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “move forward to the edge of the bed”.</string>
+		<speak>13.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_walker</id>
+		<string>Select the walker and position it about 50 cm from the patient.</string>
+		<speak>18.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_feet</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “stand with your feet slightly apart”.</string>
+		<speak>14.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_hand</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “place one hand on the walker and one on the bed”.</string>
+		<speak>19.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_lean</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “lean forward”.</string>
+		<speak>15.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_ready</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that she must “get ready to stand up” when I raise the bed.</string>
+		<speak>20.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_stand</id>
+		<string>Select the bed controls and raise the bed slightly to help the patient stand up.</string>
+		<speak>21.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_talk_forward</id>
+		<string>Move to the edge of the bed.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_talk_feet</id>
+		<string>Stand with your feet slightly apart.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_talk_hand</id>
+		<string>Place one hand on the walker and one on
+the bed.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_talk_lean</id>
+		<string>Lean forward.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_talk_stand</id>
+		<string>Get ready to stand up when I raise
+the bed.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_talk_assisthand</id>
+		<string>Place your hand on the patient’s shoulder.</string>
+	</text>
+	<text>
+		<id>sim_sit_a_state_bend</id>
+		<string>Remember to ask the patient to bend her legs.</string>
+	</text>
+	<text>
+		<id>sim_sit_a_state_arms</id>
+		<string>Remember to ask the patient to move her arms.</string>
+	</text>
+	<text>
+		<id>sim_sit_a_state_beddown</id>
+		<string>Remember to lower the bed.</string>
+	</text>
+	<text>
+		<id>sim_sit_a_help_bend</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “bend your legs”.</string>
+		<speak>4.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_a_help_arms</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “move your arms in to the cushion”.</string>
+		<speak>22.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_a_help_situp</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “put your right hand on the mattress, push down and sit up”.</string>
+		<speak>2057.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_a_talk_bend</id>
+		<string>Bend your legs.</string>
+	</text>
+	<text>
+		<id>sim_sit_a_talk_arms</id>
+		<string>Move your arms in to the cushion.</string>
+	</text>
+	<text>
+		<id>sim_sit_a_talk_situp</id>
+		<string>Sit up.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_bend</id>
+		<string>Remember to ask the patient to bend her legs.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_arms</id>
+		<string>Remember to ask the patient to move her arms in to the cushion.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_ready</id>
+		<string>Remember to tell the patient that she must be ready to sit up.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_bedhead</id>
+		<string>Remember to raise the head of the bed.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_help_toolbox</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the bed controls.</string>
+		<speak>24.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_help_bend</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “bend your legs”. If the patient has slid down in the bed, do the “reposition towards the head of the bed” transfer first.</string>
+		<speak>25.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_help_arms</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “put your right hand on the mattress”.</string>
+		<speak>2058.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_help_ready</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “get ready to sit up when the head of the bed is raised”.</string>
+		<speak>26.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_help_bedhead</id>
+		<string>Select the bed controls and raise the head of the bed slightly to help her to sit up.</string>
+		<speak>27.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_help_lowerbed</id>
+		<string>Select the bed controls and lower the bed.</string>
+		<speak>28.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_talk_bend</id>
+		<string>Bend your legs.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_talk_arms</id>
+		<string>Place your right hand on the mattress.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_talk_ready</id>
+		<string>Get ready to sit up when I raise
+ the head of the bed.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_beddown</id>
+		<string>Remember to lower the bed.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_psoas</id>
+		<string>Remember to position the psoas cushion.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_help_psoas</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the bed controls and the psoas cushion.</string>
+		<speak>209.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_state_help_psoas_place</id>
+		<string>Select the psoas cushion and position it behind the patient.</string>
+		<speak>210.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_state_bend</id>
+		<string>Remember to bend the patient’s legs.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_state_turn</id>
+		<string>Remember to turn the patient to the right.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_state_sling</id>
+		<string>Remember to position the sling.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_state_back</id>
+		<string>Remember to turn the patient over to the left.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_state_pull</id>
+		<string>Remember to return the patient to lying on her back.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_state_strops</id>
+		<string>Remember to pull the straps under the patient’s legs.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_tool</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the sling.</string>
+		<speak>29.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_bend</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we will now bend your legs”.</string>
+		<speak>30.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_turn</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we are now going to turn you over onto your right side”.</string>
+		<speak>31.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_sling</id>
+		<string>Select the sling and position it underneath the patient.</string>
+		<speak>32.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_back</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we are now going to turn you over onto your left side”.</string>
+		<speak>33.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_pull</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we are now going to return you to lying on your back”.</string>
+		<speak>34.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_strops</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we are now pulling the straps under your legs”.</string>
+		<speak>35.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_cross</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we are now interlacing and crossing the straps”.</string>
+		<speak>2059.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_talk_bend</id>
+		<string>Bend your legs.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_talk_turn</id>
+		<string>Turn over on your right side.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_talk_back</id>
+		<string>Turn over on your left side.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_talk_pull</id>
+		<string>Return to lying on your back.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_talk_strops</id>
+		<string>Now I am pulling the straps under your legs.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_talk_cross</id>
+		<string>Now I am interlacing the straps so they are crossed.</string>
+	</text>
+	<text>
+		<id>sim_side_c_state_0</id>
+		<string>Remember to tell the patient to bend her legs.</string>
+	</text>
+	<text>
+		<id>sim_side_c_state_1</id>
+		<string>Remember to tell the patient to turn over onto her right side.</string>
+	</text>
+	<text>
+		<id>sim_side_c_state_2</id>
+		<string>Remember to place the spinnaker glide sheet under the patient’s upper left torso.</string>
+	</text>
+	<text>
+		<id>sim_side_c_state_3</id>
+		<string>Remember to tell the patient to turn over onto her left side.</string>
+	</text>
+	<text>
+		<id>sim_side_c_state_4</id>
+		<string>Remember to place the spinnaker glide sheet under the patient’s upper right torso.</string>
+	</text>
+	<text>
+		<id>sim_side_c_state_5</id>
+		<string>Remember to tell the patient to return to lying on her back.</string>
+	</text>
+	<text>
+		<id>sim_side_c_help_0</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the spinnaker glide sheet.</string>
+		<speak>37.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_1</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “bend your legs”.</string>
+		<speak>38.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “turn over onto her right side”.</string>
+		<speak>39.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_3</id>
+		<string>Select the spinnaker glide sheet and position it under the patient’s left shoulder and down towards the hip.</string>
+		<speak>40.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_4</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “turn over onto her left side”.</string>
+		<speak>41.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_5</id>
+		<string>Select the spinnaker glide sheet and position it under the patient’s right shoulder and down towards her hip.</string>
+		<speak>42.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_6</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “return to lying on your back”.</string>
+		<speak>43.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_7</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we are now going to move you sideways in the bed”.</string>
+		<speak>44.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_c_talk_0</id>
+		<string>Bend your legs.</string>
+	</text>
+	<text>
+		<id>sim_side_c_talk_1</id>
+		<string>Turn over onto your right side.</string>
+	</text>
+	<text>
+		<id>sim_side_c_talk_2</id>
+		<string>Turn over onto your left side.</string>
+	</text>
+	<text>
+		<id>sim_side_c_talk_3</id>
+		<string>Return to lying on your back.</string>
+	</text>
+	<text>
+		<id>sim_side_c_talk_4</id>
+		<string>Now we are going to move you over to one side of the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_toolbox</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use your co-worker and the spinnaker glide sheet.</string>
+		<speak>45.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_placehelper</id>
+		<string>Select your co-worker and position him on the opposite side of the bed.</string>
+		<speak>46.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_bendLegs</id>
+		<string>Move the cursor over the patient’s head and left-click.
+After this, tell the patient to bend her legs.</string>
+		<speak>47.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_turntoright</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Then tell the patient to turn over on her right side (while you position the spinnaker glide sheet).</string>
+		<speak>48.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_slidemat</id>
+		<string>Select the spinnaker glide sheet and place it under the patient’s upper left torso.</string>
+		<speak>49.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_onback</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Then tell the patient to return to lying on her back.</string>
+		<speak>50.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_movebutt</id>
+		<string>Move the cursor over the patient’s head and left-click.
+After this, tell the patient to lift her lower body (out towards the edge of the bed).</string>
+		<speak>51.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_moveupper</id>
+		<string>Move the cursor over the patient’s head and left-click.
+After this, tell the patient to lift her upper body (out towards the edge of the bed).</string>
+		<speak>52.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_liftlegs</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Then tell the patient to lift her legs (out towards the edge of the bed).</string>
+		<speak>53.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_turntorightagain</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Then tell the patient to turn over on her right side.</string>
+		<speak>54.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_slidematcorrect</id>
+		<string>Move the cursor over the spinnaker glide sheet and left-click to adjust it.</string>
+		<speak>177.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_pushbutt</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Then tell the patient to push her pelvis to the rear (repeat the procedure until the patient is lying all the way at the edge of the bed).</string>
+		<speak>55.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_a_help_start</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “pull your legs up under you, place your hands on the armrests, lean forward and lift yourself back into the wheelchair”.</string>
+		<speak>2060.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_a_dialog_back</id>
+		<string>Sit back further in the chair.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_leanleft</id>
+		<string>Remember to ask the patient to lean to the left.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_rightarm</id>
+		<string>Remember to remove the right armrest.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_placeright</id>
+		<string>Remember to place the spinnaker glide sheet on the right side.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_rightback</id>
+		<string>Remember to reattach the right armrest to the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_leanright</id>
+		<string>Remember to ask the patient to lean to the right.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_leftarm</id>
+		<string>Remember to remove the left armrest.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_placeleft</id>
+		<string>Remember to place the spinnaker glide sheet on the left side.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_leftback</id>
+		<string>Remember to reattach the left armrest to the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_placefeet</id>
+		<string>Remember to ask the patient to sit up straight and place her feet firmly on the floor.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_start</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the spinnaker glide sheet.</string>
+		<speak>37.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_toolbox</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “lean to the left”.</string>
+		<speak>57.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_talk_0_0</id>
+		<string>Remove the right armrest by moving the cursor over it and then left-clicking it.</string>
+		<speak>58.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_armright</id>
+		<string>Select the spinnaker glide sheet and place it under the patient’s right side.</string>
+		<speak>59.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_slideright</id>
+		<string>Reattach the right armrest by moving the cursor over it and left-clicking it.</string>
+		<speak>60.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_rightback</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “lean to the right”.</string>
+		<speak>61.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_talk_0_1</id>
+		<string>Remove the left armrest by moving the cursor over it and then left-clicking it.</string>
+		<speak>62.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_armleft</id>
+		<string>Select the spinnaker glide sheet and place it under the patient’s left side.</string>
+		<speak>63.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_slideleft</id>
+		<string>Reattach the left armrest by moving the cursor over it and then left-clicking it.</string>
+		<speak>64.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_leftback</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “sit up straight and place your feet firmly on the floor”.</string>
+		<speak>65.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_talk_0_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “sit further back in the wheelchair”.</string>
+		<speak>56.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_talk_0</id>
+		<string>Lean to the left</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_talk_1</id>
+		<string>Lean to the right</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_talk_2</id>
+		<string>Sit up straight and place your feet firmly on the ground.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_talk_3</id>
+		<string>Sit back further in the chair.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_0</id>
+		<string>Remember to ask the patient to lean to the left.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_1</id>
+		<string>Remember to remove the right armrest.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_2</id>
+		<string>Remember to place the spinnaker glide sheet on the right side.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_3</id>
+		<string>Remember to reattach the right armrest to the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_4</id>
+		<string>Remember to ask the patient to lean to the right.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_5</id>
+		<string>Remember to remove the left armrest.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_6</id>
+		<string>Remember to place the spinnaker glide sheet on the left side.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_7</id>
+		<string>Remember to reattach the left armrest to the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_8</id>
+		<string>Remember to put a footstool into position.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_9</id>
+		<string>Remember to place one hand on the patient’s right shoulder and the other on her left knee.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_10</id>
+		<string>Remember to ask the patient to push her right side to the rear.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_11</id>
+		<string>Remember to place one hand on the patient’s left shoulder and the other on her right knee.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_0</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the spinnaker glide sheet and a footstool.</string>
+		<speak>67.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_1</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “lean to the left”.</string>
+		<speak>57.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_2</id>
+		<string>Remove the right armrest by moving the cursor over it and then left-clicking it.</string>
+		<speak>58.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_3</id>
+		<string>Select the spinnaker glide sheet and place it under the patient’s right side.</string>
+		<speak>59.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_4</id>
+		<string>Reattach the right armrest by moving the cursor over it and left-clicking it.</string>
+		<speak>60.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_5</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “lean to the right”.</string>
+		<speak>61.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_6</id>
+		<string>Remove the left armrest by moving the cursor over it and then left-clicking it.</string>
+		<speak>62.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_7</id>
+		<string>Select the spinnaker glide sheet and place it under the patient’s left side.</string>
+		<speak>63.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_8</id>
+		<string>Reattach the left armrest by moving the cursor over it and then left-clicking it.</string>
+		<speak>64.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_9</id>
+		<string>Select a footstool and place it in front of the patient.</string>
+		<speak>68.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_10</id>
+		<string>Move the cursor over the patient’s left knee and left-click to put one hand on her right shoulder and the other hand on her left knee.</string>
+		<speak>69.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_11</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “push your right side to the rear”.</string>
+		<speak>70.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_12</id>
+		<string>Move the cursor over the patient’s right knee and left-click to put one hand on her left shoulder and the other on her right knee.</string>
+		<speak>71.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_13</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “push your left side to the rear”.</string>
+		<speak>72.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_talk_0</id>
+		<string>Lean to the left</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_talk_1</id>
+		<string>Lean to the right</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_talk_2</id>
+		<string>Push your right side to the rear</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_talk_3</id>
+		<string>Push your left side to the rear.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_0</id>
+		<string>Remember to ask the patient to bend her legs.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_1</id>
+		<string>Remember to ask the patient to turn over to her right.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_2</id>
+		<string>Remember to select the spinnaker glide sheet and put it under the patient’s upper left torso.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_3</id>
+		<string>Remember to ask the patient to turn to the left.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_4</id>
+		<string>Remember to select the spinnaker glide sheet and put it under the patient’s upper right torso.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_5</id>
+		<string>Remember to ask the patient to return to lying on her back.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_6</id>
+		<string>Remember to raise the foot of the bed.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_7</id>
+		<string>Remember to tell the patient to lift her feet when you position the anti-slip mat.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_8</id>
+		<string>Remember to position the anti-slip mat.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_9</id>
+		<string>Remember to reposition the patient towards the head of the bed.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_0</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the spinnaker glide sheet and the anti-slip mat.</string>
+		<speak>2061.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_1</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “bend your legs”.</string>
+		<speak>38.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “turn over onto her right side”.</string>
+		<speak>39.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_3</id>
+		<string>Select the spinnaker glide sheet and position it under the patient’s left shoulder and down towards the hip.</string>
+		<speak>40.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_4</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “turn over onto her left side”.</string>
+		<speak>41.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_5</id>
+		<string>Select the spinnaker glide sheet and position it under the patient’s right shoulder and down towards her hip.</string>
+		<speak>42.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_6</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “return to lying on your back”.</string>
+		<speak>43.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_7</id>
+		<string>Select the bed controls and raise the foot of the bed.</string>
+		<speak>74.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_8</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “lift your feet when I position the anti-slip mat”.</string>
+		<speak>75.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_9</id>
+		<string>Select the anti-slip mat and place it under the patient’s feet.</string>
+		<speak>76.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_10</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to lift her head while you reposition her closer to the head of the bed by pulling on the sheet.</string>
+		<speak>2062.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_11</id>
+		<string>Select the bed controls and lower the foot of the bed to a horizontal position.</string>
+		<speak>78.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_talk_0</id>
+		<string>Bend your legs.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_talk_1</id>
+		<string>Turn over to the right (co-worker pulls on the draw sheet).</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_talk_2</id>
+		<string>Turn over to the left (co-worker pulls on the draw sheet).</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_talk_3</id>
+		<string>Return to lying on your back.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_talk_4</id>
+		<string>Lift your feet when I position the anti-slip mat. (If the patient 
+is unable to lift her feet, place the spinnaker glide sheet under her legs.)</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_talk_5</id>
+		<string>Lift your head: now we are repositioning you towards the head of the bed.</string>
+	</text>
+	<text>
+		<id>sim_high_up_a_state_0</id>
+		<string>Remember to lower the head of the bed.</string>
+	</text>
+	<text>
+		<id>sim_high_up_a_state_1</id>
+		<string>Remember to ask the patient to bend her legs.</string>
+	</text>
+	<text>
+		<id>sim_high_up_a_state_2</id>
+		<string>Remember to raise the foot of the bed.</string>
+	</text>
+	<text>
+		<id>sim_high_up_a_help_0</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the bed controls.</string>
+		<speak>24.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_a_help_1</id>
+		<string>Select the bed controls and lower the head of the bed all the way down.</string>
+		<speak>79.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_a_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “bend your legs”.</string>
+		<speak>38.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_a_help_3</id>
+		<string>Select the bed controls and slightly raise the foot of the bed.</string>
+		<speak>80.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_a_help_4</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “push yourself towards the head of the bed”.</string>
+		<speak>2063.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_a_help_5</id>
+		<string>Select the bed controls and lower the foot of the bed to a horizontal position.</string>
+		<speak>211.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_a_talk_0</id>
+		<string>Bend your legs.</string>
+	</text>
+	<text>
+		<id>sim_high_up_a_talk_1</id>
+		<string>Push yourself towards the head of the bed by rolling from side to side</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_0</id>
+		<string>Remember to ask the patient to bend her legs</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_1</id>
+		<string>Remember to ask the patient to turn to the right</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_2</id>
+		<string>Remember to place the spinnaker glide sheet under the patient’s left shoulder.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_3</id>
+		<string>Remember to ask the patient to turn to the left</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_4</id>
+		<string>Remember to place the spinnaker glide sheet under the patient’s right shoulder</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_5</id>
+		<string>Remember to ask the patient to return to lying on her back.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_6</id>
+		<string>Remember to position the draw sheet.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_7</id>
+		<string>Remember to raise the foot of the bed</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_8</id>
+		<string>Remember to ask the patient to lift her feet when you position the anti-slip mat</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_9</id>
+		<string>Remember to position the anti-slip mat.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_10</id>
+		<string>Remember to tell the patient that you will now reposition her towards the head of the bed</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_0</id>
+		<string>Choose the right device for the transfer.
+For this transfer you need to use the anti-slip mat, the spinnaker glide sheet and the draw sheet.</string>
+		<speak>109.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_1</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “bend your legs”.</string>
+		<speak>38.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “turn over onto her right side”.</string>
+		<speak>39.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_3</id>
+		<string>Select the spinnaker glide sheet and position it under the patient’s left shoulder and down towards the hip.</string>
+		<speak>40.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_4</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “turn over onto her left side”.</string>
+		<speak>41.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_5</id>
+		<string>Select the spinnaker glide sheet and position it under the patient’s right shoulder and down towards her hip.</string>
+		<speak>42.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_6</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “return to lying on your back”.</string>
+		<speak>43.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_65</id>
+		<string>Select the spinnaker glide sheet and position it under the patient’s thigh.</string>
+		<speak>212.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_7</id>
+		<string>Select the bed controls and raise the foot of the bed.</string>
+		<speak>74.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_8</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “lift your feet when I position the anti-slip mat”.</string>
+		<speak>75.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_9</id>
+		<string>Select the anti-slip mat and place it under the patient’s feet.</string>
+		<speak>76.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_10</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to lift her head while you reposition her closer to the head of the bed by pulling on the sheet.</string>
+		<speak>2064.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_11</id>
+		<string>Select the bed controls and lower the foot of the bed to a horizontal position.</string>
+		<speak>211.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_talk_0</id>
+		<string>Bend your legs.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_talk_1</id>
+		<string>Turn over onto your right side.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_talk_2</id>
+		<string>Turn over onto your left side.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_talk_3</id>
+		<string>Return to lying on your back.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_talk_4</id>
+		<string>Lift your feet when I position the anti-slip mat.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_talk_5</id>
+		<string>Push down with your feet and lift your head  
+while we reposition you towards the head of the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_0</id>
+		<string>Remember to tell the patient to lift her head and look away from you (while you pull the pillow corner down under the patient’s exposed shoulder blade).</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_1</id>
+		<string>Remember to tell the patient to lift her head and look at you (while you pull the pillow corner down under the patient’s exposed shoulder blade).</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_2</id>
+		<string>Remember to position the spinnaker glide sheet under the pillow.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_3</id>
+		<string>Remember to tell the patient to lift her head and look at you (while you pull the spinnaker glide sheet down under the patient’s exposed shoulder blade).</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_4</id>
+		<string>Remember to tell the patient to lift her head and look away from you (while you pull the spinnaker glide sheet down under the patient’s exposed shoulder blade).</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_5</id>
+		<string>Remember to raise the foot of the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_55</id>
+		<string>Remember to ask the patient to lift her feet.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_6</id>
+		<string>Remember to position the anti-slip mat.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_7</id>
+		<string>Remember to tell the patient to lift her pelvis and push herself towards the head of the bed (repeat this procedure until the patient is lying correctly in bed).</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_8</id>
+		<string>Remember to lower the foot of the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_0</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the bed controls, the spinnaker glide sheet and the anti-slip mat.</string>
+		<speak>83.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_1</id>
+		<string>Move the cursor over the patient’s head and left-click.
+After this, remember to tell the patient to lift her head and look away from you (while you pull the pillow corner down under the patient’s exposed shoulder blade).</string>
+		<speak>84.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+After this, remember to tell the patient to lift her head and look at you (while you pull the pillow corner down under the patient’s exposed shoulder blade).</string>
+		<speak>85.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_3</id>
+		<string>Select the spinnaker glide sheet and position it underneath the pillow.</string>
+		<speak>86.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_4</id>
+		<string>Move the cursor over the patient’s head and left-click.
+After this, remember to tell the patient to lift her head and look away from you (while you pull the spinnaker glide sheet down under the patient’s exposed shoulder blade).</string>
+		<speak>88.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_5</id>
+		<string>Move the cursor over the patient’s head and left-click.
+After this, remember to tell the patient to lift her head and look at you (while you pull the spinnaker glide sheet down under the patient’s exposed shoulder blade).</string>
+		<speak>87.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_6</id>
+		<string>Select the bed controls and raise the foot of the bed.</string>
+		<speak>74.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_65</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to lift her feet when you position the anti-slip mat.</string>
+		<speak>89.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_7</id>
+		<string>Select the anti-slip mat and place it under the patient’s feet.</string>
+		<speak>90.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_8</id>
+		<string>Move the cursor over the patient’s head and left-click.
+After this, remember to tell the patient to lift her pelvis and push herself towards the head of the bed (repeat this procedure until the patient is lying correctly in bed).</string>
+		<speak>91.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_9</id>
+		<string>Select the bed controls and lower the foot of the bed again. (Remember to remove the spinnaker glide sheet and anti-slip mat when the transfer is completed.)</string>
+		<speak>92.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_10</id>
+		<string>Move the cursor over the patient’s head and left-click.
+After this, tell the patient to lift her head (while you remove the spinnaker glide sheet).</string>
+		<speak>93.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_0</id>
+		<string>Lift your head and look away from me.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_1</id>
+		<string>Lift your head and look at me.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_2</id>
+		<string>Lift your head and look away from me.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_3</id>
+		<string>Lift your head and look at me.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_35</id>
+		<string>Lift your feet when I position
+the anti-slip mat.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_4</id>
+		<string>Lift your pelvis and push yourself towards the head of the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_5</id>
+		<string>Lift your head.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_0</id>
+		<string>Remember to position your co-worker.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_1</id>
+		<string>Remember to ask the patient to lift her head and look at your co-worker while you pull the pillow corner down under the patient’s exposed shoulder blade.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_2</id>
+		<string>Remember to ask the patient to lift her head and look at you while your co-worker pulls the pillow corner down under the patient’s exposed shoulder blade.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_3</id>
+		<string>Remember to ask the patient to bend her legs.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_4</id>
+		<string>Remember to ask the patient to turn over onto her right side.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_5</id>
+		<string>Remember to position the spinnaker glide sheet.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_6</id>
+		<string>Remember to ask the patient to return to lying on her back and to look at you.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_7</id>
+		<string>Remember to ask the patient to return to lying on her back.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_8</id>
+		<string>Remember to raise the foot of the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_85</id>
+		<string>Remember to ask the patient to lift her feet.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_9</id>
+		<string>Remember to position the anti-slip mat.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_10</id>
+		<string>Remember to ask the patient to lift her pelvis and push herself towards the head of the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_0</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to the help of your co-worker, you need to use the bed controls, the spinnaker glide sheet and the anti-slip mat.</string>
+		<speak>178.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_1</id>
+		<string>Select your co-worker and position him on the opposite side of the bed.</string>
+		<speak>179.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+After this, remember to tell the patient to lift her head and look at your co-worker (while you pull the pillow corner down under the patient’s exposed shoulder blade).</string>
+		<speak>180.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_3</id>
+		<string>Move the cursor over the patient’s head and left-click.
+After this, remember to tell the patient to lift her head and look at you (while your co-worker pulls the pillow corner down under the patient’s exposed shoulder blade).</string>
+		<speak>181.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_4</id>
+		<string>Move the cursor over the patient’s head and left-click.
+After this, tell the patient to bend her legs.</string>
+		<speak>47.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_5</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Then tell the patient to turn over on her right side.</string>
+		<speak>54.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_6</id>
+		<string>Select the spinnaker glide sheet and place it under the patient’s upper left torso.</string>
+		<speak>182.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_7</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Next, tell the patient to return to lying on her back and then lift her head and look at you (while your co-worker adjusts the spinnaker glide sheet).</string>
+		<speak>183.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_8</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Then tell the patient to return to lying on her back.</string>
+		<speak>50.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_9</id>
+		<string>Select the bed controls and raise the foot of the bed.</string>
+		<speak>74.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_95</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “lift your feet when I position the anti-slip mat”.</string>
+		<speak>184.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_10</id>
+		<string>Select the anti-slip mat and place it under the patient’s legs.</string>
+		<speak>185.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_11</id>
+		<string>Move the cursor over the patient’s head and left-click.
+After this, remember to tell the patient to (lift her pelvis) and push herself towards the head of the bed. (Repeat this procedure until the patient is lying correctly in bed.)</string>
+		<speak>186.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_12</id>
+		<string>Select the bed controls and lower the foot of the bed again. (Remember to remove the spinnaker glide sheet and anti-slip mat when the transfer is completed.)</string>
+		<speak>92.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_0</id>
+		<string>Lift your head and look at my co-worker.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_1</id>
+		<string>Lift your head and look at me.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_2</id>
+		<string>Bend your legs.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_3</id>
+		<string>Turn over onto your right side.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_4</id>
+		<string>Return to lying on your back, lift your head and look at me.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_5</id>
+		<string>Return to lying on your back.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_55</id>
+		<string>Lift your feet when I position
+the anti-slip mat.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_6</id>
+		<string>Push yourself towards the head of the bed (lift your pelvis if you can).</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_0</id>
+		<string>Remember to adjust the bed to an upright position.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_01</id>
+		<string>Remember to lower the bend in the bed under the patient’s knees.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_02</id>
+		<string>Remember to lower the foot of the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_1</id>
+		<string>Remember to tell the patient to move her leg out over the edge of the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_2</id>
+		<string>Remember to tell the patient to lean forward.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_3</id>
+		<string>Remember to tell the patient to move her inner leg towards the edge of the bed</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_4</id>
+		<string>Remember to tell the patient to move her outer leg back in.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_5</id>
+		<string>Remember to move the inner leg over the edge of the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_0</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the bed controls.</string>
+		<speak>24.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_1</id>
+		<string>Select the bed controls and raise the bed to an upright position. Remember to make sure that the starting position of the patient is on the edge of the bed and right next to the head of the bed.</string>
+		<speak>187.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_11</id>
+		<string>Select the bed controls and lower the bend in the bed under the knees.</string>
+		<speak>188.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_12</id>
+		<string>Select the bed controls and lower the foot of the bed.</string>
+		<speak>189.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Next, tell the patient to move her outer leg out over the edge of the bed.</string>
+		<speak>190.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_3</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Then tell the patient to lean forward (as you position the pillow behind her lower back)</string>
+		<speak>191.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_4</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Then put her weight onto her (left) buttock and move her inner leg out towards the edge of the bed.</string>
+		<speak>192.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_5</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Next, shift her weight onto her (right) buttock and move her outer leg again.</string>
+		<speak>193.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_6</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Next put her weight onto her (left) buttock and move her inner leg out over the edge of the bed (repeat this procedure until the patient is sitting correctly on the bed).</string>
+		<speak>194.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_7</id>
+		<string>Select the bed controls and lower the bed.</string>
+		<speak>28.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_talk_0</id>
+		<string>Move your outer leg over the edge of the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_talk_1</id>
+		<string>Lean forward.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_talk_2</id>
+		<string>Put your weight on your (left) buttock
+and move out your inner leg towards the edge of the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_talk_3</id>
+		<string>Shift your weight onto your (right) buttock and move your outer leg again.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_talk_4</id>
+		<string>Now move your inner leg out over the edge of the bed
+so you rise to a seated position.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_0</id>
+		<string>Remember to position the footstools.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_1</id>
+		<string>Remember to raise the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_2</id>
+		<string>Remember to ask the patient to place her feet on the footstool.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_3</id>
+		<string>Remember to lower the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_4</id>
+		<string>Remember to lower the foot of the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_5</id>
+		<string>Remember to ask the patient to lift her leg up onto the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_6</id>
+		<string>Remember to ask the patient to lift her other leg up onto the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_0</id>
+		<string>Select the proper device to be used for the transfer.
+For this transfer, you need the bed controls and a footstool.</string>
+		<speak>195.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_1</id>
+		<string>Select the footstool and position it.
+Note that the patient is sitting far back on the edge of the bed at a slight angle and that the head of the bed is raised.</string>
+		<speak>196.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_2</id>
+		<string>Select the bed controls and raise the bed.</string>
+		<speak>197.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_3</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Next, tell the patient to place her feet up on the footstool.</string>
+		<speak>198.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_4</id>
+		<string>Select the bed controls and lower the bed.</string>
+		<speak>28.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_5</id>
+		<string>Lower the foot of the bed to all the way down below the bed frame.</string>
+		<speak>199.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_6</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Then tell the patient to lie down and lift her leg up onto the bed.</string>
+		<speak>200.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_7</id>
+		<string>Move the cursor over the patient’s head and left-click.
+After this, tell the patient to lift her other leg up onto the bed.</string>
+		<speak>201.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_8</id>
+		<string>Move the cursor over the patient’s head and left-click.
+After this, tell the patient to lift her pelvis onto the bed.</string>
+		<speak>202.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_talk_0</id>
+		<string>Put your feet up on the footstool.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_talk_1</id>
+		<string>Lie down and lift your leg up onto the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_talk_2</id>
+		<string>Lift the other leg up onto the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_talk_3</id>
+		<string>Lift your pelvis onto the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_state_0</id>
+		<string>Remember to move the walker into position.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_state_1</id>
+		<string>Remember to lock the walker.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_state_2</id>
+		<string>Remember to ask the patient to pull her feet towards her.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_state_3</id>
+		<string>Remember to ask the patient to put her hands on the walker.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_state_4</id>
+		<string>Remember to ask the patient to get ready to stand up.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_state_5</id>
+		<string>Remember to raise the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_0</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the bed controls and the walker.</string>
+		<speak>17.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_1</id>
+		<string>Select the walker from the toolbox.
+Then position the walker about 50 cm in front of the patient.</string>
+		<speak>203.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_2</id>
+		<string>Move the cursor over the walker’s lock and left-click it to lock it.</string>
+		<speak>204.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_3</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Then tell the patient to pull her feet towards her.</string>
+		<speak>205.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_4</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Next, tell the patient to put her hands on the walker plate.</string>
+		<speak>206.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_5</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Next, tell the patient to stand up when you raise the bed.</string>
+		<speak>207.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_6</id>
+		<string>Select the bed controls and raise the bed.</string>
+		<speak>197.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_7</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Next, tell the patient to grip the walker.</string>
+		<speak>208.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_talk_0</id>
+		<string>Pull your feet towards you.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_talk_1</id>
+		<string>Put your hands on the walker plate.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_talk_2</id>
+		<string>Stand up when I raise the bed.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_talk_3</id>
+		<string>Grip the walker.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_0</id>
+		<string>Remember to position your co-worker.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_1</id>
+		<string>Remember to ask the patient to bend her legs</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_2</id>
+		<string>Remember to ask the patient to turn over onto her right side (as you position the spinnaker glide sheet).</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_3</id>
+		<string>Remember to position the spinnaker glide sheet.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_4</id>
+		<string>Remember to ask the patient to return to lying on her back.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_5</id>
+		<string>Remember to ask the patient to lift her pelvis.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_6</id>
+		<string>Remember to ask the patient to lift her upper body.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_7</id>
+		<string>Remember to ask the patient to lift her legs.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_8</id>
+		<string>Remember to ask the patient to turn over onto her right side.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_9</id>
+		<string>Remember to click the spinnaker glide sheet.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_0</id>
+		<string>Bend your legs.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_1</id>
+		<string>Turn over onto your right side
+(as you position the spinnaker glide sheet).</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_2</id>
+		<string>Return to lying on your back.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_3</id>
+		<string>Lift your pelvis (out towards the edge of the bed).</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_4</id>
+		<string>Lift your upper body (out towards the edge of the bed).</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_5</id>
+		<string>Lift your legs (out towards the edge of the bed).</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_6</id>
+		<string>Turn over onto your right side.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_7</id>
+		<string>Push your pelvis to the rear.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_a_state_0</id>
+		<string>Remember to ask the patient to sit as far in on the bed as possible.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_a_state_1</id>
+		<string>Remember to ask the patient to lower herself onto her lower arm.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_a_help_0</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “sit as far in on the bed as possible”.</string>
+		<speak>98.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_a_help_1</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “lower yourself onto your lower arm”.</string>
+		<speak>94.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_a_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “lift up your legs and lie down”.</string>
+		<speak>95.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_a_talk_0</id>
+		<string>Sit as far in on the bed as possible</string>
+	</text>
+	<text>
+		<id>sim_lie_down_a_talk_1</id>
+		<string>Place your left hand on the mattress and lower yourself onto your lower arm.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_a_talk_2</id>
+		<string>Lift your legs into bed while
+turning your upper body at the same time.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_state_0</id>
+		<string>Remember to raise the head of the bed.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_state_1</id>
+		<string>Remember to ask the patient to sit as far in on the bed as possible.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_state_2</id>
+		<string>Remember to ask the patient to lean back against the pillow.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_state_3</id>
+		<string>Remember to remove the headboard.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_state_4</id>
+		<string>Remember to position the spinnaker glide sheet.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_state_5</id>
+		<string>Remember to wrap the draw sheet around the patient’s ankles.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_0</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the bed controls, the spinnaker glide sheet and the draw sheet.</string>
+		<speak>96.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_1</id>
+		<string>Select the bed controls and raise the head of the bed.</string>
+		<speak>97.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “sit as far in on the bed as possible”.</string>
+		<speak>98.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_3</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “lean back against the pillow”.</string>
+		<speak>99.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_4</id>
+		<string>Move the cursor over the headboard and left-click to remove it.</string>
+		<speak>2066.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_5</id>
+		<string>Select the spinnaker glide sheet and place it at the foot of the bed, allowing some of it to hang over the edge of the bed.</string>
+		<speak>101.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_6</id>
+		<string>Select the draw sheet and wrap it around the patient’s ankles.</string>
+		<speak>102.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_7</id>
+		<string>Move the cursor over the patient and left-click.
+Tell the patient to “lower the bed’s headboard while I help you lift your legs onto the bed using the sheet”.</string>
+		<speak>2065.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_talk_0</id>
+		<string>Sit as far in on the bed as possible</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_talk_1</id>
+		<string>Lean back against the pillow</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_talk_2</id>
+		<string>Lower the bed’s headboard, while I help you lift your legs onto the bed.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_state_0</id>
+		<string>Remember to raise the head of the bed.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_state_1</id>
+		<string>Remember to ask the patient to lean back against the pillow.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_state_2</id>
+		<string>Remember to remove the headboard.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_state_3</id>
+		<string>Remember to position the spinnaker glide sheet.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_state_4</id>
+		<string>Remember to wrap the draw sheet around the patient’s ankles.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_0</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the bed controls, the spinnaker glide sheet and the draw sheet.</string>
+		<speak>96.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_1</id>
+		<string>Select the bed controls and raise the head of the bed.</string>
+		<speak>105.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “lean back against the pillow”.</string>
+		<speak>99.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_3</id>
+		<string>Move the cursor over the headboard and left-click to remove it.</string>
+		<speak>2066.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_4</id>
+		<string>Select the spinnaker glide sheet and place it at the foot of the bed, allowing some of it to hang over the edge of the bed.</string>
+		<speak>101.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_5</id>
+		<string>Select the draw sheet and wrap it around the patient’s ankles.</string>
+		<speak>102.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_6</id>
+		<string>Move the cursor over your co-worker and left-click.
+Tell the patient to “lower the headboard of the bed, while I help you lift your legs onto the bed using the draw sheet”. Use bed straps with grips, rope-ladder bed lifts, etc.</string>
+		<speak>2067.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_talk_0</id>
+		<string>Lean back against the pillow</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_talk_1</id>
+		<string>Lower the head of the bed.</string>
+	</text>
+	<text>
+		<id>sim_side_b_state_0_extra</id>
+		<string>Remember to tell the patient to lift her feet when you position the anti-slip mat.</string>
+	</text>
+	<text>
+		<id>sim_side_b_state_0</id>
+		<string>Remember to position the anti-slip mat.</string>
+	</text>
+	<text>
+		<id>sim_side_b_state_1</id>
+		<string>Remember to ask the patient to turn over to her right.</string>
+	</text>
+	<text>
+		<id>sim_side_b_state_2</id>
+		<string>Remember to position the spinnaker glide sheet.</string>
+	</text>
+	<text>
+		<id>sim_side_b_state_3</id>
+		<string>Remember to ask the patient to turn over towards you.</string>
+	</text>
+	<text>
+		<id>sim_side_b_state_4</id>
+		<string>Remember to ask the patient to move in to the middle of the bed.</string>
+	</text>
+	<text>
+		<id>sim_side_b_help_0</id>
+		<string>Choose the right device for the transfer.
+For this transfer you need to use the anti-slip mat, the spinnaker glide sheet and the draw sheet.</string>
+		<speak>109.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_0_extra</id>
+		<string>Move the cursor over the patient’s head and left-click. Tell the patient to “lift your feet when I position the anti-slip mat”.</string>
+		<speak>75.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_1</id>
+		<string>Select the anti-slip mat and place it under the patient’s legs.</string>
+		<speak>110.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Then tell the patient to turn over onto her right side.</string>
+		<speak>111.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_3</id>
+		<string>Select the spinnaker glide sheet and place it under the patient’s upper left torso.</string>
+		<speak>49.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_4</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to turn over towards you.</string>
+		<speak>112.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_5</id>
+		<string>Move the cursor over the draw sheet and left-click to move the patient to the middle of the bed.</string>
+		<speak>113.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_6</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to return to lying on her back.</string>
+		<speak>114.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_b_talk_0_extra</id>
+		<string>Lift your feet when I position the anti-slip mat. (If the patient
+is unable to lift her feet, place the spinnaker glide sheet under her legs.)</string>
+	</text>
+	<text>
+		<id>sim_side_b_talk_0</id>
+		<string>Turn over onto your right side.</string>
+	</text>
+	<text>
+		<id>sim_side_b_talk_1</id>
+		<string>Turn over towards me.</string>
+	</text>
+	<text>
+		<id>sim_side_b_talk_2</id>
+		<string>Return to lying on your back.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_state_0</id>
+		<string>Remember to tell the patient to bend her legs.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_state_1</id>
+		<string>Remember to tell the patient to turn over onto her right side.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_state_2</id>
+		<string>Remember to place the spinnaker glide sheet under the patient’s upper left torso.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_state_3</id>
+		<string>Remember to tell the patient to turn over onto her left side.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_state_4</id>
+		<string>Remember to place the spinnaker glide sheet under the patient’s upper right torso.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_state_5</id>
+		<string>Remember to tell the patient to return to lying on her back.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_help_0</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the spinnaker glide sheet.</string>
+		<speak>37.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_1</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “bend your legs”.</string>
+		<speak>38.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “turn over onto her right side”.</string>
+		<speak>39.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_3</id>
+		<string>Select the spinnaker glide sheet and position it under the patient’s left shoulder and down towards the hip.</string>
+		<speak>40.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_4</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “turn over onto her left side”.</string>
+		<speak>41.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_5</id>
+		<string>Select the spinnaker glide sheet and position it under the patient’s right shoulder and down towards her hip.</string>
+		<speak>42.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_6</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “return to lying on your back”.</string>
+		<speak>43.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_7</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we will now turn you onto your side”.</string>
+		<speak>115.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_talk_0</id>
+		<string>Bend your legs.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_talk_1</id>
+		<string>Turn over onto your right side.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_talk_2</id>
+		<string>Turn over onto your left side.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_talk_3</id>
+		<string>Return to lying on your back.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_talk_4</id>
+		<string>We will now turn you onto your side.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_0</id>
+		<string>Remember to tell the patient to bend her legs.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_1</id>
+		<string>Remember that the patient needs to turn over onto her left side.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_2</id>
+		<string>Remember to position the spinnaker glide sheet.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_3</id>
+		<string>Remember that the patient needs to return to lying on her back.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_4</id>
+		<string>Remember to put up the bed rail.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_5</id>
+		<string>Remember that the patient needs to turn to her right.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_6</id>
+		<string>Remember that the patient needs to grip the bed rail.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_help_0</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the spinnaker glide sheet.</string>
+		<speak>37.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_1</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “bend your legs”.</string>
+		<speak>4.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “turn over onto your left side”.</string>
+		<speak>116.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_3</id>
+		<string>Select the spinnaker glide sheet and position it under the patient’s right shoulder and down towards her hip.</string>
+		<speak>42.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_4</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to return to lying on her back.</string>
+		<speak>117.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_5</id>
+		<string>To put up the bed rail, move the cursor over it and left-click.</string>
+		<speak>118.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_6</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to turn her head to the right.</string>
+		<speak>119.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_7</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “grip the bed rail”.</string>
+		<speak>120.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_8</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “push down with your feet and turn over”.</string>
+		<speak>7.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_talk_0</id>
+		<string>Bend your legs.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_talk_1</id>
+		<string>Turn over onto your left side.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_talk_2</id>
+		<string>Return to lying on your back.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_talk_3</id>
+		<string>Turn your head to the right.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_talk_4</id>
+		<string>Grip the bed rail.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_talk_5</id>
+		<string>Push down with your feet and turn over.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_0</id>
+		<string>Remember to position the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_1</id>
+		<string>Remember to lock the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_2</id>
+		<string>Remember to recline the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_3</id>
+		<string>Remember to lower the ceiling lift.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_4</id>
+		<string>Remember to attach the straps to the lift.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_5</id>
+		<string>Remember to put the bed in an upright position.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_60</id>
+		<string>Remember to tell the patient that you will now lift her up from the bed.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_6</id>
+		<string>Remember to lift the patient up from the bed.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_7</id>
+		<string>Remember to lower the bed.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_8</id>
+		<string>Remember to transfer the patient to the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_9</id>
+		<string>Remember to lower the patient into the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_10</id>
+		<string>Remember to remove the straps from the lift.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_0</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the bed controls, the lift controls and the wheelchair.</string>
+		<speak>121.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_1</id>
+		<string>Select the wheelchair and place it next to the bed.</string>
+		<speak>122.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_2</id>
+		<string>To lock the wheelchair, move the cursor over the lock and then left-click.</string>
+		<speak>123.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_3</id>
+		<string>To recline the wheelchair, move the cursor over the handle and then left-click.</string>
+		<speak>124.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_4</id>
+		<string>Select the lift controls and lower the lift over the patient.</string>
+		<speak>125.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_5</id>
+		<string>Interlace the straps so they are crossed and attach the straps to the lift by moving the cursor over the sling and left-clicking.</string>
+		<speak>2068.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_6</id>
+		<string>Select the bed controls and put the bed in an upright position.</string>
+		<speak>127.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_70</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we are now lifting you up from the bed”.</string>
+		<speak>2069.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_7</id>
+		<string>Select the lift controls and lift the patient up from the bed.</string>
+		<speak>213.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_8</id>
+		<string>Select the bed controls and lower the bed.</string>
+		<speak>28.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_9</id>
+		<string>Move the cursor over the patient’s head and left-click. 
+Tell the patient that “we are now lifting you over to the wheelchair”.</string>
+		<speak>2070.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_10</id>
+		<string>Select the lift controls and lower the patient into the wheelchair. 
+(If necessary push against the patient’s knees to make sure she sits all the way back in the wheelchair.)</string>
+		<speak>2071.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_11</id>
+		<string>To remove the sling straps, move the cursor over the sling and left-click.</string>
+		<speak>130.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_12</id>
+		<string>To incline the wheelchair, move the cursor over the handle and then left-click.</string>
+		<speak>131.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_talk_00</id>
+		<string>Now we are lifting you up from the bed.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_talk_0</id>
+		<string>Now you are being lifted over to the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_state_0</id>
+		<string>Remember to ask the patient to bend her legs</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_state_1</id>
+		<string>Remember to ask the patient to turn over onto her right side</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_state_2</id>
+		<string>Remember to position the draw sheet.</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_state_3</id>
+		<string>Remember to ask the patient to turn over onto her left side</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_help_0</id>
+		<string>Choose the right device for the transfer.
+For this transfer you need to use the draw sheet.</string>
+		<speak>132.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_help_1</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “bend your legs”.</string>
+		<speak>133.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “turn over onto your right side”.</string>
+		<speak>134.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_help_3</id>
+		<string>Select the draw sheet and place it on the bed</string>
+		<speak>135.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_help_4</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “turn over onto your left side” so your co-worker can adjust the draw sheet.</string>
+		<speak>136.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_help_5</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “return to lying on your back”.</string>
+		<speak>137.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_talk_0</id>
+		<string>Bend your legs.</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_talk_1</id>
+		<string>Turn over onto your right side.</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_talk_2</id>
+		<string>Turn over onto your left side.</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_talk_3</id>
+		<string>Return to lying on your back.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_0</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the bed controls, the lift controls and the wheelchair.</string>
+		<speak>121.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_1</id>
+		<string>Select the lift controls and lower the lift over the patient.</string>
+		<speak>125.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_2</id>
+		<string>Interlace the straps so they are crossed – 
+attach the straps to the lift by moving the cursor over the sling and left-clicking.</string>
+		<speak>2078.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_3</id>
+		<string>Select the bed controls and put the bed in an upright position.</string>
+		<speak>127.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_40</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we are now lifting you up from the bed”.</string>
+		<speak>2079.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_4</id>
+		<string>Select the lift controls and lift the patient up from the bed.</string>
+		<speak>213.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_5</id>
+		<string>Select the bed controls and lower the bed.</string>
+		<speak>28.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_6</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we are now lifting you over to the wheelchair”.</string>
+		<speak>2080.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_7</id>
+		<string>Select the lift controls and move the lift’s legs out to the side.</string>
+		<speak>139.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_8</id>
+		<string>Select the wheelchair and place it under the lift.</string>
+		<speak>140.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_9</id>
+		<string>To lock the wheelchair, move the cursor over the lock and then left-click.</string>
+		<speak>123.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_10</id>
+		<string>To recline the wheelchair, move the cursor over the handle and then left-click.</string>
+		<speak>124.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_11</id>
+		<string>Select the lift controls and lower the patient into the wheelchair. 
+(If necessary push against the patient’s knees to make sure she sits all the way back in the wheelchair.)</string>
+		<speak>2081.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_12</id>
+		<string>To remove the sling straps, move the cursor over the sling and left-click.</string>
+		<speak>130.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_13</id>
+		<string>To incline the wheelchair, move the cursor over the handle and then left-click.</string>
+		<speak>141.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_talk_00</id>
+		<string>Now we are lifting you up from the bed.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_talk_0</id>
+		<string>Now we are lifting you over to the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_0</id>
+		<string>Remember to lower the lift.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_1</id>
+		<string>Remember to attach the straps to the lift.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_2</id>
+		<string>Remember to put the bed in an upright position.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_30</id>
+		<string>Remember to tell the patient that you will now lift her up from the bed.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_3</id>
+		<string>Remember to lift the patient.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_4</id>
+		<string>Remember to lower the bed.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_5</id>
+		<string>Remember to tell the patient that you are moving the lift.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_6</id>
+		<string>Remember to move the lift’s legs out to the side.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_7</id>
+		<string>Remember to position the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_8</id>
+		<string>Remember to lock the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_9</id>
+		<string>Remember to move the wheelchair backwards.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_10</id>
+		<string>Remember to lower the patient into the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_11</id>
+		<string>Remember to remove the straps from the lift.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_0</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the bed controls and the lift controls.</string>
+		<speak>142.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_1</id>
+		<string>Select the bed controls and put the bed in an upright position by pressing the correct button.</string>
+		<speak>143.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_2</id>
+		<string>Select the bed controls and lower the bed.</string>
+		<speak>144.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_3</id>
+		<string>To interlace the straps so they are crossed and attach the straps to the lift, move the cursor over the sling and left-click.</string>
+		<speak>2082.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_40</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we will now lift you up from the wheelchair”.</string>
+		<speak>2083.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_4</id>
+		<string>Select the lift controls and lift the patient from the wheelchair.</string>
+		<speak>146.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_5</id>
+		<string>Select the lift controls and move the lift legs inward.</string>
+		<speak>147.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_6</id>
+		<string>Move the cursor over the patient’s head and left-click. 
+Tell the patient that “we are now lifting you over onto the bed”.</string>
+		<speak>2084.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_7</id>
+		<string>Select the bed controls and raise the bed.</string>
+		<speak>149.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_8</id>
+		<string>Select the lift controls and lower the patient onto the bed.</string>
+		<speak>150.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_9</id>
+		<string>Move the cursor over the sling and left-click to remove the straps.</string>
+		<speak>151.ogg</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_help_0</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the lift controls.</string>
+		<speak>152.ogg</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_help_1</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we are now removing the straps under your legs”.</string>
+		<speak>153.ogg</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we will now lean you forward”.</string>
+		<speak>154.ogg</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_help_3</id>
+		<string>Select the lift controls and raise the sling. (Make sure the sling is not touching the pressure points to avoid burn marks.)</string>
+		<speak>2085.ogg</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_help_4</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we will now lean you back”.</string>
+		<speak>156.ogg</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_help_0</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we are now pulling up the straps under your legs”.</string>
+		<speak>2086.ogg</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_help_1</id>
+		<string>Move the cursor over the bed rails and left-click to raise them.</string>
+		<speak>157.ogg</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “pull yourself forward using the bed rails”.</string>
+		<speak>2087.ogg</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_help_3</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we are now removing the sling”.</string>
+		<speak>159.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_chair_help_01</id>
+		<string>To lock the wheelchair, move the cursor over the lock and then left-click.</string>
+		<speak>123.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_chair_help_0</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we will now lean you forward”.</string>
+		<speak>160.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_chair_help_1</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we are now placing the sling behind her back”.</string>
+		<speak>161.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_chair_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we will now lean you back”.</string>
+		<speak>156.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_chair_help_3</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that “we are now pulling up the straps under her legs”.</string>
+		<speak>35.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_00</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the bed controls, the spinnaker glide sheet and the anti-slip mat.</string>
+		<speak>83.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_0</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to lift her feet when you position the anti-slip mat.</string>
+		<speak>89.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_1</id>
+		<string>Select the anti-slip mat and place it under the patient’s feet.</string>
+		<speak>76.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Next, remember to tell the patient to lift her head and look away from you (while you pull down the pillow corner).</string>
+		<speak>162.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_3</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Next, remember to tell the patient to lift her head and look at you (while you pull down the pillow corner).</string>
+		<speak>163.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_4</id>
+		<string>Select the spinnaker glide sheet and position it underneath the pillow.</string>
+		<speak>86.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_5</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Next, remember to tell the patient to lift her head and look at you (while you pull down the spinnaker glide sheet).</string>
+		<speak>164.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_6</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Next, remember to tell the patient to lift her head and look away from you (while you pull down the spinnaker glide sheet).</string>
+		<speak>165.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_7</id>
+		<string>Select the bed controls and raise the foot of the bed.</string>
+		<speak>74.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_8</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to lift her pelvis and push herself towards the head of the bed.</string>
+		<speak>166.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_9</id>
+		<string>Select the bed controls and lower the foot of the bed again.</string>
+		<speak>214.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_0</id>
+		<string>Choose the right device for making the transfer.
+For this transfer you need to use the sling.</string>
+		<speak>29.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_1</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “bend your left leg up”.</string>
+		<speak>167.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click. Tell the patient to “grip the bed rail” and turn herself over onto her right side.</string>
+		<speak>168.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_3</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Then tell the patient to return to lying on her back.</string>
+		<speak>50.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_4</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Next, tell the patient that you are now pressing the sling strap under her thigh (after folding the strap into a Z-shape)</string>
+		<speak>169.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_5</id>
+		<string>To raise the bed rail on the patient’s left side, move the cursor over it and left-click it.</string>
+		<speak>170.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_6</id>
+		<string>To lower the bed rail on the patient’s right side, move the cursor over it and left-click it.</string>
+		<speak>171.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_7</id>
+		<string>Move the cursor over the patient’s head and left-click. Tell the patient that you are now “pulling up the strap under her leg”.</string>
+		<speak>172.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_8</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “bend her right leg up”.</string>
+		<speak>173.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_9</id>
+		<string>Move the cursor over the patient’s head and left-click. Tell the patient to “grip the bed rail” and turn herself over onto her left side.</string>
+		<speak>174.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_10</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient that you are now pulling out the sling on the bed behind her back</string>
+		<speak>175.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_11</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Then tell the patient to return to lying on her back.</string>
+		<speak>50.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_12</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Next, tell the patient that you are now pressing the sling strap under her thigh (after folding the strap into a Z-shape)</string>
+		<speak>169.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_13</id>
+		<string>To lower the bed rail on the patient’s left side, move the cursor over it and left-click it.</string>
+		<speak>176.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_14</id>
+		<string>Move the cursor over the patient’s head and left-click. Tell the patient that you are now “pulling up the strap under her leg”.</string>
+		<speak>172.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_0</id>
+		<string>Remember to ask the patient to lift her feet.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_1</id>
+		<string>Remember to position the anti-slip mat.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_2</id>
+		<string>Remember to ask the patient to lift her head and look away from you.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_3</id>
+		<string>Remember to ask the patient to lift her head and look at you.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_4</id>
+		<string>Remember to position the spinnaker glide sheet.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_5</id>
+		<string>Remember to ask the patient to lift her head and look at you.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_6</id>
+		<string>Remember to ask the patient to lift her head and look away from you.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_7</id>
+		<string>Remember to raise the foot of the bed.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_8</id>
+		<string>Remember to ask the patient to push herself towards the head of the bed.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_talk_0</id>
+		<string>Lift your feet when I position the anti-slip mat.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_talk_1</id>
+		<string>Lift your head and look away from me.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_talk_2</id>
+		<string>Lift your head and look at me.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_talk_3</id>
+		<string>Lift your head and look at me.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_talk_4</id>
+		<string>Lift your head and look away from me.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_talk_5</id>
+		<string>Lift your pelvis and push yourself towards the head of the bed.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_0</id>
+		<string>Remember to put the bed in an upright position.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_1</id>
+		<string>Remember to lower the bed.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_2</id>
+		<string>Remember to attach the straps to the lift.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_30</id>
+		<string>Remember to tell the patient that you will now lift her up from the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_3</id>
+		<string>Remember to lift up the patient from the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_4</id>
+		<string>Remember to retract the lift legs.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_5</id>
+		<string>Remember to move the lift over the bed.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_6</id>
+		<string>Remember to raise the bed.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_7</id>
+		<string>Remember to lower the patient onto the bed.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_talk_00</id>
+		<string>Now we will lift you up from the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_talk_0</id>
+		<string>Now we will lift you over onto the bed.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_0</id>
+		<string>Remember to bend your left leg up.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_1</id>
+		<string>Remember to ask the patient to turn over onto her right side.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_2</id>
+		<string>Remember to position the sling.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_3</id>
+		<string>Remember to return the patient to lying on her back.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_4</id>
+		<string>Remember to press the strap in under the patient’s thigh.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_5</id>
+		<string>Remember to raise the bed rail on the left side of the patient.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_6</id>
+		<string>Remember to lower the bed rail on the right side of the patient.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_7</id>
+		<string>Remember to pull the strap under the patient’s leg.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_8</id>
+		<string>Remember to bend your right leg up.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_9</id>
+		<string>Remember to ask the patient to turn over onto her left side.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_10</id>
+		<string>Remember to pull the sling out onto the bed.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_11</id>
+		<string>Remember to return the patient to lying on her back.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_12</id>
+		<string>Remember to push the strap in under the patient’s thigh.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_13</id>
+		<string>Lower the bed rail on the patient’s left side.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_0</id>
+		<string>Bend your left leg up.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_1</id>
+		<string>Grip the bed rail and turn over onto your right side.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_2</id>
+		<string>Return to lying on your back.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_3</id>
+		<string>Now I am pushing the sling strap under your thighs.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_4</id>
+		<string>Now I am pulling the sling strap under your legs.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_5</id>
+		<string>Bend your right leg up.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_6</id>
+		<string>Grip the bed rail and turn over onto your left side.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_7</id>
+		<string>Now I am pulling the sling out onto the bed.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_8</id>
+		<string>Return to lying on your back.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_9</id>
+		<string>Now I am pushing the sling strap under your thighs.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_10</id>
+		<string>Now I am pulling the sling strap under your legs.</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_state_lockchair</id>
+		<string>Remember to lock the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_state_chair</id>
+		<string>Remember to lean the patient forward.</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_state_lock</id>
+		<string>Remember to place the sling behind the patient.</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_state_lean</id>
+		<string>Remember to lean the patient back.</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_talk_0</id>
+		<string>We will now lean you forward</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_talk_1</id>
+		<string>Now we are positioning the sling behind your back</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_talk_2</id>
+		<string>Now we are leaning you back.</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_talk_3</id>
+		<string>Now we are pulling the straps under your legs</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_state_0</id>
+		<string>Remember to pull the straps under the patient’s legs.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_state_1</id>
+		<string>Remember to raise the bed rails.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_state_2</id>
+		<string>Remember to lean the patient forward.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_talk_0</id>
+		<string>Now we are pulling the straps under your legs.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_talk_1</id>
+		<string>Lean forward.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_talk_2</id>
+		<string>Now we are removing the sling.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_state_0</id>
+		<string>Remember to remove the straps under the patient’s legs.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_state_1</id>
+		<string>Remember to lean the patient forward.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_state_2</id>
+		<string>Remember to lift the sling with the lift.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_talk_0</id>
+		<string>Now we are removing the straps under your legs.
+(The straps should slide against the sling to reduce friction.)</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_talk_1</id>
+		<string>Now we are leaning you forward.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_talk_2</id>
+		<string>Now we are leaning you back.</string>
+	</text>
+	<text>
+		<id>sim_side_a_state_0</id>
+		<string>Remember to tell the patient to bend her legs.</string>
+	</text>
+	<text>
+		<id>sim_side_a_talk_0</id>
+		<string>Bend your legs.</string>
+	</text>
+	<text>
+		<id>sim_side_a_talk_1</id>
+		<string>Move to one side in the bed.</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_state_0</id>
+		<string>Remember to lock the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_state_1</id>
+		<string>Remember to ask the patient to pull her feet towards her under the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_state_2</id>
+		<string>Remember to ask the patient to put her hands on the wheelchair’s armrests.</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_state_3</id>
+		<string>Remember to push the patient’s right side to the rear.</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_help_0</id>
+		<string>To lock the wheelchair, move the cursor over the lock and then left-click.</string>
+		<speak>123.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_help_1</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “move her feet under the wheelchair”.</string>
+		<speak>2088.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_help_2</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “put your hands on the wheelchair’s armrests”.</string>
+		<speak>2089.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_help_3</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “push your right side to the rear” (while you place one hand on her left shoulder and the other hand on her right knee and push).</string>
+		<speak>2090.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_help_4</id>
+		<string>Move the cursor over the patient’s head and left-click.
+Tell the patient to “push your left side to the rear” (while you place one hand on her right shoulder and the other on her left knee and push).</string>
+		<speak>2091.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_talk_0</id>
+		<string>Move your feet under the wheelchair.</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_talk_1</id>
+		<string>Put your hands on the wheelchair’s armrests.</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_talk_2</id>
+		<string>Push your right side to the rear</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_talk_3</id>
+		<string>Push your left side to the rear.</string>
+	</text>
+  <text>
+    <id>Spielerdug</id>
+    <string>Spielerdew</string>
+  </text>
+  <text>
+    <id>Kontrol</id>
+    <string>Control</string>
+  </text>
+  <text>
+    <id>Psoas-pude</id>
+    <string>Psoas-pillow</string>
+  </text>
+  <text>
+    <id>Rollator</id>
+    <string>Walker</string>
+  </text>
+  <text>
+    <id>Kollega</id>
+    <string>Colleague</string>
+  </text>
+  <text>
+    <id>Skridsikker</id>
+    <string>Anti-skid</string>
+  </text>
+  <text>
+    <id>Lagen</id>
+    <string>Sheet</string>
+  </text>
+  <text>
+    <id>Sengekontrol</id>
+    <string>Bed Control</string>
+  </text>
+  <text>
+    <id>Skammel</id>
+    <string>Stool</string>
+  </text>
+  <text>
+    <id>Liftkontrol</id>
+    <string>Lift Control</string>
+  </text>
+  <text>
+    <id>Sejl</id>
+    <string>Sail</string>
+  </text>
+  <text>
+    <id>Psoaspude</id>
+    <string>Psoas Pillow</string>
+  </text>
+  <text>
+    <id>Kørestol</id>
+    <string>Wheelchair</string>
+  </text>
+  <text>
+    <id>Loftlift</id>
+    <string>Ceiling lift</string>
+  </text>
+  <text>
+    <id>Gulvlift</id>
+    <string>Floor lift</string>
+  </text>
+  <text>
+    <id>Gå til hovedmenu</id>
+    <string>Go to main menu</string>
+  </text>
+  <text>
+    <id>Åben breefing tekst</id>
+    <string>Open briefing text</string>
+  </text>
+  <text>
+    <id>Genstart øvelse</id>
+    <string>Restart exercise</string>
+  </text>
+  <text>
+    <id>Slå lyd fra eller til</id>
+    <string>Turn sound off or on</string>
+  </text>
+</texts>

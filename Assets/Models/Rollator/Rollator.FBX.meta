@@ -1,0 +1,307 @@
+fileFormatVersion: 2
+guid: afc38d937dcebbc4aac15f686681e2e5
+ModelImporter:
+  fileIDToRecycleName:
+    4300000: Cylinder002
+    4300002: Cylinder005
+    4300004: Cylinder006
+    4300006: Box002
+    4300008: Box003
+    4300010: Line001
+    4300012: Object011
+    4300014: Object013
+    4300016: Line002
+    4300018: Box005
+    4300020: Cylinder011
+    4300022: Cylinder012
+    4300024: Cylinder013
+    4300026: Cylinder014
+    4300028: Cylinder023
+    4300030: Cylinder024
+    4300032: Cylinder026
+    4300034: Cylinder027
+    4300036: Object008
+    4300038: Cylinder044
+    4300040: Cylinder045
+    4300042: Cylinder046
+    4300044: Cylinder047
+    4300046: Cylinder049
+    4300048: Cylinder050
+    4300050: Cylinder051
+    4300052: Box008
+    4300054: Line030
+    4300056: Line031
+    4300058: Cylinder052
+    4300060: Cylinder053
+    4300062: Cylinder054
+    4300064: Circle001
+    4300066: Box006
+    4300068: Box007
+    4300070: Cylinder034
+    4300072: Cylinder035
+    4300074: Plane003
+    4300076: Box010
+    4300078: Cylinder037
+    4300080: Circle004
+    4300082: Object006
+    4300084: Cylinder036
+    4300086: Object014
+    4300088: Cylinder056
+    4300090: Circle005
+    4300092: Plane002
+    4300094: Cylinder031
+    4300096: Cylinder028
+    4300098: Cylinder029
+    4300100: Circle003
+    4300102: Cylinder061
+    4300104: Object016
+    4300106: Circle006
+    4300108: Plane001
+    4300110: Cylinder015
+    4300112: Cylinder022
+    4300114: Cylinder025
+    4300116: Circle002
+    4300118: Cylinder060
+    4300120: Object015
+    4300122: Cylinder055
+    4300124: Box011
+    4300126: Cylinder057
+    4300128: Cylinder058
+    4300130: Plane004
+    4300132: Cylinder059
+    4300134: Box012
+    4300136: Line014
+    4300138: Line028
+    4300140: Rectangle001
+    4300142: Line003
+    4300144: Line004
+    4300146: Line005
+    4300148: Line006
+    4300150: Line007
+    4300152: Line008
+    4300154: Line009
+    4300156: Line010
+    4300158: Line011
+    4300160: Line012
+    4300162: Line013
+    4300164: Line029
+    4300166: Line015
+    4300168: Line016
+    4300170: Line017
+    4300172: Line027
+    4300174: Line019
+    4300176: Line020
+    4300178: Line021
+    4300180: Line022
+    4300182: Line023
+    4300184: Line024
+    4300186: Line025
+    4300188: Line026
+    4300190: Line018
+    4300192: Rectangle002
+    4300194: lock_click
+    4300196: lock_hover
+    7400000: Take 001 //// Rollator
+  serializedVersion: 10
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    generateAnimations: 3
+    bakeSimulation: 0
+    splitAnimations: 1
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMesh: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  textMetaNamesToFileIDs:
+    //RootNode:
+      data:
+        first: 1
+        second: 72870100
+      data:
+        first: 4
+        second: 521b0600
+      data:
+        first: 111
+        second: 605fa900
+    Box006:
+      data:
+        first: 1
+        second: 2e870100
+      data:
+        first: 4
+        second: 0e1b0600
+      data:
+        first: 23
+        second: dc182300
+      data:
+        first: 33
+        second: 1c5b3200
+    Box007:
+      data:
+        first: 1
+        second: 2c870100
+      data:
+        first: 4
+        second: 0c1b0600
+      data:
+        first: 23
+        second: da182300
+      data:
+        first: 33
+        second: 1a5b3200
+    Box012:
+      data:
+        first: 1
+        second: da860100
+      data:
+        first: 4
+        second: ba1a0600
+      data:
+        first: 23
+        second: 98182300
+      data:
+        first: 33
+        second: d85a3200
+    Circle001:
+      data:
+        first: 1
+        second: 30870100
+      data:
+        first: 4
+        second: 101b0600
+    Circle002:
+      data:
+        first: 1
+        second: f0860100
+      data:
+        first: 4
+        second: d01a0600
+    Circle003:
+      data:
+        first: 1
+        second: 04870100
+      data:
+        first: 4
+        second: e41a0600
+    Circle004:
+      data:
+        first: 1
+        second: 1e870100
+      data:
+        first: 4
+        second: fe1a0600
+    Circle005:
+      data:
+        first: 1
+        second: 10870100
+      data:
+        first: 4
+        second: f01a0600
+    Circle006:
+      data:
+        first: 1
+        second: fc860100
+      data:
+        first: 4
+        second: dc1a0600
+    Cylinder036:
+      data:
+        first: 1
+        second: 18870100
+      data:
+        first: 4
+        second: f81a0600
+      data:
+        first: 23
+        second: ca182300
+      data:
+        first: 33
+        second: 0a5b3200
+    Cylinder061:
+      data:
+        first: 1
+        second: 00870100
+      data:
+        first: 4
+        second: e01a0600
+      data:
+        first: 23
+        second: b8182300
+      data:
+        first: 33
+        second: f85a3200
+    Object014:
+      data:
+        first: 1
+        second: 14870100
+      data:
+        first: 4
+        second: f41a0600
+      data:
+        first: 23
+        second: c8182300
+      data:
+        first: 33
+        second: 085b3200
+    Object015:
+      data:
+        first: 1
+        second: ea860100
+      data:
+        first: 4
+        second: ca1a0600
+      data:
+        first: 23
+        second: a6182300
+      data:
+        first: 33
+        second: e65a3200
+    lock_click:
+      data:
+        first: 1
+        second: a0860100
+      data:
+        first: 4
+        second: 801a0600
+      data:
+        first: 23
+        second: 60182300
+      data:
+        first: 33
+        second: a05a3200
+    lock_hover:
+      data:
+        first: 1
+        second: a2860100
+      data:
+        first: 4
+        second: 821a0600
+      data:
+        first: 23
+        second: 62182300
+      data:
+        first: 33
+        second: a25a3200

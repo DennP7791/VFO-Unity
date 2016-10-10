@@ -1,0 +1,4392 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<texts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<text>
+		<id>mouse_over_assistant</id>
+		<string>Vänsterklicka på musen för att starta en konversation med din kollega.</string>
+	</text>
+	<text>
+		<id>mouse_over_patient_head</id>
+		<string>Vänsterklicka på musen för att starta en konversation med vårdtagaren.</string>
+	</text>
+	<text>
+		<id>mouse_over_sling</id>
+		<string>Vänsterklicka på musen för att aktivera selet.</string>
+	</text>
+	<text>
+		<id>mouse_over_drawsheet</id>
+		<string>Vänsterklicka på musen för att aktivera lakanet.</string>
+	</text>
+	<text>
+		<id>mouse_over_bed</id>
+		<string>Vänsterklicka på musen för att aktivera sängen.</string>
+	</text>
+	<text>
+		<id>mouse_over_wheelchair</id>
+		<string>Vänsterklicka på musen för att aktivera rullstolen.</string>
+	</text>
+	<text>
+		<id>mouse_over_slidemat</id>
+		<string>Vänsterklicka på musen för att aktivera segelduken.</string>
+	</text>
+	<text>
+		<id>mouse_over_antislidemat</id>
+		<string>Vänsterklicka på musen för att ta bort halkmattan.</string>
+	</text>
+	<text>
+		<id>mouse_over_walker</id>
+		<string>Vänsterklicka på musen för att låsa rullatorn.</string>
+	</text>
+	<text>
+		<id>talk_dialog_undo</id>
+		<string>Ångra</string>
+	</text>
+	<text>
+		<id>talk_dialog_ok</id>
+		<string>OK</string>
+	</text>
+	<text>
+		<id>results_headline</id>
+		<string>Resultat</string>
+	</text>
+	<text>
+		<id>results_failed</id>
+		<string>Du klarade inte övningen.</string>
+	</text>
+	<text>
+		<id>results_passed_help</id>
+		<string>Grattis
+Du har klarat av programmet med hjälp. Om du vill kan du gå igenom programmet i testläge.
+
+Ta bort alla hjälpmedel innan du lämnar vårdtagaren.</string>
+		<speak>1701.ogg</speak>
+	</text>
+	<text>
+		<id>results_passed_test</id>
+		<string>Grattis
+Du har klarat av programmet i testläge. Om du vill kan du gå tillbaka till huvudmenyn och välja en ny uppgift.
+
+Ta bort alla hjälpmedel innan du lämnar vårdtagaren.</string>
+		<speak>1702.ogg</speak>
+	</text>
+	<text>
+		<id>results_start_over</id>
+		<string>Klicka på OK för att starta övningen från början.</string>
+	</text>
+	<text>
+		<id>results_main_menu</id>
+		<string>Klicka på OK för att gå till huvudmenyn.</string>
+	</text>
+	<text>
+		<id>results_comment</id>
+		<string>Kommentarer till denna övning:</string>
+	</text>
+	<text>
+		<id>results_too_many_errors</id>
+		<string>Du genomförde övningen men gjorde för många fel och har därför inte klarat den.</string>
+		<speak>1703.ogg</speak>
+	</text>
+	<text>
+		<id>welcome_1</id>
+		<string>Introduktion
+Detta är ett program för personal som arbetar med förflyttning av vårdtagare. Vårdtagare som behöver hjälp, vägledning och stöd under förflyttning. Det kan vara på ett sjukhus, ett vårdhem, en institution eller i vårdtagarens eget hem.
+
+Eftersom detta är ett grundläggande program för förflyttning av vårdtagare är lösningarna på förhand utvalda åt dig. Uppgifterna ska du lösa i en logisk följd genom dialog med vårdtagaren och din kollega samt med hjälp av olika verktyg.  
+
+Det finns många alternativa förflyttningslösningar, helt beroende på vårdtagarens funktionsnivå.</string>
+		<speak>2000.ogg</speak>
+	</text>
+	<text>
+		<id>welcome_2</id>
+		<string>I förflyttningsprogrammet löser du uppgifter inom fyra olika funktionsnivåer. 
+Avslutningsvis kan du göra ett test utan hjälp av programmet, som visar att du kan lösa uppgifter på de fyra funktionsnivåerna.</string>
+		<speak>2001.ogg</speak>
+	</text>
+	<text>
+		<id>welcome_3</id>
+		<string>Förflyttningsprogrammet går att genomföra med hjälp eller som ett test. Se instruktionerna</string>
+		<speak>2002.ogg</speak>
+	</text>
+	<text>
+		<id>global_place_helper</id>
+		<string>Placera ut kollegan.</string>
+	</text>
+	<text>
+		<id>global_place_sling</id>
+		<string>Placera ut selet.</string>
+	</text>
+	<text>
+		<id>global_place_floorlift</id>
+		<string>Placera ut golvliften.</string>
+	</text>
+	<text>
+		<id>global_place_chair</id>
+		<string>Placera ut pallen.</string>
+	</text>
+	<text>
+		<id>global_place_wheelchair</id>
+		<string>Placera ut rullstolen.</string>
+	</text>
+	<text>
+		<id>global_back_to_home</id>
+		<string>Är du säker på att du vill avsluta övningen och gå till startmenyn?</string>
+	</text>
+	<text>
+		<id>global_start_over</id>
+		<string>Är du säker på att du vill börja från början?</string>
+	</text>
+	<text>
+		<id>help_or_test_help</id>
+		<string>Starta med hjälp</string>
+	</text>
+	<text>
+		<id>help_or_test_test</id>
+		<string>Starta som test</string>
+	</text>
+	<text>
+		<id>hud_wrong_placement</id>
+		<string>Du har valt fel placering. Försök igen.</string>
+	</text>
+	<text>
+		<id>hud_must_choose_placement</id>
+		<string>Välj någon av placeringarna innan du klickar på OK.</string>
+	</text>
+	<text>
+		<id>hud_tiled_wrong_placement</id>
+		<string>Fel position. Försök igen.</string>
+	</text>
+	<text>
+		<id>help_box_ok_button</id>
+		<string>OK</string>
+	</text>
+	<text>
+		<id>message_box_ok</id>
+		<string>OK</string>
+	</text>
+	<text>
+		<id>message_box_undo</id>
+		<string>Ångra</string>
+	</text>
+	<text>
+		<id>sceneloader_downloading</id>
+		<string>Hämtar ...</string>
+	</text>
+	<text>
+		<id>data_loader_getting_data</id>
+		<string>Hämtar data ... V.g. vänta ...</string>
+	</text>
+	<text>
+		<id>data_manager_wrong_username_password</id>
+		<string>Fel: Fel användarnamn eller lösenord.</string>
+	</text>
+	<text>
+		<id>data_manager_admin_loging_error</id>
+		<string>Du kan inte logga in som administratör.</string>
+	</text>
+	<text>
+		<id>data_manager_general_error</id>
+		<string>Ett fel har inträffat. Försök logga in på nytt.\nOm felet består kontakta support.</string>
+	</text>
+	<text>
+		<id>data_manager_connect_error</id>
+		<string>Fel: Det gick inte att ansluta till servern</string>
+	</text>
+	<text>
+		<id>login_form_remember</id>
+		<string>Kom ihåg mig:</string>
+	</text>
+	<text>
+		<id>login_form_username</id>
+		<string>Användarnamn:</string>
+	</text>
+	<text>
+		<id>login_form_password</id>
+		<string>Lösenord:</string>
+	</text>
+	<text>
+		<id>login_form_checking_loging_data</id>
+		<string>Kontrollerar inloggningsuppgifter.</string>
+	</text>
+	<text>
+		<id>resolution_check_too_low</id>
+		<string>Din upplösning är för låg för att köra programmet, klicka på OK för att växla till helskärmsläge.</string>
+	</text>
+	<text>
+		<id>resolution_check_can_not_change</id>
+		<string>Det gick inte att växla till helskärmsläge. Ändra skärmupplösning eller välj helskärmsläge i din webbläsare.</string>
+	</text>
+	<text>
+		<id>tool_button_not_needed_tool</id>
+		<string>Det valda verktyget behövs inte i denna övning.</string>
+	</text>
+	<text>
+		<id>tool_grid_wrong_tool_test</id>
+		<string>Du har inte valt rätt verktyg för att utföra förflyttningen. Om du är osäker på vilka verktyg du ska använda kan du påbörja övningen igen med hjälp.</string>
+	</text>
+	<text>
+		<id>tool_grid_wrong_tool_help</id>
+		<string>Du har inte valt rätt verktyg för att utföra förflyttningen. Se hjälptexten för information om vilka verktyg du behöver.</string>
+	</text>
+	<text>
+		<id>tool_grid_continue</id>
+		<string>Fortsätt</string>
+	</text>
+	<text>
+		<id>introduction_guide_0</id>
+		<string>Du kommer nu att få en introduktion till programmet Virtuell förflyttning. Under introduktionen får du lära dig hur du använder programmet och vilka funktioner det innehåller. Klicka på "OK" för att fortsätta.</string>
+		<speak>2003.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_1</id>
+		<string>I huvudmenyn är förflyttningarna indelade i fyra funktionsnivåer. Varje funktionsnivå innehåller flera övningar och intill respektive funktionsnivå visar antalet stjärnor ditt genomsnitt för samtliga övningar. Klicka på den översta funktionsnivån för att fortsätta.</string>
+		<speak>2004.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_2</id>
+		<string>När du har klickat på en funktionsnivå visas en lista med övningar. Intill varje övning visar antalet stjärnor hur väl du lyckats med övningen. Klicka på ”Upp i sittande på sängkanten” för att fortsätta.</string>
+		<speak>2005.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_3</id>
+		<string>När du valt en övning på listan får du frågan om du vill starta övningen i hjälp- eller testläge. Om du väljer att starta i hjälpläge kommer du att få beskrivningar av vad du ska göra i övningen och ditt resultat varken registreras eller sparas. Klicka på ”Starta med hjälp” för att fortsätta.</string>
+		<speak>2006.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_4</id>
+		<string>Om du väljer att starta en övning i testläge får du inga beskrivningar under övningens gång och ditt resultat registreras och sparas. Klarar du inte en övning som test eller du vill uppnå ett bättre resultat kan du alltid göra ett nytt försök. Klicka på ”Starta som test” för att fortsätta.</string>
+		<speak>1004.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_5</id>
+		<string>Du kommer att få en kort beskrivning av vad övningen går ut på. Klicka på ”OK” för att fortsätta.</string>
+		<speak>1005.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_6</id>
+		<string>Beroende på övning ska du i startögonblicket välja vilka verktyg du behöver i övningen. Klicka på sängkontrollen för att fortsätta.</string>
+		<speak>1006.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_7</id>
+		<string>I detta exempel ligger vårdtagaren på sängen och du ska föreställa dig att medhjälparen som står upp är du själv och att det är genom honom/henne du utför förflyttningen. I vissa övningar kommer det också att finnas en kollega som assisterar. Klicka på medhjälparen för att fortsätta.</string>
+		<speak>2007.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_8</id>
+		<string>För att genomföra övningen krävs att du utför några moment. Momenten utförs antingen med hjälp av de verktyg du valt eller genom att du för muspekaren över olika fokuspunkter. Klicka på vårdtagarens huvud för att fortsätta.</string>
+		<speak>1008.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_9</id>
+		<string>När du för muspekaren över en punkt, som kan utlösa ett moment, markeras den och en beskrivning av punkten visas överst i högra hörnet. Klicka på vårdtagarens huvud igen för att fortsätta.</string>
+		<speak>1009.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_10</id>
+		<string>Om du klickar på vårdtagarens huvud visas förslag på olika dialoger du kan ha med vårdtagaren. Därefter ska du välja den dialog som passar för det steg du befinner dig i under förflyttningen. Klicka på någon av dialogerna för att fortsätta.</string>
+		<speak>1010.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_11</id>
+		<string>Om du valt ett verktyg för övningen kan du använda det via din verktygslåda. Klicka på psoas-kudden för att fortsätta.</string>
+		<speak>1011.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_12</id>
+		<string>För några av verktygen ska du ange korrekt position. Detta gör du genom att klicka på bilden som visar och beskriver positionen. Klicka på den mittersta bilden ”Vid bröstkorgen” för att fortsätta.</string>
+		<speak>1012.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_13</id>
+		<string>Om du utför en åtgärd på fel sätt eller i fel ordning får du ett meddelande och chansen att välja rätt. Varje gång du utför ett moment på fel sätt dras en stjärna av från ditt resultat. Klicka på "OK" för att fortsätta.</string>
+		<speak>1013.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_14</id>
+		<string>När du har genomfört övningen visas ditt resultat. Genomför du övningen i hjälpläget sparas inte resultatet. I testläget kommer din handledare att kunna se resultatet. Klicka på "OK" för att fortsätta.</string>
+		<speak>1014.ogg</speak>
+	</text>
+	<text>
+		<id>introduction_guide_15</id>
+		<string>Om du vill ha ett bättre resultat kan du genomföra programmet i hjälpläget och därefter göra testet på nytt. Ditt nya resultat sparas sedan och det gamla raderas. Introduktionen är klar. Klicka på "Hem" för att avsluta och gå till menyn.</string>
+		<speak>1015.ogg</speak>
+	</text>
+	<text>
+		<id>function_level_0</id>
+		<string>Detta är en introduktion till funktionsnivåerna. Det finns fem funktionsnivåer som beskriver vårdtagarens funktionsförmåga och därmed också dennes behov av förflyttning.
+I programmet Virtuell förflyttning får du lära dig mer om funktionsnivåerna 1-4. Funktionsnivå 0 beskriver en vårdtagare med obetydliga eller inga begränsningar och vårdtagaren har därför inget förflyttningsbehov.</string>
+		<speak>1501.ogg</speak>
+	</text>
+	<text>
+		<id>function_level_1</id>
+		<string>Vårdtagare på funktionsnivå 1 har lättare begränsningar. Vårdtagaren är den aktiva parten och kan med viss, personlig assistans utföra aktiviteten. Din uppgift med vårdtagare på funktionsnivå 1 är därför att vägleda vårdtagaren att utföra förflyttningen på lämpligaste sätt.</string>
+		<speak>2008.ogg</speak>
+	</text>
+	<text>
+		<id>function_level_2</id>
+		<string>Vårdtagare på funktionsnivå 2 har måttliga begränsningar. Vårdtagaren är den aktiva parten och kan  med måttlig, personlig assistans utföra aktiviteten.
+Din uppgift med vårdtagare på funktionsnivå 2 är därför att stötta vårdtagaren så att denne med enkla hjälpmedel kan förflytta sig själv.</string>
+		<speak>2009.ogg</speak>
+	</text>
+	<text>
+		<id>function_level_3</id>
+		<string>Vårdtagare på funktionsnivå 3 har svåra begränsningar. Vårdtagaren deltar och kan med betydande personlig assistans utföra aktiviteten.
+Din uppgift är att förflytta vårdtagaren och samtidigt vara uppmärksam på vårdtagarens tryckpunkter och inte minst din egen arbetsställning.</string>
+		<speak>2010.ogg</speak>
+	</text>
+	<text>
+		<id>function_level_4</id>
+		<string>Vårdtagare på funktionsnivå 4 har totala begränsningar. Vårdtagaren är oförmögen att utföra aktiviteten och behöver fullständig personlig assistans.
+När du arbetar med vårdtagare på funktionsnivå 4 ska du vara mycket uppmärksam på vårdtagarens tryckpunkter och din egen arbetsställning.</string>
+		<speak>2011.ogg</speak>
+	</text>
+	<text>
+		<id>preasurepoints_elearning_0</id>
+		<string>1. Tryckpunkter och förflyttning av personer. 
+När en person ligger eller sitter på en säng eller i en stol uppstår tryck på de punkter där personens kropp är i kontakt med underlaget. Det är vid dessa tryckpunkter som trycksår kan uppstå om punkterna utsätts för långvarig tryckbelastning.</string>
+		<speak>1601.ogg</speak>
+	</text>
+	<text>
+		<id>preasurepoints_elearning_1</id>
+		<string>2. Tryckpunkterna blir till friktionsområden vid rörelse. När en person förflyttas längs ett underlag uppstår friktion vid de tryckpunkter som är i kontakt med underlaget (gnidningsmotstånd).
+Därför använder vi hjälpmedel som minskar friktionen under alla tryckpunkter.</string>
+		<speak>2012.ogg</speak>
+	</text>
+	<text>
+		<id>preasurepoints_elearning_2</id>
+		<string>3. Alla som arbetar med vårdtagare och patienter ska veta var på kroppen gnidningsmotstånd uppstår och skona personens hud för att motverka uppkomsten av sår och obehag. 
+Detta gör du bäst genom att lägga dig i en säng eller sitta på en stol och känna efter på din egen kropp. 
+Prova själv att ligga och sitta i olika ställningar och observera därefter var dina tryckpunkter sitter innan du går vidare med programmet.</string>
+		<speak>2013.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_back_in_chair_a</id>
+		<string>Tillbaka i stolen
+Funktionsnivå 1
+
+Vårdtagaren sitter i en stol och ska komma längre in på den.
+
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.</string>
+		<speak>2014.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_back_in_chair_b</id>
+		<string>Tillbaka i stolen
+Funktionsnivå 2
+
+Vårdtagaren sitter i en stol och ska komma längre in på den.
+
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.</string>
+		<speak>2015.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_back_in_chair_c</id>
+		<string>Tillbaka i stolen
+Funktionsnivå 2
+
+Vårdtagaren sitter i en stol och ska komma längre in på den.
+
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.</string>
+		<speak>2016.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_higher_in_bed_a_almbed</id>
+		<string>Högre upp i sängen
+Funktionsnivå 1
+
+Vårdtagaren ligger på rygg i sängen och har glidit ned mot fotänden.
+
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.</string>
+		<speak>2017.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_higher_in_bed_a</id>
+		<string>Högre upp i sängen
+Funktionsnivå 1
+
+Vårdtagaren ligger på rygg i sängen och har glidit ned mot fotänden.
+
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2018.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_higher_in_bed_b</id>
+		<string>Högre upp i sängen
+Funktionsnivå 2
+
+Vårdtagaren ligger på rygg i sängen och har glidit ned mot fotänden.
+
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2019.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_higher_in_bed_c</id>
+		<string>Högre upp i sängen
+Funktionsnivå 3
+
+Vårdtagaren ligger på rygg i sängen och har glidit ned mot fotänden.
+Vårdtagaren kan inte förflytta sig själv och du behöver en kollega och enkla hjälpmedel för att kunna förflytta vårdtagaren.
+
+Tryckpunkter
+Var uppmärksam på tryckpunkter som ger upphov till friktion och gör det svårt att förflytta vårdtagaren utan hjälpmedel med glidegenskaper. 
+
+Din uppgift är att vägleda vårdtagaren och din kollega. Använd hjälpmedel som underlättar förflyttningen och ta hjälp av själva sängen för att förflytta vårdtagaren högre upp i sängen.
+
+Arbetsställningar och rörelser under förflyttning
+Var uppmärksam på arbetsställningar och rörelser som används under förflyttningen. Denna vårdtagare behöver omfattande personlig assistans, vilket kan innebära påfrestningar på din kropp om du inte arbetar på ändamålsenligt sätt.</string>
+		<speak>2020.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_higher_in_bed_drawsheet</id>
+		<string>Högre upp i sängen med draglakan
+Funktionsnivå 4
+
+Vårdtagaren ligger på rygg och har glidit nedåt i sängen.
+
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2021.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_lie_down_a</id>
+		<string>Från sittande till liggande
+Funktionsnivå 1
+
+Vårdtagaren sitter på sängkanten och ska lägga sig i sängen. 
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.</string>
+		<speak>2022.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_lie_down_b</id>
+		<string>Från sittande till liggande
+Funktionsnivå 2
+
+Vårdtagaren sitter på sängkanten. 
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2023.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_lie_down_c</id>
+		<string>Från sittande till liggande
+Funktionsnivå 3
+
+Vårdtagaren sitter på sängkanten. 
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2024.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_lifting_bed_chair_floorlift</id>
+		<string>Lyft från säng till stol – golvlift
+Funktionsnivå 4
+
+Vårdtagaren ligger i sängen och ska lyftas över i rullstolen. 
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2025.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_lifting_bed_chair_rooflift</id>
+		<string>Lyft från säng till stol – taklift
+Funktionsnivå 4
+
+Vårdtagaren ligger i sängen och ska lyftas över i rullstolen. 
+Vårdtagaren kan inte förflytta sig själv och du behöver en kollega och hjälpmedel för att kunna förflytta vårdtagaren.
+
+Din uppgift är att vägleda vårdtagaren och din kollega. Använd hjälpmedel som gör förflyttningen smart, enkel och bekväm.
+
+Arbetsställningar och rörelser under förflyttning
+Var uppmärksam på arbetsställningar och rörelser som används under denna förflyttning. Att arbeta med en vårdtagare som behöver mycket hjälp kan vara påfrestande för både dig och din kollega om ni inte rör er på ett smart, tryggt och säkert sätt.</string>
+		<speak>breaf_roof_lift_bed_to_chair.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_lifting_bed_chair_rooflift_single</id>
+		<string>Lyft från säng till stol – taklift
+Funktionsnivå 4
+
+Vårdtagaren ligger i sängen och ska lyftas över i rullstolen. 
+
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2026.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_lifting_chair_bed_floorlift</id>
+		<string>Lyft från stol till säng – golvlift
+Funktionsnivå 4
+
+Vårdtagaren sitter i rullstolen och ska lyftas över i sängen. 
+
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2027.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_place_sling_in_bed</id>
+		<string>Fastsättning av sele i säng
+Funktionsnivå 4
+
+Vårdtagaren ligger i sängen och ska lyftas.
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2028.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_place_sling_in_bed_single</id>
+		<string>Fastsättning av sele i säng
+Funktionsnivå 4
+
+Vårdtagaren ligger i sängen och ska lyftas. 
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2029.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_remove_sling_in_bed</id>
+		<string>Borttagning av sele i säng
+Funktionsnivå 4
+
+Vårdtagaren ligger i sängen och seglet ska tas bort. 
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2030.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_place_drawsheet_in_bed</id>
+		<string>Placera draglakanet i sängen
+Funktionsnivå 4
+
+Vårdtagaren ligger i sängen. 
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2031.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_place_sling_in_chair</id>
+		<string>Fastsättning av sele i stol
+Funktionsnivå 4
+
+Vårdtagaren sitter i rullstolen. 
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.</string>
+		<speak>2032.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_remove_sling_in_chair</id>
+		<string>Borttagning av sele i stol
+Funktionsnivå 4
+
+Vårdtagaren sitter i rullstolen och ska få selet borttaget.
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.</string>
+		<speak>2033.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_remove_sling_in_chair_single</id>
+		<string>Borttagning av sele i stol
+Funktionsnivå 4
+
+Vårdtagaren sitter i rullstolen och ska få selet borttaget. 
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.</string>
+		<speak>2034.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_sit_up_a</id>
+		<string>Upp i sittande på sängkanten
+Funktionsnivå 1
+
+Vårdtagaren ligger på sidan i sängen och ska upp i sittande på sängkanten.
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.</string>
+		<speak>2035.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_sit_up_b</id>
+		<string>Upp i sittande på sängkanten
+Funktionsnivå 2
+
+Vårdtagaren ligger på sidan i sängen och ska upp i sittande på sängkanten.
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2036.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_sit_up_c</id>
+		<string>Från liggande till sittande med psoas-kudde
+Funktionsnivå 2
+
+Vårdtagaren ligger på sidan i sängen och ska upp i sittande på sängkanten. 
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2037.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_stand_up_a</id>
+		<string>Från sängkanten till stående
+Funktionsnivå 1
+
+Vårdtagaren sitter på sängkanten. 
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.</string>
+		<speak>2038.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_stand_up_b</id>
+		<string>Från sängkanten till stående
+Funktionsnivå 2
+
+Vårdtagaren sitter på sängkanten. 
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2039.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_stand_up_c</id>
+		<string>Från sängkanten till stående
+Funktionsnivå 2
+
+Vårdtagaren sitter på sängkanten. 
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2040.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_side_a</id>
+		<string>Till sidan i sängen
+Funktionsnivå 1
+
+Vårdtagaren ligger på rygg i sängen och ska förflytta sig åt sidan. 
+
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.</string>
+		<speak>2041.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_side_b</id>
+		<string>Till sidoläge i säng
+Funktionsnivå 2
+
+Vårdtagaren ligger på rygg i sängen och ska förflytta sig åt sidan. 
+
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2042.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_side_c</id>
+		<string>Till sidan i sängen
+Funktionsnivå 3
+
+Vårdtagaren ligger på rygg i sängen och ska förflytta sig åt sidan. 
+
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2043.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_turn_a</id>
+		<string>Vändning om på sidan
+Funktionsnivå 1
+
+Vårdtagaren ligger på rygg i sängen och ska vända sig till sidoläge. 
+
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.</string>
+		<speak>2044.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_turn_b</id>
+		<string>Vändning om på sidan
+Funktionsnivå 1
+
+Vårdtagaren ligger på rygg i sängen och ska vända sig till sidoläge. 
+
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2045.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_turn_c</id>
+		<string>Vändning om på sidan
+Funktionsnivå 3
+
+Vårdtagaren ligger på rygg i sängen och ska vändas till sidoläge. 
+
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2046.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_walk_a</id>
+		<string>Gång med vårdtagare
+Funktionsnivå 1
+
+Vårdtagaren står på golvet och ska gå framåt.</string>
+		<speak>2047.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_walk_b</id>
+		<string>Gång med vårdtagare
+Funktionsnivå 1
+
+Vårdtagaren står på golvet och ska gå framåt.</string>
+		<speak>2047.ogg</speak>
+	</text>
+	<text>
+		<id>breafing_walk_c</id>
+		<string>Gång med vårdtagare
+Funktionsnivå 2
+
+Vårdtagaren står på golvet med en rullator.</string>
+		<speak>2049.ogg</speak>
+	</text>
+	<text>
+		<id>breefing_hor_higer_in_bed_pillow</id>
+		<string>Högre upp i sängen – segelduk under huvudkudden:
+
+Vårdtagaren ligger på rygg i sängen och har glidit ned mot fotänden.
+
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2050.ogg</speak>
+	</text>
+	<text>
+		<id>breefing_hor_higer_in_bed_slidemat</id>
+		<string>Högre upp i sängen 2 – segelduk under kroppen:
+
+Vårdtagaren ligger på rygg i sängen och har glidit ned mot fotänden.
+
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2051.ogg</speak>
+	</text>
+	<text>
+		<id>breefing_hor_turn_to_side</id>
+		<string>Vändning i säng:
+
+Vårdtagaren ligger på rygg i sängen och ska vändas till sidoläge. 
+
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2052.ogg</speak>
+	</text>
+	<text>
+		<id>breefing_hor_sit_up_in_bed</id>
+		<string>Upp i sittande på sängkanten: 
+
+Vårdtagaren ligger på sidan i sängen och ska upp i sittande på sängkanten.
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2053.ogg</speak>
+	</text>
+	<text>
+		<id>breefing_hor_sitting_to_standing</id>
+		<string>Från sittande på sängen till stående:
+
+Vårdtagaren sitter på sängkanten. 
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2054.ogg</speak>
+	</text>
+	<text>
+		<id>breefing_hor_sitting_to_lying</id>
+		<string>Från sittande på sängen till liggande:
+
+Vårdtagaren sitter på sängkanten. 
+Var uppmärksam på tryckpunkter som ger upphov till friktion. 
+Din uppgift är att vägleda vårdtagaren utifrån ett naturligt rörelsemönster så att vårdtagarens resurser nyttjas på bästa sätt under förflyttningen.
+Vårdtagaren förflyttas med hjälp av sängens funktioner och enkla hjälpmedel.</string>
+		<speak>2055.ogg</speak>
+	</text>
+	<text>
+		<id>sim_walk_a_help_walk_forward</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen. Berätta för vårdtagaren att han/hon ska börja med att gå framåt.</string>
+		<speak>1.ogg</speak>
+	</text>
+	<text>
+		<id>sim_walk_a_talk_walk_forward</id>
+		<string>Gå framåt</string>
+	</text>
+	<text>
+		<id>sim_walk_b_state_place_hand</id>
+		<string>Klicka på vårdtagarens överkropp för att placera din hand som stöd för vårdtagaren.</string>
+	</text>
+	<text>
+		<id>sim_walk_b_remember_place_hand</id>
+		<string>I den här övningen bör du placera din hand på vårdtagarens axel för att ge bättre stöd.</string>
+	</text>
+	<text>
+		<id>sim_walk_b_state_walk_forward</id>
+		<string>Klicka på vårdtagarens huvud och därefter på knappen som berättar för vårdtagaren att hon/han ska gå framåt.</string>
+	</text>
+	<text>
+		<id>sim_walk_b_help_place_hand</id>
+		<string>För muspekaren över vårdtagarens överkropp och vänsterklicka på musen för att lyfta upp din hand så att vårdtagaren känner sig trygg.</string>
+		<speak>2.ogg</speak>
+	</text>
+	<text>
+		<id>sim_walk_b_help_walk_forward</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen. Berätta för vårdtagaren att hon/han ska börja med att gå framåt.</string>
+		<speak>1.ogg</speak>
+	</text>
+	<text>
+		<id>sim_walk_b_talk_walk_forward</id>
+		<string>Gå framåt</string>
+	</text>
+	<text>
+		<id>sim_walk_c_state_place_hand</id>
+		<string>Klicka på vårdtagarens överkropp för att placera din hand som stöd för vårdtagaren.</string>
+	</text>
+	<text>
+		<id>sim_walk_c_remember_place_hand</id>
+		<string>I den här övningen bör du placera din hand på vårdtagarens axel för att ge bättre stöd.</string>
+	</text>
+	<text>
+		<id>sim_walk_c_state_walk_helper</id>
+		<string>Glöm inte att klicka på din kollega och be denne göra sig redo att följa vårdtagaren.</string>
+	</text>
+	<text>
+		<id>sim_walk_c_state_walk_borger</id>
+		<string>Klicka på vårdtagarens huvud och därefter på knappen som berättar för vårdtagaren att hon/han ska gå framåt.</string>
+	</text>
+	<text>
+		<id>sim_walk_c_help_place_hand</id>
+		<string>För muspekaren över vårdtagarens överkropp och vänsterklicka på musen för att lyfta upp din hand så att vårdtagaren känner sig trygg.</string>
+		<speak>2.ogg</speak>
+	</text>
+	<text>
+		<id>sim_walk_c_help_walk_helper</id>
+		<string>För muspekaren över din kollega och vänsterklicka på musen.
+Tala om för din kollega att han ska göra sig redo att följa efter vårdtagaren med rullstol.</string>
+		<speak>3.ogg</speak>
+	</text>
+	<text>
+		<id>sim_walk_c_help_walk_borger</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen. Berätta för vårdtagaren att hon/han ska börja med att gå framåt.</string>
+		<speak>1.ogg</speak>
+	</text>
+	<text>
+		<id>sim_walk_c_talk_walk_helper</id>
+		<string>Var beredd att gå framåt med rullstol.</string>
+	</text>
+	<text>
+		<id>sim_walk_c_talk_walk_borger</id>
+		<string>Gå framåt</string>
+	</text>
+	<text>
+		<id>sim_turn_a_state_bendlegs</id>
+		<string>Be vårdtagaren böja på benen.</string>
+	</text>
+	<text>
+		<id>sim_turn_a_state_turnhead</id>
+		<string>Be vårdtagaren vrida på huvudet.</string>
+	</text>
+	<text>
+		<id>sim_turn_a_state_movearm</id>
+		<string>Be vårdtagaren sträcka upp vänster arm ovanför kroppen.</string>
+	</text>
+	<text>
+		<id>sim_turn_a_state_moveover</id>
+		<string>Be vårdtagaren ta spjärn och vända sig om.</string>
+	</text>
+	<text>
+		<id>sim_turn_a_help_bedhead</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att böja upp benen.</string>
+		<speak>4.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_a_help_bendlegs</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att vrida huvudet åt höger.</string>
+		<speak>5.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_a_help_turnhead</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att sträcka upp vänster arm och sätta ned handen i madrassen.</string>
+		<speak>6.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_a_help_movearm</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att ta spjärn med fötterna och vända sig om.</string>
+		<speak>7.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_a_talk_bendlegs</id>
+		<string>Böj upp benen.</string>
+	</text>
+	<text>
+		<id>sim_turn_a_talk_turnhead</id>
+		<string>Vrid huvudet åt höger</string>
+	</text>
+	<text>
+		<id>sim_turn_a_talk_movearm</id>
+		<string>Sträck upp vänster arm och sätt ned handen i madrassen.</string>
+	</text>
+	<text>
+		<id>sim_turn_a_talk_moveover</id>
+		<string>Vänd dig om på sidan och flytta samtidigt sätet bakåt.</string>
+	</text>
+	<text>
+		<id>sim_side_a_state_liftlegs</id>
+		<string>Be vårdtagaren lyfta på benen.</string>
+	</text>
+	<text>
+		<id>sim_side_a__state_placeslide</id>
+		<string>Lägg ut halkmattan.</string>
+	</text>
+	<text>
+		<id>sim_side_a_state_moveside</id>
+		<string>Be vårdtagaren flytta sig åt sidan i sängen.</string>
+	</text>
+	<text>
+		<id>sim_side_a_state_removeslide</id>
+		<string>Glöm inte att avlägsna halkmattan.</string>
+	</text>
+	<text>
+		<id>sim_side_a_help_bendlegs</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att böja upp benen.</string>
+		<speak>4.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_a_help_moveside</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att flytta sig åt sidan i sängen.</string>
+		<speak>11.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_a_talk_liftlegs</id>
+		<string>Lyft benen</string>
+	</text>
+	<text>
+		<id>sim_side_a_talk_moveside</id>
+		<string>Flytta dig åt sidan i sängen.</string>
+	</text>
+	<text>
+		<id>sim_stand_a_help_forward</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att komma framåt på sängkanten.</string>
+		<speak>13.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_a_help_legback</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att placera den ena foten en bit framför den andra.</string>
+		<speak>14.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_a_help_lean</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att luta sig framåt.</string>
+		<speak>15.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_a_help_stand</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att ta spjärn mot madrassen och resa sig upp.</string>
+		<speak>16.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_a_state_forward</id>
+		<string>Be vårdtagaren komma framåt på sängkanten.</string>
+	</text>
+	<text>
+		<id>sim_stand_a_state_legback</id>
+		<string>Be vårdtagaren att placera ena foten en bit framför den andra.</string>
+	</text>
+	<text>
+		<id>sim_stand_a_state_lean</id>
+		<string>Be vårdtagaren att luta sig framåt.</string>
+	</text>
+	<text>
+		<id>sim_stand_a_talk_forward</id>
+		<string>Kom framåt på sängkanten.</string>
+	</text>
+	<text>
+		<id>sim_stand_a_talk_legback</id>
+		<string>Placera ena foten en bit framför den andra.</string>
+	</text>
+	<text>
+		<id>sim_stand_a_talk_lean</id>
+		<string>Luta kroppen framåt.</string>
+	</text>
+	<text>
+		<id>sim_stand_a_talk_stand</id>
+		<string>Ta spjärn mot madrassen med händerna och res dig upp.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_beddown</id>
+		<string>Sänk ned sängens läge.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_forward</id>
+		<string>Be vårdtagaren komma framåt på sängkanten.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_walker</id>
+		<string>Ställ fram rullatorn.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_feet</id>
+		<string>Instruera vårdtagaren att placera fötterna på rätt sätt.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_hand</id>
+		<string>Instruera vårdtagaren att placera ena handen på rullatorn.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_lean</id>
+		<string>Be vårdtagaren att luta sig framåt.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_stand</id>
+		<string>Be vårdtagaren göra sig redo att resa sig upp.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_help_toolbox</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda sängkontrollen och rullatorn.</string>
+		<speak>17.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_forward</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att komma framåt på sängkanten.</string>
+		<speak>13.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_walker</id>
+		<string>Välj rullatorn och placera den ca. en halvmeter från vårdtagaren.</string>
+		<speak>18.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_feet</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att placera ena foten en bit framför den andra</string>
+		<speak>14.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_hand</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att placera ena handen på rullatorn och den andra på sängen.</string>
+		<speak>19.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_lean</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att luta sig framåt.</string>
+		<speak>15.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_prepare</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Be vårdtagaren att göra sig beredd att resa sig när du höjer upp sängen.</string>
+		<speak>20.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_stand</id>
+		<string>Välj sängkontrollen och höj sängen lite så att vårdtagaren får hjälp upp.</string>
+		<speak>21.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_talk_forward</id>
+		<string>Kom framåt på sängkanten.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_talk_feet</id>
+		<string>Placera ena foten en bit framför den andra.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_talk_hand</id>
+		<string>Placera ena handen på rullatorn och den andra på sängen.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_talk_lean</id>
+		<string>Luta kroppen framåt.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_talk_stand</id>
+		<string>Var beredd att resa dig upp när jag höjer upp sängen.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_beddown</id>
+		<string>Sänk ned sängens läge.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_assisthand</id>
+		<string>Be din kollega att lägga en hand på vårdtagarens axel.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_forward</id>
+		<string>Be vårdtagaren komma framåt på sängkanten.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_walker</id>
+		<string>Ställ fram rullatorn.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_feet</id>
+		<string>Instruera vårdtagaren att placera fötterna på rätt sätt.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_hand</id>
+		<string>Instruera vårdtagaren att placera ena handen på rullatorn.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_lean</id>
+		<string>Instruera vårdtagaren att luta sig framåt.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_stand</id>
+		<string>Instruera vårdtagaren göra sig redo att resa sig upp.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_help_toolbox</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda sängkontrollen och rullatorn.</string>
+		<speak>17.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_assisthand</id>
+		<string>För muspekaren över din kollega och vänsterklicka på musen.
+Instruera din kollega att placera handen på vårdtagarens axel.</string>
+		<speak>2056.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_forward</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att komma framåt på sängkanten.</string>
+		<speak>13.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_walker</id>
+		<string>Välj rullatorn och placera den ca. en halvmeter från vårdtagaren.</string>
+		<speak>18.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_feet</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att placera ena foten en bit framför den andra.</string>
+		<speak>14.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_hand</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att placera ena handen på rullatorn och den andra på sängen.</string>
+		<speak>19.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_lean</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att luta sig framåt.</string>
+		<speak>15.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_ready</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Be vårdtagaren att göra sig beredd att resa sig när du höjer upp sängen.</string>
+		<speak>20.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_stand</id>
+		<string>Välj sängkontrollen och höj sängen lite så att vårdtagaren får hjälp upp.</string>
+		<speak>21.ogg</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_talk_forward</id>
+		<string>Kom framåt på sängkanten.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_talk_feet</id>
+		<string>Placera ena foten en bit framför den andra.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_talk_hand</id>
+		<string>Placera ena handen på rullatorn och den andra på sängen.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_talk_lean</id>
+		<string>Luta kroppen framåt.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_talk_stand</id>
+		<string>Var beredd att resa dig upp när jag höjer upp sängen.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_talk_assisthand</id>
+		<string>Lägg en hand på vårdtagarens axel.</string>
+	</text>
+	<text>
+		<id>sim_sit_a_state_bend</id>
+		<string>Be vårdtagaren böja på benen.</string>
+	</text>
+	<text>
+		<id>sim_sit_a_state_arms</id>
+		<string>Be vårdtagaren vrida på huvudet.</string>
+	</text>
+	<text>
+		<id>sim_sit_a_state_beddown</id>
+		<string>Sänk ned sängens läge.</string>
+	</text>
+	<text>
+		<id>sim_sit_a_help_bend</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att böja upp benen.</string>
+		<speak>4.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_a_help_arms</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att flytta armarna in mot kudden.</string>
+		<speak>22.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_a_help_situp</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att ta spjärn med höger hand mot madrassen och sätta sig upp.</string>
+		<speak>2057.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_a_talk_bend</id>
+		<string>Böj upp benen.</string>
+	</text>
+	<text>
+		<id>sim_sit_a_talk_arms</id>
+		<string>Flytta armarna in mot kudden.</string>
+	</text>
+	<text>
+		<id>sim_sit_a_talk_situp</id>
+		<string>Sätt dig upp.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_bend</id>
+		<string>Be vårdtagaren böja på benen.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_arms</id>
+		<string>Be vårdtagaren att flytta armarna in till kudden.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_ready</id>
+		<string>Be vårdtagaren göra sig redo att resa sig.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_bedhead</id>
+		<string>Höj upp huvudänden av sängen.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_help_toolbox</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda sängkontrollen.</string>
+		<speak>24.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_help_bend</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att böja upp benen. Om vårdtagaren glidit nedåt i sängen ska denne först flyttas högre upp i sängen.</string>
+		<speak>25.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_help_arms</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att sätta höger hand i madrassen.</string>
+		<speak>2058.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_help_ready</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att göra sig redo att sätta sig upp när sängens huvudände höjs upp.</string>
+		<speak>26.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_help_bedhead</id>
+		<string>Välj sängkontrollen och höj upp sängens huvudände något så att vårdtagaren får hjälp att sätta sig upp.</string>
+		<speak>27.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_help_lowerbed</id>
+		<string>Välj sängkontrollen och sänk ned sängen.</string>
+		<speak>28.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_talk_bend</id>
+		<string>Böj upp benen.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_talk_arms</id>
+		<string>Sätt höger hand i madrassen.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_talk_ready</id>
+		<string>Gör dig redo att sätta dig upp när jag höjer upp sängens huvudände.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_beddown</id>
+		<string>Sänk ned sängens läge.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_psoas</id>
+		<string>Placera ut psoas-kudden.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_help_psoas</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda sängkontrollen och psoas-kudden.</string>
+		<speak>209.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_state_help_psoas_place</id>
+		<string>Välj psoas-kudden och placera den bakom vårdtagaren.</string>
+		<speak>210.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_state_bend</id>
+		<string>Böj på vårdtagarens ben.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_state_turn</id>
+		<string>Vänd vårdtagaren åt höger.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_state_sling</id>
+		<string>Placera ut selet.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_state_back</id>
+		<string>Vänd vårdtagaren åt vänster.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_state_pull</id>
+		<string>Vänd tillbaka vårdtagaren på ryggen.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_state_strops</id>
+		<string>Dra remmarna under vårdtagarens ben.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_tool</id>
+		<string>Välj rätt verktyg för förflyttningen.
+Använd sele för denna förflyttning.</string>
+		<speak>29.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_bend</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska böja benen.</string>
+		<speak>30.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_turn</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska göra en vändning åt höger.</string>
+		<speak>31.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_sling</id>
+		<string>Välj sele och placera det under vårdtagaren.</string>
+		<speak>32.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_back</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att ni ska göra en vändning åt vänster.</string>
+		<speak>33.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_pull</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska göra en vändning tillbaka på rygg.</string>
+		<speak>34.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_strops</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska dra remmarna under hans/hennes ben.</string>
+		<speak>35.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_cross</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska  stoppa in remmarna i varandra så att de korsas.</string>
+		<speak>2059.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_talk_bend</id>
+		<string>Böj på benen.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_talk_turn</id>
+		<string>Vänd dig på höger sida.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_talk_back</id>
+		<string>Vänd dig på vänster sida.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_talk_pull</id>
+		<string>Vänd dig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_talk_strops</id>
+		<string>Nu drar jag remmarna under benen.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_talk_cross</id>
+		<string>Nu sticker jag in remmarna i varandra så att de korsas.</string>
+	</text>
+	<text>
+		<id>sim_side_c_state_0</id>
+		<string>Instruera vårdtagaren att böja på benen.</string>
+	</text>
+	<text>
+		<id>sim_side_c_state_1</id>
+		<string>Instruera vårdtagaren att vända sig åt höger.</string>
+	</text>
+	<text>
+		<id>sim_side_c_state_2</id>
+		<string>Placera segelduken under vänstra delen av vårdtagarens överkropp.</string>
+	</text>
+	<text>
+		<id>sim_side_c_state_3</id>
+		<string>Instruera vårdtagaren att vända sig åt vänster.</string>
+	</text>
+	<text>
+		<id>sim_side_c_state_4</id>
+		<string>Placera segelduken under högra delen av vårdtagarens överkropp.</string>
+	</text>
+	<text>
+		<id>sim_side_c_state_5</id>
+		<string>Instruera vårdtagaren att vända sig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_side_c_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda segelduken.</string>
+		<speak>37.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_1</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att böja på benen.</string>
+		<speak>38.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren  att vända sig åt höger.</string>
+		<speak>39.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_3</id>
+		<string>Välj segelduken och placera den under vårdtagarens vänstra skuldra och ned mot höften.</string>
+		<speak>40.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_4</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att vända sig åt vänster.</string>
+		<speak>41.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_5</id>
+		<string>Välj segelduken och placera den under vårdtagarens högra skuldra och ned mot höften.</string>
+		<speak>42.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_6</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren  att vända sig tillbaka på rygg.</string>
+		<speak>43.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_7</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska flytta henne/honom åt sidan i sängen.</string>
+		<speak>44.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_c_talk_0</id>
+		<string>Böj på benen.</string>
+	</text>
+	<text>
+		<id>sim_side_c_talk_1</id>
+		<string>Vänd dig om åt höger.</string>
+	</text>
+	<text>
+		<id>sim_side_c_talk_2</id>
+		<string>Vänd dig om åt vänster.</string>
+	</text>
+	<text>
+		<id>sim_side_c_talk_3</id>
+		<string>Vänd dig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_side_c_talk_4</id>
+		<string>Nu flyttar vi dig åt sidan i sängen.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_toolbox</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda segelduken samt ta hjälp av din kollega.</string>
+		<speak>45.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_placehelper</id>
+		<string>Välj din kollega och placera denne på motsatt sida av sängen.</string>
+		<speak>46.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_bendLegs</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att böja på benen.</string>
+		<speak>47.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_turntoright</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att vända sig om på höger sida (medan du lägger ut segelduken).</string>
+		<speak>48.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_slidemat</id>
+		<string>Välj segelduken och placera den under vänster del av vårdtagarens överkropp.</string>
+		<speak>49.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_onback</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att vända sig tillbaka på rygg.</string>
+		<speak>50.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_movebutt</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att lyfta på sätet (ut mot sängkanten).</string>
+		<speak>51.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_moveupper</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att lyfta överkroppen (ut mot sängkanten).</string>
+		<speak>52.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_liftlegs</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att lyfta benen (ut mot sängkanten).</string>
+		<speak>53.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_turntorightagain</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att vända sig om på höger sida.</string>
+		<speak>54.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_slidematcorrect</id>
+		<string>För muspekaren över segelduken och vänsterklicka på musen för att rätta till den.</string>
+		<speak>177.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_pushbutt</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera sedan vårdtagaren att flytta sätet bakåt (upprepa proceduren tills vårdtagaren ligger alldeles ute vid sängkanten).</string>
+		<speak>55.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_a_help_start</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att flytta in benen under sig, placera händerna på armstöden, luta sig framåt och lyfta sig tillbaka i stolen.</string>
+		<speak>2060.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_a_dialog_back</id>
+		<string>Sätt dig längre bak i stolen.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_leanleft</id>
+		<string>Be vårdtagaren luta sig åt vänster.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_rightarm</id>
+		<string>Ta bort höger armstöd.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_placeright</id>
+		<string>Placera segelduken på höger sida.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_rightback</id>
+		<string>Sätt tillbaka höger armstöd på rullstolen.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_leanright</id>
+		<string>Be vårdtagaren luta sig åt höger.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_leftarm</id>
+		<string>Ta bort vänster armstöd.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_placeleft</id>
+		<string>Placera segelduken på vänster sida.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_leftback</id>
+		<string>Sätt tillbaka vänster armstöd på rullstolen.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_placefeet</id>
+		<string>Be vårdtagaren räta på sig och placera fötterna stadigt i underlaget.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_start</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda segelduken.</string>
+		<speak>37.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_toolbox</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren  att luta sig åt vänster.</string>
+		<speak>57.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_talk_0_0</id>
+		<string>Ta bort höger armstöd genom att föra muspekaren över det och vänsterklicka därefter på musen.</string>
+		<speak>58.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_armright</id>
+		<string>Välj segelduken och placera den under vårdtagarens högra sida.</string>
+		<speak>59.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_slideright</id>
+		<string>Sätt tillbaka höger armstöd genom att föra muspekaren över det och vänsterklicka därefter på musen.</string>
+		<speak>60.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_rightback</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren  att luta sig åt vänster.</string>
+		<speak>61.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_talk_0_1</id>
+		<string>Ta bort vänster armstöd genom att föra muspekaren över det och vänsterklicka därefter på musen.</string>
+		<speak>62.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_armleft</id>
+		<string>Välj segelduken och placera den under vårdtagarens vänstra sida.</string>
+		<speak>63.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_slideleft</id>
+		<string>Sätt tillbaka vänster armstöd genom att föra muspekaren över det och vänsterklicka därefter på musen.</string>
+		<speak>64.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_leftback</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att räta på sig och placera fötterna stadigt på underlaget.</string>
+		<speak>65.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_talk_0_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren  att sätta sig längre bak i stolen.</string>
+		<speak>56.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_talk_0</id>
+		<string>Luta dig åt vänster.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_talk_1</id>
+		<string>Luta dig åt höger.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_talk_2</id>
+		<string>Räta på dig och placera fötterna stadigt på underlaget.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_talk_3</id>
+		<string>Sätt dig längre bak i stolen.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_0</id>
+		<string>Be vårdtagaren luta sig åt vänster.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_1</id>
+		<string>Ta bort höger armstöd.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_2</id>
+		<string>Placera segelduken på höger sida.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_3</id>
+		<string>Sätt tillbaka höger armstöd på rullstolen.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_4</id>
+		<string>Be vårdtagaren luta sig åt höger.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_5</id>
+		<string>Ta bort vänster armstöd.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_6</id>
+		<string>Placera segelduken på vänster sida.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_7</id>
+		<string>Sätt tillbaka vänster armstöd på rullstolen.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_8</id>
+		<string>Ställ fram en pall.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_9</id>
+		<string>Lägg händerna på vårdtagarens högra axel och vänstra knä.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_10</id>
+		<string>Be vårdtagaren flytta höger sida bakåt.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_11</id>
+		<string>Lägg händerna på vårdtagarens vänstra axel och högra knä.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda segelduken och pallen.</string>
+		<speak>67.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_1</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren  att luta sig åt vänster.</string>
+		<speak>57.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_2</id>
+		<string>Ta bort höger armstöd genom att föra muspekaren över det och vänsterklicka därefter på musen.</string>
+		<speak>58.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_3</id>
+		<string>Välj segelduken och placera den under vårdtagarens högra sida.</string>
+		<speak>59.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_4</id>
+		<string>Sätt tillbaka höger armstöd genom att föra muspekaren över det och vänsterklicka därefter på musen.</string>
+		<speak>60.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_5</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren  att luta sig åt vänster.</string>
+		<speak>61.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_6</id>
+		<string>Ta bort vänster armstöd genom att föra muspekaren över det och vänsterklicka därefter på musen.</string>
+		<speak>62.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_7</id>
+		<string>Välj segelduken och placera den under vårdtagarens vänstra sida.</string>
+		<speak>63.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_8</id>
+		<string>Sätt tillbaka vänster armstöd genom att föra muspekaren över det och vänsterklicka därefter på musen.</string>
+		<speak>64.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_9</id>
+		<string>Välj en pall och placera den framför vårdtagaren.</string>
+		<speak>68.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_10</id>
+		<string>För muspekaren över vårdtagarens vänstra knä och vänsterklicka på musen för att lägga händerna på höger axel och vänster knä.</string>
+		<speak>69.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_11</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att flytta höger sida bakåt.</string>
+		<speak>70.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_12</id>
+		<string>För muspekaren över vårdtagarens högra knä och vänsterklicka på musen för att lägga händerna på vänster axel och höger knä.</string>
+		<speak>71.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_13</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att flytta vänster sida bakåt.</string>
+		<speak>72.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_talk_0</id>
+		<string>Luta dig åt vänster.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_talk_1</id>
+		<string>Luta dig åt höger.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_talk_2</id>
+		<string>Flytta höger sida bakåt.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_talk_3</id>
+		<string>Flytta vänster sida bakåt.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_0</id>
+		<string>Be vårdtagaren böja på benen.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_1</id>
+		<string>Be vårdtagaren vända sig åt höger.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_2</id>
+		<string>Välj segelduken och placera den under vänster del av vårdtagarens överkropp.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_3</id>
+		<string>Be vårdtagaren vända sig åt vänster.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_4</id>
+		<string>Välj segelduken och placera den under höger del av vårdtagarens överkropp.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_5</id>
+		<string>Be vårdtagaren vända sig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_6</id>
+		<string>Höj upp sängens fotände.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_7</id>
+		<string>Instruera vårdtagaren att lyfta på fötterna när du lägger ut halkmattan.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_8</id>
+		<string>Lägg ut halkmattan.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_9</id>
+		<string>Flytta vårdtagaren högre upp i sängen.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda segelduken och halkmattan.</string>
+		<speak>2061.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_1</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att böja på benen.</string>
+		<speak>38.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren  att vända sig åt höger.</string>
+		<speak>39.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_3</id>
+		<string>Välj segelduken och placera den under vårdtagarens vänstra skuldra och ned mot höften.</string>
+		<speak>40.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_4</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren  att vända sig åt vänster.</string>
+		<speak>41.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_5</id>
+		<string>Välj segelduken och placera den under vårdtagarens högra skuldra och ned mot höften.</string>
+		<speak>42.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_6</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att vända sig tillbaka på rygg.</string>
+		<speak>43.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_7</id>
+		<string>Välj sängkontrollen och höj upp sängens fotände.</string>
+		<speak>74.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_8</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att lyfta på fötterna när du lägger ut halkmattan.</string>
+		<speak>75.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_9</id>
+		<string>Välj halkmattan och lägg den under vårdtagarens fötter.</string>
+		<speak>76.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_10</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att lyfta på huvudet medan ni flyttar honom/henne högre upp i sängen genom att dra i lakanet.</string>
+		<speak>2062.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_11</id>
+		<string>Välj sängkontrollen och sänk ned sängens fotände i horisontellt läge.</string>
+		<speak>78.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_talk_0</id>
+		<string>Böj upp benen.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_talk_1</id>
+		<string>Vänd dig om åt höger (kollegan drar i draglakanet).</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_talk_2</id>
+		<string>Vänd dig om åt vänster (medhjälparen drar i draglakanet).</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_talk_3</id>
+		<string>Vänd dig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_talk_4</id>
+		<string>Lyft på fötterna när jag lägger ut halkmattan (om vårdtagaren inte 
+kan lyfta fötterna på egen hand ska en segelduk läggas under benen).</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_talk_5</id>
+		<string>Lyft på huvudet – Nu flyttar vi dig högre upp i sängen</string>
+	</text>
+	<text>
+		<id>sim_high_up_a_state_0</id>
+		<string>Sänk ned sängens huvudände.</string>
+	</text>
+	<text>
+		<id>sim_high_up_a_state_1</id>
+		<string>Be vårdtagaren böja på benen.</string>
+	</text>
+	<text>
+		<id>sim_high_up_a_state_2</id>
+		<string>Höj upp sängens fotände.</string>
+	</text>
+	<text>
+		<id>sim_high_up_a_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda sängkontrollen.</string>
+		<speak>24.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_a_help_1</id>
+		<string>Välj sängkontrollen och sänk ned sängens huvudände helt.</string>
+		<speak>79.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_a_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att böja på benen.</string>
+		<speak>38.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_a_help_3</id>
+		<string>Välj sängkontrollen och höj upp sängens fotände något.</string>
+		<speak>80.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_a_help_4</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att flytta sig högre upp i sängen.</string>
+		<speak>2063.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_a_help_5</id>
+		<string>Välj sängkontrollen och sänk ned sängens fotände i horisontellt läge.</string>
+		<speak>211.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_a_talk_0</id>
+		<string>Böj upp benen.</string>
+	</text>
+	<text>
+		<id>sim_high_up_a_talk_1</id>
+		<string>Flytta dig högre upp i sängen genom att rulla från sida till sida.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_0</id>
+		<string>Be vårdtagaren böja på benen.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_1</id>
+		<string>Be vårdtagaren vända sig åt höger.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_2</id>
+		<string>Placera segelduken under vårdtagarens vänstra axel.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_3</id>
+		<string>Be vårdtagaren vända sig åt vänster.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_4</id>
+		<string>Placera segelduken under vårdtagarens högra axel.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_5</id>
+		<string>Be vårdtagaren vända sig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_6</id>
+		<string>Placera ut lakanet.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_7</id>
+		<string>Höj upp fotänden av sängen.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_8</id>
+		<string>Instruera vårdtagaren att lyfta på fötterna när du lägger ut halkmattan.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_9</id>
+		<string>Lägg ut halkmattan.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_10</id>
+		<string>Tala om för vårdtagaren att ni ska flytta honom/henne högre upp i sängen.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+Vid denna förflyttning ska du använda halkmattan, segelduken och lakanet.</string>
+		<speak>109.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_1</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att böja på benen.</string>
+		<speak>38.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren  att vända sig åt höger.</string>
+		<speak>39.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_3</id>
+		<string>Välj segelduken och placera den under vårdtagarens vänstra skuldra och ned mot höften.</string>
+		<speak>40.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_4</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren  att vända sig åt vänster.</string>
+		<speak>41.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_5</id>
+		<string>Välj segelduken och placera den under vårdtagarens högra skuldra och ned mot höften.</string>
+		<speak>42.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_6</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren  att vända sig tillbaka på rygg.</string>
+		<speak>43.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_65</id>
+		<string>Välj lakanet och placera det under vårdtagarens lår.</string>
+		<speak>212.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_7</id>
+		<string>Välj sängkontrollen och höj upp sängens fotände.</string>
+		<speak>74.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_8</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att lyfta på fötterna när du lägger ut halkmattan.</string>
+		<speak>75.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_9</id>
+		<string>Välj halkmattan och lägg den under vårdtagarens fötter.</string>
+		<speak>76.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_10</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att lyfta på huvudet medan ni flyttar honom/henne högre upp i sängen genom att dra i lakanet.</string>
+		<speak>2064.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_11</id>
+		<string>Välj sängkontrollen och sänk ned sängens fotände i horisontellt läge.</string>
+		<speak>211.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_talk_0</id>
+		<string>Böj på benen.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_talk_1</id>
+		<string>Vänd dig om åt höger.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_talk_2</id>
+		<string>Vänd dig om åt vänster.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_talk_3</id>
+		<string>Vänd dig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_talk_4</id>
+		<string>Lyft på fötterna när jag lägger ut halkmattan.</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_talk_5</id>
+		<string>Skjut ifrån med benen och lyft huvudet 
+medan vi flyttar dig högre upp i sängen.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_0</id>
+		<string>Instruera vårdtagaren att lyfta på huvudet och titta bort från dig (medan du drar hörnet på huvudkudden ned under vårdtagarens fria skulderblad).</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_1</id>
+		<string>Instruera vårdtagaren att lyfta på huvudet och titta på dig (medan du drar hörnet på huvudkudden ned under vårdtagarens fria skulderblad).</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_2</id>
+		<string>Placera segelduken under kudden.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_3</id>
+		<string>Instruera vårdtagaren att lyfta på huvudet och titta på dig (medan du drar ned segelduken under vårdtagarens fria skulderblad).</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_4</id>
+		<string>Instruera vårdtagaren att lyfta på huvudet och titta bort från dig (medan du drar segelduken ned under vårdtagarens fria skulderblad).</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_5</id>
+		<string>Höj upp sängens fotände.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_55</id>
+		<string>Instruera vårdtagaren att lyfta på fötterna.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_6</id>
+		<string>Lägg ut halkmattan.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_7</id>
+		<string>Instruera vårdtagaren att lyfta på sätet och flytta sig högre upp i sängen (upprepa proceduren tills vårdtagaren ligger korrekt i sängen).</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_8</id>
+		<string>Sänk ned sängens fotände.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda sängkontrollen, segelduken och halkmattan.</string>
+		<speak>83.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_1</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att lyfta på huvudet och titta bort från dig (medan du drar hörnet på huvudkudden ned under vårdtagarens fria skulderblad).</string>
+		<speak>84.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att lyfta på huvudet och titta på dig (medan du drar hörnet på huvudkudden ned under vårdtagarens fria skulderblad).</string>
+		<speak>85.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_3</id>
+		<string>Välj segelduken och placera den under kudden.</string>
+		<speak>86.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_4</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att lyfta på huvudet och titta bort från dig (medan du drar segelduken ned under vårdtagarens fria skulderblad).</string>
+		<speak>88.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_5</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att lyfta på huvudet och titta på dig (medan du drar segelduken ned under vårdtagarens fria skulderblad).</string>
+		<speak>87.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_6</id>
+		<string>Välj sängkontrollen och höj upp sängens fotände.</string>
+		<speak>74.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_65</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att lyfta på fötterna när du lägger ut halkmattan.</string>
+		<speak>89.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_7</id>
+		<string>Välj halkmattan och lägg den under vårdtagarens fötter.</string>
+		<speak>90.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_8</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att lyfta på sätet och flytta sig högre upp i sängen (upprepa proceduren tills vårdtagaren ligger korrekt i sängen).</string>
+		<speak>91.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_9</id>
+		<string>Välj sängkontrollen och sänk ned sängens fotände igen. Ta bort segelduken och halkmattan efter utförd förflyttning.</string>
+		<speak>92.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_10</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att lyfta på huvudet (medan du tar bort segelduken).</string>
+		<speak>93.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_0</id>
+		<string>Lyft på huvudet och titta bort från mig.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_1</id>
+		<string>Lyft på huvudet och titta på mig.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_2</id>
+		<string>Lyft på huvudet och titta bort från mig.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_3</id>
+		<string>Lyft på huvudet och titta på mig.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_35</id>
+		<string>Lyft på fötterna när jag lägger ut halkmattan.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_4</id>
+		<string>Lyft på sätet och flytta dig högre upp i sängen.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_5</id>
+		<string>Lyft på huvudet.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_0</id>
+		<string>Placera ut din kollega.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_1</id>
+		<string>Instruera vårdtagaren att lyfta på huvudet och titta på din kollega (medan du drar hörnet på huvudkudden ned under vårdtagarens fria skulderblad).</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_2</id>
+		<string>Instruera vårdtagaren att lyfta på huvudet och titta på dig (medan din kollega drar hörnet på huvudkudden ned under vårdtagarens fria skulderblad).</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_3</id>
+		<string>Be vårdtagaren böja på benen.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_4</id>
+		<string>Be vårdtagaren vända sig om på höger sida.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_5</id>
+		<string>Lägg ut segelduken.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_6</id>
+		<string>Be vårdtagaren vända sig tillbaka på rygg och titta på dig.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_7</id>
+		<string>Be vårdtagaren vända sig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_8</id>
+		<string>Höj upp sängens fotände.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_85</id>
+		<string>Instruera vårdtagaren att lyfta på fötterna.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_9</id>
+		<string>Lägg ut halkmattan.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_10</id>
+		<string>Be vårdtagaren att lyfta på sätet och flytta sig högre upp i sängen.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda din kollega, sängkontrollen, segelduken och halkmattan.</string>
+		<speak>178.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_1</id>
+		<string>Välj din kollega och placera denne på motsatt sida av sängen.</string>
+		<speak>179.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren lyfta på huvudet och titta på din kollega (medan du drar hörnet på huvudkudden ned under vårdtagarens fria skulderblad).</string>
+		<speak>180.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_3</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren lyfta på huvudet och titta på dig (medan din kollega drar hörnet på huvudkudden ned under vårdtagarens fria skulderblad).</string>
+		<speak>181.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_4</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att böja på benen.</string>
+		<speak>47.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_5</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att vända sig om på höger sida.</string>
+		<speak>54.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_6</id>
+		<string>Välj segelduken och placera den under vänster sida av vårdtagarens överkropp.</string>
+		<speak>182.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_7</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att vända sig tillbaka på rygg och sedan lyfta på huvudet och titta på dig (medan din kollega rätar ut segelduken).</string>
+		<speak>183.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_8</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att vända sig tillbaka på rygg.</string>
+		<speak>50.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_9</id>
+		<string>Välj sängkontrollen och höj upp sängens fotände.</string>
+		<speak>74.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_95</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren lyfta på fötterna när du lägger ut halkmattan.</string>
+		<speak>184.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_10</id>
+		<string>Välj halkmattan och lägg den under vårdtagarens ben.</string>
+		<speak>185.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_11</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren lyfta på sätet och flytta sig högre upp i sängen (upprepa proceduren tills vårdtagaren ligger korrekt i sängen).</string>
+		<speak>186.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_12</id>
+		<string>Välj sängkontrollen och sänk ned sängens fotände igen. Ta bort segelduken och halkmattan efter utförd förflyttning.</string>
+		<speak>92.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_0</id>
+		<string>Lyft på huvudet och titta på min kollega.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_1</id>
+		<string>Lyft på huvudet och titta på mig.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_2</id>
+		<string>Böj på benen.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_3</id>
+		<string>Vänd dig om på höger sida.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_4</id>
+		<string>Vänd dig tillbaka på rygg, lyft på huvudet och titta på mig.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_5</id>
+		<string>Vänd dig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_55</id>
+		<string>Lyft på fötterna när jag lägger ut halkmattan.</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_6</id>
+		<string>Flytta dig högre upp i sängen (lyft upp sätet om du kan).</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_0</id>
+		<string>Se till att sängen är inställd för sittläge.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_01</id>
+		<string>Sänk ned upphöjningen under vårdtagarens knän.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_02</id>
+		<string>Sänk ned sängens fotände.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_1</id>
+		<string>Instruera vårdtagaren att flytta ut benet över sängkanten.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_2</id>
+		<string>Instruera vårdtagaren att luta sig framåt.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_3</id>
+		<string>Instruera vårdtagaren att flytta det innersta benet ut mot sängkanten.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_4</id>
+		<string>Instruera vårdtagaren att flytta in det yttersta benet igen.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_5</id>
+		<string>Flytta det innersta benet över sängkanten.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda sängkontrollen.</string>
+		<speak>24.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_1</id>
+		<string>Välj sängkontrollen och höj upp sängen i sittläge. Vårdtagaren ska som utgångsläge ligga ute på sängkanten ända uppe vid huvudgärdet.</string>
+		<speak>187.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_11</id>
+		<string>Välj sängkontrollen och sänk ned upphöjningen under vårdtagarens knän.</string>
+		<speak>188.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_12</id>
+		<string>Välj sängkontrollen och sänk ned sängens fotände.</string>
+		<speak>189.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att flytta ut det yttersta benet över sängkanten.</string>
+		<speak>190.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_3</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att luta sig framåt (medan du lägger kudden under dennes ländrygg).</string>
+		<speak>191.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_4</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Lägg därefter över vikten på (vänster) skinka och flytta det innersta benet ut mot sängkanten.</string>
+		<speak>192.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_5</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Lägg därefter över vikten på (höger) skinka och flytta det yttersta benet igen.</string>
+		<speak>193.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_6</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Lägg därefter över vikten på (vänster) skinka och flytta ut det innersta benet över sängkanten (upprepa proceduren tills vårdtagaren sitter korrekt på sängen).</string>
+		<speak>194.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_7</id>
+		<string>Välj sängkontrollen och sänk ned sängen.</string>
+		<speak>28.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_talk_0</id>
+		<string>Flytta ut det yttersta benet över sängkanten.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_talk_1</id>
+		<string>Luta dig framåt.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_talk_2</id>
+		<string>Lägg över vikten på (vänster) skinka och flytta det innersta benet ut mot sängkanten.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_talk_3</id>
+		<string>Lägg därefter över vikten på (höger) skinka och flytta det yttersta benet igen.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_talk_4</id>
+		<string>Flytta nu ut det innersta benet över sängkanten så att du kommer upp i sittande.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_0</id>
+		<string>Placera ut pallarna.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_1</id>
+		<string>Höj sängens läge.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_2</id>
+		<string>Be vårdtagaren att placera fötterna på pallen.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_3</id>
+		<string>Sänk sängens läge.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_4</id>
+		<string>Sänk fotänden på sängen.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_5</id>
+		<string>Be vårdtagaren lyfta upp benet i sängen.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_6</id>
+		<string>Be vårdtagaren lyfta upp det andra benet i sängen.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen. För denna förflyttning ska du använda sängkontrollen och en pall.</string>
+		<speak>195.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_1</id>
+		<string>Välj pallen och placera ut den.
+Kontrollera att vårdtagaren sitter långt tillbaka på sängkanten, lite på snedden och att sängens huvudgärde är upphöjt.</string>
+		<speak>196.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_2</id>
+		<string>Välj sängkontrollen och höj sängens läge.</string>
+		<speak>197.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_3</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att lägga upp fötterna på pallen.</string>
+		<speak>198.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_4</id>
+		<string>Välj sängkontrollen och sänk ned sängen.</string>
+		<speak>28.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_5</id>
+		<string>Sänk ned sängens fotände helt under sängramen.</string>
+		<speak>199.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_6</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att lägga sig ned och lyfta upp benet i sängen.</string>
+		<speak>200.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_7</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren lyfta upp det andra benet i sängen.</string>
+		<speak>201.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_8</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren lyfta upp sätet i sängen.</string>
+		<speak>202.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_talk_0</id>
+		<string>Lägg fötterna på pallen.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_talk_1</id>
+		<string>Lägg dig ned och lyft upp benet i sängen.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_talk_2</id>
+		<string>Lyft upp det andra benet i sängen.</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_talk_3</id>
+		<string>Lyft sätet inåt i sängen.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_state_0</id>
+		<string>Ställ fram rullatorn.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_state_1</id>
+		<string>Lås rullatorn.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_state_2</id>
+		<string>Be vårdtagaren att dra in fötterna.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_state_3</id>
+		<string>Be vårdtagaren att placera händerna på rullatorn.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_state_4</id>
+		<string>Be vårdtagaren göra sig redo att resa sig upp.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_state_5</id>
+		<string>Höj sängens läge.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda sängkontrollen och rullatorn.</string>
+		<speak>17.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_1</id>
+		<string>Välj rullatorn från verktygslådan.
+Ställ därefter rullatorn ca. en halvmeter framför vårdtagaren.</string>
+		<speak>203.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_2</id>
+		<string>För muspekaren över rullatorns lås och vänsterklicka för att låsa den.</string>
+		<speak>204.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_3</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att dra in fötterna under sig.</string>
+		<speak>205.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_4</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att placera händerna på rullatorns platta.</string>
+		<speak>206.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_5</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att resa sig upp när du höjer upp sängen.</string>
+		<speak>207.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_6</id>
+		<string>Välj sängkontrollen och höj sängens läge.</string>
+		<speak>197.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_7</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att greppa tag i rullatorn.</string>
+		<speak>208.ogg</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_talk_0</id>
+		<string>Dra in fötterna under dig.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_talk_1</id>
+		<string>Placera händerna på plattan på rullatorn.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_talk_2</id>
+		<string>Res dig när jag höjer upp sängen.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_talk_3</id>
+		<string>Ta tag i rullatorn.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_0</id>
+		<string>Placera ut din kollega.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_1</id>
+		<string>Be vårdtagaren böja på benen.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_2</id>
+		<string>Be vårdtagaren vända sig åt höger (medan du lägger ut segelduken).</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_3</id>
+		<string>Lägg ut segelduken.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_4</id>
+		<string>Be vårdtagaren vända sig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_5</id>
+		<string>Be vårdtagaren lyfta på sätet.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_6</id>
+		<string>Be vårdtagaren lyfta på överkroppen.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_7</id>
+		<string>Be vårdtagaren lyfta på benen.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_8</id>
+		<string>Be vårdtagaren vända sig om på höger sida.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_9</id>
+		<string>Klicka på segelduken.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_0</id>
+		<string>Böj på benen.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_1</id>
+		<string>Vänd dig om på höger sida (medan du lägger ut segelduken).</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_2</id>
+		<string>Vänd dig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_3</id>
+		<string>Lyft upp sätet (ut mot sängkanten).</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_4</id>
+		<string>Lyft upp överkroppen (ut mot sängkanten).</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_5</id>
+		<string>Lyft på benen (ut mot sängkanten).</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_6</id>
+		<string>Vänd dig om på höger sida.</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_7</id>
+		<string>Flytta sätet bakåt.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_a_state_0</id>
+		<string>Be vårdtagaren att sätta sig hela vägen in på sängen.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_a_state_1</id>
+		<string>Be vårdtagaren att komma ned på underarmarna.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_a_help_0</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att sätta sig hela vägen in på sängen.</string>
+		<speak>98.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_a_help_1</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att komma ned på underarmarna.</string>
+		<speak>94.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_a_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att lyfta upp benen och lägga sig ned.</string>
+		<speak>95.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_a_talk_0</id>
+		<string>Sätt dig hela vägen in på sängen.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_a_talk_1</id>
+		<string>Sätt vänster hand i madrassen och kom ned på underarmen.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_a_talk_2</id>
+		<string>Lyft upp benen i sängen samtidigt som du vrider på överkroppen.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_state_0</id>
+		<string>Höj upp huvudänden av sängen.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_state_1</id>
+		<string>Be vårdtagaren att sätta sig så långt in på sängen som möjligt.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_state_2</id>
+		<string>Be vårdtagaren att luta sig in mot huvudkudden.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_state_3</id>
+		<string>Avlägsna sänggaveln.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_state_4</id>
+		<string>Lägg ut segelduken.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_state_5</id>
+		<string>Vira lakanet kring vårdtagarens anklar.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda sängkontrollen, segelduken och lakanet.</string>
+		<speak>96.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_1</id>
+		<string>Välj sängkontrollen och höj upp huvudgärdet på sängen.</string>
+		<speak>97.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att sätta sig hela vägen in på sängen.</string>
+		<speak>98.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_3</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att luta sig in mot huvudkudden.</string>
+		<speak>99.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_4</id>
+		<string>För muspekaren över sänggaveln och vänsterklicka med musen för att avlägsna den.</string>
+		<speak>2066.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_5</id>
+		<string>Välj segelduken och lägg den vid fotänden så att en del hänger ut över sängkanten.</string>
+		<speak>101.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_6</id>
+		<string>Välj lakanet och vira det runt vårdtagarens anklar.</string>
+		<speak>102.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_7</id>
+		<string>För muspekaren över vårdtagaren och vänsterklicka på musen.
+Instruera vårdtagaren att sänka sängens huvudgärde medan du hjälper till att lyfta upp hans/hennes ben i sängen med hjälp av lakanet.</string>
+		<speak>2065.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_talk_0</id>
+		<string>Sätt dig hela vägen in på sängen.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_talk_1</id>
+		<string>Luta dig mot huvudkudden.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_talk_2</id>
+		<string>Sänk ned sängens huvudgärde medan jag
+ hjälper dig att få upp benen i sängen.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_state_0</id>
+		<string>Höj upp huvudgärdet på sängen.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_state_1</id>
+		<string>Be vårdtagaren att luta sig in mot huvudkudden.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_state_2</id>
+		<string>Avlägsna sänggaveln.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_state_3</id>
+		<string>Lägg ut segelduken.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_state_4</id>
+		<string>Vira lakanet kring vårdtagarens anklar.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda sängkontrollen, segelduken och lakanet.</string>
+		<speak>96.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_1</id>
+		<string>Välj sängkontrollen och lyft upp huvudgärdet på sängen.</string>
+		<speak>105.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att luta sig in mot huvudkudden.</string>
+		<speak>99.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_3</id>
+		<string>För muspekaren över sänggaveln och vänsterklicka med musen för att avlägsna den.</string>
+		<speak>2066.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_4</id>
+		<string>Välj segelduken och lägg den vid fotänden så att en del hänger ut över sängkanten.</string>
+		<speak>101.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_5</id>
+		<string>Välj lakanet och vira det runt vårdtagarens anklar.</string>
+		<speak>102.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_6</id>
+		<string>För muspekaren över din kollega och vänsterklicka på musen.
+Instruera din kollega att sänka sängens huvudgärde medan du hjälper till att lyfta upp vårdtagarens ben i sängen med hjälp av lakanet.  Använd ev. sängband, repstege el. likn.</string>
+		<speak>2067.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_talk_0</id>
+		<string>Luta dig mot huvudkudden.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_talk_1</id>
+		<string>Sänk ned sängens huvudgärde.</string>
+	</text>
+	<text>
+		<id>sim_side_b_state_0_extra</id>
+		<string>Instruera vårdtagaren att lyfta på fötterna när du lägger ut halkmattan.</string>
+	</text>
+	<text>
+		<id>sim_side_b_state_0</id>
+		<string>Lägg ut halkmattan.</string>
+	</text>
+	<text>
+		<id>sim_side_b_state_1</id>
+		<string>Be vårdtagaren vända sig åt höger.</string>
+	</text>
+	<text>
+		<id>sim_side_b_state_2</id>
+		<string>Lägg ut segelduken.</string>
+	</text>
+	<text>
+		<id>sim_side_b_state_3</id>
+		<string>Be vårdtagaren vända sig mot dig.</string>
+	</text>
+	<text>
+		<id>sim_side_b_state_4</id>
+		<string>Flytta in vårdtagaren till sängens mitt.</string>
+	</text>
+	<text>
+		<id>sim_side_b_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+Vid denna förflyttning ska du använda halkmattan, segelduken och lakanet.</string>
+		<speak>109.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_0_extra</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen. Instruera vårdtagaren att lyfta på fötterna när du lägger ut halkmattan.</string>
+		<speak>75.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_1</id>
+		<string>Välj halkmattan och lägg den under vårdtagarens ben.</string>
+		<speak>110.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att vända sig om på höger sida.</string>
+		<speak>111.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_3</id>
+		<string>Välj segelduken och placera den under vänster del av vårdtagarens överkropp.</string>
+		<speak>49.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_4</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren  att vända sig om mot dig.</string>
+		<speak>112.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_5</id>
+		<string>För muspekaren över lakanet och vänsterklicka på musen för att dra in vårdtagaren till mitten av sängen.</string>
+		<speak>113.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_6</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att vända sig tillbaka på rygg.</string>
+		<speak>114.ogg</speak>
+	</text>
+	<text>
+		<id>sim_side_b_talk_0_extra</id>
+		<string>Lyft på fötterna när jag lägger ut halkmattan (om vårdtagaren inte 
+kan lyfta fötterna på egen hand ska en segelduk läggas under benen)</string>
+	</text>
+	<text>
+		<id>sim_side_b_talk_0</id>
+		<string>Vänd dig om åt höger.</string>
+	</text>
+	<text>
+		<id>sim_side_b_talk_1</id>
+		<string>Vänd dig om mot mig.</string>
+	</text>
+	<text>
+		<id>sim_side_b_talk_2</id>
+		<string>Vänd dig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_state_0</id>
+		<string>Instruera vårdtagaren att böja på benen.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_state_1</id>
+		<string>Instruera vårdtagaren att vända sig åt höger.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_state_2</id>
+		<string>Placera segelduken under vänstra delen av vårdtagarens överkropp.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_state_3</id>
+		<string>Instruera vårdtagaren att vända sig åt vänster.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_state_4</id>
+		<string>Placera segelduken under högra delen av vårdtagarens överkropp.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_state_5</id>
+		<string>Instruera vårdtagaren att vända sig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda segelduken.</string>
+		<speak>37.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_1</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att böja på benen.</string>
+		<speak>38.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren  att vända sig åt höger.</string>
+		<speak>39.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_3</id>
+		<string>Välj segelduken och placera den under vårdtagarens vänstra skuldra och ned mot höften.</string>
+		<speak>40.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_4</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren  att vända sig åt vänster.</string>
+		<speak>41.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_5</id>
+		<string>Välj segelduken och placera den under vårdtagarens högra skuldra och ned mot höften.</string>
+		<speak>42.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_6</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren  att vända sig tillbaka på rygg.</string>
+		<speak>43.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_7</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska vända honom/henne på sidan.</string>
+		<speak>115.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_talk_0</id>
+		<string>Böj på benen.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_talk_1</id>
+		<string>Vänd dig om åt höger.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_talk_2</id>
+		<string>Vänd dig om åt vänster.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_talk_3</id>
+		<string>Vänd dig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_talk_4</id>
+		<string>Nu vänder vi dig om på sidan.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_0</id>
+		<string>Vårdtagaren ska böja på benen.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_1</id>
+		<string>Vårdtagaren ska vända sig om mot vänster.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_2</id>
+		<string>Lägg ut segelduken.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_3</id>
+		<string>Vårdtagaren ska vända sig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_4</id>
+		<string>Fäll upp sänggrindarna.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_5</id>
+		<string>Vårdtagaren ska vända sig åt höger.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_6</id>
+		<string>Vårdtagaren ska greppa tag i sänggrinden.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda segelduken.</string>
+		<speak>37.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_1</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att böja upp benen.</string>
+		<speak>4.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att vända sig om på vänster sida.</string>
+		<speak>116.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_3</id>
+		<string>Välj segelduken och placera den under vårdtagarens högra skuldra och ned mot höften.</string>
+		<speak>42.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_4</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att vända sig tillbaka på rygg.</string>
+		<speak>117.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_5</id>
+		<string>Fäll upp sänggrindarna genom att föra muspekaren över den och vänsterklicka på den med musen.</string>
+		<speak>118.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_6</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren  att vrida huvudet åt höger.</string>
+		<speak>119.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_7</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att greppa tag i sänggrindarna.</string>
+		<speak>120.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_8</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att ta spjärn med fötterna och vända sig om.</string>
+		<speak>7.ogg</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_talk_0</id>
+		<string>Böj upp benen.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_talk_1</id>
+		<string>Vänd dig om åt vänster.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_talk_2</id>
+		<string>Vänd dig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_talk_3</id>
+		<string>Vrid huvudet åt höger.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_talk_4</id>
+		<string>Ta tag i sänggrindarna.</string>
+	</text>
+	<text>
+		<id>sim_turn_b_talk_5</id>
+		<string>Ta spjärn med fötterna och vänd dig om.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_0</id>
+		<string>Ställ fram rullstolen.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_1</id>
+		<string>Lås rullstolen.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_2</id>
+		<string>Luta rullstolen bakåt.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_3</id>
+		<string>Sänk ned takliften.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_4</id>
+		<string>Sätt fast remmarna i liften.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_5</id>
+		<string>Ställ in sängen på sittläge.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_60</id>
+		<string>Tala om för vårdtagaren att ni ska lyfta upp honom/henne från sängen.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_6</id>
+		<string>Hjälp vårdtagaren upp i sängen.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_7</id>
+		<string>Sänk sängens läge.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_8</id>
+		<string>Flytta över vårdtagaren i stolen.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_9</id>
+		<string>Sänk ned vårdtagaren i stolen.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_10</id>
+		<string>Ta bort remmarna från liften.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda sängkontrollen, liftkontrollen och rullstolen.</string>
+		<speak>121.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_1</id>
+		<string>Välj rullstolen och placera den vid sängen.</string>
+		<speak>122.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_2</id>
+		<string>Lås rullstolen genom att föra muspekaren över låset och vänsterklicka därefter på musen.</string>
+		<speak>123.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_3</id>
+		<string>Luta rullstolen tillbaka genom att föra muspekaren över handtaget och vänsterklicka därefter på musen.</string>
+		<speak>124.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_4</id>
+		<string>Välj liftkontrollen och sänk ned liften över vårdtagaren.</string>
+		<speak>125.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_5</id>
+		<string>Stick in remmarna i varandra så att de är korsade och häkta fast dem i liften genom att föra muspekaren över selet och vänsterklicka på musen.</string>
+		<speak>2068.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_6</id>
+		<string>Välj sängkontrollen och ställ in sängen på sittläge.</string>
+		<speak>127.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_70</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska lyfta upp honom/henne från sängen.</string>
+		<speak>2069.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_7</id>
+		<string>Välj liftkontrollen och lyft upp vårdtagaren från sängen.</string>
+		<speak>213.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_8</id>
+		<string>Välj sängkontrollen och sänk ned sängen.</string>
+		<speak>28.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_9</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen. 
+Tala om för vårdtagaren att ni ska lyfta över honom/henne till rullstolen.</string>
+		<speak>2070.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_10</id>
+		<string>Välj liftkontrollen och sänk ned vårdtagaren i rullstolen. 
+(Tryck ev. på vårdtagarens knä så att han/hon kommer hela vägen in på sitsen).</string>
+		<speak>2071.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_11</id>
+		<string>Ta bort remmarna från selet genom att föra muspekaren över det och vänsterklicka därefter på musen.</string>
+		<speak>130.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_12</id>
+		<string>Luta rullstolen bakåt genom att föra muspekaren över handtaget och vänsterklicka därefter på musen.</string>
+		<speak>131.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_talk_00</id>
+		<string>Nu lyfter vi upp dig från sängen.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_talk_0</id>
+		<string>Nu lyfter vi över dig i rullstolen.</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_state_0</id>
+		<string>Be vårdtagaren böja på benen.</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_state_1</id>
+		<string>Be vårdtagaren vända sig åt höger.</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_state_2</id>
+		<string>Placera ut lakanet.</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_state_3</id>
+		<string>Be vårdtagaren vända sig åt vänster.</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda lakanet.</string>
+		<speak>132.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_help_1</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att böja på benen.</string>
+		<speak>133.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att vända sig åt höger.</string>
+		<speak>134.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_help_3</id>
+		<string>Välj lakanet och placera det på sängen.</string>
+		<speak>135.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_help_4</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att vända sig åt vänster så att din kollega kan justera lakanet.</string>
+		<speak>136.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_help_5</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att vända sig tillbaka på rygg.</string>
+		<speak>137.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_talk_0</id>
+		<string>Böj på benen.</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_talk_1</id>
+		<string>Vänd dig om åt höger.</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_talk_2</id>
+		<string>Vänd dig om åt vänster.</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_talk_3</id>
+		<string>Vänd dig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda sängkontrollen, liftkontrollen och rullstolen.</string>
+		<speak>121.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_1</id>
+		<string>Välj liftkontrollen och sänk ned liften över vårdtagaren.</string>
+		<speak>125.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_2</id>
+		<string>Stick in remmarna i varandra så att de är korsade och häkta fast dem i liften genom att föra muspekaren över selet och vänsterklicka på musen.</string>
+		<speak>2078.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_3</id>
+		<string>Välj sängkontrollen och ställ in sängen på sittläge.</string>
+		<speak>127.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_40</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska lyfta upp honom/henne från sängen.</string>
+		<speak>2079.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_4</id>
+		<string>Välj liftkontrollen och lyft upp vårdtagaren från sängen.</string>
+		<speak>213.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_5</id>
+		<string>Välj sängkontrollen och sänk ned sängen.</string>
+		<speak>28.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_6</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska lyfta över honom/henne till rullstolen.</string>
+		<speak>2080.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_7</id>
+		<string>Välj liftkontrollen och flytta ut liftens ben åt sidan.</string>
+		<speak>139.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_8</id>
+		<string>Välj rullstolen och placera den under liften.</string>
+		<speak>140.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_9</id>
+		<string>Lås rullstolen genom att föra muspekaren över låset och vänsterklicka därefter på musen.</string>
+		<speak>123.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_10</id>
+		<string>Luta rullstolen bakåt genom att föra muspekaren över handtaget och vänsterklicka därefter på musen.</string>
+		<speak>124.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_11</id>
+		<string>Välj liftkontrollen och sänk ned vårdtagaren i rullstolen. 
+(Tryck ev. på vårdtagarens knä så att han/hon kommer hela vägen in på sitsen).</string>
+		<speak>2081.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_12</id>
+		<string>Ta bort remmarna från selet genom att föra muspekaren över det och vänsterklicka därefter på musen.</string>
+		<speak>130.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_13</id>
+		<string>Luta rullstolen tillbaka genom att föra muspekaren över handtaget och vänsterklicka därefter på musen.</string>
+		<speak>141.ogg</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_talk_00</id>
+		<string>Nu lyfter vi upp dig från sängen.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_talk_0</id>
+		<string>Nu lyfter vi över dig i rullstolen.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_0</id>
+		<string>Sänk ned liften.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_1</id>
+		<string>Sätt fast remmarna i liften.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_2</id>
+		<string>Ställ in sängen på sittläge.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_30</id>
+		<string>Tala om för vårdtagaren att ni ska lyfta upp honom/henne från sängen.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_3</id>
+		<string>Lyft upp vårdtagaren.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_4</id>
+		<string>Sänk ned sängens läge.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_5</id>
+		<string>Tala om för vårdtagaren att ni ska flytta liften.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_6</id>
+		<string>Flytta benen på liften ut åt sidan.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_7</id>
+		<string>Ställ fram rullstolen.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_8</id>
+		<string>Lås rullstolen.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_9</id>
+		<string>Kör rullstolen bakåt.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_10</id>
+		<string>Sänk ned vårdtagaren i rullstolen.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_11</id>
+		<string>Ta bort remmarna från liften.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda sängkontrollen och liftkontrollen.</string>
+		<speak>142.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_1</id>
+		<string>Välj sängkontrollen och ställ in sängen på sittläge genom att klicka på rätt knapp.</string>
+		<speak>143.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_2</id>
+		<string>Välj sängkontrollen och kör ned sängen.</string>
+		<speak>144.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_3</id>
+		<string>För muspekaren över selet och vänsterklicka på musen för att stoppa in remmarna i varandra så att de korsas. Häkta därefter fast dem i liften.</string>
+		<speak>2082.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_40</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska lyfta upp honom/henne ur stolen.</string>
+		<speak>2083.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_4</id>
+		<string>Välj liftkontrollen och lyft upp vårdtagaren från stolen.</string>
+		<speak>146.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_5</id>
+		<string>Välj liftkontrollen och flytta in benen på liften.</string>
+		<speak>147.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_6</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen. 
+Tala om för vårdtagaren att ni ska lyfta över honom/henne i sängen.</string>
+		<speak>2084.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_7</id>
+		<string>Välj sängkontrollen och höj sängens läge.</string>
+		<speak>149.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_8</id>
+		<string>Välj liftkontrollen och sänk ned vårdtagaren i sängen.</string>
+		<speak>150.ogg</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_9</id>
+		<string>För muspekaren över selet och vänsterklicka med musen för att avlägsna remmarna.</string>
+		<speak>151.ogg</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda liftkontrollen.</string>
+		<speak>152.ogg</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_help_1</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska ta bort remmarna under hans/hennes ben.</string>
+		<speak>153.ogg</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska luta honom/henne framåt.</string>
+		<speak>154.ogg</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_help_3</id>
+		<string>Välj liftkontrollen och höj upp selet. (Kontrollera att selet inte medför några friktionspunkter för att undvika brännskada).</string>
+		<speak>2085.ogg</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_help_4</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska luta honom/henne tillbaka.</string>
+		<speak>156.ogg</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_help_0</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska dra remmarna under hans/hennes ben.</string>
+		<speak>2086.ogg</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_help_1</id>
+		<string>För muspekaren över sänggrinden och vänsterklicka med musen för att avlägsna remmarna.</string>
+		<speak>157.ogg</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att dra sig framåt med hjälp av sänggrinden.</string>
+		<speak>2087.ogg</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_help_3</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska ta bort sele.</string>
+		<speak>159.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_chair_help_01</id>
+		<string>Lås rullstolen genom att föra muspekaren över låset och vänsterklicka därefter på musen.</string>
+		<speak>123.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_chair_help_0</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska luta honom/henne framåt.</string>
+		<speak>160.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_chair_help_1</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska lägga selet bakom hans/hennes rygg.</string>
+		<speak>161.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_chair_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska luta honom/henne tillbaka.</string>
+		<speak>156.ogg</speak>
+	</text>
+	<text>
+		<id>sim_sling_chair_help_3</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att ni ska dra remmarna under hans/hennes ben.</string>
+		<speak>35.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_00</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda sängkontrollen, segelduken och halkmattan.</string>
+		<speak>83.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_0</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att lyfta på fötterna när du lägger ut halkmattan.</string>
+		<speak>89.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_1</id>
+		<string>Välj halkmattan och lägg den under vårdtagarens fötter.</string>
+		<speak>76.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att lyfta på huvudet och titta bort från dig (medan du drar ned hörnet på huvudkudden).</string>
+		<speak>162.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_3</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att lyfta på huvudet och titta på dig (medan du drar ned hörnet på huvudkudden).</string>
+		<speak>163.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_4</id>
+		<string>Välj segelduken och placera den under kudden.</string>
+		<speak>86.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_5</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att lyfta på huvudet och titta på dig (medan du drar ned segelduken).</string>
+		<speak>164.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_6</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att lyfta på huvudet och titta bort från dig (medan du drar segelduken nedåt).</string>
+		<speak>165.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_7</id>
+		<string>Välj sängkontrollen och höj upp sängens fotände.</string>
+		<speak>74.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_8</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att lyfta på sätet och flytta sig högre upp i sängen.</string>
+		<speak>166.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_9</id>
+		<string>Välj sängkontrollen och sänk ned sängens fotände igen.</string>
+		<speak>214.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_0</id>
+		<string>Välj rätt verktyg för förflyttningen.
+För denna förflyttning ska du använda sele.</string>
+		<speak>29.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_1</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att böja upp vänster ben.</string>
+		<speak>167.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen. Instruera vårdtagaren att ta tag i sänggrind och vända sig om på höger sida.</string>
+		<speak>168.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_3</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att vända sig tillbaka på rygg.</string>
+		<speak>50.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_4</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala därefter om för vårdtagaren att du ska pressa in remmen till selet under hans/hennes lår (vik först remmen som ett Z).</string>
+		<speak>169.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_5</id>
+		<string>Fäll upp sänggrinden på vårdtagarens vänstra sida genom att föra muspekaren över den och vänsterklicka på den med musen.</string>
+		<speak>170.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_6</id>
+		<string>Fäll ned sänggrinden på vårdtagarens högra sida genom att föra muspekaren över den och vänsterklicka på den med musen.</string>
+		<speak>171.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_7</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen. Tala om för vårdtagaren att du ska dra remmen under hans/hennes ben.</string>
+		<speak>172.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_8</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att böja upp höger ben.</string>
+		<speak>173.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_9</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen. Instruera vårdtagaren att ta tag i sänggrinden och vända sig om på vänster sida.</string>
+		<speak>174.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_10</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala om för vårdtagaren att du ska dra ut sele på sängen bakom hans/hennes rygg.</string>
+		<speak>175.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_11</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera därefter vårdtagaren att vända sig tillbaka på rygg.</string>
+		<speak>50.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_12</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Tala därefter om för vårdtagaren att du ska pressa in remmen till selet under hans/hennes lår (vik först remmen som ett Z).</string>
+		<speak>169.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_13</id>
+		<string>Fäll ned sänggrinden på vårdtagarens vänstra sida genom att föra muspekaren över den och vänsterklicka på den med musen.</string>
+		<speak>176.ogg</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_14</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen. Tala om för vårdtagaren att du ska dra remmen under hans/hennes ben.</string>
+		<speak>172.ogg</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_0</id>
+		<string>Instruera vårdtagaren att lyfta på fötterna.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_1</id>
+		<string>Lägg ut halkmattan.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_2</id>
+		<string>Be vårdtagaren att lyfta på huvudet och titta bort från dig.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_3</id>
+		<string>Be vårdtagaren att lyfta på huvudet och titta på dig.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_4</id>
+		<string>Lägg ut segelduken.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_5</id>
+		<string>Be vårdtagaren att lyfta på huvudet och titta på dig.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_6</id>
+		<string>Be vårdtagaren att lyfta på huvudet och titta bort från dig.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_7</id>
+		<string>Lyft upp fotänden av sängen.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_8</id>
+		<string>Be vårdtagaren att flytta sig uppåt i sängen.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_talk_0</id>
+		<string>Lyft på fötterna när jag lägger ut halkmattan.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_talk_1</id>
+		<string>Lyft på huvudet och titta bort från mig.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_talk_2</id>
+		<string>Lyft på huvudet och titta på mig.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_talk_3</id>
+		<string>Lyft på huvudet och titta på mig.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_talk_4</id>
+		<string>Lyft på huvudet och titta bort från mig.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_talk_5</id>
+		<string>Lyft på sätet och flytta dig högre upp i sängen.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_0</id>
+		<string>Se till att sängen är inställd för sittläge.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_1</id>
+		<string>Kör ner sängen.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_2</id>
+		<string>Fäst remmarna i liften.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_30</id>
+		<string>Tala om för vårdtagaren att ni ska lyfta upp honom/henne från stolen.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_3</id>
+		<string>Lyft upp vårdtagaren från stolen.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_4</id>
+		<string>Flytta in liftens ben.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_5</id>
+		<string>Flytta liften så den hamnar ovanför sängen.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_6</id>
+		<string>Höj upp sängen.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_7</id>
+		<string>Sänk ned vårdtagaren i sängen.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_talk_00</id>
+		<string>Nu lyfter vi upp dig ur stolen.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_talk_0</id>
+		<string>Nu lyfter vi över dig i sängen.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_0</id>
+		<string>Böj upp vänster ben.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_1</id>
+		<string>Vänd vårdtagaren på höger sida.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_2</id>
+		<string>Placera ut selet.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_3</id>
+		<string>Vänd vårdtagaren tillbaka på ryggen.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_4</id>
+		<string>Pressa in remmen under vårdtagarens lår.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_5</id>
+		<string>Fäll upp sänggrinden på vårdtagarens vänstra sida.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_6</id>
+		<string>Fäll ned sänggrinden på vårdtagarens högra sida.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_7</id>
+		<string>Dra remmarna under vårdtagarens ben.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_8</id>
+		<string>Böj upp höger ben.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_9</id>
+		<string>Vänd vårdtagaren om på vänster sida.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_10</id>
+		<string>Dra ut selet på sängen.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_11</id>
+		<string>Vänd vårdtagaren tillbaka på ryggen.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_12</id>
+		<string>Pressa in remmen under vårdtagarens lår.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_13</id>
+		<string>Fäll ned sänggrinden på vårdtagarens vänstra sida.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_0</id>
+		<string>Böj upp vänster ben.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_1</id>
+		<string>Ta tag i sänggrinden och vänd dig om på höger sida.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_2</id>
+		<string>Vänd dig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_3</id>
+		<string>Nu trycker jag in seleremmen under dina lår.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_4</id>
+		<string>Nu drar jag seleremmen under dina ben.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_5</id>
+		<string>Böj upp höger ben.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_6</id>
+		<string>Ta tag i sänggrinden och vänd dig om på vänster sida.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_7</id>
+		<string>Nu drar jag ut sele på sängen.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_8</id>
+		<string>Vänd dig tillbaka på rygg.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_9</id>
+		<string>Nu trycker jag in seleremmen under dina lår.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_10</id>
+		<string>Nu drar jag seleremmen under dina ben.</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_state_lockchair</id>
+		<string>Lås rullstolen.</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_state_chair</id>
+		<string>Luta vårdtagaren framåt.</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_state_lock</id>
+		<string>Placera sele bakom vårdtagaren.</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_state_lean</id>
+		<string>Luta vårdtagaren bakåt.</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_talk_0</id>
+		<string>Nu fäller vi dig framåt.</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_talk_1</id>
+		<string>Nu placerar vi sele bakom din rygg.</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_talk_2</id>
+		<string>Nu lutar vi dig bakåt.</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_talk_3</id>
+		<string>Nu drar vi remmarna under benen.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_state_0</id>
+		<string>Dra remmarna under vårdtagarens ben.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_state_1</id>
+		<string>Fäll upp sänggrinden.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_state_2</id>
+		<string>Luta vårdtagaren framåt.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_talk_0</id>
+		<string>Nu drar vi remmarna under dina ben.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_talk_1</id>
+		<string>Luta dig framåt.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_talk_2</id>
+		<string>Nu tar vi bort sele.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_state_0</id>
+		<string>Ta bort remmarna under vårdtagarens ben.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_state_1</id>
+		<string>Luta vårdtagaren framåt.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_state_2</id>
+		<string>Höj upp selet med liften.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_talk_0</id>
+		<string>Nu tar vi bort remmarna under dina ben 
+(remmarna ska glida mot selet för att minimera friktion).</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_talk_1</id>
+		<string>Nu lutar vi dig framåt.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_talk_2</id>
+		<string>Nu lutar vi dig bakåt.</string>
+	</text>
+	<text>
+		<id>sim_side_a_state_0</id>
+		<string>Instruera vårdtagaren att böja på benen.</string>
+	</text>
+	<text>
+		<id>sim_side_a_talk_0</id>
+		<string>Böj på benen.</string>
+	</text>
+	<text>
+		<id>sim_side_a_talk_1</id>
+		<string>Flytta dig åt sidan i sängen.</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_state_0</id>
+		<string>Lås rullstolen.</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_state_1</id>
+		<string>Be vårdtagaren att flytta in fötterna under rullstolen.</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_state_2</id>
+		<string>Be vårdtagaren att placera händerna på rullstolens armstöd.</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_state_3</id>
+		<string>Flytta vårdtagarens högra sida bakåt.</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_help_0</id>
+		<string>Lås rullstolen genom att föra muspekaren över låset och vänsterklicka därefter på musen.</string>
+		<speak>123.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_help_1</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att flytta in fötterna under rullstolen.</string>
+		<speak>2088.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_help_2</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att placera händerna på rullstolens armstöd.</string>
+		<speak>2089.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_help_3</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att flytta höger sida bakåt (medan du lägger ena handen på vänster axel och den andra på höger knä).</string>
+		<speak>2090.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_help_4</id>
+		<string>För muspekaren över vårdtagarens huvud och vänsterklicka på musen.
+Instruera vårdtagaren att flytta vänster sida bakåt (medan du lägger ena handen på höger axel och den andra på vänster knä).</string>
+		<speak>2091.ogg</speak>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_talk_0</id>
+		<string>Flytta in fötterna under rullstolen.</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_talk_1</id>
+		<string>Placera händerna på rullstolens armstöd.</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_talk_2</id>
+		<string>Flytta höger sida bakåt.</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_talk_3</id>
+		<string>Flytta vänster sida bakåt.</string>
+	</text>
+	<text>
+		<id>Spielerdug</id>
+		<string>Segelduk</string>
+	</text>
+	<text>
+		<id>Kontrol</id>
+		<string>Kontroll</string>
+	</text>
+	<text>
+		<id>Psoas-pude</id>
+		<string>Psoas-kudde</string>
+	</text>
+	<text>
+		<id>Rollator</id>
+		<string>Rullator</string>
+	</text>
+	<text>
+		<id>Kollega</id>
+		<string>Kollega</string>
+	</text>
+	<text>
+		<id>Skridsikker</id>
+		<string>Halkmatta</string>
+	</text>
+	<text>
+		<id>Lagen</id>
+		<string>Lakan</string>
+	</text>
+	<text>
+		<id>Sengekontrol</id>
+		<string>Sängkontroll</string>
+	</text>
+	<text>
+		<id>Skammel</id>
+		<string>Pall</string>
+	</text>
+	<text>
+		<id>Liftkontrol</id>
+		<string>Liftkontroll</string>
+	</text>
+	<text>
+		<id>Sejl</id>
+		<string>Sele</string>
+	</text>
+	<text>
+		<id>Psoaspude</id>
+		<string>Psoas-kudde</string>
+	</text>
+	<text>
+		<id>Kørestol</id>
+		<string>Rullstol</string>
+	</text>
+	<text>
+		<id>Loftlift</id>
+		<string>Taklift</string>
+	</text>
+	<text>
+		<id>Gulvlift</id>
+		<string>Golvlift</string>
+	</text>
+	<text>
+		<id>Gå til hovedmenu</id>
+		<string>Gå till huvudmenyn</string>
+	</text>
+	<text>
+		<id>Åben breefing tekst</id>
+		<string>Öppen breefingtext</string>
+	</text>
+	<text>
+		<id>Genstart øvelse</id>
+		<string>Starta övningen på nytt</string>
+	</text>
+	<text>
+		<id>Slå lyd fra eller til</id>
+		<string>Sätt på/stäng av ljudet</string>
+	</text>
+</texts>

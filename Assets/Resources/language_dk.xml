@@ -1,0 +1,4405 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<texts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<text>
+		<id>mouse_over_assistant</id>
+		<string>Klik med venstre museknap, for at starte en samtale med din kollega</string>
+	</text>
+	<text>
+		<id>mouse_over_patient_head</id>
+		<string>Klik med venstre museknap, for at starte en samtale med borgeren</string>
+	</text>
+	<text>
+		<id>mouse_over_sling</id>
+		<string>Klik med venstre museknap, for at aktivere sejlet</string>
+	</text>
+	<text>
+		<id>mouse_over_drawsheet</id>
+		<string>Klik med venstre museknap, for at aktivere lagnet</string>
+	</text>
+	<text>
+		<id>mouse_over_bed</id>
+		<string>Kilk med venstre museknap, for at aktivere sengen</string>
+	</text>
+	<text>
+		<id>mouse_over_wheelchair</id>
+		<string>Kilk med venstre museknap, for at aktivere kørestolen</string>
+	</text>
+	<text>
+		<id>mouse_over_slidemat</id>
+		<string>Klik med venstre museknap, for at aktivere spilerdugen</string>
+	</text>
+	<text>
+		<id>mouse_over_antislidemat</id>
+		<string>Klik med venstre museknap, for at fjerne den skridsikre måtte</string>
+	</text>
+	<text>
+		<id>mouse_over_walker</id>
+		<string>Klik med venstre museknap, for at låse rollatoren</string>
+	</text>
+	<text>
+		<id>talk_dialog_undo</id>
+		<string>Fortryd</string>
+	</text>
+	<text>
+		<id>talk_dialog_ok</id>
+		<string>Ok</string>
+	</text>
+	<text>
+		<id>results_headline</id>
+		<string>Resultater</string>
+	</text>
+	<text>
+		<id>results_failed</id>
+		<string>Du bestod ikke øvelsen.</string>
+	</text>
+	<text>
+		<id>results_passed_help</id>
+		<string>Tillykke
+Du har bestået programmet med hjælp. Hvis du ønsker det, kan du gennemgå programmet som test.
+
+Husk at fjerne alle hjælpemidler før du forlader borgeren.</string>
+		<speak>1701</speak>
+	</text>
+	<text>
+		<id>results_passed_test</id>
+		<string>Tillykke
+Du har bestået programmet som test. Hvis du ønsker det, kan du gå til hovedmenuen og vælge en ny opgave.
+
+Husk at fjerne alle hjælpemidler før du forlader borgeren.</string>
+		<speak>1702</speak>
+	</text>
+	<text>
+		<id>results_start_over</id>
+		<string>Tryk på ok for, at starte øvelsen forfra.</string>
+	</text>
+	<text>
+		<id>results_main_menu</id>
+		<string>Tryk på ok for, at gå til hovedmenuen.</string>
+	</text>
+	<text>
+		<id>results_comment</id>
+		<string>Kommentarer til øvelsen:</string>
+	</text>
+	<text>
+		<id>results_too_many_errors</id>
+		<string>Du gennemførte øvelsen, men begik for mange fejl undervejs og har derfor ikke bestået.</string>
+		<speak>1703</speak>
+	</text>
+	<text>
+		<id>welcome_1</id>
+		<string>Introduktion
+Dette er et program for personale, der arbejder med forflytninger af personer. Borger/patienter som har brug for hjælp, guidning og støtte under forflytninger. Det være sig på et sygehus, et plejehjem, en institution eller i borgers eget hjem.
+
+Eftersom dette er et grundprogram i forflytning af borgere, er løsningerne på forhånd valgt ud for dig. Disse opgaver skal du så løse ved at følge en logisk rækkefølge i form af dialog med borger og din kollega - og ved brug af hjælpemidler.  
+
+Der findes mange mulige variationer af forflytningsløsninger, alt afhængig af borgerens funktionsniveau.</string>
+		<speak>2000</speak>
+	</text>
+	<text>
+		<id>welcome_2</id>
+		<string>I forflytningsprogrammet løser du opgaver indenfor 4 forskellige funktionsniveauer. 
+Du kan til sidst tage en test uden hjælp fra programmet, som viser, at du kan løse opgaver på de 4 funktionsniveauer.</string>
+		<speak>2001</speak>
+	</text>
+	<text>
+		<id>welcome_3</id>
+		<string>Der er mulighed for at gennemføre forflytningsprogrammet med hjælp eller som en test. Se vejledningen</string>
+		<speak>2002</speak>
+	</text>
+	<text>
+		<id>global_place_helper</id>
+		<string>Placer kollega.</string>
+	</text>
+	<text>
+		<id>global_place_sling</id>
+		<string>Placer sejl.</string>
+	</text>
+	<text>
+		<id>global_place_floorlift</id>
+		<string>Placer gulvlift.</string>
+	</text>
+	<text>
+		<id>global_place_chair</id>
+		<string>Placer skammel.</string>
+	</text>
+	<text>
+		<id>global_place_wheelchair</id>
+		<string>Placer kørestol.</string>
+	</text>
+	<text>
+		<id>global_back_to_home</id>
+		<string>Er du sikker på du vil forlade øvelsen og gå til start menuen?</string>
+	</text>
+	<text>
+		<id>global_start_over</id>
+		<string>Er du sikker på du vil starte forfra?</string>
+	</text>
+	<text>
+		<id>help_or_test_help</id>
+		<string>Start med hjælp</string>
+	</text>
+	<text>
+		<id>help_or_test_test</id>
+		<string>Start uden hjælp</string>
+	</text>
+	<text>
+		<id>hud_wrong_placement</id>
+		<string>Du har valgt en forkert placering, prøv venligst igen.</string>
+	</text>
+	<text>
+		<id>hud_must_choose_placement</id>
+		<string>Vælg venligst en af placeringerne, før du klikker på Ok.</string>
+	</text>
+	<text>
+		<id>hud_tiled_wrong_placement</id>
+		<string>Forkert position, prøv venligst igen.</string>
+	</text>
+	<text>
+		<id>help_box_ok_button</id>
+		<string>Ok</string>
+	</text>
+	<text>
+		<id>message_box_ok</id>
+		<string>OK</string>
+	</text>
+	<text>
+		<id>message_box_undo</id>
+		<string>Fortryd</string>
+	</text>
+	<text>
+		<id>sceneloader_downloading</id>
+		<string>Henter…</string>
+	</text>
+	<text>
+		<id>data_loader_getting_data</id>
+		<string>Henter Data... Vent venligst!</string>
+	</text>
+	<text>
+		<id>data_manager_wrong_username_password</id>
+		<string>Fejl: Forkert brugernavn eller kodeord.</string>
+	</text>
+	<text>
+		<id>data_manager_admin_loging_error</id>
+		<string>Du kan ikke logge ind med dit administrator login</string>
+	</text>
+	<text>
+		<id>data_manager_general_error</id>
+		<string>Der er sket en fejl, prøv at logge ind igen.\nHvis fejlen forsætter, så kontakt venligst support.</string>
+	</text>
+	<text>
+		<id>data_manager_connect_error</id>
+		<string>Fejl: Kunne ikke forbinde til serveren</string>
+	</text>
+	<text>
+		<id>login_form_remember</id>
+		<string>Husk mig:</string>
+	</text>
+	<text>
+		<id>login_form_username</id>
+		<string>Brugernavn:</string>
+	</text>
+	<text>
+		<id>login_form_password</id>
+		<string>Kodeord:</string>
+	</text>
+	<text>
+		<id>login_form_checking_loging_data</id>
+		<string>Tjekker login data.</string>
+	</text>
+	<text>
+		<id>resolution_check_too_low</id>
+		<string>Din opløsning er for lav til at afvikle programmet, tryk på OK for at skifte til fuldskærmsvisning.</string>
+	</text>
+	<text>
+		<id>resolution_check_can_not_change</id>
+		<string>Kunne ikke skifte til fuldskærmsvisning. Ændre venligst din skærmopløsning, eller vælg fuldskærmsvisning i din internet browser.</string>
+	</text>
+	<text>
+		<id>tool_button_not_needed_tool</id>
+		<string>Det valgte værktøj er ikke nødvendig i denne øvelse.</string>
+	</text>
+	<text>
+		<id>tool_grid_wrong_tool_test</id>
+		<string>Du har ikke valgt de rigtige værktøjer til brug i forflytningen. Er du i tvivl om hvilke du skal bruge, kan du starte øvelsen igen med hjælp.</string>
+	</text>
+	<text>
+		<id>tool_grid_wrong_tool_help</id>
+		<string>Du har ikke valgt de rigtige værktøjer til brug i forflytningen. Se hjælpeteksten for, at få at vide hvilke værktøjer du skal bruge</string>
+	</text>
+	<text>
+		<id>tool_grid_continue</id>
+		<string>Videre</string>
+	</text>
+	<text>
+		<id>introduction_guide_0</id>
+		<string>Du vil nu modtage en introduktion til programmet Virtual Forflytning. Under denne introduktion vil du lære, hvordan du bruger programmet, og hvilke funktioner det indeholder. Klik på knappen 'OK' for at forsætte.</string>
+		<speak>2003</speak>
+	</text>
+	<text>
+		<id>introduction_guide_1</id>
+		<string>I hovedmenuen er forflytninger inddelt i de 4 funktionsniveauer. Hvert funktionsniveau indeholder flere øvelser, og ud for hvert funktionsniveau viser antallet af stjerner dit gennemsnit for alle øvelser. Klik på det øverste funktionsniveau for at forsætte.</string>
+		<speak>2004</speak>
+	</text>
+	<text>
+		<id>introduction_guide_2</id>
+		<string>Når du har klikket på et funktionsniveau, vil en liste af øvelser vise sig. Ud for hver øvelse kan du, ved antallet af stjerner se, hvor godt du har klaret øvelsen. Tryk på  'Op at sidde på sengekanten' for at forsætte.</string>
+		<speak>2005</speak>
+	</text>
+	<text>
+		<id>introduction_guide_3</id>
+		<string>Når du har valgt en øvelse på listen, bliver du spurgt, om du ønsker at starte øvelsen med hjælp eller som test. Med hjælp vil du undervejs få en beskrivelse af, hvad du skal gøre i øvelsen, og dit resultat vil ikke blive registeret eller gemt. Klik på 'Start med hjælp' for at forsætte.</string>
+		<speak>2006</speak>
+	</text>
+	<text>
+		<id>introduction_guide_4</id>
+		<string>Vælger du at starte en øvelse som en test, vil du ikke få en beskrivelse under øvelsen, og dit resultat vil blive registeret og gemt. Består du ikke en øvelse som test, eller vil du gerne gøre det bedre, kan du altid prøve igen. Klik på 'Start som test' for at forsætte.</string>
+		<speak>1004</speak>
+	</text>
+	<text>
+		<id>introduction_guide_5</id>
+		<string>Du vil få en kort beskrivelse af hvad øvelsen går ud på. Tryk på "OK" for at fortsætte.</string>
+		<speak>1005</speak>
+	</text>
+	<text>
+		<id>introduction_guide_6</id>
+		<string>Afhængigt af øvelsen vil du i starten skulle vælge hvilke værktøjer, du skal bruge til øvelsen. Tryk på sengekontrollen for at forsætte.</string>
+		<speak>1006</speak>
+	</text>
+	<text>
+		<id>introduction_guide_7</id>
+		<string>I dette eksempel ligger borgeren på sengen, og du skal forestille dig, at hjælperen der står op er dig, og det er gennem hende, du udfører forflytningen. I nogle øvelser vil der også være en kollega til stede til at assistere dig. Tryk på hjælperen for at forsætte.</string>
+		<speak>2007</speak>
+	</text>
+	<text>
+		<id>introduction_guide_8</id>
+		<string>For at gennemføre øvelsen vil du skulle foretage nogle handlinger. Disse handlinger udføres enten ved hjælp af de værktøjer du har valgt, eller ved at føre musen over forskellige interesse punkter. Klik på borgerens hoved for at forsætte.</string>
+		<speak>1008</speak>
+	</text>
+	<text>
+		<id>introduction_guide_9</id>
+		<string>Når du fører musen over et punkt, der kan udløse en handling, vil det lyse op, og der vil blive vist en beskrivelse af punktet i øverste højre hjørne. Klik igen på borgerens hoved for at forsætte.</string>
+		<speak>1009</speak>
+	</text>
+	<text>
+		<id>introduction_guide_10</id>
+		<string>I de tilfælde hvor du klikker på borgerens hoved, vil du blive præsenteret for forskellige mulige dialoger, du kan have med borgeren. Du skal derefter vælge den dialog der passer til det trin, du er i gang med i forflytningen. Klik på en af dialogerne for at forsætte.</string>
+		<speak>1010</speak>
+	</text>
+	<text>
+		<id>introduction_guide_11</id>
+		<string>Hvis du har valgt et værktøj til øvelsen, kan du bruge det gennem din værktøjskasse. Klik på psoas puden for at fortsætte.</string>
+		<speak>1011</speak>
+	</text>
+	<text>
+		<id>introduction_guide_12</id>
+		<string>Ved nogle af værktøjerne vil du skulle vælge en korrekt position. Dette gør du ved at klikke på billedet, der viser og beskriver positionen. Klik på det midterste billede 'Ved Torso' for at forsætte.</string>
+		<speak>1012</speak>
+	</text>
+	<text>
+		<id>introduction_guide_13</id>
+		<string>Udfører du en handlig forkert eller i en forkert rækkefølge, vil du modtage en besked om dette, og få mulighed for at vælge det rigtige. For hver forkert handling vil der blive trukket en stjerne fra dit resultat. Tryk på knappen 'Ok' for at forsætte.</string>
+		<speak>1013</speak>
+	</text>
+	<text>
+		<id>introduction_guide_14</id>
+		<string>Når du har gennemført øvelsen, vil du få vist dit resultat. Når du gennemfører øvelsen med hjælp vil resultatet ikke blive gemt, men gennemfører du som test, vil din ansvarlige kunne se dit resultat. Tryk på knappen 'Ok' for at forsætte.</string>
+		<speak>1014</speak>
+	</text>
+	<text>
+		<id>introduction_guide_15</id>
+		<string>Hvis du gerne vil have et bedre resultat, kan du gennemgå programmet med hjælp og derefter tage testen igen. Dit nye resultat vil derefter blive gemt, og det gamle vil blive slettet. Introduktionen er færdig, tryk på 'Hjem' ikonet for at afslutte og gå til menuen.</string>
+		<speak>1015</speak>
+	</text>
+	<text>
+		<id>function_level_0</id>
+		<string>Dette er en introduktion til funktionsniveauer. Der er 5 funktionsniveauer, som beskriver borgerens funktionsevne, og dermed hvilket behov borgeren har til en forflytning.
+I programmet Virtuel Forflytning, vil du lære om funktionsniveauerne 1 - 4. Funktionsniveau 0 beskriver en borger, som har ubetydelige eller ingen begrænsninger, og borgeren har derfor ikke behov for hjælp til en forflytning.</string>
+		<speak>1501</speak>
+	</text>
+	<text>
+		<id>function_level_1</id>
+		<string>Borgere på funktionsniveau 1 har lette begrænsninger. Borgeren er den aktive part og kan med let personassistance udføre aktiviteten. Din opgave med borgere på funktionsniveau 1 er derfor, at vejlede og guide borgeren til at udføre forflytningen på den mest hensigtsmæssige måde.</string>
+		<speak>2008</speak>
+	</text>
+	<text>
+		<id>function_level_2</id>
+		<string>Borgere på funktionsniveau 2 har moderate begrænsninger. Borgeren er den aktive part og kan under forudsætninger af moderat personassistance udføre aktiviteten.
+Din opgave med borgere på funktionsniveau 2 er derfor, at støtte borgeren og benytte simple hjælpemidler så borgeren kan forflytte sig selv.</string>
+		<speak>2009</speak>
+	</text>
+	<text>
+		<id>function_level_3</id>
+		<string>Borgere på funktionsniveau 3 har svære begrænsninger. Borger deltager og kan under forudsætning af omfattende personassistance udføre aktiviteten.
+Din opgave er at forflytte borgeren, mens du er opmærksom på borgerens trykpunkter og ikke mindst din egen arbejdsstilling.</string>
+		<speak>2010</speak>
+	</text>
+	<text>
+		<id>function_level_4</id>
+		<string>Borgere på funktionsniveau 4 har totale begrænsninger. Borgeren er ude af stand til at udføre aktiviteten og har brug for fuldstændig personassistance.
+Ved en borger på funktionsniveau 4, skal du være meget opmærksom på  borgerens trykpunkter samt din egen arbejdsstilling.</string>
+		<speak>2011</speak>
+	</text>
+	<text>
+		<id>preasurepoints_elearning_0</id>
+		<string>1. Trykpunkter og forflytning af personer. 
+Når en person ligger eller sidder i en seng eller i en stol, opstår der tryk på de punkter, hvor personens krop er i kontakt med underlaget. Det er på disse trykpunkter, at der kan opstå tryksår, såfremt punkterne belastes med tryk over længere tid.</string>
+		<speak>1601</speak>
+	</text>
+	<text>
+		<id>preasurepoints_elearning_1</id>
+		<string>2. Trykpunkter bliver til friktionsområder ved bevægelse    
+Når en person bevæges langs et underlag, vil der på trykpunkterne mod underlaget opstå friktion (gnidningsmodstand).
+Derfor bruger vi hjælpemidler, som reducerer friktionen under alle trykpunkter.</string>
+		<speak>2012</speak>
+	</text>
+	<text>
+		<id>preasurepoints_elearning_2</id>
+		<string>3. Alle som arbejder med borgere og patienter skal vide, hvor på kroppen der opstår gnidningsmodstand og skåne personens hud og forhindre udvikling af sår og ubehag. 
+Den bedste måde at finde ud af det på, er selv at ligge i seng eller sidde på en stol og erfare det på egen krop. 
+Du kan prøve selv at ligge og sidde i forskellige stillinger og derefter observere dine trykpunkter, før du forsætter videre i programmet.</string>
+		<speak>2013</speak>
+	</text>
+	<text>
+		<id>breafing_back_in_chair_a</id>
+		<string>Tilbage i stol
+Funktionsniveau 1
+
+Borgeren sidder i en stol og skal længere tilbage.
+
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.</string>
+		<speak>2014</speak>
+	</text>
+	<text>
+		<id>breafing_back_in_chair_b</id>
+		<string>Tilbage i stol
+Funktionsniveau 2
+
+Borgeren sidder i en stol og skal længere tilbage.
+
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.</string>
+		<speak>2015</speak>
+	</text>
+	<text>
+		<id>breafing_back_in_chair_c</id>
+		<string>Tilbage i stol 
+Funktionsniveau 2
+
+Borgeren sidder i en stol og skal længere tilbage.
+
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.</string>
+		<speak>2016</speak>
+	</text>
+	<text>
+		<id>breafing_higher_in_bed_a_almbed</id>
+		<string>Højere op i seng
+Funktionsniveau 1
+
+Borger ligger på ryggen i sengen, og hun er gledet ned i fodenden.
+
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.</string>
+		<speak>2017</speak>
+	</text>
+	<text>
+		<id>breafing_higher_in_bed_a</id>
+		<string>Højere op i seng
+Funktionsniveau 1
+
+Borger ligger på ryggen i sengen, og hun er gledet ned i fodenden.
+
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2018</speak>
+	</text>
+	<text>
+		<id>breafing_higher_in_bed_b</id>
+		<string>Højere op i seng
+Funktionsniveau 2
+
+Borger ligger på ryggen i sengen, og hun er gledet ned i fodenden.
+
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2019</speak>
+	</text>
+	<text>
+		<id>breafing_higher_in_bed_c</id>
+		<string>Højere op i seng
+Funktionsniveau 3
+
+Borger ligger på ryggen i sengen, og hun er gledet ned i fodenden.
+Hun kan ikke forflytte sig selv, og du er afhængig af en kollega og enkle hjælpemidler for at forflytte hende.
+
+Trykpunkter
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand og gør opgaven med at forflytte borgeren besværlig uden glatte hjælpemidler. 
+
+Din opgave er at vejlede hende og din kollega. I skal bruge hjælpemidler, som gør forflytningen nemmere - og bruge sengen som hjælpemiddel for at forflytte hende højere op i sengen.
+
+Arbejdsstillinger og bevægelser under forflytning
+Vær opmærksom på arbejdsstillinger og bevægelser som anvendes i denne forflytning. Denne borger har brug for omfattende personassistance, hvilket kan være en udfordring for din krop, hvis man ikke arbejder på den mest hensigtsmæssige måde.</string>
+		<speak>2020</speak>
+	</text>
+	<text>
+		<id>breafing_higher_in_bed_drawsheet</id>
+		<string>Højere op i seng med stiklagen
+Funktionsniveau 4
+
+Borgeren ligger på ryggen og er gledet ned i sengen.
+
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2021</speak>
+	</text>
+	<text>
+		<id>breafing_lie_down_a</id>
+		<string>Fra siddende til liggende
+Funktionsniveau 1
+
+Borgeren sidder på sengekanten og skal lægge sig i sengen. 
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.</string>
+		<speak>2022</speak>
+	</text>
+	<text>
+		<id>breafing_lie_down_b</id>
+		<string>Fra siddende til liggende
+Funktionsniveau 2
+
+Borgeren sidder på sengekanten. 
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2023</speak>
+	</text>
+	<text>
+		<id>breafing_lie_down_c</id>
+		<string>Fra siddende til liggende
+Funktionsniveau 3
+
+Borgeren sidder på sengekanten. 
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2024</speak>
+	</text>
+	<text>
+		<id>breafing_lifting_bed_chair_floorlift</id>
+		<string>Liftning fra seng til stol – gulvlift
+Funktionsniveau 4
+
+Borgeren ligger i sengen og skal liftes over i kørestolen. 
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2025</speak>
+	</text>
+	<text>
+		<id>breafing_lifting_bed_chair_rooflift</id>
+		<string>Liftning fra seng til stol – loftlift
+Funktionsniveau 4
+
+Borgeren ligger i sengen og skal liftes over i kørestolen. 
+Hun kan ikke forflytte sig selv, og du skal bruge hjælpemidler og en kollega for at forflytte hende.
+
+Din opgave er at vejlede hende og din kollega. I skal bruge hjælpemidler, som gør forflytningen nem, smart og komfortabel.
+
+Arbejdsstillinger og bevægelser under forflytning
+Vær opmærksom på arbejdsstillinger og bevægelser, som anvendes i denne forflytning. Denne opgave med en borger, som har behov for megen hjælp, kan være en udfordring for din egen og din kollegas krop, hvis man ikke bevæger sig på en smart, tryg og sikker måde.</string>
+		<speak>breaf_roof_lift_bed_to_chair</speak>
+	</text>
+	<text>
+		<id>breafing_lifting_bed_chair_rooflift_single</id>
+		<string>Liftning fra seng til stol – loftlift
+Funktionsniveau 4
+
+Borgeren ligger i sengen og skal liftes over i kørestolen. 
+
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2026</speak>
+	</text>
+	<text>
+		<id>breafing_lifting_chair_bed_floorlift</id>
+		<string>Liftning fra stol til seng – gulvlift
+Funktionsniveau 4
+
+Borgeren sidder i kørestolen og skal liftes over i sengen. 
+
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2027</speak>
+	</text>
+	<text>
+		<id>breafing_place_sling_in_bed</id>
+		<string>Sejlpålægning i seng
+Funktionsniveau 4
+
+Borgeren ligger i sengen og skal liftes.
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2028</speak>
+	</text>
+	<text>
+		<id>breafing_place_sling_in_bed_single</id>
+		<string>Sejlpålægning i seng
+Funktionsniveau 4
+
+Borgeren ligger i sengen og skal liftes. 
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2029</speak>
+	</text>
+	<text>
+		<id>breafing_remove_sling_in_bed</id>
+		<string>Fjernelse af sejl i seng
+Funktionsniveau 4
+
+Borgeren ligger i sengen og skal have fjernet sejlet. 
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2030</speak>
+	</text>
+	<text>
+		<id>breafing_place_drawsheet_in_bed</id>
+		<string>Placer stiklagen i seng
+Funktionsniveau 4
+
+Borgeren ligger i sengen. 
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2031</speak>
+	</text>
+	<text>
+		<id>breafing_place_sling_in_chair</id>
+		<string>Sejlpålægning i stol
+Funktionsniveau 4
+
+Borgeren sidder i kørestolen. 
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.</string>
+		<speak>2032</speak>
+	</text>
+	<text>
+		<id>breafing_remove_sling_in_chair</id>
+		<string>Fjernelse af sejl i stol
+Funktionsniveau 4
+
+Borgeren sidder i kørestolen og skal have fjernet sejlet.
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.</string>
+		<speak>2033</speak>
+	</text>
+	<text>
+		<id>breafing_remove_sling_in_chair_single</id>
+		<string>Fjernelse af sejl i stol
+Funktionsniveau 4
+
+Borgeren sidder i kørestolen og skal have fjernet sejlet. 
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.</string>
+		<speak>2034</speak>
+	</text>
+	<text>
+		<id>breafing_sit_up_a</id>
+		<string>Op at sidde på sengekanten
+Funktionsniveau 1
+
+Borgeren ligger på siden i sengen og skal op at sidde på sengekanten.
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.</string>
+		<speak>2035</speak>
+	</text>
+	<text>
+		<id>breafing_sit_up_b</id>
+		<string>Op at sidde på sengekanten
+Funktionsniveau 2
+
+Borgeren ligger på siden i sengen og skal op at sidde på sengekanten.
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2036</speak>
+	</text>
+	<text>
+		<id>breafing_sit_up_c</id>
+		<string>Fra liggende til siddende - med psoas-pude
+Funktionsniveau 2
+
+Borgeren ligger på siden i sengen og skal op at sidde på sengekanten. 
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2037</speak>
+	</text>
+	<text>
+		<id>breafing_stand_up_a</id>
+		<string>Fra sengekanten til stående
+Funktionsniveau 1
+
+Borgeren sidder på sengekanten. 
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.</string>
+		<speak>2038</speak>
+	</text>
+	<text>
+		<id>breafing_stand_up_b</id>
+		<string>Fra sengekanten til stående
+Funktionsniveau 2
+
+Borgeren sidder på sengekanten. 
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2039</speak>
+	</text>
+	<text>
+		<id>breafing_stand_up_c</id>
+		<string>Fra sengekanten til stående
+Funktionsniveau 2
+
+Borgeren sidder på sengekanten. 
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2040</speak>
+	</text>
+	<text>
+		<id>breafing_side_a</id>
+		<string>Til siden i seng 
+Funktionsniveau 1
+
+Borgeren ligger på ryggen i sengen og skal forflytte sig til siden. 
+
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.</string>
+		<speak>2041</speak>
+	</text>
+	<text>
+		<id>breafing_side_b</id>
+		<string>Til siden i seng
+Funktionsniveau 2
+
+Borgeren ligger på ryggen i sengen og skal forflytte sig til siden. 
+
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2042</speak>
+	</text>
+	<text>
+		<id>breafing_side_c</id>
+		<string>Til siden i seng
+Funktionsniveau 3
+
+Borgeren ligger på ryggen i sengen og skal forflyttes til siden. 
+
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2043</speak>
+	</text>
+	<text>
+		<id>breafing_turn_a</id>
+		<string>Vending om på siden
+Funktionsniveau 1
+
+Borgeren ligger på ryggen i sengen og skal vende sig om på siden. 
+
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.</string>
+		<speak>2044</speak>
+	</text>
+	<text>
+		<id>breafing_turn_b</id>
+		<string>Vending om på siden
+Funktionsniveau 1
+
+Borgeren ligger på ryggen i sengen og skal vende sig om på siden. 
+
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2045</speak>
+	</text>
+	<text>
+		<id>breafing_turn_c</id>
+		<string>Vending om på siden
+Funktionsniveau 3
+
+Borgeren ligger på ryggen i sengen, og skal vendes om på siden. 
+
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2046</speak>
+	</text>
+	<text>
+		<id>breafing_walk_a</id>
+		<string>Gang med borger
+Funktionsniveau 1
+
+Borger står på gulvet og skal gå fremad.</string>
+		<speak>2047</speak>
+	</text>
+	<text>
+		<id>breafing_walk_b</id>
+		<string>Gang med borger
+Funktionsniveau 1
+
+Borger står på gulvet og skal gå fremad.</string>
+		<speak>2047</speak>
+	</text>
+	<text>
+		<id>breafing_walk_c</id>
+		<string>Gang med borger
+Funktionsniveau 2
+
+Borger står på gulvet med en rollator.</string>
+		<speak>2049</speak>
+	</text>
+	<text>
+		<id>breefing_hor_higer_in_bed_pillow</id>
+		<string>Højere op i seng - Spilerdug under hovedpuden:
+
+Borger ligger på ryggen i sengen, og hun er gledet ned i fodenden.
+
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2050</speak>
+	</text>
+	<text>
+		<id>breefing_hor_higer_in_bed_slidemat</id>
+		<string>Højere op i seng 2 - Spilerdug under hele kroppen:
+
+Borger ligger på ryggen i sengen, og hun er gledet ned i fodenden.
+
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2051</speak>
+	</text>
+	<text>
+		<id>breefing_hor_turn_to_side</id>
+		<string>Vending i seng:
+
+Borgeren ligger på ryggen i sengen, og skal vendes om på siden. 
+
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2052</speak>
+	</text>
+	<text>
+		<id>breefing_hor_sit_up_in_bed</id>
+		<string>Op at sidde på sengekanten: 
+
+Borgeren ligger på siden i sengen og skal op at sidde på sengekanten.
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2053</speak>
+	</text>
+	<text>
+		<id>breefing_hor_sitting_to_standing</id>
+		<string>Fra siddende på sengen til stående:
+
+Borgeren sidder på sengekanten. 
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2054</speak>
+	</text>
+	<text>
+		<id>breefing_hor_sitting_to_lying</id>
+		<string>Fra siddende på sengen til liggende:
+
+Borgeren sidder på sengekanten. 
+Vær opmærksom på trykpunkter, som giver gnidningsmodstand. 
+Din opgave er at vejlede borger ud fra det naturlige bevægemønster, så borgers ressourcer bruges bedst muligt under forflytningen.
+Ved hjælp af sengens funktioner og enkelte hjælpemidler forflyttes borger.</string>
+		<speak>2055</speak>
+	</text>
+	<text>
+		<id>sim_walk_a_help_walk_forward</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap. Fortæl borgeren, at hun skal 'starte med at gå fremad'.</string>
+		<speak>1</speak>
+	</text>
+	<text>
+		<id>sim_walk_a_talk_walk_forward</id>
+		<string>Gå fremad</string>
+	</text>
+	<text>
+		<id>sim_walk_b_state_place_hand</id>
+		<string>Du skal huske at klikke på borgeren overkrop for at placere din hånd der og støtte borgeren.</string>
+	</text>
+	<text>
+		<id>sim_walk_b_remember_place_hand</id>
+		<string>Du bør til denne øvelse placere din hånd på borgerens skulder, for bedre at kunne støtte borgeren.</string>
+	</text>
+	<text>
+		<id>sim_walk_b_state_walk_forward</id>
+		<string>Du skal huske at klikke på borgerens hoved og derefter knappen der fortæller borgeren at hun skal gå fremad.</string>
+	</text>
+	<text>
+		<id>sim_walk_b_help_place_hand</id>
+		<string>Før musen over borgerens overkrop og klik med venstre museknap, for at løfte din hånd op og skabe tryghed for borgeren.</string>
+		<speak>2</speak>
+	</text>
+	<text>
+		<id>sim_walk_b_help_walk_forward</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap. Fortæl borgeren, at hun skal 'starte med at gå fremad'.</string>
+		<speak>1</speak>
+	</text>
+	<text>
+		<id>sim_walk_b_talk_walk_forward</id>
+		<string>Gå fremad</string>
+	</text>
+	<text>
+		<id>sim_walk_c_state_place_hand</id>
+		<string>Du skal huske at klikke på borgeren overkrop for at placere din hånd der og støtte borgeren.</string>
+	</text>
+	<text>
+		<id>sim_walk_c_remember_place_hand</id>
+		<string>Du bør til denne øvelse placere din hånd på borgerens skulder, for bedre at kunne støtte borgeren.</string>
+	</text>
+	<text>
+		<id>sim_walk_c_state_walk_helper</id>
+		<string>Du skal huske at klikke på din kollega og bede ham være klar til at følge borgeren.</string>
+	</text>
+	<text>
+		<id>sim_walk_c_state_walk_borger</id>
+		<string>Du skal huske at klikke på borgerens hoved og derefter knappen der fortæller borgeren at hun skal gå fremad.</string>
+	</text>
+	<text>
+		<id>sim_walk_c_help_place_hand</id>
+		<string>Før musen over borgerens overkrop og klik med venstre museknap, for at løfte din hånd op og skabe tryghed for borgeren.</string>
+		<speak>2</speak>
+	</text>
+	<text>
+		<id>sim_walk_c_help_walk_helper</id>
+		<string>Før musen over din kollega og tryk med venstre museknap.
+Fortæl din kollega at han skal 'være klar til at følge efter borgeren med kørestolen'.</string>
+		<speak>3</speak>
+	</text>
+	<text>
+		<id>sim_walk_c_help_walk_borger</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap. Fortæl borgeren, at hun skal 'starte med at gå fremad'.</string>
+		<speak>1</speak>
+	</text>
+	<text>
+		<id>sim_walk_c_talk_walk_helper</id>
+		<string>Vær klar til at gå fremad med kørestolen</string>
+	</text>
+	<text>
+		<id>sim_walk_c_talk_walk_borger</id>
+		<string>Gå fremad</string>
+	</text>
+	<text>
+		<id>sim_turn_a_state_bendlegs</id>
+		<string>Du skal huske at bede borgeren om at bøje benene.</string>
+	</text>
+	<text>
+		<id>sim_turn_a_state_turnhead</id>
+		<string>Du skal huske at bede borgeren om at dreje hovedet.</string>
+	</text>
+	<text>
+		<id>sim_turn_a_state_movearm</id>
+		<string>Du skal huske at bede borgeren om at række venstre arm over kroppen.</string>
+	</text>
+	<text>
+		<id>sim_turn_a_state_moveover</id>
+		<string>Du skal huske at bede borgeren om at støde fra og vende sig om.</string>
+	</text>
+	<text>
+		<id>sim_turn_a_help_bedhead</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'bøje benene op'.</string>
+		<speak>4</speak>
+	</text>
+	<text>
+		<id>sim_turn_a_help_bendlegs</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'dreje hovedet til højre'.</string>
+		<speak>5</speak>
+	</text>
+	<text>
+		<id>sim_turn_a_help_turnhead</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'række venstre arm over og sætte hånden i madrassen'.</string>
+		<speak>6</speak>
+	</text>
+	<text>
+		<id>sim_turn_a_help_movearm</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'støde fra med fødderne og vende sig om'.</string>
+		<speak>7</speak>
+	</text>
+	<text>
+		<id>sim_turn_a_talk_bendlegs</id>
+		<string>Bøj benene op</string>
+	</text>
+	<text>
+		<id>sim_turn_a_talk_turnhead</id>
+		<string>Drej hovedet til højre</string>
+	</text>
+	<text>
+		<id>sim_turn_a_talk_movearm</id>
+		<string>Ræk venstre arm over og sæt hånden i madrassen</string>
+	</text>
+	<text>
+		<id>sim_turn_a_talk_moveover</id>
+		<string>Vend dig om på siden og skub samtidig bagdelen bagud</string>
+	</text>
+	<text>
+		<id>sim_side_a_state_liftlegs</id>
+		<string>Du skal huske at bede borgeren om at løfte benene.</string>
+	</text>
+	<text>
+		<id>sim_side_a__state_placeslide</id>
+		<string>Du skal huske at placere den skridsikre måtte.</string>
+	</text>
+	<text>
+		<id>sim_side_a_state_moveside</id>
+		<string>Du skal huske at bede borgeren om at flytte sig til siden i sengen.</string>
+	</text>
+	<text>
+		<id>sim_side_a_state_removeslide</id>
+		<string>Du skal huske at fjerne den skridsikre måtte.</string>
+	</text>
+	<text>
+		<id>sim_side_a_help_bendlegs</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'bøje benene op'.</string>
+		<speak>4</speak>
+	</text>
+	<text>
+		<id>sim_side_a_help_moveside</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'flytte sig til siden i sengen'.</string>
+		<speak>11</speak>
+	</text>
+	<text>
+		<id>sim_side_a_talk_liftlegs</id>
+		<string>Løft benene</string>
+	</text>
+	<text>
+		<id>sim_side_a_talk_moveside</id>
+		<string>Flyt dig til siden i sengen</string>
+	</text>
+	<text>
+		<id>sim_stand_a_help_forward</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'komme frem på sengekanten'.</string>
+		<speak>13</speak>
+	</text>
+	<text>
+		<id>sim_stand_a_help_legback</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'placere fødderne i skridtstående'.</string>
+		<speak>14</speak>
+	</text>
+	<text>
+		<id>sim_stand_a_help_lean</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'læne kroppen fremad'.</string>
+		<speak>15</speak>
+	</text>
+	<text>
+		<id>sim_stand_a_help_stand</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'støde fra med hænderne på madrassen og rejse sig op'.</string>
+		<speak>16</speak>
+	</text>
+	<text>
+		<id>sim_stand_a_state_forward</id>
+		<string>Du skal huske at bede borgeren om at komme frem på sengekanten.</string>
+	</text>
+	<text>
+		<id>sim_stand_a_state_legback</id>
+		<string>Du skal huske at bede borgeren om at placere fødderne i skridtstående.</string>
+	</text>
+	<text>
+		<id>sim_stand_a_state_lean</id>
+		<string>Du skal huske at bede borgeren om at læne kroppen fremad.</string>
+	</text>
+	<text>
+		<id>sim_stand_a_talk_forward</id>
+		<string>Kom frem på sengekanten</string>
+	</text>
+	<text>
+		<id>sim_stand_a_talk_legback</id>
+		<string>Placer fødderne i skridtstående</string>
+	</text>
+	<text>
+		<id>sim_stand_a_talk_lean</id>
+		<string>Læn kroppen fremad</string>
+	</text>
+	<text>
+		<id>sim_stand_a_talk_stand</id>
+		<string>Stød fra med hænderne på madrassen og rejs dig op</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_beddown</id>
+		<string>Du skal huske at sænke sengen.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_forward</id>
+		<string>Du skal huske at bede borgeren om at komme frem på sengekanten.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_walker</id>
+		<string>Du skal huske at placere rollatoren.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_feet</id>
+		<string>Du skal huske at bede borgeren om at  placere fødderne.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_hand</id>
+		<string>Du skal huske at bede borgeren om at placere en hånd på rollatoren.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_lean</id>
+		<string>Du skal huske at bede borgeren om at læne kroppen frem.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_state_stand</id>
+		<string>Du skal huske at bede borgeren om at være klar til at rejse sig op.</string>
+	</text>
+	<text>
+		<id>sim_stand_b_help_toolbox</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge sengekontrollen og rollatoren.</string>
+		<speak>17</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_forward</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'komme frem på sengekanten'.</string>
+		<speak>13</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_walker</id>
+		<string>Vælg rollatoren og placer den ca. en halv meter fra borgeren.</string>
+		<speak>18</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_feet</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'placere fødderne i skridtstående'.</string>
+		<speak>14</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_hand</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'placere en hånd på rollatoren og en på sengen'.</string>
+		<speak>19</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_lean</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'læne kroppen fremad'.</string>
+		<speak>15</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_prepare</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'være klar til at rejse sig op', når jeg hæver sengen.</string>
+		<speak>20</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_help_stand</id>
+		<string>Vælg sengekontrollen og hæv sengen lidt, så borgeren har hjælp til at rejse sig.</string>
+		<speak>21</speak>
+	</text>
+	<text>
+		<id>sim_stand_b_talk_forward</id>
+		<string>Kom frem på sengekanten</string>
+	</text>
+	<text>
+		<id>sim_stand_b_talk_feet</id>
+		<string>Placer fødderne i skridtstående</string>
+	</text>
+	<text>
+		<id>sim_stand_b_talk_hand</id>
+		<string>Placer en hånd på rollatoren, og en på
+sengen</string>
+	</text>
+	<text>
+		<id>sim_stand_b_talk_lean</id>
+		<string>Læn kroppen fremad</string>
+	</text>
+	<text>
+		<id>sim_stand_b_talk_stand</id>
+		<string>Vær klar til at rejse dig op, når jeg hæver
+sengen</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_beddown</id>
+		<string>Du skal huske at sænke sengen.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_assisthand</id>
+		<string>Du skal huske at bede din kollega om at placere en hånd på borgerens skulder.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_forward</id>
+		<string>Du skal huske at bede borgeren om at komme frem på sengekanten.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_walker</id>
+		<string>Du skal huske at placere rollatoren.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_feet</id>
+		<string>Du skal huske at bede borgeren om at placere fødderne.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_hand</id>
+		<string>Du skal huske at bede borgeren om at placeren en hånd på rollatoren.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_lean</id>
+		<string>Du skal huske at bede borgeren om at læne kroppen frem.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_state_stand</id>
+		<string>Du skal huske at bede borgeren om at være klar til at rejse sig op.</string>
+	</text>
+	<text>
+		<id>sim_stand_c_help_toolbox</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge sengekontrollen og rollatoren.</string>
+		<speak>17</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_assisthand</id>
+		<string>Før musen over din kollega og klik med venstre museknap.
+Fortæl din kollega, at han nu skal 'placere hånden på borgerens skulder'.</string>
+		<speak>2056</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_forward</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'komme frem på sengekanten'.</string>
+		<speak>13</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_walker</id>
+		<string>Vælg rollatoren og placer den ca. en halv meter fra borgeren.</string>
+		<speak>18</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_feet</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'placere fødderne i skridtstående'.</string>
+		<speak>14</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_hand</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'placere en hånd på rollatoren og en på sengen'.</string>
+		<speak>19</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_lean</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'læne kroppen fremad'.</string>
+		<speak>15</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_ready</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'være klar til at rejse sig op', når jeg hæver sengen.</string>
+		<speak>20</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_help_stand</id>
+		<string>Vælg sengekontrollen og hæv sengen lidt, så borgeren har hjælp til at rejse sig.</string>
+		<speak>21</speak>
+	</text>
+	<text>
+		<id>sim_stand_c_talk_forward</id>
+		<string>Kom frem på sengekanten</string>
+	</text>
+	<text>
+		<id>sim_stand_c_talk_feet</id>
+		<string>Placer fødderne i skridtstående</string>
+	</text>
+	<text>
+		<id>sim_stand_c_talk_hand</id>
+		<string>Placer en hånd på rollatoren og en på
+sengen</string>
+	</text>
+	<text>
+		<id>sim_stand_c_talk_lean</id>
+		<string>Læn kroppen fremad</string>
+	</text>
+	<text>
+		<id>sim_stand_c_talk_stand</id>
+		<string>Vær klar til at rejse dig op, når jeg hæver
+sengen</string>
+	</text>
+	<text>
+		<id>sim_stand_c_talk_assisthand</id>
+		<string>Placer din hånd på borgerens skulder</string>
+	</text>
+	<text>
+		<id>sim_sit_a_state_bend</id>
+		<string>Du skal huske at bede borgeren om at bøje benene.</string>
+	</text>
+	<text>
+		<id>sim_sit_a_state_arms</id>
+		<string>Du skal huske at bede borgeren om at flytte armene.</string>
+	</text>
+	<text>
+		<id>sim_sit_a_state_beddown</id>
+		<string>Du skal huske at sænke sengen.</string>
+	</text>
+	<text>
+		<id>sim_sit_a_help_bend</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'bøje benene op'.</string>
+		<speak>4</speak>
+	</text>
+	<text>
+		<id>sim_sit_a_help_arms</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'flytte armene ind til puden'.</string>
+		<speak>22</speak>
+	</text>
+	<text>
+		<id>sim_sit_a_help_situp</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'sætte højre hånd i madrassen, støde fra og sætte sig op'.</string>
+		<speak>2057</speak>
+	</text>
+	<text>
+		<id>sim_sit_a_talk_bend</id>
+		<string>Bøj benene op</string>
+	</text>
+	<text>
+		<id>sim_sit_a_talk_arms</id>
+		<string>Flyt armene ind til puden</string>
+	</text>
+	<text>
+		<id>sim_sit_a_talk_situp</id>
+		<string>Sæt dig op</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_bend</id>
+		<string>Du skal huske at bede borgeren om at bøje benene.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_arms</id>
+		<string>Du skal huske at bede borgeren om at flytte armene ind til puden.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_ready</id>
+		<string>Du skal huske at fortælle borgeren at hun skal være klar til at sætte sig op.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_bedhead</id>
+		<string>Du skal huske at hæve hovedgærdet af sengen.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_help_toolbox</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge sengekontrollen.</string>
+		<speak>24</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_help_bend</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'bøje benene op'. Hvis borgeren er gledet ned i sengen skal der først laves en forflytning 'højere op i sengen'.</string>
+		<speak>25</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_help_arms</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'sætte højre hånd i madrassen'.</string>
+		<speak>2058</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_help_ready</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'være klar til at sætte sig op, når hovedgærdet hæves'.</string>
+		<speak>26</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_help_bedhead</id>
+		<string>Vælg sengekontrollen og hæv hovedgærdet lidt, så borgeren får hjælp til at sætte sig op.</string>
+		<speak>27</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_help_lowerbed</id>
+		<string>Vælg sengekontrollen og sænk sengen.</string>
+		<speak>28</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_talk_bend</id>
+		<string>Bøj benene op</string>
+	</text>
+	<text>
+		<id>sim_sit_b_talk_arms</id>
+		<string>Sæt højre hånd i madrassen</string>
+	</text>
+	<text>
+		<id>sim_sit_b_talk_ready</id>
+		<string>Vær klar til at sætte dig op, når jeg hæver
+hovedgærdet.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_beddown</id>
+		<string>Du skal huske at sænke sengen.</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_psoas</id>
+		<string>Du skal huske at placere psoas-puden</string>
+	</text>
+	<text>
+		<id>sim_sit_b_state_help_psoas</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge sengekontrollen og psoas-puden.</string>
+		<speak>209</speak>
+	</text>
+	<text>
+		<id>sim_sit_b_state_help_psoas_place</id>
+		<string>Vælg psoas-puden og placer den bag ved borgeren.</string>
+		<speak>210</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_state_bend</id>
+		<string>Du skal huske at bøje borgerens ben.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_state_turn</id>
+		<string>Du skal huske at vende borgeren mod højre.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_state_sling</id>
+		<string>Du skal huske at placere sejlet.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_state_back</id>
+		<string>Du skal huske at vende borgeren om mod venstre.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_state_pull</id>
+		<string>Du skal huske at vende borgeren tilbage på ryggen.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_state_strops</id>
+		<string>Du skal huske at trække stropperne under borgerens ben.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_tool</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge sejlet</string>
+		<speak>29</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_bend</id>
+		<string>Før musen over borgerens hoved og klik med venstre muse knap.
+Fortæl borgeren, at i nu skal 'bøje benene'.</string>
+		<speak>30</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_turn</id>
+		<string>Før musen over borgerens hoved og klik med venstre muse knap.
+Fortæl borgeren, at i nu skal 'dreje om på højre side'.</string>
+		<speak>31</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_sling</id>
+		<string>Vælg sejlet og placer det under borgeren.</string>
+		<speak>32</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_back</id>
+		<string>Før musen over borgerens hoved og klik med venstre muse knap.
+Fortæl borgeren, at i nu skal 'dreje om på venstre side'.</string>
+		<speak>33</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_pull</id>
+		<string>Før musen over borgerens hoved og klik med venstre muse knap.
+Fortæl borgeren, at i nu skal 'dreje tilbage på ryggen'.</string>
+		<speak>34</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_strops</id>
+		<string>Før musen over borgerens hoved og klik med venstre muse knap.
+Fortæl borgeren, at i nu 'trækker stropperne under hendes ben'.</string>
+		<speak>35</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_help_cross</id>
+		<string>Før musen over borgerens hoved og klik med venstre muse knap.
+Fortæl borgeren, at I nu 'sætter stropperne ind i hinanden så de er krydset'.</string>
+		<speak>2059</speak>
+	</text>
+	<text>
+		<id>sim_sling_bed_talk_bend</id>
+		<string>Bøj benene</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_talk_turn</id>
+		<string>Vend dig mod højre side.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_talk_back</id>
+		<string>Vend dig mod venstre side.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_talk_pull</id>
+		<string>Vend dig tilbage på ryggen.</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_talk_strops</id>
+		<string>Nu trækker jeg stropperne under benene</string>
+	</text>
+	<text>
+		<id>sim_sling_bed_talk_cross</id>
+		<string>Nu sætter jeg stropperne ind i hinanden så de er krydset</string>
+	</text>
+	<text>
+		<id>sim_side_c_state_0</id>
+		<string>Du skal huske at fortælle borgeren at hun skal bøje benene.</string>
+	</text>
+	<text>
+		<id>sim_side_c_state_1</id>
+		<string>Du skal huske at fortælle borgeren at hun skal vende sig mod højre.</string>
+	</text>
+	<text>
+		<id>sim_side_c_state_2</id>
+		<string>Du skal huske at placere spilerdugen under borgerens venstre overkrop.</string>
+	</text>
+	<text>
+		<id>sim_side_c_state_3</id>
+		<string>Du skal huske at fortælle borgeren at hun skal vende sig mod venstre.</string>
+	</text>
+	<text>
+		<id>sim_side_c_state_4</id>
+		<string>Du skal huske at placere spilerdugen under borgerens højre overkrop.</string>
+	</text>
+	<text>
+		<id>sim_side_c_state_5</id>
+		<string>Du skal huske at fortælle borgeren at hun skal vende sig tilbage på ryggen.</string>
+	</text>
+	<text>
+		<id>sim_side_c_help_0</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge spilerdugen.</string>
+		<speak>37</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_1</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'bøje benene'.</string>
+		<speak>38</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'vende sig mod højre'.</string>
+		<speak>39</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_3</id>
+		<string>Vælg spilerdugen og placer den under borgerens venstre skulder og ned mod hoften.</string>
+		<speak>40</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_4</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'vende sig mod venstre'.</string>
+		<speak>41</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_5</id>
+		<string>Vælg spilerdugen og placer den under borgerens højre skulder og ned mod hoften.</string>
+		<speak>42</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_6</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'vende sig tilbage på ryggen'.</string>
+		<speak>43</speak>
+	</text>
+	<text>
+		<id>sim_side_c_help_7</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at I nu 'flytter hende til side i sengen'.</string>
+		<speak>44</speak>
+	</text>
+	<text>
+		<id>sim_side_c_talk_0</id>
+		<string>Bøj benene</string>
+	</text>
+	<text>
+		<id>sim_side_c_talk_1</id>
+		<string>Vend dig om mod højre side</string>
+	</text>
+	<text>
+		<id>sim_side_c_talk_2</id>
+		<string>Vend dig om mod venstre side</string>
+	</text>
+	<text>
+		<id>sim_side_c_talk_3</id>
+		<string>Vend dig tilbage på ryggen</string>
+	</text>
+	<text>
+		<id>sim_side_c_talk_4</id>
+		<string>Nu flytter vi dig til side i sengen</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_toolbox</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge din kollega, og spilerdugen.</string>
+		<speak>45</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_placehelper</id>
+		<string>Vælg din kollega placer ham på den modsatte side af sengen.</string>
+		<speak>46</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_bendLegs</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal bøje benene.</string>
+		<speak>47</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_turntoright</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal vende sig om på højre side (imens du placerer spilerdugen).</string>
+		<speak>48</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_slidemat</id>
+		<string>Vælg spilerdugen og placer den under borgerens venstre overkrop.</string>
+		<speak>49</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_onback</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal vende sig tilbage på ryggen.</string>
+		<speak>50</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_movebutt</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal løfte bagdelen (ud mod sengekanten).</string>
+		<speak>51</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_moveupper</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal løfte overkroppen (ud mod sengekanten).</string>
+		<speak>52</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_liftlegs</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal løfte benene (ud mod sengekanten).</string>
+		<speak>53</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_turntorightagain</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal vende sig om på højre side.</string>
+		<speak>54</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_slidematcorrect</id>
+		<string>Før musen over spilerdugen og klik med venstre museknap for at rette den til.</string>
+		<speak>177</speak>
+	</text>
+	<text>
+		<id>sim_hor_turn_help_pushbutt</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal skubbe bagdelen bagud (proceduren gentages indtil borger ligger helt ude ved sengekanten).</string>
+		<speak>55</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_a_help_start</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'flytte benene ind under sig, sætte hænderne på armlænene, læne sig frem og løfte sig tilbage i stolen'.</string>
+		<speak>2060</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_a_dialog_back</id>
+		<string>Sæt dig længere tilbage i stolen</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_leanleft</id>
+		<string>Du skal huske at bede borgeren om at læne sig til venstre.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_rightarm</id>
+		<string>Du skal huske at fjerne højre armlæn.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_placeright</id>
+		<string>Du skal huske at placere spilerdugen i højre side.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_rightback</id>
+		<string>Du skal huske at sætte højre armlæn på kørestolen.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_leanright</id>
+		<string>Du skal huske at bede borgeren om at læne sig til højre.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_leftarm</id>
+		<string>Du skal huske at fjerne venstre armlæn.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_placeleft</id>
+		<string>Du skal huske at placere spilerdugen i venstre side.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_leftback</id>
+		<string>Du skal huske at sætte venstre armlæn på kørestolen.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_state_placefeet</id>
+		<string>Du skal huske at bede borgeren om at rette sig op og placere fødderne fast på jorden.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_start</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge spilerdugen.</string>
+		<speak>37</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_toolbox</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'læne sig til venstre'.</string>
+		<speak>57</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_talk_0_0</id>
+		<string>Fjern højre armlæn ved, at føre musen over det og klik derefter på venstre museknap.</string>
+		<speak>58</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_armright</id>
+		<string>Vælg spilerdugen og placer det under borgerens højre side.</string>
+		<speak>59</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_slideright</id>
+		<string>Sæt det højre armlæn på igen, ved at føre musen over det og derefter klikke med venstre museknap.</string>
+		<speak>60</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_rightback</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'læne sig til højre'.</string>
+		<speak>61</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_talk_0_1</id>
+		<string>Fjern venstre armlæn ved, at føre musen over det og klik derefter på venstre museknap.</string>
+		<speak>62</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_armleft</id>
+		<string>Vælg spilerdugen og placer det under borgerens venstre side.</string>
+		<speak>63</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_slideleft</id>
+		<string>Sæt det venstre armlæn på igen, ved at føre musen over det og derefter klikke med venstre museknap.</string>
+		<speak>64</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_leftback</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'rette sig op og placere fødderne fast på jorden'.</string>
+		<speak>65</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_help_talk_0_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'sætte sig længere tilbage i stolen'.</string>
+		<speak>56</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_talk_0</id>
+		<string>Læn dig til venstre</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_talk_1</id>
+		<string>Læn dig til højre</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_talk_2</id>
+		<string>Ret dig op og placer fødderne fast på jorden</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_b_talk_3</id>
+		<string>Sæt dig længere tilbage i stolen</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_0</id>
+		<string>Du skal huske at bede borgeren om at læne sig til venstre.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_1</id>
+		<string>Du skal huske at fjerne højre armlæn.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_2</id>
+		<string>Du skal huske at placere spilerdugen i højre side.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_3</id>
+		<string>Du skal huske at sætte højre armlæn på kørestolen.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_4</id>
+		<string>Du skal huske at bede borgeren om at læne sig til højre.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_5</id>
+		<string>Du skal huske at fjerne venstre armlæn.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_6</id>
+		<string>Du skal huske at placere spilerdugen i venstre side.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_7</id>
+		<string>Du skal huske at sætte venstre armlæn på kørestolen.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_8</id>
+		<string>Du skal huske at placere en skammel.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_9</id>
+		<string>Du skal huske at placere hænderne på borgerens højre skulder og venstre knæ.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_10</id>
+		<string>Du skal huske at bede borgeren skubbe højre side bagud.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_state_11</id>
+		<string>Du skal huske at placere hænderne på borgerens venstre skulder og højre knæ.</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_0</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge spilerdugen og en skammel.</string>
+		<speak>67</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_1</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'læne sig til venstre'.</string>
+		<speak>57</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_2</id>
+		<string>Fjern højre armlæn ved, at føre musen over det og klik derefter på venstre museknap.</string>
+		<speak>58</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_3</id>
+		<string>Vælg spilerdugen og placer det under borgerens højre side.</string>
+		<speak>59</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_4</id>
+		<string>Sæt det højre armlæn på igen, ved at føre musen over det og derefter klikke med venstre museknap.</string>
+		<speak>60</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_5</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'læne sig til højre'.</string>
+		<speak>61</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_6</id>
+		<string>Fjern venstre armlæn ved, at føre musen over det og klik derefter på venstre museknap.</string>
+		<speak>62</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_7</id>
+		<string>Vælg spilerdugen og placer det under borgerens venstre side.</string>
+		<speak>63</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_8</id>
+		<string>Sæt det venstre armlæn på igen, ved at føre musen over det og derefter klikke med venstre museknap.</string>
+		<speak>64</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_9</id>
+		<string>Vælg en skammel og placer den foran borgeren.</string>
+		<speak>68</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_10</id>
+		<string>Før musen over borgerens venstre knæ og klik med venstre museknap for, at placere hænderne på højre skulder og venstre knæ.</string>
+		<speak>69</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_11</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'skubbe højre side bagud'.</string>
+		<speak>70</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_12</id>
+		<string>Før musen over borgerens højre knæ og klik med venstre museknap for, at placere hænderne på venstre skulder og højre knæ.</string>
+		<speak>71</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_help_13</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'skubbe venstre side bagud'.</string>
+		<speak>72</speak>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_talk_0</id>
+		<string>Læn dig til venstre</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_talk_1</id>
+		<string>Læn dig til højre</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_talk_2</id>
+		<string>Skub højre side bagud</string>
+	</text>
+	<text>
+		<id>sim_back_in_chair_c_talk_3</id>
+		<string>Skub venstre side bagud</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_0</id>
+		<string>Du skal huske at bede borgeren om at bøje benene.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_1</id>
+		<string>Du skal huske at bede borgeren om at vende sig mod højre.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_2</id>
+		<string>Du skal huske at vælge spilerdugen og placere den under borgerens venstre overkrop.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_3</id>
+		<string>Du skal huske at bede borgeren om at vende sig mod venstre.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_4</id>
+		<string>Du skal huske at vælge spilerdugen og placere den under borgerens højre overkrop.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_5</id>
+		<string>Du skal huske at bede borgeren om at vende sig tilbage på ryggen.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_6</id>
+		<string>Du skal huske at hæve sengens fodende.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_7</id>
+		<string>Du skal huske at fortælle borgeren at hun skal løfte fødderne når du placerer den skridsikre måtte.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_8</id>
+		<string>Du skal huske at placere den skridsikre måtte.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_state_9</id>
+		<string>Du skal huske at flytte borgeren højere op i sengen.</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_0</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge spilerdugen og den skridsikre måtte.</string>
+		<speak>2061</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_1</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'bøje benene'.</string>
+		<speak>38</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'vende sig mod højre'.</string>
+		<speak>39</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_3</id>
+		<string>Vælg spilerdugen og placer den under borgerens venstre skulder og ned mod hoften.</string>
+		<speak>40</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_4</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'vende sig mod venstre'.</string>
+		<speak>41</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_5</id>
+		<string>Vælg spilerdugen og placer den under borgerens højre skulder og ned mod hoften.</string>
+		<speak>42</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_6</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'vende sig tilbage på ryggen'.</string>
+		<speak>43</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_7</id>
+		<string>Vælg sengekontrollen og hæv sengens fodende.</string>
+		<speak>74</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_8</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'løfte fødderne, når du placerer den skridsikre måtte'.</string>
+		<speak>75</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_9</id>
+		<string>Vælg den skridsikre måtte og placer den under borgerens fødder</string>
+		<speak>76</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_10</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal løfte hovedet mens I flytter hende højere op i sengen ved at trække i lagnet.</string>
+		<speak>2062</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_help_11</id>
+		<string>Vælg sengekontrollen og sænk sengens fodende ned i vandret position.</string>
+		<speak>78</speak>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_talk_0</id>
+		<string>Bøj benene op</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_talk_1</id>
+		<string>Vend dig om mod højre side (Kollega trækker i stiklagnet)</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_talk_2</id>
+		<string>Vend dig om mod venstre side (hjælper trækker i stiklagnet)</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_talk_3</id>
+		<string>Vend dig tilbage på ryggen</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_talk_4</id>
+		<string>Løft fødderne når jeg placerer den skridsikre måtte (Hvis borger 
+ikke selv kan løfte fødderne placeres der spilerdug under benene)</string>
+	</text>
+	<text>
+		<id>sim_high_bed_draw_talk_5</id>
+		<string>Løft hovedet - Nu flytter vi dig længere op i sengen</string>
+	</text>
+	<text>
+		<id>sim_high_up_a_state_0</id>
+		<string>Du skal huske at sænke sengens hovedgærde.</string>
+	</text>
+	<text>
+		<id>sim_high_up_a_state_1</id>
+		<string>Du skal huske at bede borgeren om at bøje benene.</string>
+	</text>
+	<text>
+		<id>sim_high_up_a_state_2</id>
+		<string>Du skal huske at hæve sengens fodende.</string>
+	</text>
+	<text>
+		<id>sim_high_up_a_help_0</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge sengekontrollen.</string>
+		<speak>24</speak>
+	</text>
+	<text>
+		<id>sim_high_up_a_help_1</id>
+		<string>Vælg sengekontrollen sænk sengens hovedgærde helt ned.</string>
+		<speak>79</speak>
+	</text>
+	<text>
+		<id>sim_high_up_a_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'bøje benene'.</string>
+		<speak>38</speak>
+	</text>
+	<text>
+		<id>sim_high_up_a_help_3</id>
+		<string>Vælg sengekontrollen og hæv sengens fodende lidt.</string>
+		<speak>80</speak>
+	</text>
+	<text>
+		<id>sim_high_up_a_help_4</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'skubbe sig højere op i sengen'</string>
+		<speak>2063</speak>
+	</text>
+	<text>
+		<id>sim_high_up_a_help_5</id>
+		<string>Vælg sengekontrollen og sænk sengens fodende til vandret position.</string>
+		<speak>211</speak>
+	</text>
+	<text>
+		<id>sim_high_up_a_talk_0</id>
+		<string>Bøj benene op</string>
+	</text>
+	<text>
+		<id>sim_high_up_a_talk_1</id>
+		<string>Skub dig højere op i sengen, ved at rulle fra side til side</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_0</id>
+		<string>Du skal huske at bede borgeren om at bøje benene</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_1</id>
+		<string>Du skal huske at bede borgeren om at vende sig mod højre</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_2</id>
+		<string>Du skal huske at placere spilerdugen under borgerens venstre skulder</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_3</id>
+		<string>Du skal huske at bede borgeren om at vende sig mod venstre</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_4</id>
+		<string>Du skal huske at placere spilerdugen under borgerens højre skulder</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_5</id>
+		<string>Du skal huske at bede borgeren om at vende sig tilbage på ryggen</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_6</id>
+		<string>Du skal huske at placere lagnet</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_7</id>
+		<string>Du skal huske at hæve fodenden af sengen</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_8</id>
+		<string>Du skal huske at bede borgeren om at løfte fødderne når du placerer den skridsikre måtte</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_9</id>
+		<string>Du skal huske at placere den skridsikre måtte</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_state_10</id>
+		<string>Du skal huske at fortælle borgeren at I nu flytter hende højere i sengen</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_0</id>
+		<string>Vælg det rigtige værktøj til forflytningen.
+Til denne forflytning skal du bruge den skridsikre måtte, spilerdugen og lagnet.</string>
+		<speak>109</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_1</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'bøje benene'.</string>
+		<speak>38</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'vende sig mod højre'.</string>
+		<speak>39</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_3</id>
+		<string>Vælg spilerdugen og placer den under borgerens venstre skulder og ned mod hoften.</string>
+		<speak>40</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_4</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'vende sig mod venstre'.</string>
+		<speak>41</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_5</id>
+		<string>Vælg spilerdugen og placer den under borgerens højre skulder og ned mod hoften.</string>
+		<speak>42</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_6</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'vende sig tilbage på ryggen'.</string>
+		<speak>43</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_65</id>
+		<string>Vælg lagnet og placer det under borgerens lår.</string>
+		<speak>212</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_7</id>
+		<string>Vælg sengekontrollen og hæv sengens fodende.</string>
+		<speak>74</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_8</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'løfte fødderne, når du placerer den skridsikre måtte'.</string>
+		<speak>75</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_9</id>
+		<string>Vælg den skridsikre måtte og placer den under borgerens fødder.</string>
+		<speak>76</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_10</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal løfte hovedet mens I flytter hende højere op i sengen ved at trække i lagnet.</string>
+		<speak>2064</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_help_11</id>
+		<string>Vælg sengekontrollen og sænk sengens fodende til vandret position.</string>
+		<speak>211</speak>
+	</text>
+	<text>
+		<id>sim_high_up_c_talk_0</id>
+		<string>Bøj benene</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_talk_1</id>
+		<string>Vend dig om mod højre</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_talk_2</id>
+		<string>Vend dig om mod venstre</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_talk_3</id>
+		<string>Vend dig tilbage på ryggen</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_talk_4</id>
+		<string>Løft fødderne når jeg placerer den skridsikre måtte</string>
+	</text>
+	<text>
+		<id>sim_high_up_c_talk_5</id>
+		<string>Skub fra med benene og løft hovedet 
+mens vi flytter dig højere op i sengen</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_0</id>
+		<string>Husk at fortælle borgeren, at hun skal løfte hovedet og se væk fra dig (Imens du trækker hovedpudens hjørne ned under borgerens frie skulderblad)</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_1</id>
+		<string>Husk at fortælle borgeren, at hun skal løfte hovedet og se på dig (Imens du trækker hovedpudens hjørne ned under borgerens frie skulderblad)</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_2</id>
+		<string>Husk at placere spilerdugen under puden</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_3</id>
+		<string>Husk at fortælle borgeren, at hun skal løfte hovedet og se på dig (Imens du trækker spilerdugen ned under borgerens frie skulderblad)</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_4</id>
+		<string>Husk at fortælle borgeren, at hun skal løfte hovedet og se væk fra dig (Imens du trækker spilerdugen ned under borgerens frie skulderblad)</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_5</id>
+		<string>Du skal huske at hæve sengens fodende</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_55</id>
+		<string>Du skal huske at bede borgeren om at løfte fødderne</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_6</id>
+		<string>Du skal huske at placere den skridsikre måtte</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_7</id>
+		<string>Husk at fortælle borgeren, at hun skal løfte bagdelen og skubbe sig højere op i sengen (Proceduren gentages til borger ligger korrekt i sengen)</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_state_8</id>
+		<string>Husk at sænke sengens fodende</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_0</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge sengekontrollen, spilerdugen og den skridsikre måtte.</string>
+		<speak>83</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_1</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal løfte hovedet og se væk fra dig (Imens du trækker hovedpudens hjørne ned under borgerens frie skulderblad).</string>
+		<speak>84</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal løfte hovedet og se på dig (Imens du trækker hovedpudens hjørne ned under borgerens frie skulderblad).</string>
+		<speak>85</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_3</id>
+		<string>Vælg spilerdugen og placer det under puden.</string>
+		<speak>86</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_4</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal løfte hovedet og se væk fra dig (Imens du trækker spilerdugen ned under borgerens frie skulderblad).</string>
+		<speak>88</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_5</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal løfte hovedet og se på dig (Imens du trækker spilerdugen ned under borgerens frie skulderblad).</string>
+		<speak>87</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_6</id>
+		<string>Vælg sengekontrollen og hæv sengens fodende.</string>
+		<speak>74</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_65</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at hun skal løfte fødderne når du placerer den skridsikre måtte.</string>
+		<speak>89</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_7</id>
+		<string>Vælg den skridsikre og placer den under borgerens fødder.</string>
+		<speak>90</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_8</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal løfte bagdelen og skubbe sig højere op i sengen (Proceduren gentages til borger ligger korrekt i sengen)</string>
+		<speak>91</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_9</id>
+		<string>Vælg sengekontrollen og sænk sengens fodende igen. ”husk at fjerne spilerdug og skridsikker måtte, når forflytningen er udført”</string>
+		<speak>92</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_help_10</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal løfte hovedet (Imens du fjerner spilerdugen).</string>
+		<speak>93</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_0</id>
+		<string>Løft hovedet og se væk fra mig</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_1</id>
+		<string>Løft hovedet og se på mig</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_2</id>
+		<string>Løft hovedet og se væk fra mig</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_3</id>
+		<string>Løft hovedet og se på mig</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_35</id>
+		<string>Løft fødderne når jeg placerer
+den skridsikre måtte</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_4</id>
+		<string>Løft bagdelen og skub dig højere op i sengen</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_pil_talk_5</id>
+		<string>Løft hovedet</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_0</id>
+		<string>Du skal huske at placere din kollega</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_1</id>
+		<string>Du skal huske at bede borgeren om, at hun skal løfte hovedet og se på din kollega, imens du trækker hovedpudens hjørne ned under borgerens frie skulderblad</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_2</id>
+		<string>Du skal huske at bede borgeren om, at hun skal løfte hovedet og se på dig, imens din kollega trækker hovedpudens hjørne ned under borgerens frie skulderblad</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_3</id>
+		<string>Du skal huske at bede borgeren om, at bøje benene</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_4</id>
+		<string>Du skal huske at bede borgeren om, at vende sig om på højre side</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_5</id>
+		<string>Du skal huske at placere spilerdugen</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_6</id>
+		<string>Du skal huske at bede borgeren om, at vende sig tilbage på ryggen og se på dig</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_7</id>
+		<string>Du skal huske at bede borgeren om, at vende sig tilbage på ryggen</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_8</id>
+		<string>Du skal huske at hæve sengens fodende</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_85</id>
+		<string>Du skal huske at bede borgeren om at løfte fødderne</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_9</id>
+		<string>Du skal huske at placere den skridsikre måtte</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_state_10</id>
+		<string>Du skal huske at bede borgeren om, at løfte bagdelen og skubbe sig højere op i sengen</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_0</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge din kollega, sengekontrollen, spilerdugen og den skridsikre måtte.</string>
+		<speak>178</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_1</id>
+		<string>Vælg din kollega og placer ham på den modsatte side af sengen.</string>
+		<speak>179</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal løfte hovedet og se på din kollega (Imens du trækker hovedpudens hjørne ned under borgerens frie skulderblad).</string>
+		<speak>180</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_3</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal løfte hovedet og se på dig (Imens din kollega trækker hovedpudens hjørne ned under borgerens frie skulderblad).</string>
+		<speak>181</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_4</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal bøje benene.</string>
+		<speak>47</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_5</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal vende sig om på højre side.</string>
+		<speak>54</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_6</id>
+		<string>Vælg spilerdugen og placer det under borgerens venstre overkrop.</string>
+		<speak>182</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_7</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal vende sig tilbage på ryggen og derefter løfte hovedet og se på dig (Imens din kollega retter på spilerdugen).</string>
+		<speak>183</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_8</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal vende sig tilbage på ryggen.</string>
+		<speak>50</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_9</id>
+		<string>Vælg sengekontrollen og hæv sengens fodende.</string>
+		<speak>74</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_95</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at hun skal 'løfte fødderne når du placerer den skridsikre måtte'.</string>
+		<speak>184</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_10</id>
+		<string>Vælg den skridsikre måtte og placer den under borgerens ben.</string>
+		<speak>185</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_11</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal (løfte bagdelen) og skubbe sig højere op i sengen (Proceduren gentages til borger ligger korrekt i sengen)</string>
+		<speak>186</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_help_12</id>
+		<string>Vælg sengekontrollen og sænk sengens fodende igen. ”husk at fjerne spilerdug og skridsikker måtte, når forflytningen er udført”</string>
+		<speak>92</speak>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_0</id>
+		<string>Løft hovedet og se på min kollega</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_1</id>
+		<string>Løft hovedet og se på mig</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_2</id>
+		<string>Bøj benene</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_3</id>
+		<string>Vend dig om på højre side</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_4</id>
+		<string>Vend dig tilbage på ryggen, løft hovedet og se på mig</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_5</id>
+		<string>Vend dig tilbage på ryggen</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_55</id>
+		<string>Løft fødderne når jeg placere
+den skridsikre måtte</string>
+	</text>
+	<text>
+		<id>sim_hor_high_bed_sli_talk_6</id>
+		<string>Skub dig højere i sengen (løft bagdelen hvis du kan)</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_0</id>
+		<string>Husk at placere sengen i en siddende position</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_01</id>
+		<string>Husk at sænke knækket under borgerens knæ</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_02</id>
+		<string>Husk at sænke sengens fodende</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_1</id>
+		<string>Husk at fortælle borgeren, at hun skal flytte benet ud over sengekanten</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_2</id>
+		<string>Husk at fortælle borgeren, at hun skal læne sig frem</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_3</id>
+		<string>Husk at fortælle borgeren, at hun skal flytte det inderste ben ud mod sengekanten</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_4</id>
+		<string>Husk at fortælle borgeren, at hun skal flytte det yderste ben ind igen</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_state_5</id>
+		<string>Du skal huske at flytte det inderste ben over sengekanten</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_0</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge sengekontrollen.</string>
+		<speak>24</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_1</id>
+		<string>Vælg sengekontrollen og hæv sengen til en siddende position. Vær opmærksom på at borgeren i udgangspositionen skal være placeret ud til sengekanten og helt op til hovedgærdet.</string>
+		<speak>187</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_11</id>
+		<string>Vælg sengekontrollen og sænk knækket under knæene.</string>
+		<speak>188</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_12</id>
+		<string>Vælg sengekontrollen og sænk sengens fodende.</string>
+		<speak>189</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal flytte det yderste ben ud over sengekanten.</string>
+		<speak>190</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_3</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal læne sig frem (imens du placerer puden bag hendes lænd)</string>
+		<speak>191</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_4</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Læg derefter vægten over på (venstre) balde og flyt det inderste ben ud mod sengekanten.</string>
+		<speak>192</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_5</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Læg derefter vægten over på (højre) balde og flyt det yderste ben igen.</string>
+		<speak>193</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_6</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Læg derefter vægten over på (venstre) balde og flyt det inderste ben ud over sengekanten (Proceduren gentages til borgeren sidder korrekt på sengen)</string>
+		<speak>194</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_help_7</id>
+		<string>Vælg sengekontrollen og sænk sengen.</string>
+		<speak>28</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_talk_0</id>
+		<string>Flyt det yderste ben ud over sengekanten</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_talk_1</id>
+		<string>Læn dig frem</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_talk_2</id>
+		<string>Læg vægten over på (venstre) balde
+og flyt det inderste ben ud mod sengekanten</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_talk_3</id>
+		<string>Læg vægten over på (højre) balde og flyt det yderste ben igen.</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_up_on_bed_talk_4</id>
+		<string>Flyt nu det inderste ben ud over sengekanten
+så du kommer op at sidde</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_0</id>
+		<string>Du skal huske at placere skamlerne</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_1</id>
+		<string>Du skal huske at hæve sengen</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_2</id>
+		<string>Du skal huske at bede borgeren om at sætte fødderne på skamlen</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_3</id>
+		<string>Du skal huske at sænke sengen</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_4</id>
+		<string>Du skal huske at sænke fodenden på sengen</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_5</id>
+		<string>Du skal huske at bede borgeren om at løfte benet op i sengen</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_state_6</id>
+		<string>Du skal huske at bede borgeren om at løfte det andet ben op i sengen</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_0</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen
+Til denne forflytning skal du bruge sengekontrollen og en skammel.</string>
+		<speak>195</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_1</id>
+		<string>Vælg skamlen og placer den.
+Læg mærke til at borgeren sidder på sengekanten langt tilbage og lidt på skrå og hovedgærdet er hævet.</string>
+		<speak>196</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_2</id>
+		<string>Vælg sengekontrollen og hæv sengen.</string>
+		<speak>197</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_3</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal sætte fødderne op på skamlen.</string>
+		<speak>198</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_4</id>
+		<string>Vælg sengekontrollen og sænk sengen.</string>
+		<speak>28</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_5</id>
+		<string>Sænk sengens fodende helt ned under sengerammen.</string>
+		<speak>199</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_6</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal lægge sig ned og løfte benet op i sengen.</string>
+		<speak>200</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_7</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal løfte det andet ben op i sengen.</string>
+		<speak>201</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_help_8</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal løfte bagdelen ind i sengen.</string>
+		<speak>202</speak>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_talk_0</id>
+		<string>Sæt fødderne op på skamlen</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_talk_1</id>
+		<string>Læg dig ned og løft benet op i sengen</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_talk_2</id>
+		<string>Løft det andet ben op i sengen</string>
+	</text>
+	<text>
+		<id>sim_hor_sitting_to_lying_talk_3</id>
+		<string>Løft bagdelen ind i sengen</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_state_0</id>
+		<string>Du skal huske at placere rollatoren</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_state_1</id>
+		<string>Du skal huske at låse rollatoren</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_state_2</id>
+		<string>Du skal huske at bede borgeren om at trække fødderne ind</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_state_3</id>
+		<string>Du skal huske at bede borgeren om at sætte hænderne på rollatoren</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_state_4</id>
+		<string>Du skal huske at bede borgeren om at hun skal gøre sig klar til at rejse sig</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_state_5</id>
+		<string>Du skal huske at hæve sengen</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_0</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge sengekontrollen og rollatoren.</string>
+		<speak>17</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_1</id>
+		<string>Vælg rollatoren fra værktøjskassen.
+Placer derefter rollatoren ca. en halv meter foran borgeren.</string>
+		<speak>203</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_2</id>
+		<string>Før musen over rollatorens lås og klik med venstre museknap for at låse den.</string>
+		<speak>204</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_3</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal trække fødderne ind under sig.</string>
+		<speak>205</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_4</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal sætte hænderne på rollatorpladen.</string>
+		<speak>206</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_5</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal rejse sig op når du hæver sengen.</string>
+		<speak>207</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_6</id>
+		<string>Vælg sengekontrollen og hæv sengen.</string>
+		<speak>197</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_help_7</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal tage fat i rollatoren.</string>
+		<speak>208</speak>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_talk_0</id>
+		<string>Træk fødderne ind under dig</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_talk_1</id>
+		<string>Sæt hænderne på rollatorpladen</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_talk_2</id>
+		<string>Rejs dig op når jeg hæver sengen</string>
+	</text>
+	<text>
+		<id>sim_hor_sit_to_stand_talk_3</id>
+		<string>Tag fat i rollatoren</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_0</id>
+		<string>Du skal huske at placere din kollega</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_1</id>
+		<string>Du skal huske at bede borgeren om at bøje benene</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_2</id>
+		<string>Du skal huske at bede borgeren vende sig til højre (imens du placerer spilerdugen)</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_3</id>
+		<string>Du skal huske at placere spilerdugen</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_4</id>
+		<string>Du skal huske at bede borgeren om at vende sig tilbage på ryggen</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_5</id>
+		<string>Du skal huske at bede borgeren om at løfte bagdelen</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_6</id>
+		<string>Du skal huske at bede borgeren om at løfte overkroppen</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_7</id>
+		<string>Du skal huske at bede borgeren om at løfte benene</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_8</id>
+		<string>Du skal huske at bede borgeren vende sig om på højre side</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_state_9</id>
+		<string>Du skal huske at klikke på spilerdugen</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_0</id>
+		<string>Bøj benene</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_1</id>
+		<string>Vend dig om på højre side
+(imens du placerer spilerdugen)</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_2</id>
+		<string>Vend dig tilbage på ryggen</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_3</id>
+		<string>Løft bagdelen (ud mod sengekanten)</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_4</id>
+		<string>Løft overkroppen (ud mod sengekanten)</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_5</id>
+		<string>Løft benene (ud mod sengekanten)</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_6</id>
+		<string>Vend dig om på højre side</string>
+	</text>
+	<text>
+		<id>sim_hor_turn_to_side_talk_7</id>
+		<string>Skub bagdelen bagud</string>
+	</text>
+	<text>
+		<id>sim_lie_down_a_state_0</id>
+		<string>Du skal huske at bede borgeren om at sætte sig helt ind på sengen.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_a_state_1</id>
+		<string>Du skal huske at bede borgeren om at komme ned på underarmen.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_a_help_0</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'sætte sig helt ind på sengen'.</string>
+		<speak>98</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_a_help_1</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'komme ned på underarmen'.</string>
+		<speak>94</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_a_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'løfte benene op og lægge sig ned'.</string>
+		<speak>95</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_a_talk_0</id>
+		<string>Sæt dig helt ind på sengen</string>
+	</text>
+	<text>
+		<id>sim_lie_down_a_talk_1</id>
+		<string>Sæt venstre hånd i madrassen og kom ned på underarmen</string>
+	</text>
+	<text>
+		<id>sim_lie_down_a_talk_2</id>
+		<string>Løft benene op i sengen samtidig med
+at du drejer overkroppen</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_state_0</id>
+		<string>Du skal huske at hæve hovedgærdet af sengen.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_state_1</id>
+		<string>Du skal huske at bede borgeren om at sætte sig så langt ind på sengen som muligt.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_state_2</id>
+		<string>Du skal huske at bede borgeren om at læne sig ind mod hovedpuden.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_state_3</id>
+		<string>Du skal huske at fjerne sengegærdet.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_state_4</id>
+		<string>Du skal huske at placere spilerdugen.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_state_5</id>
+		<string>Du skal huske at placere lagnet omkring borgerens ankler.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_0</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge sengekontrollen, spilerdugen, og lagnet.</string>
+		<speak>96</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_1</id>
+		<string>Vælg sengekontrollen og hæv sengens hovedgærde.</string>
+		<speak>97</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'sætte sig helt ind på sengen'.</string>
+		<speak>98</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_3</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at hun skal 'læne sig ind mod hovedpuden'.</string>
+		<speak>99</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_4</id>
+		<string>Før musen over endegavlen, og klik med venstre museknap for, at fjerne den.</string>
+		<speak>2066</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_5</id>
+		<string>Vælg spilerdugen og placer den i fodenden, så noget hænger ud over sengekanten.</string>
+		<speak>101</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_6</id>
+		<string>Vælg lagnet og placer det omkring borgerens ankler.</string>
+		<speak>102</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_help_7</id>
+		<string>Før musen over borgeren, og klik med venstre museknap.
+Fortæl borgeren at hun skal 'sænke sengens hovedgærde, mens du hjælper hendes ben op i sengen, ved brug af lagnet'.</string>
+		<speak>2065</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_b_talk_0</id>
+		<string>Sæt dig helt ind på sengen</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_talk_1</id>
+		<string>Læn dig ind mod hovedpuden</string>
+	</text>
+	<text>
+		<id>sim_lie_down_b_talk_2</id>
+		<string>Sænk sengens hovedgærde, mens jeg hjælper dine ben op i sengen</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_state_0</id>
+		<string>Du skal huske at hæve hovedgærdet af sengen.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_state_1</id>
+		<string>Du skal huske at bede borgeren om at læne sig ind mod hovedpuden.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_state_2</id>
+		<string>Du skal huske at fjerne sengegærdet.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_state_3</id>
+		<string>Du skal huske at placere spilerdugen.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_state_4</id>
+		<string>Du skal huske at placere lagnet omkring borgerens ankler.</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_0</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge sengekontrollen, spilerdugen, og lagnet.</string>
+		<speak>96</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_1</id>
+		<string>Vælg sengekontrollen og hæv hovedgærdet på sengen.</string>
+		<speak>105</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_2</id>
+		<string>Før musen over borgerens hoved, og klik med venstre museknap.
+Fortæl borgeren at hun skal 'læne sig ind mod hovedpuden'.</string>
+		<speak>99</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_3</id>
+		<string>Før musen over endegavlen, og klik med venstre museknap for, at fjerne den.</string>
+		<speak>2066</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_4</id>
+		<string>Vælg spilerdugen og placer den i fodenden, så noget hænger ud over sengekanten.</string>
+		<speak>101</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_5</id>
+		<string>Vælg lagnet og placer det omkring borgerens ankler.</string>
+		<speak>102</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_help_6</id>
+		<string>Før musen over din kollega, og klik med venstre museknap.
+Fortæl din kollega at han skal 'sænke sengens hovedgærde, når du hjælper benene op i sengen, ved brug af lagnet'.  brug evt. sengebånd, rebstige mv.</string>
+		<speak>2067</speak>
+	</text>
+	<text>
+		<id>sim_lie_down_c_talk_0</id>
+		<string>Læn dig ind mod hovedpuden</string>
+	</text>
+	<text>
+		<id>sim_lie_down_c_talk_1</id>
+		<string>Sænk sengens hovedgærde</string>
+	</text>
+	<text>
+		<id>sim_side_b_state_0_extra</id>
+		<string>Du skal huske at fortælle borgeren at hun skal løfte fødderne når du placerer den skridsikre måtte.</string>
+	</text>
+	<text>
+		<id>sim_side_b_state_0</id>
+		<string>Du skal huske at placere den skridsikre måtte.</string>
+	</text>
+	<text>
+		<id>sim_side_b_state_1</id>
+		<string>Du skal huske at bede borgeren om at vende sig mod højre.</string>
+	</text>
+	<text>
+		<id>sim_side_b_state_2</id>
+		<string>Du skal huske at placere spilerdugen.</string>
+	</text>
+	<text>
+		<id>sim_side_b_state_3</id>
+		<string>Du skal huske at bede borgeren om at vende sig over mod dig.</string>
+	</text>
+	<text>
+		<id>sim_side_b_state_4</id>
+		<string>Du skal huske at flytte borgere ind midt på sengen.</string>
+	</text>
+	<text>
+		<id>sim_side_b_help_0</id>
+		<string>Vælg det rigtige værktøj til forflytningen.
+Til denne forflytning skal du bruge den skridsikre måtte, spilerdugen og lagnet.</string>
+		<speak>109</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_0_extra</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap. Fortæl borgeren, at hun skal 'løfte fødderne, når du placerer den skridsikre måtte'.</string>
+		<speak>75</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_1</id>
+		<string>Vælg den skridsikre måtte, og placer den under borgerens ben.</string>
+		<speak>110</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal vende sig om mod højre side.</string>
+		<speak>111</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_3</id>
+		<string>Vælg spilerdugen og placer den under borgerens venstre overkrop.</string>
+		<speak>49</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_4</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at hun skal vende sig om mod dig.</string>
+		<speak>112</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_5</id>
+		<string>Før musen over lagnet, og klik med venstre museknap for at trække borgeren ind midt på sengen.</string>
+		<speak>113</speak>
+	</text>
+	<text>
+		<id>sim_side_b_help_6</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl burgeren at hun skal vende sig tilbage på ryggen.</string>
+		<speak>114</speak>
+	</text>
+	<text>
+		<id>sim_side_b_talk_0_extra</id>
+		<string>Løft fødderne når jeg placerer den skridsikre måtte (Hvis borger
+ikke selv kan løfte fødderne placeres der spilerdug under benene)</string>
+	</text>
+	<text>
+		<id>sim_side_b_talk_0</id>
+		<string>Vend dig om mod højre side</string>
+	</text>
+	<text>
+		<id>sim_side_b_talk_1</id>
+		<string>Vend dig over mod mig</string>
+	</text>
+	<text>
+		<id>sim_side_b_talk_2</id>
+		<string>Vend dig tilbage på ryggen</string>
+	</text>
+	<text>
+		<id>sim_turn_c_state_0</id>
+		<string>Du skal huske at fortælle borgeren at hun skal bøje benene.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_state_1</id>
+		<string>Du skal huske at fortælle borgeren at hun skal vende sig mod højre.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_state_2</id>
+		<string>Du skal huske at placere spilerdugen under borgerens venstre overkrop.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_state_3</id>
+		<string>Du skal huske at fortælle borgeren at hun skal vende sig mod venstre.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_state_4</id>
+		<string>Du skal huske at placere spilerdugen under borgerens højre overkrop.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_state_5</id>
+		<string>Du skal huske at fortælle borgeren at hun skal vende sig tilbage på ryggen.</string>
+	</text>
+	<text>
+		<id>sim_turn_c_help_0</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge spilerdugen.</string>
+		<speak>37</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_1</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'bøje benene'.</string>
+		<speak>38</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'vende sig mod højre'.</string>
+		<speak>39</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_3</id>
+		<string>Vælg spilerdugen og placer den under borgerens venstre skulder og ned mod hoften.</string>
+		<speak>40</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_4</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'vende sig mod venstre'.</string>
+		<speak>41</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_5</id>
+		<string>Vælg spilerdugen og placer den under borgerens højre skulder og ned mod hoften.</string>
+		<speak>42</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_6</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'vende sig tilbage på ryggen'.</string>
+		<speak>43</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_help_7</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at I nu 'vender hende om på siden'.</string>
+		<speak>115</speak>
+	</text>
+	<text>
+		<id>sim_turn_c_talk_0</id>
+		<string>Bøj benene</string>
+	</text>
+	<text>
+		<id>sim_turn_c_talk_1</id>
+		<string>Vend dig om mod højre side</string>
+	</text>
+	<text>
+		<id>sim_turn_c_talk_2</id>
+		<string>Vend dig om mod venstre side</string>
+	</text>
+	<text>
+		<id>sim_turn_c_talk_3</id>
+		<string>Vend dig tilbage på ryggen</string>
+	</text>
+	<text>
+		<id>sim_turn_c_talk_4</id>
+		<string>Nu vender vi dig om på siden</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_0</id>
+		<string>Du skal huske at borgeren skal bøje benene</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_1</id>
+		<string>Du skal huske at borgeren skal vende sig om mod venstre</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_2</id>
+		<string>Du skal huske at placere spilerdugen</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_3</id>
+		<string>Du skal huske at borgeren skal bevæge sig tilbage på ryggen</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_4</id>
+		<string>Du skal huske at slå sengehesten op</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_5</id>
+		<string>Du skal huske at borgeren vende sig mod højre</string>
+	</text>
+	<text>
+		<id>sim_turn_b_state_6</id>
+		<string>Du skal huske at borgeren skal tage fat i sengehesten</string>
+	</text>
+	<text>
+		<id>sim_turn_b_help_0</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge spilerdugen.</string>
+		<speak>37</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_1</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'bøje benene op'.</string>
+		<speak>4</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at hun skal 'vende sig om mod venstre side'.</string>
+		<speak>116</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_3</id>
+		<string>Vælg spilerdugen og placer den under borgerens højre skulder og ned mod hoften.</string>
+		<speak>42</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_4</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at hun skal vende sig tilbage på ryggen.</string>
+		<speak>117</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_5</id>
+		<string>Slå sengehesten op ved at føre musen over den, og klikke på den med venstre museknap.</string>
+		<speak>118</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_6</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at hun skal dreje hovedet mod højre.</string>
+		<speak>119</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_7</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'tage fat i sengehesten'.</string>
+		<speak>120</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_help_8</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'støde fra med fødderne og vende sig om'.</string>
+		<speak>7</speak>
+	</text>
+	<text>
+		<id>sim_turn_b_talk_0</id>
+		<string>Bøj benene op</string>
+	</text>
+	<text>
+		<id>sim_turn_b_talk_1</id>
+		<string>Vend dig om mod venstre</string>
+	</text>
+	<text>
+		<id>sim_turn_b_talk_2</id>
+		<string>Vend dig tilbage på ryggen</string>
+	</text>
+	<text>
+		<id>sim_turn_b_talk_3</id>
+		<string>Drej hovedet mod højre</string>
+	</text>
+	<text>
+		<id>sim_turn_b_talk_4</id>
+		<string>Tag fat i sengehesten</string>
+	</text>
+	<text>
+		<id>sim_turn_b_talk_5</id>
+		<string>Stød fra med fødderne og vend dig om</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_0</id>
+		<string>Du skal huske at placere kørestolen</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_1</id>
+		<string>Du skal huske at låse kørestolen</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_2</id>
+		<string>Du skal huske at læne kørestolen tilbage</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_3</id>
+		<string>Du skal huske at sænke loftliften</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_4</id>
+		<string>Du skal huske at sætte stropperne på liften</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_5</id>
+		<string>Du skal huske at sætte sengen i en siddende position</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_60</id>
+		<string>Du skal huske at fortælle borgeren at i nu lifter hende op fra sengen</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_6</id>
+		<string>Du skal huske at hæve borgere op fra sengen</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_7</id>
+		<string>Du skal huske at sænke sengen</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_8</id>
+		<string>Du skal huske at flytte borgeren over i stolen</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_9</id>
+		<string>Du skal huske at sænke borgeren ned i stolen</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_state_10</id>
+		<string>Du skal huske at fjerne stropperne fra liften</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_0</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge sengekontrollen, liftkontrollen og kørestolen.</string>
+		<speak>121</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_1</id>
+		<string>Vælg kørestolen og placer den ved sengen.</string>
+		<speak>122</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_2</id>
+		<string>Lås kørestolen ved, at føre musen over låsen, og derefter klik med venstre museknap.</string>
+		<speak>123</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_3</id>
+		<string>Læn kørestolen tilbage ved, at føre musen over håndtaget, og derefter klik med venstre museknap.</string>
+		<speak>124</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_4</id>
+		<string>Vælg liftkontrollen og sænk liften ned over borgeren.</string>
+		<speak>125</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_5</id>
+		<string>Sæt stropperne ind i hinanden, så de er krydset og hægt stropperne på liften ved, at føre musen over sejlet og klik med venstre museknap.</string>
+		<speak>2068</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_6</id>
+		<string>Vælg sengekontrollen og placer sengen i en siddende position.</string>
+		<speak>127</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_70</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at 'nu lifter i hende op fra sengen'.</string>
+		<speak>2069</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_7</id>
+		<string>Vælg liftkontrollen og hæv borgeren op fra sengen.</string>
+		<speak>213</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_8</id>
+		<string>Vælg sengekontrollen og sænk sengen.</string>
+		<speak>28</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_9</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap. 
+Fortæl borgeren at 'nu lifter i hende over i kørestolen'.</string>
+		<speak>2070</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_10</id>
+		<string>Vælg liftkontrollen og sænk borgeren ned i kørestolen. 
+(Pres evt. på borgers knæ, så borger kommer helt tilbage i stolen)</string>
+		<speak>2071</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_11</id>
+		<string>Fjern stopperne på sejlet ved at føre musen over sejlet og klik med venstre museknap.</string>
+		<speak>130</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_help_12</id>
+		<string>Læn stolen forover ved at føre musen over håndtaget, og derefter klik med venstre museknap.</string>
+		<speak>131</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_talk_00</id>
+		<string>Nu lifter vi dig op fra sengen</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_roof_talk_0</id>
+		<string>Nu liftes du over i kørestolen</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_state_0</id>
+		<string>Du skal huske at bede borgeren om at bøje benene</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_state_1</id>
+		<string>Du skal huske at bede borgeren om at vende sig mod højre side</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_state_2</id>
+		<string>Du skal huske at placere lagnet</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_state_3</id>
+		<string>Du skal huske at bede borgeren om at vende sig mod venstre side</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_help_0</id>
+		<string>Du skal vælge det rigtige værktøj til forflytningen.
+Til denne forflytning skal du bruge lagnet.</string>
+		<speak>132</speak>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_help_1</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at hun skal 'bøje benene'.</string>
+		<speak>133</speak>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at hun skal 'vende sig om mod højre'.</string>
+		<speak>134</speak>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_help_3</id>
+		<string>Vælg lagnet og placer det på sengen.</string>
+		<speak>135</speak>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_help_4</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at hun skal 'vende sig om mod venstre', så din kollega kan justere stiklagnet.</string>
+		<speak>136</speak>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_help_5</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at hun skal 'vende sig tilbage på ryggen'.</string>
+		<speak>137</speak>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_talk_0</id>
+		<string>Bøj benene</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_talk_1</id>
+		<string>Vend dig om mod højre</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_talk_2</id>
+		<string>Vend dig om mod venstre</string>
+	</text>
+	<text>
+		<id>sim_place_drawsheet_talk_3</id>
+		<string>Vend dig tilbage på ryggen</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_0</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge sengekontrollen, liftkontrollen og kørestolen.</string>
+		<speak>121</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_1</id>
+		<string>Vælg liftkontrollen og sænk liften ned over borgeren.</string>
+		<speak>125</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_2</id>
+		<string>Sæt stropperne ind i hinanden, så de er krydset - 
+hægt stropperne på liften ved, at føre musen over sejlet og klik med venstre museknap.</string>
+		<speak>2078</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_3</id>
+		<string>Vælg sengekontrollen og placer sengen i en siddende position.</string>
+		<speak>127</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_40</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at 'nu lifter i hende op fra sengen'.</string>
+		<speak>2079</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_4</id>
+		<string>Vælg liftkontrollen og hæv borgeren op fra sengen.</string>
+		<speak>213</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_5</id>
+		<string>Vælg sengekontrollen og sænk sengen.</string>
+		<speak>28</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_6</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at 'nu lifter i hende over i kørestolen'.</string>
+		<speak>2080</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_7</id>
+		<string>Vælg liftkontrollen og flyt liftens ben ud til siden.</string>
+		<speak>139</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_8</id>
+		<string>Vælg kørestolen og placer den under liften.</string>
+		<speak>140</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_9</id>
+		<string>Lås kørestolen ved, at føre musen over låsen, og derefter klik med venstre museknap.</string>
+		<speak>123</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_10</id>
+		<string>Læn kørestolen tilbage ved, at føre musen over håndtaget, og derefter klik med venstre museknap.</string>
+		<speak>124</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_11</id>
+		<string>Vælg liftkontrollen og sænk borgeren ned i kørestolen. 
+(Pres evt. på borgers knæ, så borger kommer helt tilbage i stolen)</string>
+		<speak>2081</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_12</id>
+		<string>Fjern stopperne på sejlet ved at føre musen over sejlet og klik med venstre museknap.</string>
+		<speak>130</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_help_13</id>
+		<string>Læn stolen forover ved at føre musen over håndtaget, og derefter klik med venstre musenknap.</string>
+		<speak>141</speak>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_talk_00</id>
+		<string>Nu lifter vi dig op fra sengen</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_talk_0</id>
+		<string>Nu lifter vi dig over i kørestolen</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_0</id>
+		<string>Du skal huske at sænke liften.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_1</id>
+		<string>Du skal huske at sætte stropperne på liften.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_2</id>
+		<string>Du skal huske at placere sengen i en siddende position.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_30</id>
+		<string>Du skal huske at fortælle borgeren at i nu lifter hende op fra sengen</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_3</id>
+		<string>Du skal huske at løfte borgeren.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_4</id>
+		<string>Du skal huske at sænke sengen.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_5</id>
+		<string>Du skal huske at fortælle borgeren at i flytter liften.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_6</id>
+		<string>Du skal huske at bevæge liftens ben ud til siden.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_7</id>
+		<string>Du skal huske at placere kørestolen.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_8</id>
+		<string>Du skal huske at låse kørestolen.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_9</id>
+		<string>Du skal huske at bevæge kørestolen bagover.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_10</id>
+		<string>Du skal huske at sænge borgeren ned i kørestolen.</string>
+	</text>
+	<text>
+		<id>sim_lift_bed_chair_floor_state_11</id>
+		<string>Du skal huske at fjerne stopperne fra liften.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_0</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge sengekontrollen og liftkontrollen.</string>
+		<speak>142</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_1</id>
+		<string>Vælg sengekontrollen og placer sengen i en siddende position ved at trykke på den rigtige knap.</string>
+		<speak>143</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_2</id>
+		<string>Vælg sengekontrollen og kør sengen ned.</string>
+		<speak>144</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_3</id>
+		<string>Før musen over sejlet og klik med venstre museknap for, at sætte stropperne ind i hinanden, så de er krydset og hægt dem på liften.</string>
+		<speak>2082</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_40</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at 'nu lifter i hende op fra stolen'.</string>
+		<speak>2083</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_4</id>
+		<string>Vælg liftkontrollen og hæv borgeren op fra stolen.</string>
+		<speak>146</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_5</id>
+		<string>Vælg liftkontrollen og kør liftens ben ind.</string>
+		<speak>147</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_6</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap. 
+Fortæl borgeren at 'nu lifter i hende over i sengen'.</string>
+		<speak>2084</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_7</id>
+		<string>Vælg sengekontrollen og hæv sengen op.</string>
+		<speak>149</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_8</id>
+		<string>Vælg liftkontrollen og sænk borgeren ned i sengen.</string>
+		<speak>150</speak>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_help_9</id>
+		<string>Før musen over sejlet og klik med venstre museknap for at fjerne stropperne.</string>
+		<speak>151</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_help_0</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge liftkontrollen.</string>
+		<speak>152</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_help_1</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at i 'nu fjerner stropperne under hendes ben'.</string>
+		<speak>153</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at i 'nu læner hende fremad'.</string>
+		<speak>154</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_help_3</id>
+		<string>Vælg liftkontrollen og hæv sejlet op. (Vær opmærksom på, at sejlet er frigjort fra trykpunkterne, så brandsår undgås)</string>
+		<speak>2085</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_help_4</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at i 'nu læner hende tilbage'.</string>
+		<speak>156</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_help_0</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at I 'nu trækker stropperne under hendes ben'.</string>
+		<speak>2086</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_help_1</id>
+		<string>Før musen over sengehesten og klik med venstre museknap for at hæve dem.</string>
+		<speak>157</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at 'hun skal trække sig frem vha. sengehestene'.</string>
+		<speak>2087</speak>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_help_3</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at i 'nu fjerner sejlet'.</string>
+		<speak>159</speak>
+	</text>
+	<text>
+		<id>sim_sling_chair_help_01</id>
+		<string>Lås kørestolen ved, at føre musen over låsen, og derefter klik med venstre museknap.</string>
+		<speak>123</speak>
+	</text>
+	<text>
+		<id>sim_sling_chair_help_0</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at i 'nu læner hende forover'.</string>
+		<speak>160</speak>
+	</text>
+	<text>
+		<id>sim_sling_chair_help_1</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at i 'nu placere sejlet bag hendes ryg'.</string>
+		<speak>161</speak>
+	</text>
+	<text>
+		<id>sim_sling_chair_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at i 'nu læner hende tilbage'.</string>
+		<speak>156</speak>
+	</text>
+	<text>
+		<id>sim_sling_chair_help_3</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at i 'nu trækker stropperne under hendes ben'.</string>
+		<speak>35</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_00</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge sengekontrollen, spilerdugen og den skridsikre måtte.</string>
+		<speak>83</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_0</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at hun skal løfte fødderne når du placerer den skridsikre måtte.</string>
+		<speak>89</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_1</id>
+		<string>Vælg den skridsikre måtte og placer den under borgerens fødder.</string>
+		<speak>76</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at hun skal løfte hovedet og se væk fra dig (Imens du trækker hovedpudens hjørne ned).</string>
+		<speak>162</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_3</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at hun skal løfte hovedet og se på dig (Imens du trækker hovedpudens hjørne ned).</string>
+		<speak>163</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_4</id>
+		<string>Vælg spilerdugen og placer det under puden.</string>
+		<speak>86</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_5</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at hun skal løfte hovedet og se på dig (Imens du trækker spilerdugen ned).</string>
+		<speak>164</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_6</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at hun skal løfte hovedet og se væk fra dig (Imens du trækker spilerdugen ned).</string>
+		<speak>165</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_7</id>
+		<string>Vælg sengekontrollen og hæv sengens fodende.</string>
+		<speak>74</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_8</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren at hun skal løfte bagdelen og skubbe sig højere op i sengen.</string>
+		<speak>166</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_help_9</id>
+		<string>Vælg sengekontrollen og sænk sengens fodende igen.</string>
+		<speak>214</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_0</id>
+		<string>Vælg det rigtige værktøj til brug ved forflytningen.
+Til denne forflytning skal du bruge sejlet.</string>
+		<speak>29</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_1</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'bøje venstre ben op'.</string>
+		<speak>167</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap. Fortæl borgeren, at hun skal 'tage fat i sengehesten' og vende sig om på højre side.</string>
+		<speak>168</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_3</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal vende sig tilbage på ryggen.</string>
+		<speak>50</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_4</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at du nu presser sejlets strop ind under hendes lår (efter at du har foldet stroppen som et Z)</string>
+		<speak>169</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_5</id>
+		<string>Slå sengehesten, på borgerens venstre side op, ved at føre musen over den, og klikke på den med venstre museknap.</string>
+		<speak>170</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_6</id>
+		<string>Slå sengehesten, på borgerens højre side ned, ved at føre musen over den, og klikke på den med venstre museknap.</string>
+		<speak>171</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_7</id>
+		<string>Før musen over borgerens hoved og klik med venstre muse knap. Fortæl borgeren, at du nu 'trækker stroppen under hendes ben'.</string>
+		<speak>172</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_8</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'bøje højre ben op'.</string>
+		<speak>173</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_9</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap. Fortæl borgeren, at hun skal 'tage fat i sengehesten' og vende sig om på venstre side.</string>
+		<speak>174</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_10</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at du nu trækker sejlet ud på sengen,  bag hendes ryg</string>
+		<speak>175</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_11</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at hun skal vende sig tilbage på ryggen.</string>
+		<speak>50</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_12</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl derefter borgeren at du nu presser sejlets strop ind under hendes lår (efter at du har foldet stroppen som et Z)</string>
+		<speak>169</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_13</id>
+		<string>Slå sengehesten, på borgerens venstre side ned, ved at føre musen over den, og klikke på den med venstre museknap.</string>
+		<speak>176</speak>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_help_14</id>
+		<string>Før musen over borgerens hoved og klik med venstre muse knap. Fortæl borgeren, at du nu 'trækker stroppen under hendes ben'.</string>
+		<speak>172</speak>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_0</id>
+		<string>Du skal huske at bede borgeren om at løfte fødderne.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_1</id>
+		<string>Du skal huske at placere den skridsikre måtte.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_2</id>
+		<string>Du skal huske at bede borgeren løfte hovedet og se væk fra dig.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_3</id>
+		<string>Du skal huske at bede borgeren løfte hovedet og se på dig.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_4</id>
+		<string>Du skal huske at placere spilerdugen.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_5</id>
+		<string>Du skal huske at bede borgeren løfte hovedet og se på dig.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_6</id>
+		<string>Du skal huske at bede borgeren løfte høvedet og se væk fra dig.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_7</id>
+		<string>Du skal huske at løfte fodenden af sengen op.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_state_8</id>
+		<string>Du skal huske at bede borgeren om at skubbe sig op i sengen.</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_talk_0</id>
+		<string>Løft fødderne når jeg placerer den skridsikre måtte</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_talk_1</id>
+		<string>Løft hovedet og se væk fra mig</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_talk_2</id>
+		<string>Løft hovedet og se på mig</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_talk_3</id>
+		<string>løft hovedet og se på mig</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_talk_4</id>
+		<string>Løft hovedet og se væk fra mig</string>
+	</text>
+	<text>
+		<id>sim_high_up_b_talk_5</id>
+		<string>Løft bagdelen og skub dig højere op i sengen</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_0</id>
+		<string>Husk at placere sengen i en siddende position.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_1</id>
+		<string>Huske at køre sengen ned.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_2</id>
+		<string>Husk at sætte stropperne på liften.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_30</id>
+		<string>Du skal huske at fortælle borgeren at i nu lifter hende op fra stolen</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_3</id>
+		<string>Huske at løfte borgeren fra stolen.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_4</id>
+		<string>Husk at køre liftens ben ind.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_5</id>
+		<string>Husk at bevæge liften over sengen.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_6</id>
+		<string>Husk at hæve sengen.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_state_7</id>
+		<string>Husk at sænke borgeren ned i sengen.</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_talk_00</id>
+		<string>Nu lifter vi dig op fra stolen</string>
+	</text>
+	<text>
+		<id>sim_chair_bed_floor_talk_0</id>
+		<string>Nu lifter vi dig over i sengen</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_0</id>
+		<string>Du skal huske at bøje ventre ben op.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_1</id>
+		<string>Du skal huske at vende borgeren om på højre side.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_2</id>
+		<string>Du skal huske at placere sejlet.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_3</id>
+		<string>Du skal huske at vende borgeren tilbage på ryggen.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_4</id>
+		<string>Du skal huske at presse stroppen ind under borgerens lår.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_5</id>
+		<string>Du skal huske at slå sengehesten, på borgerens venstre side op.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_6</id>
+		<string>Du skal huske at slå sengehesten, på borgerens højre side ned.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_7</id>
+		<string>Du skal huske at trække stroppen under borgerens ben.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_8</id>
+		<string>Du skal huske at bøje højre ben op.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_9</id>
+		<string>Du skal huske at vende borgeren om på venstre side.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_10</id>
+		<string>Du skal huske at trække sejlet ud på sengen.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_11</id>
+		<string>Du skal huske at vende borgeren tilbage på ryggen.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_12</id>
+		<string>Du skal huske at presse stroppen under borgerens lår.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_state_13</id>
+		<string>Slå sengehesten, på borgerens venstre side ned.</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_0</id>
+		<string>Bøj venstre ben op</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_1</id>
+		<string>Tag fat i sengehesten og vend dig om på højre side</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_2</id>
+		<string>Vend dig tilbage på ryggen</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_3</id>
+		<string>Nu presser jeg sejlets strop ind under dine lår</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_4</id>
+		<string>Nu trækker jeg sejlets strop under dine ben</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_5</id>
+		<string>Bøj højre ben op</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_6</id>
+		<string>Tag fat i sengehesten og vend dig om på venstre side</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_7</id>
+		<string>Nu trækker jeg sejlet ud på sengen</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_8</id>
+		<string>Vend dig tilbage på ryggen</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_9</id>
+		<string>Nu presser jeg sejlets strop ind under dine lår</string>
+	</text>
+	<text>
+		<id>sim_place_sling_in_bed_single_talk_10</id>
+		<string>Nu trækker jeg sejlets strop under dine ben</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_state_lockchair</id>
+		<string>Du skal huske at låse kørestolen</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_state_chair</id>
+		<string>Du skal huske at læne borgeren forover.</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_state_lock</id>
+		<string>Du skal huske at placere sejlet bag borgeren.</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_state_lean</id>
+		<string>Du skal huske at læne borgeren tilbage.</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_talk_0</id>
+		<string>Nu læner vi dig forover</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_talk_1</id>
+		<string>Nu placerer vi sejlet bag din ryg</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_talk_2</id>
+		<string>Nu læner vi dig tilbage</string>
+	</text>
+	<text>
+		<id>sim_sling_chair_talk_3</id>
+		<string>Nu trækker vi stropperne under benene</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_state_0</id>
+		<string>Du skal huske at trække stropperne under borgerens ben.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_state_1</id>
+		<string>Du skal huske at slå sengehestene op.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_state_2</id>
+		<string>Du skal huske at læne borgeren forover.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_talk_0</id>
+		<string>Nu trækker vi stropperne under dine ben</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_talk_1</id>
+		<string>Læn dig forover</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_bed_talk_2</id>
+		<string>Nu fjerner vi sejlet</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_state_0</id>
+		<string>Du skal huske at fjerne stropperne under borgerens ben.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_state_1</id>
+		<string>Du skal huske at læne borgeren forover.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_state_2</id>
+		<string>Du skal huske at hæve sejlet med liften.</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_talk_0</id>
+		<string>Nu fjerner vi stropperne under dine ben 
+(Stropperne skal glide mod sejlet, så friktionen nedsættes)</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_talk_1</id>
+		<string>Nu læner vi dig fremad</string>
+	</text>
+	<text>
+		<id>sim_remove_sling_chair_talk_2</id>
+		<string>Nu læner vi dig tilbage</string>
+	</text>
+	<text>
+		<id>sim_side_a_state_0</id>
+		<string>Du skal huske at fortællge borgeren at hun skal bøje benene.</string>
+	</text>
+	<text>
+		<id>sim_side_a_talk_0</id>
+		<string>Bøj benene</string>
+	</text>
+	<text>
+		<id>sim_side_a_talk_1</id>
+		<string>Flyt dig til siden i sengen</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_state_0</id>
+		<string>Du skal huske at låse kørestolen</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_state_1</id>
+		<string>Du skal huske at bede borgeren om at flytte fødderne ind under kørestolen</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_state_2</id>
+		<string>Du skal huske at bede borgeren om at placere hænderne på kørestolens armlæn</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_state_3</id>
+		<string>Du skal huske at skubbe borgerens højre side bagud</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_help_0</id>
+		<string>Lås kørestolen ved at føre musen over låsen, og derefter klik med venstre museknap.</string>
+		<speak>123</speak>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_help_1</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'flytte fødderne ind under kørestolen'.</string>
+		<speak>2088</speak>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_help_2</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'placere hænderne på kørestolens armlæn'.</string>
+		<speak>2089</speak>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_help_3</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'skubbe højre side bagud' (imens du placerer en hånd på den venstre skulder og det højre knæ og skubber).</string>
+		<speak>2090</speak>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_help_4</id>
+		<string>Før musen over borgerens hoved og klik med venstre museknap.
+Fortæl borgeren, at hun skal 'skubbe venstre side bagud' (imens du placerer en hånd på den højre skulder og det venstre knæ og skubber).</string>
+		<speak>2091</speak>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_talk_0</id>
+		<string>Flyt fødderne ind under kørestolen</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_talk_1</id>
+		<string>Placer hænderne på kørestolens armlæn</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_talk_2</id>
+		<string>Skub højre side bagud</string>
+	</text>
+	<text>
+		<id>sim_back_chair_b_new_talk_3</id>
+		<string>Skub venstre side bagud</string>
+	</text>
+  <text>
+    <id>Spielerdug</id>
+    <string>Spielerdug</string>
+  </text>
+  <text>
+    <id>Kontrol</id>
+    <string>Kontrol</string>
+  </text>
+  <text>
+    <id>Psoas-pude</id>
+    <string>Psoas-pude</string>
+  </text>
+  <text>
+    <id>Rollator</id>
+    <string>Rollator</string>
+  </text>
+  <text>
+    <id>Kollega</id>
+    <string>Kollega</string>
+  </text>
+  <text>
+    <id>Skridsikker</id>
+    <string>Skridsikker</string>
+  </text>
+  <text>
+    <id>Lagen</id>
+    <string>Lagen</string>
+  </text>
+  <text>
+    <id>Sengekontrol</id>
+    <string>Sengekontrol</string>
+  </text>
+  <text>
+    <id>Skammel</id>
+    <string>Skammel</string>
+  </text>
+  <text>
+    <id>Liftkontrol</id>
+    <string>Liftkontrol</string>
+  </text>
+  <text>
+    <id>Sejl</id>
+    <string>Sejl</string>
+  </text>
+  <text>
+    <id>Psoaspude</id>
+    <string>Psoaspude</string>
+  </text>
+  <text>
+    <id>Kørestol</id>
+    <string>Kørestol</string>
+  </text>
+  <text>
+    <id>Loftlift</id>
+    <string>Loftlift</string>
+  </text>
+  <text>
+    <id>Gulvlift</id>
+    <string>Gulvlift</string>
+  </text>
+  <text>
+    <id>Gå til hovedmenu</id>
+    <string>Gå til hovedmenu</string>
+  </text>
+  <text>
+    <id>Åben breefing tekst</id>
+    <string>Åben breefing tekst</string>
+  </text>
+  <text>
+    <id>Genstart øvelse</id>
+    <string>Genstart øvelse</string>
+  </text>
+  <text>
+    <id>Slå lyd fra eller til</id>
+    <string>Slå lyd fra eller til</string>
+  </text>
+</texts>

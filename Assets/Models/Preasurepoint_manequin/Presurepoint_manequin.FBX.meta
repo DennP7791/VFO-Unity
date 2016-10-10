@@ -1,0 +1,157 @@
+fileFormatVersion: 1
+guid: bebb6844e6fd96e46b8ba03008031f2f
+ModelImporter:
+  importerVersion: 7
+  meshes:
+    scaleFactor: 0.01
+    useFileUnits: 1
+    meshCompression: 0
+    generateColliders: 0
+    swapUVs: 0
+  tangentSpace:
+    normalImportMode: 0
+    tangentImportMode: 1
+    smoothingAngle: 60
+    splitTangents: 1
+  materials:
+    generation: 1
+  animations:
+    generation: 3
+    bakeAnimations: 0
+    animationCompression: 1
+    animationWrapMode: 0
+    splitAnimations: 1
+  nodeInfo:
+    Point_L_Hip:
+    - 100000
+    - 400000
+    - 3300000
+    - 2300000
+    Point_L_Hand:
+    - 100002
+    - 400002
+    - 3300002
+    - 2300002
+    Point_L_Deltoid:
+    - 100004
+    - 400004
+    - 3300004
+    - 2300004
+    Point_L_Elbow:
+    - 100006
+    - 400006
+    - 3300006
+    - 2300006
+    Point_L_Calf:
+    - 100008
+    - 400008
+    - 3300008
+    - 2300008
+    Point_L_Ankle:
+    - 100010
+    - 400010
+    - 3300010
+    - 2300010
+    Point_L_Heel:
+    - 100012
+    - 400012
+    - 3300012
+    - 2300012
+    Point_Tail_Bone:
+    - 100014
+    - 400014
+    - 3300014
+    - 2300014
+    Point_R_Ankle:
+    - 100016
+    - 400016
+    - 3300016
+    - 2300016
+    Point_R_Hip:
+    - 100018
+    - 400018
+    - 3300018
+    - 2300018
+    Point_R_Hand:
+    - 100020
+    - 400020
+    - 3300020
+    - 2300020
+    Point_R_Elbow:
+    - 100022
+    - 400022
+    - 3300022
+    - 2300022
+    Point_R_Deltoid:
+    - 100024
+    - 400024
+    - 3300024
+    - 2300024
+    Point_Head:
+    - 100026
+    - 400026
+    - 3300026
+    - 2300026
+    Point_R_Heel:
+    - 100028
+    - 400028
+    - 3300028
+    - 2300028
+    Point_R_Calf:
+    - 100030
+    - 400030
+    - 3300030
+    - 2300030
+    Manequin:
+    - 100032
+    - 400032
+    - 3300032
+    - 2300032
+    Point_L_Gluteus_M:
+    - 100034
+    - 400034
+    - 3300034
+    - 2300034
+    //RootNode:
+    - 100036
+    - 400036
+    - 11100000
+    Point_L_Shoulder:
+    - 100038
+    - 400038
+    - 3300036
+    - 2300036
+    Point_R_Gluteus_M:
+    - 100040
+    - 400040
+    - 3300038
+    - 2300038
+    Point_R_Shoulder:
+    - 100042
+    - 400042
+    - 3300040
+    - 2300040
+AssetImporter:
+  importerVersion: 1
+  fileIDToRecycleName:
+    4300000: Manequin
+    4300002: Point_R_Shoulder
+    4300004: Point_R_Gluteus_M
+    4300006: Point_L_Shoulder
+    4300008: Point_L_Gluteus_M
+    4300010: Point_R_Calf
+    4300012: Point_R_Heel
+    4300014: Point_Head
+    4300016: Point_R_Deltoid
+    4300018: Point_R_Elbow
+    4300020: Point_R_Hand
+    4300022: Point_R_Hip
+    4300024: Point_R_Ankle
+    4300026: Point_Tail_Bone
+    4300028: Point_L_Heel
+    4300030: Point_L_Ankle
+    4300032: Point_L_Calf
+    4300034: Point_L_Elbow
+    4300036: Point_L_Deltoid
+    4300038: Point_L_Hand
+    4300040: Point_L_Hip
