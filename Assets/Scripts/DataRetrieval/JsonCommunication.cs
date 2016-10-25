@@ -1,8 +1,9 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using JsonFx.Json;
 using ExerciseCollections;
+using JsonFx.Json;
+
 
 public class JsonCommunication : MonoBehaviour
 {

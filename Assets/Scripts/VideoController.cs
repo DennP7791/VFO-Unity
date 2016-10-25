@@ -5,7 +5,8 @@ using UnityEngine.UI;
 public class VideoController : MonoBehaviour
 {
     //string url = "https://welfaredenmark.blob.core.windows.net/vfo-recordings-staging/ogv";
-    string url;
+    string url = "";
+    //string url = "http://localhost:59477/Service/DownloadVideoStream?videoName=ogv"; test - forsøgte at kalde www.movie direkte på http get, i håb om at kunne hive videos ud af den stream jeg sender
 
     public RawImage _player;
     public AudioSource _sound;
@@ -18,7 +19,12 @@ public class VideoController : MonoBehaviour
         loadingBox = Util.MessageBox(new Rect(0, 0, 300, 200), Text.Instance.GetString("data_loader_getting_data"), Message.Type.Info, false, true);
         //_player = GetComponent<RawImage>();
         //_sound = GetComponent<AudioSource>();
-        url = Global.Instance.videoUrl;
+        AzureManager.GetBlob(Global.Instance.videoUrl);
+        url = @Application.persistentDataPath + "/video.mp4";
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR
+        url = "file:///" + Application.persistentDataPath + "/video.ogv";
+#endif
+
         StartCoroutine(LoadVideo());
     }
 
@@ -35,6 +41,8 @@ public class VideoController : MonoBehaviour
         if (www.error != null)
         {
             Debug.Log("Error: Can't load video");
+            Debug.Log(Application.persistentDataPath);
+            Debug.Log(www.error);
             yield break;
         }
         else

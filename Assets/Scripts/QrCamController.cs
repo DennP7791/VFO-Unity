@@ -140,13 +140,16 @@ public class QrCamController : MonoBehaviour
 
     void LoadVideo(string result)
     {
+        //_qrFound = false;
+        //BlobService.GetBlob("bunny2");
+
         foreach (var vid in videoList)
         {
             if (vid.Url.Equals(result))
             {
                 _qrFound = false;
                 Global.Instance.videoUrl = result;
-                SceneLoader.Instance.CurrentScene = 1002;                
+                SceneLoader.Instance.CurrentScene = 1002;
             }
         }
     }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using JsonFx.Json;
 using ExerciseCollections;
 using System;
+using System.IO;
 using System.Net.NetworkInformation;
 
 public class DataManager : MonoBehaviour
@@ -500,45 +501,6 @@ public class DataManager : MonoBehaviour
         else
         {
             Debug.Log("WWW Error: " + www.error);
-        }
-    }
-
-    public static IEnumerator UploadQrVideo()
-    {
-        Debug.Log("UploadQrVideo");
-        string url = "https://vfo.welfaredenmark.com/Service/SaveData/"; //Production environment service
-        url = "http://localhost:59477/Service/SaveVideo/"; //LOCAL SERVICE - Comment for release version
-
-
-
-        if (Global.Instance.ProgramLanguage == "sv-SE")
-        {
-            //url = "http://vfo.welfaresverige.se/Service/SaveData/"; //OutComment if release version
-        }
-
-
-        QrVideo vid = new QrVideo("name", "desc", "url", 4, 103, 23, DateTime.Now, null);
-        JsonQrVideo qrVideos = QrVideoToJsonQrVideo(vid);
-
-        Debug.Log("Converted To Json Container:\n" + qrVideos.ToString());
-        string serialized = JsonWriter.Serialize(qrVideos);
-
-        Debug.Log("Serialized:\n" + serialized);
-        Encoding encoding = Encoding.UTF8;
-        byte[] bytes = encoding.GetBytes(serialized);
-
-        WWW www = new WWW(url, bytes);
-
-        yield return www;
-        // check for errors
-        if (www.error == null)
-        {
-            Debug.Log("Result: " + www.text);
-            Debug.Log("Upload Complete.");
-        }
-        else
-        {
-            Debug.Log("Upload Error: " + www.error);
         }
     }
 
