@@ -145,7 +145,7 @@ public class QrCamController : MonoBehaviour
 
         foreach (var vid in videoList)
         {
-            if (vid.Url.Equals(result))
+            if (vid.Path.Equals(result))
             {
                 _qrFound = false;
                 Global.Instance.videoUrl = result;
