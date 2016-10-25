@@ -152,40 +152,40 @@ public class DataManager : MonoBehaviour
         public int Id;
         public string Name;
         public string Description;
-        public string Url;
+        public string Path;
         public int Count;
         public int UserGroupId;
         public int UserId;
         public DateTime ReleaseDate;
-        public string Password;
+        public int VideoCategoryId;
 
         public JsonQrVideo()
         {
         }
 
-        public JsonQrVideo(int id, string name, string description, string url, int count, int userGroupId, int userId, DateTime releaseDate, string password)
+        public JsonQrVideo(int id, string name, string description, string path, int count, int userGroupId, int userId, DateTime releaseDate, int videoCategoryId)
         {
             Id = id;
             Name = name;
             Description = description;
-            Url = url;
+            Path = path;
             Count = count;
             UserGroupId = userGroupId;
             UserId = userId;
             ReleaseDate = releaseDate;
-            Password = password;
+            VideoCategoryId = videoCategoryId;
         }
 
-        public JsonQrVideo(string name, string description, string url, int count, int userGroupId, int userId, DateTime releaseDate, string password)
+        public JsonQrVideo(string name, string description, string path, int count, int userGroupId, int userId, DateTime releaseDate, int videoCategoryId)
         {
             Name = name;
             Description = description;
-            Url = url;
+            Path = path;
             Count = count;
             UserGroupId = userGroupId;
             UserId = userId;
             ReleaseDate = releaseDate;
-            Password = password;
+            VideoCategoryId = videoCategoryId;
         }
 
         public override string ToString()
@@ -650,7 +650,7 @@ public class DataManager : MonoBehaviour
         List<QrVideo> qrvList = new List<QrVideo>();
         foreach (JsonQrVideo qrv in qrvCol.QrVideos)
         {
-            QrVideo tmpQrVideo = new QrVideo(qrv.Id, qrv.Name, qrv.Description, qrv.Url, qrv.Count, qrv.UserGroupId, qrv.UserId, qrv.ReleaseDate, qrv.Password);
+            QrVideo tmpQrVideo = new QrVideo(qrv.Id, qrv.Name, qrv.Description, qrv.Path, qrv.Count, qrv.UserGroupId, qrv.UserId, qrv.ReleaseDate, qrv.VideoCategoryId);
             qrvList.Add(tmpQrVideo);
         }
         return qrvList;
@@ -669,7 +669,7 @@ public class DataManager : MonoBehaviour
 
     static JsonQrVideo QrVideoToJsonQrVideo(QrVideo vid)
     {
-        JsonQrVideo jsonQrVideo = new JsonQrVideo(vid.Id, vid.Name, vid.Description, vid.Url, vid.Count, vid.UserGroupId, vid.UserId, vid.ReleaseDate, vid.Password);
+        JsonQrVideo jsonQrVideo = new JsonQrVideo(vid.Id, vid.Name, vid.Description, vid.Path, vid.Count, vid.UserGroupId, vid.UserId, vid.ReleaseDate, vid.VideoCategoryId);
         return jsonQrVideo;
     }
 
