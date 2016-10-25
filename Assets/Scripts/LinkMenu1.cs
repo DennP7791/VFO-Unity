@@ -618,25 +618,36 @@ public class LinkMenu1 : BaseWindow
         {
             Id = 12345,
             WinParent = this,
-            Text = "upload/record video",
+            Text = "Record video",
             Style = _btnStyle,
             Function = 1001,
             isSubLink = true
         };
+        recordButton.Parent = recordButton;
         LinkButton searchButton = new LinkButton
         {
             Id = 9999,
             WinParent = this,
-            Text = "search for video",
+            Text = "Search for video",
             Style = _btnStyle,
             Function = 1001,
             isSubLink = true
         };
         searchButton.Parent = searchButton;
-        recordButton.Parent = recordButton;
+        LinkButton uploadButton = new LinkButton
+        {
+            Id = 9999,
+            WinParent = this,
+            Text = "Upload video",
+            Style = _btnStyle,
+            Function = 1001,
+            isSubLink = true
+        };
+        uploadButton.Parent = uploadButton;
         qrvList.Add(scanButton);
         qrvList.Add(searchButton);
         qrvList.Add(recordButton);
+        qrvList.Add(uploadButton);
         qrvMenu = qrvList.ToArray();
     }
 
