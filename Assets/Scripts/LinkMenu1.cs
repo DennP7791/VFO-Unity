@@ -620,7 +620,7 @@ public class LinkMenu1 : BaseWindow
             WinParent = this,
             Text = "Record video",
             Style = _btnStyle,
-            Function = 1001,
+            Function = 1003,
             isSubLink = true
         };
         recordButton.Parent = recordButton;

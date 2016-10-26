@@ -321,6 +321,16 @@ public class SceneLoader : MonoBehaviour {
                 Global.Instance.InfoWindowText = "Play QR videos";
                 s_level = "video_player";
                 break;
+            case 1003:
+                Global.Instance.IsQrVideoMenu = true;
+                Global.Instance.InfoWindowText = "Record Video";
+		        s_level = "recordVideo";
+		        break;
+            case 1004:
+                Global.Instance.IsQrVideoMenu = true;
+                Global.Instance.InfoWindowText = "Video Detail";
+                s_level = "videoDetailsForm";
+                break;
             default:
                 s_level = "main";
                 break;
