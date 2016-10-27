@@ -148,7 +148,7 @@ public class QrCamController : MonoBehaviour
             if (vid.Path.Equals(result))
             {
                 _qrFound = false;
-                Global.Instance.videoUrl = result;
+                Global.Instance.videoPath = result;
                 SceneLoader.Instance.CurrentScene = 1002;
             }
         }

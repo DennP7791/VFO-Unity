@@ -19,7 +19,7 @@ public class VideoController : MonoBehaviour
         loadingBox = Util.MessageBox(new Rect(0, 0, 300, 200), Text.Instance.GetString("data_loader_getting_data"), Message.Type.Info, false, true);
         //_player = GetComponent<RawImage>();
         //_sound = GetComponent<AudioSource>();
-        AzureManager.GetBlob(Global.Instance.videoUrl);
+        AzureManager.GetBlob(Global.Instance.videoPath);
         url = @Application.persistentDataPath + "/video.mp4";
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
         url = "file:///" + Application.persistentDataPath + "/video.ogv";
