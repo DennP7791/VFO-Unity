@@ -10,6 +10,7 @@ public class Global : MonoBehaviour {
     public ToolButton[] toolButtonArray = new ToolButton[0];
     public ExerciseCategoryCollection categoryCollection = new ExerciseCategoryCollection();
     public List<QrVideo> qrVideos = new List<QrVideo>();
+    public List<QrVideo> videoPaths = new List<QrVideo>();
     public string videoUrl = "";
     public List<VideoCategory> videoCategories = new List<VideoCategory>();
 
@@ -154,15 +155,6 @@ public class Global : MonoBehaviour {
                 exercise.Score = score;
                 exercise.Attempted = true;
                 category.Update();
-
-
-                foreach (var qrVideo in Global.Instance.qrVideos)
-                {
-                    Debug.Log("video data " + qrVideo);
-                }
-                //StartCoroutine(DataManager.UploadData());
-                //StartCoroutine(DataManager.UploadQRVideo());
-                //StartCoroutine(DataManager.UpdateQRVideo());
             }
         }
         else
