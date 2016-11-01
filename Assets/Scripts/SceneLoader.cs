@@ -11,6 +11,7 @@ public class SceneLoader : MonoBehaviour {
     private int _currentCategory = -1;
     private int _currentID = -1;
     private int _currentScene = -1;
+    private int _previousScene = -1;
 
     private string _loadThisScene = "";
 
@@ -37,6 +38,7 @@ public class SceneLoader : MonoBehaviour {
             //stop all audio from previous scene
             Text.Instance.StopAudio();
 
+            _previousScene = _currentScene;
             _currentScene = value;
             Util.SetToolTipText("");
             loadingBox = Util.MessageBox(new Rect(0, 0, 300, 200), Text.Instance.GetString("sceneloader_downloading") + " 0%", Message.Type.Info, false, true);
@@ -51,6 +53,11 @@ public class SceneLoader : MonoBehaviour {
                 this.Container();
             }
         }
+    }
+
+    public int PreviousScene
+    {
+        get { return _previousScene; }
     }
 
     public static SceneLoader Instance
@@ -329,7 +336,7 @@ public class SceneLoader : MonoBehaviour {
             case 1004:
                 Global.Instance.IsQrVideoMenu = true;
                 Global.Instance.InfoWindowText = "Video Detail";
-                s_level = "videoDetailsForm";
+                s_level = "video_details";
                 break;
             default:
                 s_level = "main";

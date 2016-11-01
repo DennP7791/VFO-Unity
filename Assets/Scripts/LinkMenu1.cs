@@ -616,7 +616,7 @@ public class LinkMenu1 : BaseWindow
         scanButton.Parent = scanButton;
         LinkButton recordButton = new LinkButton
         {
-            Id = 12345,
+            Id = 123456,
             WinParent = this,
             Text = "Record video",
             Style = _btnStyle,

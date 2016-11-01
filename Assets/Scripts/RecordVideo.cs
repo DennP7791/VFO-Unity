@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using CameraShot;
+using UnityEngine.SceneManagement;
 
 public class RecordVideo : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class RecordVideo : MonoBehaviour {
         #if UNITY_ANDROID
         AndroidCameraShot.LaunchCameraForVideoCapture();
         #endif
+        SceneManager.LoadScene("video_details");
     }
 
     void OnDisable()
