@@ -9,11 +9,11 @@ public class QrVideo
     public int Count;
     public int UserGroupId;
     public int UserId;
-    public DateTime ReleaseDate;
+    public DateTime? ReleaseDate;
     public int VideoCategoryId;
 
 
-    public QrVideo(int id, string name, string description, string path, int count, int userGroupId, int userId, DateTime releaseDate, int videoCategoryId)
+    public QrVideo(int id, string name, string description, string path, int count, int userGroupId, int userId, DateTime? releaseDate, int videoCategoryId)
     {
         Id = id;
         Name = name;
@@ -26,7 +26,7 @@ public class QrVideo
         VideoCategoryId = videoCategoryId;
     }
 
-    public QrVideo(string name, string description, string path, int count, int userGroupId, int userId, DateTime releaseDate, int videoCategoryId)
+    public QrVideo(string name, string description, string path, int count, int userGroupId, int userId, DateTime? releaseDate, int videoCategoryId)
     {
         Name = name;
         Description = description;

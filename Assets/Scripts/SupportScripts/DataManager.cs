@@ -22,8 +22,7 @@ public class DataManager : MonoBehaviour
         public string @params;
         public int id;
     }
-
-
+    
     //public class JsonExercisePart
     //{
     //    public int Id;
@@ -68,7 +67,7 @@ public class DataManager : MonoBehaviour
 
         public override string ToString()
         {
-            return "( "+Id + " " + Score + " " + Name+" )";
+            return "( " + Id + " " + Score + " " + Name + " )";
         }
     }
 
@@ -79,7 +78,7 @@ public class DataManager : MonoBehaviour
 
         public override string ToString()
         {
-            string result = UserId+" < ";
+            string result = UserId + " < ";
             foreach (JsonCategory c in Categories)
             {
                 result += c.ToString() + " ";
@@ -103,6 +102,7 @@ public class DataManager : MonoBehaviour
             return result;
         }
     }
+    
 
     public class JsonVideoCategoryCollection
     {
@@ -128,7 +128,7 @@ public class DataManager : MonoBehaviour
 
         public JsonQrVideoUserView()
         {
-            
+
         }
 
         public JsonQrVideoUserView(int videoId, int userId, DateTime viewDate)
@@ -156,14 +156,14 @@ public class DataManager : MonoBehaviour
         public int Count;
         public int UserGroupId;
         public int UserId;
-        public DateTime ReleaseDate;
+        public DateTime? ReleaseDate;
         public int VideoCategoryId;
 
         public JsonQrVideo()
         {
         }
 
-        public JsonQrVideo(int id, string name, string description, string path, int count, int userGroupId, int userId, DateTime releaseDate, int videoCategoryId)
+        public JsonQrVideo(int id, string name, string description, string path, int count, int userGroupId, int userId, DateTime? releaseDate, int videoCategoryId)
         {
             Id = id;
             Name = name;
@@ -176,7 +176,7 @@ public class DataManager : MonoBehaviour
             VideoCategoryId = videoCategoryId;
         }
 
-        public JsonQrVideo(string name, string description, string path, int count, int userGroupId, int userId, DateTime releaseDate, int videoCategoryId)
+        public JsonQrVideo(string name, string description, string path, int count, int userGroupId, int userId, DateTime? releaseDate, int videoCategoryId)
         {
             Name = name;
             Description = description;
@@ -185,6 +185,15 @@ public class DataManager : MonoBehaviour
             UserGroupId = userGroupId;
             UserId = userId;
             ReleaseDate = releaseDate;
+            VideoCategoryId = videoCategoryId;
+        }
+
+        public JsonQrVideo(string name, string description, string path, int userId, int videoCategoryId)
+        {
+            Name = name;
+            Description = description;
+            Path = path;
+            UserId = userId;
             VideoCategoryId = videoCategoryId;
         }
 
@@ -239,7 +248,7 @@ public class DataManager : MonoBehaviour
         public override string ToString()
         {
             string result = base.ToString() + " " + "{ ";
-          
+
             result += "}";
             return result;
         }
@@ -288,7 +297,7 @@ public class DataManager : MonoBehaviour
 
         public override string ToString()
         {
-            return "Username: "+Username+", Password: "+Password+"";
+            return "Username: " + Username + ", Password: " + Password + "";
         }
     }
 
@@ -296,7 +305,7 @@ public class DataManager : MonoBehaviour
 
     public static void WrongUserClicked(Message message, bool value)
     {
-        if(Global.Instance.ProgramLanguage == "sv-SE")
+        if (Global.Instance.ProgramLanguage == "sv-SE")
             Application.OpenURL("http://vfo.welfaresverige.se");
         else
             Application.OpenURL("https://vfo.welfaredenmark.com");
@@ -313,8 +322,8 @@ public class DataManager : MonoBehaviour
         {
             //url = "http://vfo.welfaresverige.se/Service/Authorize/"; //OutComment if release version
         }
-            
-        Debug.Log("Validating Credentials -> "+credentials);
+
+        Debug.Log("Validating Credentials -> " + credentials);
 
         string serialized = JsonWriter.Serialize(credentials);
 
@@ -371,11 +380,11 @@ public class DataManager : MonoBehaviour
         {
             //url = "http://vfo.welfaresverige.se/Service/GetExercises/" + Global.Instance.UserId + "/" + "sv-SE"; //OutComment if release version
         }
-            
+
         WWW www = new WWW(url);
 
         yield return www;
-        
+
         if (www.error == null)
         {
             Debug.Log("Result:\n" + www.text);
@@ -387,15 +396,15 @@ public class DataManager : MonoBehaviour
                 Debug.Log("Converted to ExercizeCategoryCollection:\n" + Global.Instance.categoryCollection.ToString());
                 Global.Instance.LoadMain();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                Util.MessageBox(new Rect(0, 0, 400, 200), "Error: "+e.Message+"\n\nPlease try to restart the application!" , Message.Type.Error, false, true);
+                Util.MessageBox(new Rect(0, 0, 400, 200), "Error: " + e.Message + "\n\nPlease try to restart the application!", Message.Type.Error, false, true);
             }
         }
         else
         {
             Debug.Log("WWW Error: " + www.error);
-        }   
+        }
     }
 
     public static IEnumerator UploadData()
@@ -430,14 +439,14 @@ public class DataManager : MonoBehaviour
         else
         {
             Debug.Log("Upload Error: " + www.error);
-        } 
+        }
     }
 
     public static IEnumerator RetrieveVideoCategoryData()
     {
-        Debug.Log("Retrieving QrVideoData");
+        Debug.Log("Retrieving QrVideoCategoryData");
 
-        string url = "https://vfo.welfaredenmark.com/Service/GetVideoCategories/" ; //Production environment service
+        string url = "https://vfo.welfaredenmark.com/Service/GetVideoCategories/"; //Production environment service
         url = "http://localhost:59477/Service/GetVideoCategories/";//LOCAL SERVICE - Comment for release version
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
@@ -504,6 +513,81 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    public static IEnumerator RetrieveVideoPathData()
+    {
+        Debug.Log("Retrieving Video Paths");
+
+        string url = "https://vfo.welfaredenmark.com/Service/GetQrVideos/" + Global.Instance.UserId + "/" + "da-DK"; //Production environment service
+        url = "http://localhost:59477/Service/GetVideoPaths/" + Global.Instance.UserId; //LOCAL SERVICE - Comment for release version
+
+        if (Global.Instance.ProgramLanguage == "sv-SE")
+        {
+            //url = "http://vfo.welfaresverige.se/Service/GetQrVideos/" + Global.Instance.UserId + "/" + "sv-SE"; //OutComment if release version
+        }
+
+        WWW www = new WWW(url);
+
+        yield return www;
+
+        if (www.error == null)
+        {
+            Debug.Log("Result:\n" + www.text);
+            try
+            {
+                JsonQrVideoCollection qrvC = JsonReader.Deserialize<JsonQrVideoCollection>(www.text);
+                Global.Instance.videoPaths = JsonQrVideoToQrVideo(qrvC);
+            }
+            catch (Exception e)
+            {
+                Util.MessageBox(new Rect(0, 0, 400, 200), "Error: " + e.Message + "\n\nPlease try to restart the application!", Message.Type.Error, false, true);
+            }
+        }
+        else
+        {
+            Debug.Log("WWW Error: " + www.error);
+        }
+    }
+
+    public static IEnumerator UploadQrVideo(QrVideo qrVid)
+    {
+
+        Debug.Log("UploadQrVideo");
+
+        
+        string url = "https://vfo.welfaredenmark.com/Service/SaveData/"; //Production environment service
+        url = "http://localhost:59477/Service/SaveQrVideo/"; //LOCAL SERVICE - Comment for release version
+
+        if (Global.Instance.ProgramLanguage == "sv-SE")
+        {
+            //url = "http://vfo.welfaresverige.se/Service/SaveData/"; //OutComment if release version
+        }
+        
+        JsonQrVideo qrVideos = QrVideoToJsonQrVideo(qrVid);
+            
+        
+        
+        Debug.Log("Converted To Json Container:\n" + qrVideos.ToString());
+        string serialized = JsonWriter.Serialize(qrVideos);
+
+        Debug.Log("Serialized:\n" + serialized);
+        Encoding encoding = Encoding.UTF8;
+        byte[] bytes = encoding.GetBytes(serialized);
+
+        WWW www = new WWW(url, bytes);
+
+        yield return www;
+        // check for errors
+        if (www.error == null)
+        {
+            Debug.Log("Result: " + www.text);
+            Debug.Log("Upload Complete.");
+        }
+        else
+        {
+            Debug.Log("Upload Error: " + www.error);
+        }
+    }
+    
     public static IEnumerator UpdateQrVideo(QrVideo qrVideo)
     {
         Debug.Log("UpdateQRVideo");
@@ -585,10 +669,12 @@ public class DataManager : MonoBehaviour
         if (www.error == null)
         {
             Debug.Log("WWW Result: " + www.text);
-        } else {
-            Debug.Log("WWW Error: "+ www.error);
-        }    
-    } 
+        }
+        else
+        {
+            Debug.Log("WWW Error: " + www.error);
+        }
+    }
 
     static ExerciseCategoryCollection JsonCategoryCollectionToExerciseCategoryCollection(JsonCategoryCollection collection)
     {
@@ -621,11 +707,11 @@ public class DataManager : MonoBehaviour
         foreach (ExerciseCategory c in collection)
         {
             JsonCategory tmpCategory = new JsonCategory(c.ID, c.Name, c.Score);
-            List<JsonExercise> exerciseList = new List<JsonExercise>(); 
+            List<JsonExercise> exerciseList = new List<JsonExercise>();
             foreach (Exercise e in c)
             {
                 JsonExercise tmpExercise = new JsonExercise(e.ID, e.Name, e.Score, e.Function, e.Attempted);
-                
+
                 // Resets attempted each time the data is set, so only current attempted exercise is sent
                 e.Attempted = false;
 
@@ -672,6 +758,7 @@ public class DataManager : MonoBehaviour
         JsonQrVideo jsonQrVideo = new JsonQrVideo(vid.Id, vid.Name, vid.Description, vid.Path, vid.Count, vid.UserGroupId, vid.UserId, vid.ReleaseDate, vid.VideoCategoryId);
         return jsonQrVideo;
     }
+    
 
     static JsonQrVideoUserView QrVideoUserViewToJsonQrVideoUserView(QrVideoUserView view)
     {
@@ -680,12 +767,14 @@ public class DataManager : MonoBehaviour
     }
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }
