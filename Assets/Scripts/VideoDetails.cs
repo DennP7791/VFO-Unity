@@ -10,12 +10,11 @@ public class VideoDetails : MonoBehaviour
 {
     public InputField Name;
     public InputField Description;
-    public InputField Password;
-    public GameObject PasswordRow;
     public Dropdown Categories;
     public Dropdown UserGroups;
     public Button SaveButton;
     public Button CancelButton;
+    
 
     private List<string> _categoryList = new List<string>();
     private int _previousScene;
@@ -34,9 +33,6 @@ public class VideoDetails : MonoBehaviour
             Categories.value = Global.Instance.CurrentVideo.VideoCategoryId-1;
         }
 
-
-	    PasswordRow.SetActive(false);
-        //GetUserGroups();
         AddListeners();
     }
 
@@ -48,47 +44,12 @@ public class VideoDetails : MonoBehaviour
         }
         Categories.value = 1;
         Categories.value = 0;
-
-    }
-
-    void GetUserGroups()
-    {
-        
     }
 
     void AddListeners()
     {
-        //Categories.onValueChanged.AddListener(
-        //    delegate
-        //    {
-        //        EnableDisablePassword();
-        //    });
-        SaveButton.onClick.AddListener(
-            delegate
-            {
-                SaveVideoDetails();
-            });
-        CancelButton.onClick.AddListener(
-            delegate
-            {
-                GoToPreviousScene();
-            });
-
-    }
-
-    void EnableDisablePassword()
-    {
-        //TODO: currently we're disabling password if the category.value doesn't match 2 (individuel forflytning), find a better solution than hardcoding this value.
-        if (Categories.value == 2)
-        {
-            PasswordRow.SetActive(true);
-            Debug.Log("enabling password");
-        }
-        else
-        {
-            PasswordRow.SetActive(false);
-            Debug.Log("diabling password");
-        }
+        SaveButton.onClick.AddListener(SaveVideoDetails);
+        CancelButton.onClick.AddListener(GoToPreviousScene);
     }
 
     void SaveVideoDetails()
@@ -97,14 +58,12 @@ public class VideoDetails : MonoBehaviour
         Debug.Log(_previousScene);
         Debug.Log(Global.Instance.userGroup.GroupName);
 
-        //1003 = record video
         if (_previousScene == _recordVideoScene)
         {
             video = new QrVideo(Name.text, Description.text, Global.Instance.videoPath, 0, Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value);
             StartCoroutine(DataManager.UploadQrVideo(video));
         }
 
-        // upload video
         if (_previousScene == _uploadScene)
         {
             video = Global.Instance.CurrentVideo;
@@ -114,23 +73,10 @@ public class VideoDetails : MonoBehaviour
 
             StartCoroutine(DataManager.UpdateQrVideo(video));
         }
-
-
     }
 
     void GoToPreviousScene()
     {
         SceneLoader.Instance.CurrentScene = _previousScene;
     }
-
-    void UpdateVideo()
-    {
-        
-    }
-
-    void Cancel()
-    {
-        
-    }
-
 }
