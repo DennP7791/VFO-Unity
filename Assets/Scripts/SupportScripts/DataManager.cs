@@ -206,6 +206,13 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    public class JsonUserGroup
+    {
+        public int Id;
+        public string GroupName;
+        public int? CustomerId;
+    }
+
     public class JsonCategory : JsonBaseExercise
     {
         public JsonExercise[] Exercises;
@@ -662,6 +669,40 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    public static IEnumerator GetUserGroup()
+    {
+        Debug.Log("GetUserGroup");
+        string url = "https://vfo.welfaredenmark.com/Service/GetUserGroup/" + Global.Instance.UserId + "/" + "da-DK"; //Production environment service
+        url = "http://localhost:59477/Service/GetUserGroup/" + Global.Instance.UserId; //LOCAL SERVICE - Comment for release version
+
+        if (Global.Instance.ProgramLanguage == "sv-SE")
+        {
+            //url = "http://vfo.welfaresverige.se/Service/GetUserGroup/" + Global.Instance.UserId + "/" + "sv-SE"; //OutComment if release version
+        }
+
+        WWW www = new WWW(url);
+
+        yield return www;
+
+        if (www.error == null)
+        {
+            Debug.Log("Result:\n" + www.text);
+            try
+            {
+                JsonUserGroup ug = JsonReader.Deserialize<JsonUserGroup>(www.text);
+                Global.Instance.userGroup = JsonUserGroupToUserGroup(ug);
+            }
+            catch (Exception e)
+            {
+                Util.MessageBox(new Rect(0, 0, 400, 200), "Error: " + e.Message + "\n\nPlease try to restart the application!", Message.Type.Error, false, true);
+            }
+        }
+        else
+        {
+            Debug.Log("WWW Error: " + www.error);
+        }
+    }
+
     static public IEnumerator WaitForRequest(WWW www)
     {
         yield return www;
@@ -740,6 +781,12 @@ public class DataManager : MonoBehaviour
             qrvList.Add(tmpQrVideo);
         }
         return qrvList;
+    }
+
+    static UserGroup JsonUserGroupToUserGroup(JsonUserGroup ug)
+    {
+        UserGroup userGroup = new UserGroup(ug.Id, ug.GroupName, ug.CustomerId);
+        return userGroup;
     }
 
     static List<VideoCategory> JsonVideoCategoryToVideoCategory(JsonVideoCategoryCollection jsonVidCol)

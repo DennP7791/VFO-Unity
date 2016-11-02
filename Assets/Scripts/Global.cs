@@ -11,7 +11,9 @@ public class Global : MonoBehaviour {
     public ExerciseCategoryCollection categoryCollection = new ExerciseCategoryCollection();
     public List<QrVideo> qrVideos = new List<QrVideo>();
     public List<QrVideo> videoPaths = new List<QrVideo>();
+    public QrVideo CurrentVideo;
     public string videoPath = "";
+    public UserGroup userGroup;
     public List<VideoCategory> videoCategories = new List<VideoCategory>();
 
     private static Global _instance; //singleton

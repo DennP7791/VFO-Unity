@@ -1,8 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 using UnityEngine.UI;
 using System.Collections.Generic;
+using Text = UnityEngine.UI.Text;
 
 public class VideoDetails : MonoBehaviour
 {
@@ -16,13 +18,24 @@ public class VideoDetails : MonoBehaviour
     public Button CancelButton;
 
     private List<string> _categoryList = new List<string>();
-    private int PreviousScene;
+    private int _previousScene;
+    private int _recordVideoScene = 1003;
+    private int _uploadScene = 1005;
 
 	void Start ()
 	{
-	    PreviousScene = SceneLoader.Instance.PreviousScene;
-	    PasswordRow.SetActive(false);
+	    _previousScene = SceneLoader.Instance.PreviousScene;
         GetCategories();
+
+	    if (_previousScene == _uploadScene)
+	    {
+	        Name.text = Global.Instance.CurrentVideo.Name;
+            Description.text = Global.Instance.CurrentVideo.Description;
+            Categories.value = Global.Instance.CurrentVideo.VideoCategoryId-1;
+        }
+
+
+	    PasswordRow.SetActive(false);
         //GetUserGroups();
         AddListeners();
     }
@@ -53,12 +66,12 @@ public class VideoDetails : MonoBehaviour
         SaveButton.onClick.AddListener(
             delegate
             {
-                ClickSave();
+                SaveVideoDetails();
             });
         CancelButton.onClick.AddListener(
             delegate
             {
-                ClickCancel();
+                GoToPreviousScene();
             });
 
     }
@@ -78,18 +91,36 @@ public class VideoDetails : MonoBehaviour
         }
     }
 
-    void ClickSave()
+    void SaveVideoDetails()
     {
-        //save if previous scene was record video
-        if (PreviousScene == 1003)
+        QrVideo video;
+        Debug.Log(_previousScene);
+        Debug.Log(Global.Instance.userGroup.GroupName);
+
+        //1003 = record video
+        if (_previousScene == _recordVideoScene)
         {
-            
+            video = new QrVideo(Name.text, Description.text, Global.Instance.videoPath, 0, Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value);
+            StartCoroutine(DataManager.UploadQrVideo(video));
         }
+
+        // upload video
+        if (_previousScene == _uploadScene)
+        {
+            video = Global.Instance.CurrentVideo;
+            video.Name = Name.text;
+            video.Description = Description.text;
+            video.VideoCategoryId = Categories.value + 1;
+
+            StartCoroutine(DataManager.UpdateQrVideo(video));
+        }
+
+
     }
 
-    void ClickCancel()
+    void GoToPreviousScene()
     {
-        SceneLoader.Instance.CurrentScene = PreviousScene;
+        SceneLoader.Instance.CurrentScene = _previousScene;
     }
 
     void UpdateVideo()

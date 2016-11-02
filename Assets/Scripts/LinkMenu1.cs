@@ -640,7 +640,7 @@ public class LinkMenu1 : BaseWindow
             WinParent = this,
             Text = "Upload video",
             Style = _btnStyle,
-            Function = 1001,
+            Function = 1005,
             isSubLink = true
         };
         uploadButton.Parent = uploadButton;
