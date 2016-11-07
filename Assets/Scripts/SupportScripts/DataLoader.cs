@@ -14,9 +14,9 @@ public class DataLoader : MonoBehaviour {
 
         StartCoroutine(RetrieveVersion());
 	}
-	
-	// Update is called once per frame
-	void Update () 
+
+    // Update is called once per frame
+    void Update()
     {
         if (noNewVersion)
         {
@@ -30,12 +30,6 @@ public class DataLoader : MonoBehaviour {
                 checkNewVersion = true;
             }
         }
-	}
-
-    public static void DownloadNewVersion(Message message, bool value)
-    {
-        Application.OpenURL("http://vfo.welfaredenmark.com/download/index?lang=" + Global.Instance.ProgramLanguage);
-        Application.Quit();
     }
 
     public IEnumerator RetrieveVersion()
@@ -45,7 +39,12 @@ public class DataLoader : MonoBehaviour {
         WWW www = new WWW(url);
 
         yield return www;
+        
 
+#if UNITY_ANDROID || UNITY_IOS
+        noNewVersion = true;
+
+#else
         if (www.error == null)
         {
             Debug.Log("Current Version: " + Global.Instance.ProgramVersion.ToString() + " - New Version: " + www.text);
@@ -53,7 +52,7 @@ public class DataLoader : MonoBehaviour {
             {
                 noNewVersion = false;
                 Debug.LogWarning("New version available");
-                Util.OkMessageBox(new Rect(0, 0, 400, 200), "Der er en ny version tilgængelig.\n\nDu skal hente og installere den nye version før du kan forsætte.\n\nTryk på ok for at afslutte programmet og åbne websiden med den nye version.", true, Message.Type.Info, DownloadNewVersion);
+                Util.OkMessageBox(new Rect(0, 0, 400, 200), "Der er en ny version tilg�ngelig.\n\nDu skal hente og installere den nye version f�r du kan fors�tte.\n\nTryk p� ok for at afslutte programmet og �bne websiden med den nye version.", true, Message.Type.Info, DownloadNewVersion);
             }
             else
             {
@@ -65,7 +64,18 @@ public class DataLoader : MonoBehaviour {
             Debug.Log("No new version");
             noNewVersion = true;
         }
+
+
+#endif
+}
+    
+
+    public static void DownloadNewVersion(Message message, bool value)
+    {
+        Application.OpenURL("http://vfo.welfaredenmark.com/download/index?lang=" + Global.Instance.ProgramLanguage);
+        Application.Quit();
     }
+    
 
     public bool isVersionBigger(string v)
     {
