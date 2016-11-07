@@ -22,19 +22,37 @@ public abstract class BaseWindow : MonoBehaviour {
     public abstract void WinOnGUI();
     public abstract void WinUpdate();
 
-	void Start () {
-        if(_id == -1)
+    void Start()
+    {
+        if (_id == -1)
             _id = WindowHandler.Register2(this);
         Debug.Log(
             "Base Start: " + this.gameObject.name +
-            ", ID: "+ _id + ", Depth: "+_depth
+            ", ID: " + _id + ", Depth: " + _depth
             );
 
         WinStart();
         _started = true;
+        
+#if UNITY_ANDROID || UNITY_IOS
+        int maxWidth = 768;
+        int maxHeight = 1024;    
 
-        Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true, Screen.currentResolution.refreshRate); //MC Added 21-07-2016 - Adapt to current resolution of device
-	}
+        if (Screen.currentResolution.width > maxWidth || Screen.currentResolution.height > maxHeight)
+        {
+            Screen.SetResolution(maxWidth, maxHeight, true, Screen.currentResolution.refreshRate);
+        }
+        else
+        {
+            Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true, Screen.currentResolution.refreshRate); //MC Added 21-07-2016 - Adapt to current resolution of device     
+        }
+
+#else
+            Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, true, Screen.currentResolution.refreshRate); //MC Added 21-07-2016 - Adapt to current resolution of device     
+#endif
+
+
+}
 
     void OnGUI()
     {
