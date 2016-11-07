@@ -10,8 +10,7 @@ public class Global : MonoBehaviour {
     public ToolButton[] toolButtonArray = new ToolButton[0];
     public ExerciseCategoryCollection categoryCollection = new ExerciseCategoryCollection();
     public List<QrVideo> qrVideos = new List<QrVideo>();
-    public List<QrVideo> videoPaths = new List<QrVideo>();
-    public QrVideo CurrentVideo;
+    public List<QrVideo> localVideos = new List<QrVideo>();
     public string videoPath = "";
     public UserGroup userGroup;
     public List<VideoCategory> videoCategories = new List<VideoCategory>();

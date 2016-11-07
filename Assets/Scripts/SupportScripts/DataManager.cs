@@ -7,6 +7,7 @@ using ExerciseCollections;
 using System;
 using System.IO;
 using System.Net.NetworkInformation;
+using UnityEngine.Networking;
 
 public class DataManager : MonoBehaviour
 {
@@ -542,7 +543,7 @@ public class DataManager : MonoBehaviour
             try
             {
                 JsonQrVideoCollection qrvC = JsonReader.Deserialize<JsonQrVideoCollection>(www.text);
-                Global.Instance.videoPaths = JsonQrVideoToQrVideo(qrvC);
+                Global.Instance.localVideos = JsonQrVideoToQrVideo(qrvC);
             }
             catch (Exception e)
             {
@@ -598,12 +599,12 @@ public class DataManager : MonoBehaviour
     public static IEnumerator UpdateQrVideo(QrVideo qrVideo)
     {
         Debug.Log("UpdateQRVideo");
-        string url = "https://vfo.welfaredenmark.com/Service/UpdateData/"; //Production environment service
-        url = "http://localhost:59477/Service/UpdateVideo/"; //LOCAL SERVICE - Comment for release version
+        string url = "https://vfo.welfaredenmark.com/Service/UpdateQrVideo/"; //Production environment service
+        url = "http://localhost:59477/Service/UpdateQrVideo/"; //LOCAL SERVICE - Comment for release version
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
         {
-            //url = "http://vfo.welfaresverige.se/Service/UpdateVideo/"; //OutComment if release version
+            //url = "http://vfo.welfaresverige.se/Service/UpdateQrVideo/"; //OutComment if release version
         }
 
         JsonQrVideo jsonVid = QrVideoToJsonQrVideo(qrVideo);
@@ -700,6 +701,37 @@ public class DataManager : MonoBehaviour
         else
         {
             Debug.Log("WWW Error: " + www.error);
+        }
+    }
+
+    public static IEnumerator DeleteVideo(int id)
+    {
+        Debug.Log("GetUserGroup");
+        string url = "https://vfo.welfaredenmark.com/Service/DeleteVideo/" + id + "/" + "da-DK"; //Production environment service
+        url = "http://localhost:59477/Service/DeleteVideo/" + id; //LOCAL SERVICE - Comment for release version
+
+        if (Global.Instance.ProgramLanguage == "sv-SE")
+        {
+            //url = "http://vfo.welfaresverige.se/Service/DeleteVideo/" + Global.Instance.UserId + "/" + "sv-SE"; //OutComment if release version
+        }
+
+        //var headers = new Dictionary<string, string>();
+        //headers.Add("X-HTTP-Method-Override", "DELETE");
+
+        //WWW www = new WWW(url, headers);
+
+        UnityWebRequest request = UnityWebRequest.Delete(url);
+
+        yield return request.Send();
+
+        if (request.error == null)
+        {
+            //Debug.Log("Result: " + request.text);
+            Debug.Log("Video Deleted");
+        }
+        else
+        {
+            Debug.Log("Delete Error: " + request.error);
         }
     }
 
