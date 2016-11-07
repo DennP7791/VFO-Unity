@@ -18,7 +18,6 @@ public class VideoDetails : MonoBehaviour
     public Button DeleteButton;
 
     private QrVideo _selectedVideo;
-    private List<string> _categoryList = new List<string>();
     private int _previousScene;
     private int _recordVideoScene = 1003;
     private int _linkMenuScene = 0;
@@ -34,7 +33,6 @@ public class VideoDetails : MonoBehaviour
 	    {
             GetLocalVideos();
 	    }
-
 
         AddListeners();
     }
@@ -65,7 +63,6 @@ public class VideoDetails : MonoBehaviour
 
     void AddListeners()
     {
-        //DeleteButton.onClick.AddListener(GoToPreviousScene);
         SaveButton.onClick.AddListener(SaveVideoDetails);
         UploadButton.onClick.AddListener(UploadVideo);
         DeleteButton.onClick.AddListener(DeleteVideo);
@@ -83,14 +80,22 @@ public class VideoDetails : MonoBehaviour
 
     void DeleteVideo()
     {
+        if (DeleteVideoFile())
+        {
+            StartCoroutine(DataManager.DeleteVideo(_selectedVideo.Id));
+            RemoveVideoFromList();
+        }
+    }
+
+    bool DeleteVideoFile()
+    {
     #if UNITY_IPHONE
         if (File.Exists("/private" + _selectedVideo.Path))
         {
             File.Delete("/private" + _selectedVideo.Path);
             if (!File.Exists(_selectedVideo.Path))
             {
-                StartCoroutine(DataManager.DeleteVideo(_selectedVideo.Id));
-                RemoveVideoFromList();
+                return true;
             }
         }
     #else
@@ -99,55 +104,51 @@ public class VideoDetails : MonoBehaviour
             File.Delete(_selectedVideo.Path);
             if (!File.Exists(_selectedVideo.Path))
             {
-                StartCoroutine(DataManager.DeleteVideo(_selectedVideo.Id));
-                RemoveVideoFromList();
+                return true; 
             }
         }
         else
         {
             Debug.Log("File not found");
         }
+        return false;
     #endif
     }
 
     void SaveVideoDetails()
     {
-        QrVideo video;
         Debug.Log(_previousScene);
         Debug.Log(Global.Instance.userGroup.GroupName);
 
         if (_previousScene == _recordVideoScene)
         {
-            video = new QrVideo(Name.text, Description.text, Global.Instance.videoPath, 0, Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
-            StartCoroutine(DataManager.UploadQrVideo(video));
+            _selectedVideo = new QrVideo(Name.text, Description.text, Global.Instance.videoPath, 0, Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
+            StartCoroutine(DataManager.UploadQrVideo(_selectedVideo));
         }
 
         if (_previousScene == _linkMenuScene)
         {
-            _selectedVideo.Name = Name.text;
-            _selectedVideo.Description = Description.text;
-            _selectedVideo.VideoCategoryId = Categories.value + 1;
-
+            UpdateSelectedVideoFromInputFields();
             StartCoroutine(DataManager.UpdateQrVideo(_selectedVideo));
         }
     }
 
     void UploadVideo()
     {
-        string blockBlobReference = Name.text.Replace(" ","") + "_" + _selectedVideo.Id;
+        UpdateSelectedVideoFromInputFields();
+        string blockBlobReference = _selectedVideo.Name.Replace(" ","") + "_" + _selectedVideo.Id;
+        //TODO: Make sure video doesnt upload unless AzureManager.PutBlob is successfull
+        //TODO: Fix AzureManager so it doesnt lock the main thread.
         StartCoroutine(AzureManager.PutBlob(_selectedVideo.Path, blockBlobReference));
-        QrVideo video = new QrVideo(_selectedVideo.Id, Name.text, Description.text, blockBlobReference, 0, Global.Instance.userGroup.Id, Global.Instance.UserId, DateTime.Now, Categories.value + 1);
-        StartCoroutine(DataManager.UpdateQrVideo(video));
+        MakeVideoLive(blockBlobReference);
         RemoveVideoFromList();
+        DeleteVideoFile();
     }
 
     void SelectVideo()
     {
         _selectedVideo = Global.Instance.localVideos[LocalVideos.value];
-
-        Name.text = _selectedVideo.Name;
-        Description.text = _selectedVideo.Description;
-        Categories.value = _selectedVideo.VideoCategoryId - 1;
+        UpdateSelectedVideoFromInputFields();
     }
 
     void RemoveVideoFromList()
@@ -157,26 +158,25 @@ public class VideoDetails : MonoBehaviour
         GetLocalVideos();
     }
 
-    void DeleteFile()
+    void UpdateSelectedVideoFromInputFields()
     {
-#if UNITY_IPHONE
-            if (File.Exists("/private" + _selectedVideo.Path))
-        {
-            File.Delete("/private" + _selectedVideo.Path);
-            Debug.Log("File deleted");
-        }
-#else
-        Debug.Log("Selected video path: " + _selectedVideo.Path);
-        if (File.Exists(_selectedVideo.Path))
-        {
-            File.Delete(_selectedVideo.Path);
-            Debug.Log("File deleted");
-        }
-        else
-        {
-            Debug.Log("File not found");
-        }
-#endif
+        _selectedVideo.Name = Name.text;
+        _selectedVideo.Description = Description.text;
+        _selectedVideo.VideoCategoryId = Categories.value + 1;
     }
 
+    void MakeVideoLive(string blockBlobReference)
+    {
+        _selectedVideo.Path = blockBlobReference;
+        _selectedVideo.ReleaseDate = DateTime.Now;
+
+        if (_previousScene == _linkMenuScene)
+        {
+            StartCoroutine(DataManager.UpdateQrVideo(_selectedVideo));
+        }
+        else if (_previousScene == _recordVideoScene)
+        {
+            StartCoroutine(DataManager.UploadQrVideo(_selectedVideo));
+        }
+    }
 }
