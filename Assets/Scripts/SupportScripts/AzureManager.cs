@@ -8,8 +8,9 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 
-public class AzureManager : MonoBehaviour {
 
+public class AzureManager : MonoBehaviour
+{
     public static void GetBlob(string blockBlobReference)
     {
         string requestMethod = "GET";
@@ -49,9 +50,9 @@ public class AzureManager : MonoBehaviour {
 
     }
 
-    public static IEnumerator PutBlob(string filePath, string blockBlobReference)
+    public static void PutBlob(string filePath, string blockBlobReference)
     {
-        String requestMethod = "PUT";
+        String httpMethod = "PUT";
 
         Byte[] blobContent = File.ReadAllBytes(filePath);
         Int32 blobLength = blobContent.Length;
@@ -64,29 +65,24 @@ public class AzureManager : MonoBehaviour {
 
         String canonicalizedHeaders = String.Format("x-ms-blob-type:{0}\nx-ms-date:{1}\nx-ms-version:{2}", blobType, dateInRfc1123Format, msVersion);
         String canonicalizedResource = String.Format("/{0}/{1}", AzureStorageConstants.Account, urlPath);
-        String stringToSign = String.Format("{0}\n\n\n{1}\n\n\n\n\n\n\n\n\n{2}\n{3}", requestMethod, blobLength, canonicalizedHeaders, canonicalizedResource);
+        String stringToSign = String.Format("{0}\n\n\n{1}\n\n\n\n\n\n\n\n\n{2}\n{3}", httpMethod, blobLength, canonicalizedHeaders, canonicalizedResource);
         String authorizationHeader = CreateAuthorizationHeader(stringToSign);
 
         Uri uri = new Uri(AzureStorageConstants.BlobEndPoint + urlPath);
-        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
-        request.Method = requestMethod;
-        request.Headers.Add("x-ms-blob-type", blobType);
-        request.Headers.Add("x-ms-date", dateInRfc1123Format);
-        request.Headers.Add("x-ms-version", msVersion);
-        request.Headers.Add("Authorization", authorizationHeader);
-        request.ContentLength = blobLength;
 
         ServicePointManager.ServerCertificateValidationCallback = MyRemoteCertificateValidationCallback;
-        using (Stream requestStream = request.GetRequestStream())
+        using (WebClient client = new WebClient())
         {
-            requestStream.Write(blobContent, 0, blobLength);
-            yield return requestStream;
+            client.Headers.Add("x-ms-blob-type", blobType);
+            client.Headers.Add("x-ms-date", dateInRfc1123Format);
+            client.Headers.Add("x-ms-version", msVersion);
+            client.Headers.Add("Authorization", authorizationHeader);
+            client.UploadDataAsync(uri, httpMethod, blobContent);
+            
+            //client.UploadProgressChanged += delegate(object sender, UploadProgressChangedEventArgs args) {  };
         }
 
-        using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-        {
-            String ETag = response.Headers["ETag"];
-        }
+
     }
 
     private static void CopyStream(Stream input, Stream output)

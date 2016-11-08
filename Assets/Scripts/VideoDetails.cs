@@ -17,6 +17,7 @@ public class VideoDetails : MonoBehaviour
     public Button UploadButton;
     public Button DeleteButton;
 
+    private Message _confirmUploadMessages;
     private QrVideo _selectedVideo;
     private int _previousScene;
     private int _recordVideoScene = 1003;
@@ -35,7 +36,8 @@ public class VideoDetails : MonoBehaviour
 	    }
 
         AddListeners();
-    }
+
+	}
 
     void GetCategories()
     {
@@ -73,11 +75,6 @@ public class VideoDetails : MonoBehaviour
             });
     }
 
-    void GoToPreviousScene()
-    {
-        SceneLoader.Instance.CurrentScene = _previousScene;
-    }
-
     void DeleteVideo()
     {
         if (DeleteVideoFile())
@@ -107,12 +104,12 @@ public class VideoDetails : MonoBehaviour
                 return true; 
             }
         }
+    #endif
         else
         {
             Debug.Log("File not found");
         }
         return false;
-    #endif
     }
 
     void SaveVideoDetails()
@@ -136,10 +133,11 @@ public class VideoDetails : MonoBehaviour
     void UploadVideo()
     {
         UpdateSelectedVideoFromInputFields();
-        string blockBlobReference = _selectedVideo.Name.Replace(" ","") + "_" + _selectedVideo.Id;
-        //TODO: Make sure video doesnt upload unless AzureManager.PutBlob is successfull
-        //TODO: Fix AzureManager so it doesnt lock the main thread.
-        StartCoroutine(AzureManager.PutBlob(_selectedVideo.Path, blockBlobReference));
+        string blockBlobReference = _selectedVideo.Name.Replace(" ", "") + "_" + _selectedVideo.Id;
+        AzureManager.PutBlob(_selectedVideo.Path, blockBlobReference);
+        //_confirmUploadMessages = Util.CancellableMessageBox(new Rect(0, 0, 300, 200),
+        //    "Du er ved at uploade din video " + _selectedVideo.Name + ". Denne video er af typen \"" +
+        //    Global.Instance.videoCategories[LocalVideos.value] + "\". Er du sikker på at du vil fortsætte med at uploade videoen?", true, Message.Type.Info, delegate(Message message, bool value) {  });
         MakeVideoLive(blockBlobReference);
         RemoveVideoFromList();
         DeleteVideoFile();
@@ -148,7 +146,9 @@ public class VideoDetails : MonoBehaviour
     void SelectVideo()
     {
         _selectedVideo = Global.Instance.localVideos[LocalVideos.value];
-        UpdateSelectedVideoFromInputFields();
+        Name.text = _selectedVideo.Name;
+        Description.text = _selectedVideo.Description;
+        Categories.value = _selectedVideo.VideoCategoryId - 1;
     }
 
     void RemoveVideoFromList()
@@ -179,4 +179,6 @@ public class VideoDetails : MonoBehaviour
             StartCoroutine(DataManager.UploadQrVideo(_selectedVideo));
         }
     }
+
+
 }

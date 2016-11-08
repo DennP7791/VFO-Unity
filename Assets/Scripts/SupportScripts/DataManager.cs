@@ -715,11 +715,6 @@ public class DataManager : MonoBehaviour
             //url = "http://vfo.welfaresverige.se/Service/DeleteVideo/" + Global.Instance.UserId + "/" + "sv-SE"; //OutComment if release version
         }
 
-        //var headers = new Dictionary<string, string>();
-        //headers.Add("X-HTTP-Method-Override", "DELETE");
-
-        //WWW www = new WWW(url, headers);
-
         UnityWebRequest request = UnityWebRequest.Delete(url);
 
         yield return request.Send();
