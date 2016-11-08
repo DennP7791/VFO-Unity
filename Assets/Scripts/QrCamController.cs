@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,6 +21,15 @@ public class QrCamController : MonoBehaviour
     private bool _qrFound;
     private ZXing.Result result;
 
+    EncryptKey encrypt_key;
+    DataManager data_manager;
+    public UnityEngine.UI.Text errorMessage;
+    public InputField passwordInput;
+    public GameObject cameraCanvas;
+    public GameObject passwordCanvas;
+    public Button SubmibButton;
+    private bool isSecureVideo = false;
+
     void Start()
     {
         Initialize();
@@ -37,6 +47,10 @@ public class QrCamController : MonoBehaviour
 
     void Initialize()
     {
+        encrypt_key = new EncryptKey();
+        data_manager = new DataManager();
+        SubmibButton.onClick.AddListener(SumbitPassword);
+
         barcodeReader = new BarcodeReader { AutoRotate = false, TryHarder = false };
         videoList = Global.Instance.qrVideos;
         _camTexture = new WebCamTexture();
@@ -51,7 +65,15 @@ public class QrCamController : MonoBehaviour
         if (_qrFound)
         {
             StatusText.text = "QR Video Found";
-            LoadVideo(result.ToString());
+            if (isSecure())
+            {
+                passwordCanvas.SetActive(true);
+            }
+            else
+            {
+                passwordCanvas.SetActive(false);
+                LoadVideo(result.ToString());
+            }
         }
         AdjustCamera();
     }
@@ -152,5 +174,83 @@ public class QrCamController : MonoBehaviour
                 SceneLoader.Instance.CurrentScene = 1002;
             }
         }
+    }
+
+    //
+    //------------------Encryption-----------------------
+    //
+    bool isSecure()
+    {
+        foreach (var vid in videoList)
+        {
+            if (vid.VideoCategoryId == 1 && vid.VideoCategoryId == 2)
+            {
+                isSecureVideo = false;
+            }
+            else
+            {
+                isSecureVideo = true;
+            }
+        }
+        return isSecureVideo;
+    }
+
+    private void SumbitPassword()
+    {
+        try
+        {
+            if (passwordInput.text.Length == 0)
+            {
+                errorMessage.text = "Password Is Empty!";
+            }
+            else
+            {
+                string savedPassword = Global.Instance.userGroupVideoCredintial.Password.ToString();
+                byte[] salt = GetBytes(Global.Instance.userGroupVideoCredintial.Salt.ToString());
+
+                string input_Password = encrypt_key.Hash(passwordInput.text, salt);
+                string db_Password = savedPassword;
+
+                if (db_Password == input_Password)
+                {
+                    StartCoroutine(DataManager.validateSeureQrVideo(result.ToString()));
+                }
+                else
+                {
+                    errorMessage.text = "Wrong password!";
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            errorMessage.text = "Something went wrong, Contact support!";
+            Debug.Log("Error: " + e);
+        }
+    }
+
+    public void onSuccess(string result)
+    {
+        _qrFound = false;
+        Global.Instance.videoPath = result;
+        SceneLoader.Instance.CurrentScene = 1002;
+    }
+
+    static byte[] GetBytes(string str)
+    {
+        byte[] bytes = new byte[str.Length * sizeof(char)];
+        System.Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
+        return bytes;
+    }
+
+    static string GetString(byte[] bytes)
+    {
+        char[] chars = new char[bytes.Length / sizeof(char)];
+        System.Buffer.BlockCopy(bytes, 0, chars, 0, bytes.Length);
+        return new string(chars);
+    }
+
+    public void onFail()
+    {
+
     }
 }
