@@ -23,7 +23,7 @@ public class DataManager : MonoBehaviour
         public string @params;
         public int id;
     }
-    
+
     //public class JsonExercisePart
     //{
     //    public int Id;
@@ -103,7 +103,7 @@ public class DataManager : MonoBehaviour
             return result;
         }
     }
-    
+
 
     public class JsonVideoCategoryCollection
     {
@@ -292,6 +292,29 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    public class JsonUserGroupVideoCredential
+    {
+        public int Id;
+        public int VideoCategoryId;
+        public int UserGroupId;
+        public string Password;
+        public string Salt;
+
+        public JsonUserGroupVideoCredential()
+        {
+
+        }
+
+        public JsonUserGroupVideoCredential(int id, int videoCategoryId, int userGroupId, string password, string salt)
+        {
+            Id = id;
+            VideoCategoryId = videoCategoryId;
+            UserGroupId = userGroupId;
+            Password = password;
+            Salt = salt;
+        }
+    }
+
     public class JsonCredentials
     {
         public string Username = "";
@@ -308,6 +331,7 @@ public class DataManager : MonoBehaviour
             return "Username: " + Username + ", Password: " + Password + "";
         }
     }
+
 
     #endregion
 
@@ -561,7 +585,7 @@ public class DataManager : MonoBehaviour
 
         Debug.Log("UploadQrVideo");
 
-        
+
         string url = "https://vfo.welfaredenmark.com/Service/SaveData/"; //Production environment service
         url = "http://localhost:59477/Service/SaveQrVideo/"; //LOCAL SERVICE - Comment for release version
 
@@ -569,11 +593,11 @@ public class DataManager : MonoBehaviour
         {
             //url = "http://vfo.welfaresverige.se/Service/SaveData/"; //OutComment if release version
         }
-        
+
         JsonQrVideo qrVideos = QrVideoToJsonQrVideo(qrVid);
-            
-        
-        
+
+
+
         Debug.Log("Converted To Json Container:\n" + qrVideos.ToString());
         string serialized = JsonWriter.Serialize(qrVideos);
 
@@ -595,7 +619,7 @@ public class DataManager : MonoBehaviour
             Debug.Log("Upload Error: " + www.error);
         }
     }
-    
+
     public static IEnumerator UpdateQrVideo(QrVideo qrVideo)
     {
         Debug.Log("UpdateQRVideo");
@@ -821,6 +845,8 @@ public class DataManager : MonoBehaviour
         return userGroup;
     }
 
+
+
     static List<VideoCategory> JsonVideoCategoryToVideoCategory(JsonVideoCategoryCollection jsonVidCol)
     {
         List<VideoCategory> vcList = new List<VideoCategory>();
@@ -837,12 +863,85 @@ public class DataManager : MonoBehaviour
         JsonQrVideo jsonQrVideo = new JsonQrVideo(vid.Id, vid.Name, vid.Description, vid.Path, vid.Count, vid.UserGroupId, vid.UserId, vid.ReleaseDate, vid.VideoCategoryId);
         return jsonQrVideo;
     }
-    
+
 
     static JsonQrVideoUserView QrVideoUserViewToJsonQrVideoUserView(QrVideoUserView view)
     {
         JsonQrVideoUserView jsonQrVideoUserView = new JsonQrVideoUserView(view.VideoId, view.UserId, view.ViewDate);
         return jsonQrVideoUserView;
+    }
+
+    //
+    //Encryption
+    //
+
+    static UserGroupVideoCredential JsonUserGroupVideoCatagoryCredintial(JsonUserGroupVideoCredential ugcv)
+    {
+        UserGroupVideoCredential userGroupVideoCredintial = new UserGroupVideoCredential(ugcv.Id, ugcv.VideoCategoryId, ugcv.UserGroupId, ugcv.Password, ugcv.Salt);
+        return userGroupVideoCredintial;
+    }
+
+    public static IEnumerator validateSeureQrVideo(string path)
+    {
+        Debug.Log("Retrieving Secure Qr video Data");
+
+        string url = "https://vfo.welfaredenmark.com/Service/GetSecureQrVideo/" + Global.Instance.UserId + "?Path=" + path; //Production environment service
+        url = "http://localhost:59477/Service/GetSecureQrVideo/" + Global.Instance.UserId + "?Path=" + path; //LOCAL SERVICE - Comment for release version
+
+        if (Global.Instance.ProgramLanguage == "sv-SE")
+        {
+            //url = "http://vfo.welfaresverige.se/Service/GetSecureQrVideo/" + Global.Instance.UserId + "?Path=" + path; //OutComment if release version
+        }
+
+        WWW www = new WWW(url);
+
+        yield return www;
+
+        if (www.error == null)
+        {
+            if (Convert.ToBoolean(www.text))
+            {
+                QrCamController qrCam = new QrCamController();
+                qrCam.onSuccess(path);
+            }
+        }
+        else
+        {
+            Debug.Log("WWW Error: " + www.error);
+        }
+    }
+
+    public static IEnumerator getUserGroupCredential()
+    {
+        Debug.Log("GetUserGroupCredential");
+        string url = "https://vfo.welfaredenmark.com/Service/getUserGroupCredintial/" + Global.Instance.UserId + "/" + "da-DK"; //Production environment service
+        url = "http://localhost:59477/Service/getUserGroupCredintial/" + Global.Instance.UserId; //LOCAL SERVICE - Comment for release version
+
+        if (Global.Instance.ProgramLanguage == "sv-SE")
+        {
+            //url = "http://vfo.welfaresverige.se/Service/getUserGroupCredintial/" + Global.Instance.UserId + "/" + "sv-SE"; //OutComment if release version
+        }
+
+        WWW www = new WWW(url);
+
+        yield return www;
+
+        if (www.error == null)
+        {
+            try
+            {
+                JsonUserGroupVideoCredential ugvc = JsonReader.Deserialize<JsonUserGroupVideoCredential>(www.text);
+                Global.Instance.userGroupVideoCredintial = JsonUserGroupVideoCatagoryCredintial(ugvc);
+            }
+            catch (Exception e)
+            {
+                Util.MessageBox(new Rect(0, 0, 400, 200), "Error: " + e.Message + "\n\nPlease try to restart the application!", Message.Type.Error, false, true);
+            }
+        }
+        else
+        {
+            Debug.Log("WWW Error: " + www.error);
+        }
     }
 
     // Use this for initialization

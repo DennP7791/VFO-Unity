@@ -13,6 +13,7 @@ public class Global : MonoBehaviour {
     public List<QrVideo> localVideos = new List<QrVideo>();
     public string videoPath = "";
     public UserGroup userGroup;
+    public UserGroupVideoCredential userGroupVideoCredintial;
     public List<VideoCategory> videoCategories = new List<VideoCategory>();
 
     private static Global _instance; //singleton
