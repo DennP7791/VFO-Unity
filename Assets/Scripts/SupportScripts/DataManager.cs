@@ -11,9 +11,6 @@ using UnityEngine.Networking;
 
 public class DataManager : MonoBehaviour
 {
-    //string url = "https://vfo.welfaredenmark.com/";
-    //string url = "http://localhost:59477/";
-    string url = "http://vfo-staging-webapp.azurewebsites.net/";
 
 
     private static bool DEBUG = false;
@@ -352,8 +349,8 @@ public class DataManager : MonoBehaviour
     public static IEnumerator ValidateCredentials(JsonCredentials credentials)
     {
         string url = "https://vfo.welfaredenmark.com/Service/Authorize/"; //Production environment service
-        //url = "http://localhost:59477/Service/Authorize/"; //LOCAL SERVICE - Comment for release version
-        url = "http://vfo-staging-webapp.azurewebsites.net/Service/Authorize/"; //STAGING SERVICE - Comment for release version
+        url = "http://localhost:59477/Service/Authorize/"; //LOCAL SERVICE - Comment for release version
+        //url = "http://vfo-staging-webapp.azurewebsites.net/Service/Authorize/"; //STAGING SERVICE - Comment for release version
 
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
@@ -560,7 +557,7 @@ public class DataManager : MonoBehaviour
     {
         Debug.Log("Retrieving Video Paths");
 
-        string url = "https://vfo.welfaredenmark.com/Service/GetQrVideos/" + Global.Instance.UserId + "/" + "da-DK"; //Production environment service
+        string url = "https://vfo.welfaredenmark.com/Service/GetVideoPaths/" + Global.Instance.UserId + "/" + "da-DK"; //Production environment service
         url = "http://localhost:59477/Service/GetVideoPaths/" + Global.Instance.UserId; //LOCAL SERVICE - Comment for release version
         //url = "http://vfo-staging-webapp.azurewebsites.net/Service/GetVideoPaths/" + Global.Instance.UserId; //STAGING SERVICE - Comment for release version
 
