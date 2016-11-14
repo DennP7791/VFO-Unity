@@ -338,11 +338,6 @@ public class SceneLoader : MonoBehaviour {
                 Global.Instance.InfoWindowText = "Video Detail";
                 s_level = "video_details";
                 break;
-            case 1005:
-		        Global.Instance.IsQrVideoMenu = true;
-		        Global.Instance.InfoWindowText = "Upload Videos";
-		        s_level = "edit_videos";
-		        break;
             default:
                 s_level = "main";
                 break;
