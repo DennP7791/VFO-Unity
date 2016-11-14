@@ -56,6 +56,24 @@ public class VideoController : MonoBehaviour
         }
         
     }
+
+    void OnDestroy()
+    {
+        video.Stop();
+        _sound.Stop();
+    }
+
+    void OnDisable()
+    {
+        video.Pause();
+        _sound.Pause();
+    }
+
+    void ApplicationQuit()
+    {
+        video.Stop();
+        _sound.Stop();
+    }
 	
 	// Update is called once per frame
 	void Update () {
