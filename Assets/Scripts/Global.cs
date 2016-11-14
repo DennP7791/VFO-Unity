@@ -15,6 +15,7 @@ public class Global : MonoBehaviour {
     public UserGroup userGroup;
     public UserGroupVideoCredential userGroupVideoCredintial;
     public List<VideoCategory> videoCategories = new List<VideoCategory>();
+    public float progress = 0;
 
     private static Global _instance; //singleton
     private Dictionary<string,GameObject> guiObjects; //list of the

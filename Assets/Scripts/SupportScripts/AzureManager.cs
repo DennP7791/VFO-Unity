@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Globalization;
 using System.IO;
 using System.Net;
+using UnityEngine.Networking;
 
 
 public class AzureManager : MonoBehaviour
@@ -38,9 +39,7 @@ public class AzureManager : MonoBehaviour
             {
                 using (var fileStream = File.OpenWrite(Application.persistentDataPath + "/video.ogv"))
                 {
-
                     CopyStream(dataStream, fileStream);
-
                 }
                 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
                 //Method for converting .mp4 to .ogv
@@ -50,7 +49,7 @@ public class AzureManager : MonoBehaviour
 
     }
 
-    public static void PutBlob(string filePath, string blockBlobReference)
+    public IEnumerator PutBlob(string filePath, string blockBlobReference)
     {
         String httpMethod = "PUT";
 
@@ -70,19 +69,28 @@ public class AzureManager : MonoBehaviour
 
         Uri uri = new Uri(AzureStorageConstants.BlobEndPoint + urlPath);
 
-        ServicePointManager.ServerCertificateValidationCallback = MyRemoteCertificateValidationCallback;
-        using (WebClient client = new WebClient())
+        //ServicePointManager.ServerCertificateValidationCallback = MyRemoteCertificateValidationCallback;
+
+        using (UnityWebRequest webRequest = new UnityWebRequest())
         {
-            client.Headers.Add("x-ms-blob-type", blobType);
-            client.Headers.Add("x-ms-date", dateInRfc1123Format);
-            client.Headers.Add("x-ms-version", msVersion);
-            client.Headers.Add("Authorization", authorizationHeader);
-            client.UploadDataAsync(uri, httpMethod, blobContent);
-            
-            //client.UploadProgressChanged += delegate(object sender, UploadProgressChangedEventArgs args) {  };
+            webRequest.SetRequestHeader("x-ms-blob-type", blobType);
+            webRequest.SetRequestHeader("x-ms-date", dateInRfc1123Format);
+            webRequest.SetRequestHeader("x-ms-version", msVersion);
+            webRequest.SetRequestHeader("Authorization", authorizationHeader);
+
+            UploadHandler uploadHandler = new UploadHandlerRaw(blobContent);
+            webRequest.uploadHandler = uploadHandler;
+            webRequest.url = uri.ToString();
+            webRequest.method = "PUT";
+
+            webRequest.Send();
+
+            while (!webRequest.isDone)
+            {
+                UploadProgress = webRequest.uploadProgress;
+                yield return null;
+            }
         }
-
-
     }
 
     private static void CopyStream(Stream input, Stream output)
@@ -151,4 +159,31 @@ public class AzureManager : MonoBehaviour
         }
         return isOk;
     }
+
+    #region Upload Event
+    private float _uploadProgress;
+    public event EventHandler<UploadProgressEventArgs> UploadProgressChanged;
+
+    public float UploadProgress
+    {
+        get { return _uploadProgress; }
+        set
+        {
+            _uploadProgress = value;
+            UploadProgressEventArgs e = new UploadProgressEventArgs { Progress = value };
+            OnUploadProgressChanged(e);
+        }
+    }
+
+    public class UploadProgressEventArgs : EventArgs
+    {
+        public float Progress { get; set; }
+    }
+
+    protected virtual void OnUploadProgressChanged(UploadProgressEventArgs e)
+    {
+        if (UploadProgressChanged != null)
+            UploadProgressChanged(this, e);
+    }
+    #endregion
 }

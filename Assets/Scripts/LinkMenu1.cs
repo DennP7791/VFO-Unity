@@ -563,6 +563,9 @@ public class LinkMenu1 : BaseWindow
                     //    _scrollVector = Vector3.zero;
                 }
             }
+        
+        //TODO: Insert seperation line
+
         if (qrvMenu != null)
             for (int i = 0; i < qrvMenu.Length; i++)
             {
@@ -636,11 +639,11 @@ public class LinkMenu1 : BaseWindow
         searchButton.Parent = searchButton;
         LinkButton uploadButton = new LinkButton
         {
-            Id = 9999,
+            Id = 123456,
             WinParent = this,
             Text = "Upload video",
             Style = _btnStyle,
-            Function = 1005,
+            Function = 1004,
             isSubLink = true
         };
         uploadButton.Parent = uploadButton;
