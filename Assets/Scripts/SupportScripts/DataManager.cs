@@ -11,9 +11,6 @@ using UnityEngine.Networking;
 
 public class DataManager : MonoBehaviour
 {
-    //string url = "https://vfo.welfaredenmark.com/";
-    //string url = "http://localhost:59477/";
-    string url = "http://vfo-staging-webapp.azurewebsites.net/";
 
 
     private static bool DEBUG = false;
