@@ -13,6 +13,7 @@ public class VideoController : MonoBehaviour
     Message loadingBox;
     int progress;
     AzureManager azureManager;
+    WWW www;
 
     void Start ()
     {
@@ -20,7 +21,6 @@ public class VideoController : MonoBehaviour
         azureManager = new AzureManager();
         azureManager.ProgressChanged += Progress;
         StartCoroutine(azureManager.GetBlob(Global.Instance.videoPath));
-
         
         url = @Application.persistentDataPath + "/video.mp4";
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
@@ -66,15 +66,11 @@ public class VideoController : MonoBehaviour
             File.Delete(videoPath + ".mp4");
         }
 #endif
-
-
-
-    }
+        }
 
     IEnumerator LoadVideo()
     {
-        WWW www = new WWW(url);
-        
+        www = new WWW(url);
 
         if (www.error != null)
         {
@@ -83,27 +79,43 @@ public class VideoController : MonoBehaviour
             Debug.Log(www.error);
             yield break;
         }
+
+
         else
         {
-            video = www.movie;
-            _player.texture = video;
-            _sound.clip = video.audioClip;
             loadingBox.Destroy();
-            video.Play();
-            _sound.Play();
+#if UNITY_IOS || UNITY_ANDROID
+            StartCoroutine(PlayVideoOnHandheld());
+#endif
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR
+            PlayVideoOnMovieTexture();
+            #endif
         }
-        
+
     }
-	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.Space) && video.isPlaying)
+    void PlayVideoOnMovieTexture()
+    {
+        video = www.movie;
+        _player.texture = video;
+        _sound.clip = video.audioClip;
+        video.Play();
+        _sound.Play();
+    }
+
+
+    IEnumerator PlayVideoOnHandheld()
+    {
+        Color bgColor = Color.black;
+        FullScreenMovieControlMode controlMode = FullScreenMovieControlMode.Full;
+        FullScreenMovieScalingMode scalingMode = FullScreenMovieScalingMode.AspectFill;
+
+        Handheld.PlayFullScreenMovie(url, bgColor, controlMode, scalingMode);
+        yield return new WaitForSeconds(1f); //wait for Handheld to lock Screen.orientation
+
+        Screen.orientation = ScreenOrientation.AutoRotation;
+        while (Screen.currentResolution.height < Screen.currentResolution.width)
         {
-            video.Pause();
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && !video.isPlaying)
-        {
-            video.Play();
+            yield return null;
         }
     }
 }

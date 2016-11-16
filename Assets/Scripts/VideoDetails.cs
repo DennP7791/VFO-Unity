@@ -5,7 +5,9 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.CompilerServices;
 using Text = UnityEngine.UI.Text;
+using System.Security.Cryptography;
 
 public class VideoDetails : MonoBehaviour
 {
@@ -19,8 +21,11 @@ public class VideoDetails : MonoBehaviour
     public UnityEngine.UI.Text ErrorMessage;
 
     AzureManager am = new AzureManager();
+    EncryptVideo ev = new EncryptVideo();
     private string _progress = "0";
     private string _localPath = "";
+    private bool isEncrypted = true;
+    private bool _isUploaded = false;
     private Message _confirmUploadMessage;
     private Message _uploadProgressMessage;
 
@@ -29,21 +34,23 @@ public class VideoDetails : MonoBehaviour
     private int _recordVideoScene = 1003;
     private int _linkMenuScene = 0;
 
-	void Start()
-	{
-	    LocalVideos.enabled = false;
+    private string key = "HR$2pIjHR$2pIj12jh3adTaF3bi23u9n7a";
+
+    void Start()
+    {
+        LocalVideos.enabled = false;
         ErrorMessage.enabled = false;
 
         _previousScene = SceneLoader.Instance.PreviousScene;
         GetCategories();
 
-	    if (_previousScene == _linkMenuScene)
-	    {
+        if (_previousScene == _linkMenuScene)
+        {
             GetLocalVideos();
-	    }
+        }
 
         AddListeners();
-	}
+    }
 
     void GetCategories()
     {
@@ -51,12 +58,12 @@ public class VideoDetails : MonoBehaviour
 
         foreach (var cat in Global.Instance.videoCategories)
         {
-            Categories.options.Add(new Dropdown.OptionData() {text=cat.Name});
+            Categories.options.Add(new Dropdown.OptionData() { text = cat.Name });
         }
         Categories.value = 1;
         Categories.value = 0;
     }
-    
+
     void GetLocalVideos()
     {
         // If there are any local videos, add them to the LocalVideos list and select the first video. Else go back to the menu.
@@ -64,11 +71,12 @@ public class VideoDetails : MonoBehaviour
         if (!LocalVideos.enabled)
             LocalVideos.enabled = true;
 
+        LocalVideos.ClearOptions();
         if (Global.Instance.localVideos.Count > 0)
         {
             foreach (var lv in Global.Instance.localVideos)
             {
-                LocalVideos.options.Add(new Dropdown.OptionData() {text = lv.Name});
+                LocalVideos.options.Add(new Dropdown.OptionData() { text = lv.Name });
             }
             LocalVideos.value = 1;
             LocalVideos.value = 0;
@@ -84,7 +92,6 @@ public class VideoDetails : MonoBehaviour
     void AddListeners()
     {
         // Add the button and dropdown listeners for the view.
-
         SaveButton.onClick.AddListener(SaveVideoDetails);
         UploadButton.onClick.AddListener(ConfirmUploadVideo);
         DeleteButton.onClick.AddListener(DeleteVideo);
@@ -106,11 +113,12 @@ public class VideoDetails : MonoBehaviour
             {
                 StartCoroutine(DataManager.DeleteVideo(_selectedVideo.Id));
                 RemoveVideoFromList();
-            } else if (_previousScene == _recordVideoScene)
+            }
+            else if (_previousScene == _recordVideoScene)
             {
                 SceneLoader.Instance.CurrentScene = 0;
             }
-            
+
         }
     }
 
@@ -133,10 +141,10 @@ public class VideoDetails : MonoBehaviour
             File.Delete(_localPath);
             if (!File.Exists(_localPath))
             {
-                return true; 
+                return true;
             }
         }
-    #endif
+#endif
         else
         {
             Debug.Log("File not found");
@@ -150,24 +158,28 @@ public class VideoDetails : MonoBehaviour
         if (ValidInput())
         {
             ErrorMessage.enabled = false;
-            if (_previousScene == _recordVideoScene)
+            if (_previousScene == _recordVideoScene && !_isUploaded)
             {
                 _selectedVideo = new QrVideo(Name.text, Description.text, Global.Instance.videoPath, 0,
-                    Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
+                Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
+                SaveButton.interactable = false; //indicate that button is disabled?
                 StartCoroutine(DataManager.UploadQrVideo(_selectedVideo));
+                Global.Instance.localVideos.Add(_selectedVideo); //Add to global - check if UploadQrVideo is successfull first?
+                SaveButton.interactable = true;
+                _isUploaded = true;
             }
-
-            if (_previousScene == _linkMenuScene)
+            if (_previousScene == _linkMenuScene || _isUploaded)
             {
                 UpdateSelectedVideoFromInputFields();
                 StartCoroutine(DataManager.UpdateQrVideo(_selectedVideo));
+                UpdateVideoList();
             }
         }
         else
         {
             ErrorMessage.enabled = true;
         }
-       
+
     }
 
     void ConfirmUploadVideo()
@@ -182,7 +194,7 @@ public class VideoDetails : MonoBehaviour
                 "Du er ved at uploade din video " + _selectedVideo.Name + ". Denne video er af typen \"" +
                 Global.Instance.videoCategories[LocalVideos.value].Name +
                 "\". Er du sikker på at du vil fortsætte med at uploade videoen?", true, Message.Type.Info,
-                delegate(Message message, bool value)
+                delegate (Message message, bool value)
                 {
                     if (value)
                     {
@@ -202,7 +214,7 @@ public class VideoDetails : MonoBehaviour
         {
             ErrorMessage.enabled = true;
         }
-        
+
     }
 
     private void Progress(object sender, AzureManager.ProgressEventArgs e)
@@ -220,9 +232,8 @@ public class VideoDetails : MonoBehaviour
             UploadVideo();
             _uploadProgressMessage.Destroy();
             am.ProgressChanged -= Progress;
-
         }
-        
+
         ////int.Parse((webRequest.uploadProgress * 100).ToString("F0"));
         //Debug.Log(sender.ToString());
     }
@@ -231,12 +242,17 @@ public class VideoDetails : MonoBehaviour
     {
         // Try to upload the video to the Azure blob. If successfull, make the video live (db) and delete the video file. If previous scene was linkmenu, remove from list. If previous scene was record, return to menu.
 
+        if (File.Exists(_selectedVideo.Path) && !isEncrypted)
+        {
+            DecryptVideoFile();
+        }
+
         string blockBlobReference = _selectedVideo.Name.Replace(" ", "") + "_" + _selectedVideo.Id;
         _localPath = _selectedVideo.Path;
         _selectedVideo.Path = blockBlobReference;
         StartCoroutine(am.PutBlob(_localPath, blockBlobReference));
         ////TODO: dont continue untill the video has been successfully updated
-        
+
     }
 
     void UploadVideo()
@@ -261,15 +277,6 @@ public class VideoDetails : MonoBehaviour
         Categories.value = _selectedVideo.VideoCategoryId - 1;
     }
 
-    void RemoveVideoFromList()
-    {
-        // Remove video from the localVideos dropdown, and refresh localVideos.
-
-        Global.Instance.localVideos.Remove(_selectedVideo);
-        LocalVideos.ClearOptions();
-        GetLocalVideos();
-    }
-
     void UpdateSelectedVideoFromInputFields()
     {
         _selectedVideo.Name = Name.text;
@@ -285,7 +292,7 @@ public class VideoDetails : MonoBehaviour
 
         if (_previousScene == _linkMenuScene)
         {
-            
+
             StartCoroutine(DataManager.UpdateQrVideo(_selectedVideo));
             return true;
         }
@@ -302,6 +309,67 @@ public class VideoDetails : MonoBehaviour
         if (Name.text.Length > 0 && Description.text.Length > 0)
             return true;
         return false;
+    }
+
+    void UpdateVideoList()
+    {
+        // Update Global.localVideos to match _selectedVideo, and refresh LocalVideos.
+
+        int tempValue = LocalVideos.value;
+
+        Global.Instance.localVideos[LocalVideos.value].Name = _selectedVideo.Name;
+        Global.Instance.localVideos[LocalVideos.value].Description = _selectedVideo.Description;
+        Global.Instance.localVideos[LocalVideos.value].VideoCategoryId = _selectedVideo.VideoCategoryId;
+
+        GetLocalVideos();
+        LocalVideos.value = tempValue; //Select the previous selected video instead of the first one in the list, that would otherwise be selected by GetLocalVideos()
+    }
+
+    void RemoveVideoFromList()
+    {
+        // Remove video from the localVideos dropdown, and refresh LocalVideos.
+
+        Global.Instance.localVideos.Remove(_selectedVideo);
+        GetLocalVideos();
+    }
+
+    void OnDestroy()
+    {
+        if (File.Exists(_selectedVideo.Path) && !isEncrypted)
+        {
+            EncyptVideoFile();
+        }
+    }
+
+    //Refacotring
+    public void EncyptVideoFile()
+    {
+        byte[] salt;
+        new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+        string orginalFilePath = _selectedVideo.Path;
+        string file = Path.GetFileNameWithoutExtension(_selectedVideo.Path);
+        string newPath = _selectedVideo.Path.Replace(file, file + "-Encrypted");
+        ev.EncryptFile(_selectedVideo.Path, newPath, key, salt);
+        if (File.Exists(_selectedVideo.Path))
+        {
+            File.Delete(_selectedVideo.Path);
+        }
+        File.Move(newPath, orginalFilePath);
+    }
+
+    public void DecryptVideoFile()
+    {
+        byte[] salt;
+        new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+        string orginalFilePath = _selectedVideo.Path;
+        string file = Path.GetFileNameWithoutExtension(_selectedVideo.Path);
+        string newPath = _selectedVideo.Path.Replace(file, file + "-Decrypted");
+        ev.DecryptFile(_selectedVideo.Path, newPath, key, salt);
+        if (File.Exists(_selectedVideo.Path))
+        {
+            File.Delete(_selectedVideo.Path);
+        }
+        File.Move(newPath, orginalFilePath);
     }
 
 }
