@@ -27,8 +27,9 @@ public class RunTimeTest : MonoBehaviour
         string newDecryptFile = "C:/Users/Tasin/Desktop/decryptetFile.mp4";
         string getFile = "C:/Users/Tasin/AppData/LocalLow/Welfare Denmark/Virtuel Forflytning/Video.ogv";
         string name = "EncryptedFile";
-        string key = "HR$2pIjHR$2pIj12jh3adTaF3bi23u9n7a";
+
         string password = "thisisatestforme123";
+        string key = "HR$2pIjHR$2pIj12jh3adTaF3bi23u9n7a";
         byte[] salt;
         new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
 
