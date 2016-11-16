@@ -6,13 +6,13 @@ public class VideoController : MonoBehaviour
 {
     //string url = "https://welfaredenmark.blob.core.windows.net/vfo-recordings-staging/ogv";
     string url = "";
-    //string url = "http://localhost:59477/Service/DownloadVideoStream?videoName=ogv"; test - forsøgte at kalde www.movie direkte på http get, i håb om at kunne hive videos ud af den stream jeg sender
 
     public RawImage _player;
     public AudioSource _sound;
     MovieTexture video;
     Message loadingBox;
     int progress;
+    WWW www;
 
     void Start ()
     {
@@ -30,7 +30,7 @@ public class VideoController : MonoBehaviour
 
     IEnumerator LoadVideo()
     {
-        WWW www = new WWW(url);
+        www = new WWW(url);
 
         while (!www.isDone)
         {
@@ -47,14 +47,15 @@ public class VideoController : MonoBehaviour
         }
         else
         {
-            video = www.movie;
-            _player.texture = video;
-            _sound.clip = video.audioClip;
             loadingBox.Destroy();
-            video.Play();
-            _sound.Play();
+            #if UNITY_IOS || UNITY_ANDROID
+            StartCoroutine(PlayVideoOnHandheld());
+            #endif
+            #if UNITY_STANDALONE_WIN || UNITY_EDITOR
+            PlayVideoOnMovieTexture();
+            #endif
         }
-        
+
     }
 	
 	// Update is called once per frame
@@ -67,6 +68,32 @@ public class VideoController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !video.isPlaying)
         {
             video.Play();
+        }
+    }
+
+    void PlayVideoOnMovieTexture()
+    {
+        video = www.movie;
+        _player.texture = video;
+        _sound.clip = video.audioClip;
+        video.Play();
+        _sound.Play();
+    }
+
+
+    IEnumerator PlayVideoOnHandheld()
+    {
+        Color bgColor = Color.black;
+        FullScreenMovieControlMode controlMode = FullScreenMovieControlMode.Full;
+        FullScreenMovieScalingMode scalingMode = FullScreenMovieScalingMode.AspectFill;
+
+        Handheld.PlayFullScreenMovie(url, bgColor, controlMode, scalingMode);
+        yield return new WaitForSeconds(1f); //wait for Handheld to lock Screen.orientation
+
+        Screen.orientation = ScreenOrientation.AutoRotation;
+        while (Screen.currentResolution.height < Screen.currentResolution.width)
+        {
+            yield return null;
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.CompilerServices;
 using Text = UnityEngine.UI.Text;
 
 public class VideoDetails : MonoBehaviour
@@ -21,6 +22,7 @@ public class VideoDetails : MonoBehaviour
     AzureManager am = new AzureManager();
     private string _progress = "0";
     private string _localPath = "";
+    private bool _isUploaded = false;
     private Message _confirmUploadMessage;
     private Message _uploadProgressMessage;
 
@@ -64,6 +66,7 @@ public class VideoDetails : MonoBehaviour
         if (!LocalVideos.enabled)
             LocalVideos.enabled = true;
 
+        LocalVideos.ClearOptions();
         if (Global.Instance.localVideos.Count > 0)
         {
             foreach (var lv in Global.Instance.localVideos)
@@ -84,7 +87,6 @@ public class VideoDetails : MonoBehaviour
     void AddListeners()
     {
         // Add the button and dropdown listeners for the view.
-
         SaveButton.onClick.AddListener(SaveVideoDetails);
         UploadButton.onClick.AddListener(ConfirmUploadVideo);
         DeleteButton.onClick.AddListener(DeleteVideo);
@@ -150,24 +152,27 @@ public class VideoDetails : MonoBehaviour
         if (ValidInput())
         {
             ErrorMessage.enabled = false;
-            if (_previousScene == _recordVideoScene)
+            if (_previousScene == _recordVideoScene && !_isUploaded)
             {
                 _selectedVideo = new QrVideo(Name.text, Description.text, Global.Instance.videoPath, 0,
-                    Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
+                Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
+                SaveButton.interactable = false; //indicate that button is disabled?
                 StartCoroutine(DataManager.UploadQrVideo(_selectedVideo));
+                Global.Instance.localVideos.Add(_selectedVideo); //Add to global - check if UploadQrVideo is successfull first?
+                SaveButton.interactable = true;
+                _isUploaded = true;
             }
-
-            if (_previousScene == _linkMenuScene)
+            if (_previousScene == _linkMenuScene || _isUploaded)
             {
                 UpdateSelectedVideoFromInputFields();
                 StartCoroutine(DataManager.UpdateQrVideo(_selectedVideo));
+                UpdateVideoList();
             }
         }
         else
         {
             ErrorMessage.enabled = true;
         }
-       
     }
 
     void ConfirmUploadVideo()
@@ -261,15 +266,6 @@ public class VideoDetails : MonoBehaviour
         Categories.value = _selectedVideo.VideoCategoryId - 1;
     }
 
-    void RemoveVideoFromList()
-    {
-        // Remove video from the localVideos dropdown, and refresh localVideos.
-
-        Global.Instance.localVideos.Remove(_selectedVideo);
-        LocalVideos.ClearOptions();
-        GetLocalVideos();
-    }
-
     void UpdateSelectedVideoFromInputFields()
     {
         _selectedVideo.Name = Name.text;
@@ -304,4 +300,25 @@ public class VideoDetails : MonoBehaviour
         return false;
     }
 
+    void UpdateVideoList()
+    {
+        // Update Global.localVideos to match _selectedVideo, and refresh LocalVideos.
+
+        int tempValue = LocalVideos.value;
+
+        Global.Instance.localVideos[LocalVideos.value].Name = _selectedVideo.Name;
+        Global.Instance.localVideos[LocalVideos.value].Description = _selectedVideo.Description;
+        Global.Instance.localVideos[LocalVideos.value].VideoCategoryId = _selectedVideo.VideoCategoryId;
+
+        GetLocalVideos();
+        LocalVideos.value = tempValue; //Select the previous selected video instead of the first one in the list, that would otherwise be selected by GetLocalVideos()
+    }
+
+    void RemoveVideoFromList()
+    {
+        // Remove video from the localVideos dropdown, and refresh LocalVideos.
+
+        Global.Instance.localVideos.Remove(_selectedVideo);
+        GetLocalVideos();
+    }
 }
