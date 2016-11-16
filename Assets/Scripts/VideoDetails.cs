@@ -5,6 +5,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.CompilerServices;
 using Text = UnityEngine.UI.Text;
 using System.Security.Cryptography;
 
@@ -23,9 +24,9 @@ public class VideoDetails : MonoBehaviour
     EncryptVideo ev = new EncryptVideo();
     private string _progress = "0";
     private string _localPath = "";
+    private bool _isUploaded = false;
     private Message _confirmUploadMessage;
     private Message _uploadProgressMessage;
-    private bool isEncrypted = true;
 
     private QrVideo _selectedVideo;
     private int _previousScene;
@@ -69,6 +70,7 @@ public class VideoDetails : MonoBehaviour
         if (!LocalVideos.enabled)
             LocalVideos.enabled = true;
 
+        LocalVideos.ClearOptions();
         if (Global.Instance.localVideos.Count > 0)
         {
             foreach (var lv in Global.Instance.localVideos)
@@ -89,7 +91,6 @@ public class VideoDetails : MonoBehaviour
     void AddListeners()
     {
         // Add the button and dropdown listeners for the view.
-
         SaveButton.onClick.AddListener(SaveVideoDetails);
         UploadButton.onClick.AddListener(ConfirmUploadVideo);
         DeleteButton.onClick.AddListener(DeleteVideo);
@@ -156,17 +157,22 @@ public class VideoDetails : MonoBehaviour
         if (ValidInput())
         {
             ErrorMessage.enabled = false;
-            if (_previousScene == _recordVideoScene)
+            if (_previousScene == _recordVideoScene && !_isUploaded)
             {
                 _selectedVideo = new QrVideo(Name.text, Description.text, Global.Instance.videoPath, 0,
-                    Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
+                Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
+                SaveButton.interactable = false; //indicate that button is disabled?
                 StartCoroutine(DataManager.UploadQrVideo(_selectedVideo));
+                Global.Instance.localVideos.Add(_selectedVideo); //Add to global - check if UploadQrVideo is successfull first?
+                SaveButton.interactable = true;
+                EncyptVideoFile();
+                _isUploaded = true;
             }
-
-            if (_previousScene == _linkMenuScene)
+            if (_previousScene == _linkMenuScene || _isUploaded)
             {
                 UpdateSelectedVideoFromInputFields();
                 StartCoroutine(DataManager.UpdateQrVideo(_selectedVideo));
+                UpdateVideoList();
             }
         }
         else
@@ -194,7 +200,7 @@ public class VideoDetails : MonoBehaviour
                     {
                         _uploadProgressMessage = Util.MessageBox(new Rect(0, 0, 300, 200),
                             "Uploader video: " + _progress + "%", Message.Type.Info, false, true);
-                        am.UploadProgressChanged += Progress;
+                        am.ProgressChanged += Progress;
                         UploadVideoToAzure();
                     }
                     else if (!value)
@@ -211,7 +217,7 @@ public class VideoDetails : MonoBehaviour
 
     }
 
-    private void Progress(object sender, AzureManager.UploadProgressEventArgs e)
+    private void Progress(object sender, AzureManager.ProgressEventArgs e)
     {
         _progress = (e.Progress * 100).ToString();
         int index = _progress.IndexOf(".");
@@ -225,7 +231,7 @@ public class VideoDetails : MonoBehaviour
             _uploadProgressMessage.Text = "Uploader video: " + _progress + "%";
             UploadVideo();
             _uploadProgressMessage.Destroy();
-            am.UploadProgressChanged -= Progress;
+            am.ProgressChanged -= Progress;
         }
 
         ////int.Parse((webRequest.uploadProgress * 100).ToString("F0"));
@@ -236,17 +242,14 @@ public class VideoDetails : MonoBehaviour
     {
         // Try to upload the video to the Azure blob. If successfull, make the video live (db) and delete the video file. If previous scene was linkmenu, remove from list. If previous scene was record, return to menu.
 
-        if (File.Exists(_selectedVideo.Path) && isEncrypted)
+        if (File.Exists(_selectedVideo.Path))
         {
             DecryptVideoFile();
+            string blockBlobReference = _selectedVideo.Name.Replace(" ", "") + "_" + _selectedVideo.Id;
+            _localPath = _selectedVideo.Path;
+            _selectedVideo.Path = blockBlobReference;
+            StartCoroutine(am.PutBlob(_localPath, blockBlobReference));
         }
-
-        string blockBlobReference = _selectedVideo.Name.Replace(" ", "") + "_" + _selectedVideo.Id;
-        _localPath = _selectedVideo.Path;
-        _selectedVideo.Path = blockBlobReference;
-        StartCoroutine(am.PutBlob(_localPath, blockBlobReference));
-        ////TODO: dont continue untill the video has been successfully updated
-
     }
 
     void UploadVideo()
@@ -269,15 +272,6 @@ public class VideoDetails : MonoBehaviour
         Name.text = _selectedVideo.Name;
         Description.text = _selectedVideo.Description;
         Categories.value = _selectedVideo.VideoCategoryId - 1;
-    }
-
-    void RemoveVideoFromList()
-    {
-        // Remove video from the localVideos dropdown, and refresh localVideos.
-
-        Global.Instance.localVideos.Remove(_selectedVideo);
-        LocalVideos.ClearOptions();
-        GetLocalVideos();
     }
 
     void UpdateSelectedVideoFromInputFields()
@@ -314,18 +308,28 @@ public class VideoDetails : MonoBehaviour
         return false;
     }
 
-
-
-
-    void OnDestroy()
+    void UpdateVideoList()
     {
-        if (File.Exists(_selectedVideo.Path) && _selectedVideo.VideoCategoryId == 3 && isEncrypted)
-        {
-            EncyptVideoFile();
-        }
+        // Update Global.localVideos to match _selectedVideo, and refresh LocalVideos.
+
+        int tempValue = LocalVideos.value;
+
+        Global.Instance.localVideos[LocalVideos.value].Name = _selectedVideo.Name;
+        Global.Instance.localVideos[LocalVideos.value].Description = _selectedVideo.Description;
+        Global.Instance.localVideos[LocalVideos.value].VideoCategoryId = _selectedVideo.VideoCategoryId;
+
+        GetLocalVideos();
+        LocalVideos.value = tempValue; //Select the previous selected video instead of the first one in the list, that would otherwise be selected by GetLocalVideos()
     }
 
-    //Refacotring
+    void RemoveVideoFromList()
+    {
+        // Remove video from the localVideos dropdown, and refresh LocalVideos.
+
+        Global.Instance.localVideos.Remove(_selectedVideo);
+        GetLocalVideos();
+    }
+
     public void EncyptVideoFile()
     {
         byte[] salt;
