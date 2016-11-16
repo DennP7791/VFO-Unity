@@ -349,8 +349,8 @@ public class DataManager : MonoBehaviour
     public static IEnumerator ValidateCredentials(JsonCredentials credentials)
     {
         string url = "https://vfo.welfaredenmark.com/Service/Authorize/"; //Production environment service
-        url = "http://localhost:59477/Service/Authorize/"; //LOCAL SERVICE - Comment for release version
-        //url = "http://vfo-staging-webapp.azurewebsites.net/Service/Authorize/"; //STAGING SERVICE - Comment for release version
+        //url = "http://localhost:59477/Service/Authorize/"; //LOCAL SERVICE - Comment for release version
+        url = "http://vfo-staging-webapp.azurewebsites.net/Service/Authorize/"; //STAGING SERVICE - Comment for release version
 
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
@@ -406,48 +406,43 @@ public class DataManager : MonoBehaviour
 
     public static IEnumerator RetrieveData()
     {
-        Debug.Log("Retrieving Data");
+        string requestMethod = "GET";
 
-        string url = "https://vfo.welfaredenmark.com/Service/GetExercises/" + Global.Instance.UserId + "/" + "da-DK"; //Production environment service
-        url = "http://localhost:59477/Service/GetExercises/" + Global.Instance.UserId + "/" + "da-DK"; //LOCAL SERVICE - Comment for release version
-        //url = "http://vfo-staging-webapp.azurewebsites.net/Service/GetExercises/" + Global.Instance.UserId + "/" + "da-DK"; //STAGING SERVICE - Comment for release version
-
-        if (Global.Instance.ProgramLanguage == "sv-SE")
+        Uri uri = new Uri("http://vfo-staging-webapp.azurewebsites.net/Service/GetExercises/" + Global.Instance.UserId + "/" + "da-DK");
+        //ServicePointManager.ServerCertificateValidationCallback = MyRemoteCertificateValidationCallback;
+        using (UnityWebRequest webRequest = new UnityWebRequest())
         {
-            //url = "http://vfo.welfaresverige.se/Service/GetExercises/" + Global.Instance.UserId + "/" + "sv-SE"; //OutComment if release version
-        }
+            webRequest.SetRequestHeader("Accept", "application/json");
 
-        WWW www = new WWW(url);
+            DownloadHandler downloadHandler = new DownloadHandlerBuffer();
+            webRequest.downloadHandler = downloadHandler;
 
-        yield return www;
+            webRequest.method = requestMethod;
+            webRequest.url = uri.ToString();
 
-        if (www.error == null)
-        {
-            Debug.Log("Result:\n" + www.text);
-            try
+            webRequest.Send();
+
+            while (!webRequest.isDone)
             {
-                JsonCategoryCollection cc = JsonReader.Deserialize<JsonCategoryCollection>(www.text);
+                yield return null;
+            }
+            if (webRequest.isDone && webRequest.error == null)
+            {
+                JsonCategoryCollection cc = JsonReader.Deserialize<JsonCategoryCollection>(webRequest.downloadHandler.text);
                 Debug.Log("Deserialized:\n" + cc.ToString());
                 Global.Instance.categoryCollection = JsonCategoryCollectionToExerciseCategoryCollection(cc);
                 Debug.Log("Converted to ExercizeCategoryCollection:\n" + Global.Instance.categoryCollection.ToString());
                 Global.Instance.LoadMain();
             }
-            catch (Exception e)
-            {
-                Util.MessageBox(new Rect(0, 0, 400, 200), "Error: " + e.Message + "\n\nPlease try to restart the application!", Message.Type.Error, false, true);
-            }
         }
-        else
-        {
-            Debug.Log("WWW Error: " + www.error);
-        }
+
     }
 
     public static IEnumerator UploadData()
     {
         string url = "https://vfo.welfaredenmark.com/Service/SaveData/"; //Production environment service
-        url = "http://localhost:59477/Service/SaveData/"; //LOCAL SERVICE - Comment for release version
-        //url = "http://vfo-staging-webapp.azurewebsites.net/Service/SaveData/"; //STAGING SERVICE - Comment for release version
+        //url = "http://localhost:59477/Service/SaveData/"; //LOCAL SERVICE - Comment for release version
+        url = "http://vfo-staging-webapp.azurewebsites.net/Service/SaveData/"; //STAGING SERVICE - Comment for release version
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
         {
@@ -484,8 +479,8 @@ public class DataManager : MonoBehaviour
         Debug.Log("Retrieving QrVideoCategoryData");
 
         string url = "https://vfo.welfaredenmark.com/Service/GetVideoCategories/"; //Production environment service
-        url = "http://localhost:59477/Service/GetVideoCategories/";//LOCAL SERVICE - Comment for release version
-        //url = "http://vfo-staging-webapp.azurewebsites.net/Service/GetVideoCategories/";//STAGING SERVICE - Comment for release version
+        //url = "http://localhost:59477/Service/GetVideoCategories/";//LOCAL SERVICE - Comment for release version
+        url = "http://vfo-staging-webapp.azurewebsites.net/Service/GetVideoCategories/";//STAGING SERVICE - Comment for release version
 
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
@@ -522,8 +517,8 @@ public class DataManager : MonoBehaviour
         Debug.Log("Retrieving QrVideoData");
 
         string url = "https://vfo.welfaredenmark.com/Service/GetQrVideos/" + Global.Instance.UserId + "/" + "da-DK"; //Production environment service
-        url = "http://localhost:59477/Service/GetQrVideos/" + Global.Instance.UserId; //LOCAL SERVICE - Comment for release version
-        //url = "http://vfo-staging-webapp.azurewebsites.net/Service/GetQrVideos/" + Global.Instance.UserId; //STAGING SERVICE - Comment for release version
+        //url = "http://localhost:59477/Service/GetQrVideos/" + Global.Instance.UserId; //LOCAL SERVICE - Comment for release version
+        url = "http://vfo-staging-webapp.azurewebsites.net/Service/GetQrVideos/" + Global.Instance.UserId; //STAGING SERVICE - Comment for release version
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
         {
@@ -558,8 +553,8 @@ public class DataManager : MonoBehaviour
         Debug.Log("Retrieving Video Paths");
 
         string url = "https://vfo.welfaredenmark.com/Service/GetVideoPaths/" + Global.Instance.UserId + "/" + "da-DK"; //Production environment service
-        url = "http://localhost:59477/Service/GetVideoPaths/" + Global.Instance.UserId; //LOCAL SERVICE - Comment for release version
-        //url = "http://vfo-staging-webapp.azurewebsites.net/Service/GetVideoPaths/" + Global.Instance.UserId; //STAGING SERVICE - Comment for release version
+        //url = "http://localhost:59477/Service/GetVideoPaths/" + Global.Instance.UserId; //LOCAL SERVICE - Comment for release version
+        url = "http://vfo-staging-webapp.azurewebsites.net/Service/GetVideoPaths/" + Global.Instance.UserId; //STAGING SERVICE - Comment for release version
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
         {
@@ -596,8 +591,8 @@ public class DataManager : MonoBehaviour
 
 
         string url = "https://vfo.welfaredenmark.com/Service/SaveData/"; //Production environment service
-        url = "http://localhost:59477/Service/SaveQrVideo/"; //LOCAL SERVICE - Comment for release version
-        //url = "http://vfo-staging-webapp.azurewebsites.net/Service/SaveQrVideo/"; //STAGING SERVICE - Comment for release version
+        //url = "http://localhost:59477/Service/SaveQrVideo/"; //LOCAL SERVICE - Comment for release version
+        url = "http://vfo-staging-webapp.azurewebsites.net/Service/SaveQrVideo/"; //STAGING SERVICE - Comment for release version
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
         {
@@ -634,8 +629,8 @@ public class DataManager : MonoBehaviour
     {
         Debug.Log("UpdateQRVideo");
         string url = "https://vfo.welfaredenmark.com/Service/UpdateQrVideo/"; //Production environment service
-        url = "http://localhost:59477/Service/UpdateQrVideo/"; //LOCAL SERVICE - Comment for release version
-        //url = "http://vfo-staging-webapp.azurewebsites.net/Service/UpdateQrVideo/"; //STAGING SERVICE - Comment for release version
+        //url = "http://localhost:59477/Service/UpdateQrVideo/"; //LOCAL SERVICE - Comment for release version
+        url = "http://vfo-staging-webapp.azurewebsites.net/Service/UpdateQrVideo/"; //STAGING SERVICE - Comment for release version
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
         {
@@ -673,8 +668,8 @@ public class DataManager : MonoBehaviour
     {
         Debug.Log("UploadQrVideo");
         string url = "https://vfo.welfaredenmark.com/Service/SaveVideoUserViewData/"; //Production environment service
-        url = "http://localhost:59477/Service/SaveVideoUserViewData/"; //LOCAL SERVICE - Comment for release version
-        //url = "http://vfo-staging-webapp.azurewebsites.net/Service/SaveVideoUserViewData/"; //STAGING SERVICE - Comment for release version
+        //url = "http://localhost:59477/Service/SaveVideoUserViewData/"; //LOCAL SERVICE - Comment for release version
+        url = "http://vfo-staging-webapp.azurewebsites.net/Service/SaveVideoUserViewData/"; //STAGING SERVICE - Comment for release version
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
         {
@@ -710,8 +705,8 @@ public class DataManager : MonoBehaviour
     {
         Debug.Log("GetUserGroup");
         string url = "https://vfo.welfaredenmark.com/Service/GetUserGroup/" + Global.Instance.UserId + "/" + "da-DK"; //Production environment service
-        url = "http://localhost:59477/Service/GetUserGroup/" + Global.Instance.UserId; //LOCAL SERVICE - Comment for release version
-        //url = "http://vfo-staging-webapp.azurewebsites.net/Service/GetUserGroup/" + Global.Instance.UserId; //STAGING SERVICE - Comment for release version
+        //url = "http://localhost:59477/Service/GetUserGroup/" + Global.Instance.UserId; //LOCAL SERVICE - Comment for release version
+        url = "http://vfo-staging-webapp.azurewebsites.net/Service/GetUserGroup/" + Global.Instance.UserId; //STAGING SERVICE - Comment for release version
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
         {
@@ -745,8 +740,8 @@ public class DataManager : MonoBehaviour
     {
         Debug.Log("GetUserGroup");
         string url = "https://vfo.welfaredenmark.com/Service/DeleteVideo/" + id + "/" + "da-DK"; //Production environment service
-        url = "http://localhost:59477/Service/DeleteVideo/" + id; //LOCAL SERVICE - Comment for release version
-        //url = "http://vfo-staging-webapp.azurewebsites.net/Service/DeleteVideo/" + id; //STAGING SERVICE - Comment for release version
+        //url = "http://localhost:59477/Service/DeleteVideo/" + id; //LOCAL SERVICE - Comment for release version
+        url = "http://vfo-staging-webapp.azurewebsites.net/Service/DeleteVideo/" + id; //STAGING SERVICE - Comment for release version
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
         {
@@ -895,8 +890,8 @@ public class DataManager : MonoBehaviour
         Debug.Log("Retrieving Secure Qr video Data");
 
         string url = "https://vfo.welfaredenmark.com/Service/GetSecureQrVideo/" + Global.Instance.UserId + "?Path=" + path; //Production environment service
-        url = "http://localhost:59477/Service/GetSecureQrVideo/" + Global.Instance.UserId + "?Path=" + path; //LOCAL SERVICE - Comment for release version
-        //url = "http://vfo-staging-webapp.azurewebsites.net/Service/GetSecureQrVideo/" + Global.Instance.UserId + "?Path=" + path; //STAGING SERVICE - Comment for release version
+        //url = "http://localhost:59477/Service/GetSecureQrVideo/" + Global.Instance.UserId + "?Path=" + path; //LOCAL SERVICE - Comment for release version
+        url = "http://vfo-staging-webapp.azurewebsites.net/Service/GetSecureQrVideo/" + Global.Instance.UserId + "?Path=" + path; //STAGING SERVICE - Comment for release version
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
         {
@@ -925,8 +920,8 @@ public class DataManager : MonoBehaviour
     {
         Debug.Log("GetUserGroupCredential");
         string url = "https://vfo.welfaredenmark.com/Service/getUserGroupCredential/" + Global.Instance.UserId + "/" + "da-DK"; //Production environment service
-        url = "http://localhost:59477/Service/getUserGroupCredential/" + Global.Instance.UserId; //LOCAL SERVICE - Comment for release version
-        //url = "http://vfo-staging-webapp.azurewebsites.net/Service/getUserGroupCredential/" + Global.Instance.UserId; //STAGING SERVICE - Comment for release version
+        //url = "http://localhost:59477/Service/getUserGroupCredential/" + Global.Instance.UserId; //LOCAL SERVICE - Comment for release version
+        url = "http://vfo-staging-webapp.azurewebsites.net/Service/getUserGroupCredential/" + Global.Instance.UserId; //STAGING SERVICE - Comment for release version
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
         {
