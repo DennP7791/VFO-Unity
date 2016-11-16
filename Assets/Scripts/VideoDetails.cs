@@ -5,7 +5,9 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.CompilerServices;
 using Text = UnityEngine.UI.Text;
+using System.Security.Cryptography;
 
 public class VideoDetails : MonoBehaviour
 {
@@ -16,34 +18,50 @@ public class VideoDetails : MonoBehaviour
     public Button SaveButton;
     public Button UploadButton;
     public Button DeleteButton;
+    public UnityEngine.UI.Text ErrorMessage;
 
-    private Message _confirmUploadMessages;
+    AzureManager am = new AzureManager();
+    EncryptVideo ev = new EncryptVideo();
+    private string _progress = "0";
+    private string _localPath = "";
+    private bool _isUploaded = false;
+    private Message _confirmUploadMessage;
+    private Message _uploadProgressMessage;
+
     private QrVideo _selectedVideo;
     private int _previousScene;
     private int _recordVideoScene = 1003;
     private int _linkMenuScene = 0;
 
-	void Start ()
-	{
-	    LocalVideos.enabled = false;
+    private string key = "HR$2pIjHR$2pIj12jh3adTaF3bi23u9n7a";
+
+    void Start()
+    {
+        LocalVideos.enabled = false;
+        ErrorMessage.enabled = false;
+
+        Debug.Log("previous scene: " + SceneLoader.Instance.PreviousScene);
+        Debug.Log("current scene: " + SceneLoader.Instance.CurrentScene);
 
         _previousScene = SceneLoader.Instance.PreviousScene;
         GetCategories();
 
-	    if (_previousScene == _linkMenuScene)
-	    {
+        if (_previousScene == _linkMenuScene)
+        {
+            Debug.Log("only show this if previous scene is linkmenu");
             GetLocalVideos();
-	    }
+        }
 
         AddListeners();
-
-	}
+    }
 
     void GetCategories()
     {
+        // Populate the Categories dropdown, and select the first category.
+
         foreach (var cat in Global.Instance.videoCategories)
         {
-            Categories.options.Add(new Dropdown.OptionData() {text=cat.Name});
+            Categories.options.Add(new Dropdown.OptionData() { text = cat.Name });
         }
         Categories.value = 1;
         Categories.value = 0;
@@ -51,22 +69,34 @@ public class VideoDetails : MonoBehaviour
 
     void GetLocalVideos()
     {
-        LocalVideos.enabled = true;
+        // If there are any local videos, add them to the LocalVideos list and select the first video. Else go back to the menu.
 
-        foreach (var lv in Global.Instance.localVideos)
+        if (!LocalVideos.enabled)
+            LocalVideos.enabled = true;
+
+        LocalVideos.ClearOptions();
+        if (Global.Instance.localVideos.Count > 0)
         {
-            LocalVideos.options.Add(new Dropdown.OptionData() {text = lv.Name});
-        }
-        LocalVideos.value = 1;
-        LocalVideos.value = 0;
+            foreach (var lv in Global.Instance.localVideos)
+            {
+                LocalVideos.options.Add(new Dropdown.OptionData() { text = lv.Name });
+            }
+            LocalVideos.value = 1;
+            LocalVideos.value = 0;
 
-        SelectVideo();
+            SelectVideo();
+        }
+        else
+        {
+            SceneLoader.Instance.CurrentScene = 0;
+        }
     }
 
     void AddListeners()
     {
+        // Add the button and dropdown listeners for the view.
         SaveButton.onClick.AddListener(SaveVideoDetails);
-        UploadButton.onClick.AddListener(UploadVideo);
+        UploadButton.onClick.AddListener(ConfirmUploadVideo);
         DeleteButton.onClick.AddListener(DeleteVideo);
         LocalVideos.onValueChanged.AddListener(
             delegate
@@ -77,34 +107,47 @@ public class VideoDetails : MonoBehaviour
 
     void DeleteVideo()
     {
+        //If video file has been successfully deleted - delete the video from db and remove from list if previous scene was linkmenu / return to linkmenu if previous scene was record 
+
+        //TODO: Add confirmDelete popup
         if (DeleteVideoFile())
         {
-            StartCoroutine(DataManager.DeleteVideo(_selectedVideo.Id));
-            RemoveVideoFromList();
+            if (_previousScene == _linkMenuScene)
+            {
+                StartCoroutine(DataManager.DeleteVideo(_selectedVideo.Id));
+                RemoveVideoFromList();
+            }
+            else if (_previousScene == _recordVideoScene)
+            {
+                SceneLoader.Instance.CurrentScene = 0;
+            }
+
         }
     }
 
     bool DeleteVideoFile()
     {
-    #if UNITY_IPHONE
-        if (File.Exists("/private" + _selectedVideo.Path))
+        //delete the video file
+
+#if UNITY_IPHONE
+        if (File.Exists("/private" + _localPath))
         {
-            File.Delete("/private" + _selectedVideo.Path);
-            if (!File.Exists(_selectedVideo.Path))
+            File.Delete("/private" + _localPath);
+            if (!File.Exists(_localPath))
             {
                 return true;
             }
         }
-    #else
-        if (File.Exists(_selectedVideo.Path))
+#else
+        if (File.Exists(_localPath))
         {
-            File.Delete(_selectedVideo.Path);
-            if (!File.Exists(_selectedVideo.Path))
+            File.Delete(_localPath);
+            if (!File.Exists(_localPath))
             {
-                return true; 
+                return true;
             }
         }
-    #endif
+#endif
         else
         {
             Debug.Log("File not found");
@@ -114,48 +157,125 @@ public class VideoDetails : MonoBehaviour
 
     void SaveVideoDetails()
     {
-        Debug.Log(_previousScene);
-        Debug.Log(Global.Instance.userGroup.GroupName);
-
-        if (_previousScene == _recordVideoScene)
+        //Save the new or updated video details in the db.
+        if (ValidInput())
         {
-            _selectedVideo = new QrVideo(Name.text, Description.text, Global.Instance.videoPath, 0, Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
-            StartCoroutine(DataManager.UploadQrVideo(_selectedVideo));
+            ErrorMessage.enabled = false;
+            if (_previousScene == _recordVideoScene && !_isUploaded)
+            {
+                _selectedVideo = new QrVideo(Guid.NewGuid(), Name.text, Description.text, Global.Instance.videoPath, 0,
+                Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
+                SaveButton.interactable = false; //indicate that button is disabled?
+                StartCoroutine(DataManager.UploadQrVideo(_selectedVideo));
+                Global.Instance.localVideos.Add(_selectedVideo); //Add to global - check if UploadQrVideo is successfull first?
+                SaveButton.interactable = true;
+                EncyptVideoFile();
+                _isUploaded = true;
+            }
+            if (_previousScene == _linkMenuScene || _isUploaded)
+            {
+                UpdateSelectedVideoFromInputFields();
+                StartCoroutine(DataManager.UpdateQrVideo(_selectedVideo));
+                UpdateVideoList();
+            }
+        }
+        else
+        {
+            ErrorMessage.enabled = true;
         }
 
-        if (_previousScene == _linkMenuScene)
+    }
+
+    void ConfirmUploadVideo()
+    {
+        //confirm if you want to upload the video
+
+        if (ValidInput())
         {
+            ErrorMessage.enabled = false;
             UpdateSelectedVideoFromInputFields();
-            StartCoroutine(DataManager.UpdateQrVideo(_selectedVideo));
+            _confirmUploadMessage = Util.CancellableMessageBox(new Rect(0, 0, 300, 200),
+                "Du er ved at uploade din video " + _selectedVideo.Name + ". Denne video er af typen \"" +
+                Global.Instance.videoCategories[LocalVideos.value].Name +
+                "\". Er du sikker på at du vil fortsætte med at uploade videoen?", true, Message.Type.Info,
+                delegate (Message message, bool value)
+                {
+                    if (value)
+                    {
+                        _uploadProgressMessage = Util.MessageBox(new Rect(0, 0, 300, 200),
+                            "Uploader video: " + _progress + "%", Message.Type.Info, false, true);
+                        am.ProgressChanged += Progress;
+                        UploadVideoToAzure();
+                    }
+                    else if (!value)
+                    {
+
+                    }
+                    _confirmUploadMessage.Destroy();
+                });
+        }
+        else
+        {
+            ErrorMessage.enabled = true;
+        }
+
+    }
+
+    private void Progress(object sender, AzureManager.ProgressEventArgs e)
+    {
+        _progress = (e.Progress * 100).ToString();
+        int index = _progress.IndexOf(".");
+        if (index > 0)
+        {
+            _progress = _progress.Substring(0, index);
+            _uploadProgressMessage.Text = "Uploader video: " + _progress + "%";
+        }
+        else if (e.Progress == 1)
+        {
+            _uploadProgressMessage.Text = "Uploader video: " + _progress + "%";
+            UploadVideo();
+            _uploadProgressMessage.Destroy();
+            am.ProgressChanged -= Progress;
+        }
+
+        ////int.Parse((webRequest.uploadProgress * 100).ToString("F0"));
+        //Debug.Log(sender.ToString());
+    }
+
+    void UploadVideoToAzure()
+    {
+        // Try to upload the video to the Azure blob. If successfull, make the video live (db) and delete the video file. If previous scene was linkmenu, remove from list. If previous scene was record, return to menu.
+
+        if (File.Exists(_selectedVideo.Path))
+        {
+            DecryptVideoFile();
+            string blockBlobReference = _selectedVideo.Name.Replace(" ", "") + "_" + _selectedVideo.Id;
+            _localPath = _selectedVideo.Path;
+            _selectedVideo.Path = blockBlobReference;
+            StartCoroutine(am.PutBlob(_localPath, blockBlobReference));
         }
     }
 
     void UploadVideo()
     {
-        UpdateSelectedVideoFromInputFields();
-        string blockBlobReference = _selectedVideo.Name.Replace(" ", "") + "_" + _selectedVideo.Id;
-        AzureManager.PutBlob(_selectedVideo.Path, blockBlobReference);
-        //_confirmUploadMessages = Util.CancellableMessageBox(new Rect(0, 0, 300, 200),
-        //    "Du er ved at uploade din video " + _selectedVideo.Name + ". Denne video er af typen \"" +
-        //    Global.Instance.videoCategories[LocalVideos.value] + "\". Er du sikker på at du vil fortsætte med at uploade videoen?", true, Message.Type.Info, delegate(Message message, bool value) {  });
-        MakeVideoLive(blockBlobReference);
-        RemoveVideoFromList();
-        DeleteVideoFile();
+        if (MakeVideoLive())
+        {
+            DeleteVideoFile();
+        }
+        if (_previousScene == _linkMenuScene)
+            RemoveVideoFromList();
+        else if (_previousScene == _recordVideoScene)
+            SceneLoader.Instance.CurrentScene = 0;
     }
 
     void SelectVideo()
     {
+        // Set _selectedVideo from the localVideos dropdown, and update the name, description and category fields to match the video.
+
         _selectedVideo = Global.Instance.localVideos[LocalVideos.value];
         Name.text = _selectedVideo.Name;
         Description.text = _selectedVideo.Description;
         Categories.value = _selectedVideo.VideoCategoryId - 1;
-    }
-
-    void RemoveVideoFromList()
-    {
-        Global.Instance.localVideos.Remove(_selectedVideo);
-        LocalVideos.ClearOptions();
-        GetLocalVideos();
     }
 
     void UpdateSelectedVideoFromInputFields()
@@ -165,20 +285,83 @@ public class VideoDetails : MonoBehaviour
         _selectedVideo.VideoCategoryId = Categories.value + 1;
     }
 
-    void MakeVideoLive(string blockBlobReference)
+    bool MakeVideoLive()
     {
-        _selectedVideo.Path = blockBlobReference;
+        // Upload/Update video in db with new a release date. 
+
         _selectedVideo.ReleaseDate = DateTime.Now;
 
         if (_previousScene == _linkMenuScene)
         {
+
             StartCoroutine(DataManager.UpdateQrVideo(_selectedVideo));
+            return true;
         }
         else if (_previousScene == _recordVideoScene)
         {
             StartCoroutine(DataManager.UploadQrVideo(_selectedVideo));
+            return true;
         }
+        return false;
     }
 
+    bool ValidInput()
+    {
+        if (Name.text.Length > 0 && Description.text.Length > 0)
+            return true;
+        return false;
+    }
+
+    void UpdateVideoList()
+    {
+        // Update Global.localVideos to match _selectedVideo, and refresh LocalVideos.
+
+        int tempValue = LocalVideos.value;
+
+        Global.Instance.localVideos[LocalVideos.value].Name = _selectedVideo.Name;
+        Global.Instance.localVideos[LocalVideos.value].Description = _selectedVideo.Description;
+        Global.Instance.localVideos[LocalVideos.value].VideoCategoryId = _selectedVideo.VideoCategoryId;
+
+        GetLocalVideos();
+        LocalVideos.value = tempValue; //Select the previous selected video instead of the first one in the list, that would otherwise be selected by GetLocalVideos()
+    }
+
+    void RemoveVideoFromList()
+    {
+        // Remove video from the localVideos dropdown, and refresh LocalVideos.
+
+        Global.Instance.localVideos.Remove(_selectedVideo);
+        GetLocalVideos();
+    }
+
+    public void EncyptVideoFile()
+    {
+        byte[] salt;
+        new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+        string orginalFilePath = _selectedVideo.Path;
+        string file = Path.GetFileNameWithoutExtension(_selectedVideo.Path);
+        string newPath = _selectedVideo.Path.Replace(file, file + "-Encrypted");
+        ev.EncryptFile(_selectedVideo.Path, newPath, key, salt);
+        if (File.Exists(_selectedVideo.Path))
+        {
+            File.Delete(_selectedVideo.Path);
+        }
+        File.Move(newPath, orginalFilePath);
+    }
+
+    public void DecryptVideoFile()
+    {
+        byte[] salt;
+        new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+        string orginalFilePath = _selectedVideo.Path;
+        string file = Path.GetFileNameWithoutExtension(_selectedVideo.Path);
+        string newPath = _selectedVideo.Path.Replace(file, file + "-Decrypted");
+        ev.DecryptFile(_selectedVideo.Path, newPath, key, salt);
+        if (File.Exists(_selectedVideo.Path))
+        {
+            File.Delete(_selectedVideo.Path);
+        }
+        File.Move(newPath, orginalFilePath);
+    }
 
 }

@@ -360,6 +360,7 @@ public class LinkMenu1 : BaseWindow
             {
                 if (isSubLink && Function != 0)
                 {
+                    //TODO: Delete this after new search scene is implemented
                     //hardcoded Id for search button
                     if (Id == 9999)
                     {
@@ -386,9 +387,12 @@ public class LinkMenu1 : BaseWindow
                 }
                 else
                 {
-                    _collButton.IsCollapsed = !_collButton.IsCollapsed;
-                    Expanded = !_collButton.IsCollapsed;
-                    return true;
+                    if (_collButton != null)
+                    {
+                        _collButton.IsCollapsed = !_collButton.IsCollapsed;
+                        Expanded = !_collButton.IsCollapsed;
+                        return true;
+                    }
                 }
             }
             
@@ -468,6 +472,7 @@ public class LinkMenu1 : BaseWindow
     private GUIStyle _downScroll, _upScroll;
     private GUIStyle _panelStyle = new GUIStyle();
     private GUIStyle _btnStyle = new GUIStyle();
+    private GUIStyle _btnDisabledStyle = new GUIStyle();
     private Vector2 _scrollVector = Vector2.zero;
     private LinkButton[] buttons = new LinkButton[0];
     private LinkButton[] qrvMenu = new LinkButton[0];
@@ -563,6 +568,9 @@ public class LinkMenu1 : BaseWindow
                     //    _scrollVector = Vector3.zero;
                 }
             }
+        
+        //TODO: Insert seperation line
+
         if (qrvMenu != null)
             for (int i = 0; i < qrvMenu.Length; i++)
             {
@@ -606,7 +614,6 @@ public class LinkMenu1 : BaseWindow
         List<LinkButton> qrvList = new List<LinkButton>();
         LinkButton scanButton = new LinkButton
         {
-            Id = 12345,
             WinParent = this,
             Text = "Scan QR-Code",
             Style = _btnStyle,
@@ -616,7 +623,6 @@ public class LinkMenu1 : BaseWindow
         scanButton.Parent = scanButton;
         LinkButton recordButton = new LinkButton
         {
-            Id = 123456,
             WinParent = this,
             Text = "Record video",
             Style = _btnStyle,
@@ -636,13 +642,19 @@ public class LinkMenu1 : BaseWindow
         searchButton.Parent = searchButton;
         LinkButton uploadButton = new LinkButton
         {
-            Id = 9999,
             WinParent = this,
             Text = "Upload video",
-            Style = _btnStyle,
-            Function = 1005,
+            Style = _btnDisabledStyle,
+            Function = 0,
             isSubLink = true
         };
+
+        if (Global.Instance.localVideos.Count > 0)
+        {
+            //uploadButton has function 0 as default, meaning it wont do anything if clicked, UNLESS the if statement, then the function will go to the video details scene.
+            uploadButton.Style = _btnStyle;
+            uploadButton.Function = 1004;
+        }
         uploadButton.Parent = uploadButton;
         qrvList.Add(scanButton);
         qrvList.Add(searchButton);
@@ -722,7 +734,7 @@ public class LinkMenu1 : BaseWindow
 
         //Create Panel Style
         _panelStyle.normal.background = panelBackground ? panelBackground : hoverTexture;
-        _panelStyle.border.left = _panelStyle.border.right = _panelStyle.border.bottom = _panelStyle.border.top = 10;        
+        _panelStyle.border.left = _panelStyle.border.right = _panelStyle.border.bottom = _panelStyle.border.top = 10;
 
         //Create button style
         _btnStyle.imagePosition = ImagePosition.ImageAbove;
@@ -739,6 +751,24 @@ public class LinkMenu1 : BaseWindow
         _btnStyle.hover.textColor = linkStyle.selectionColor;
         _btnStyle.active.background = hoverTexture;
         _btnStyle.border.left = _btnStyle.border.right = _btnStyle.border.bottom = _btnStyle.border.top = 10;
+
+
+        //Create disabled button style
+        _btnDisabledStyle.imagePosition = ImagePosition.ImageAbove;
+        _btnDisabledStyle.alignment = TextAnchor.UpperLeft;
+        _btnDisabledStyle.padding = new RectOffset(padding, padding, padding, padding);
+        _btnDisabledStyle.font = linkStyle.font;
+        _btnDisabledStyle.fontSize = linkStyle.fontSize;
+        _btnDisabledStyle.fontStyle = FontStyle.Bold;
+        Color disabledColor = new Color(0.35f, 0.35f, 0.35f, 1);
+        _btnDisabledStyle.normal.textColor = disabledColor;
+        _btnDisabledStyle.hover.textColor = disabledColor;
+        _btnDisabledStyle.active.textColor = disabledColor;
+        _btnDisabledStyle.normal.background = hoverTexture;
+        _btnDisabledStyle.hover.background = hoverTexture;
+        _btnDisabledStyle.hover.textColor = disabledColor;
+        _btnDisabledStyle.active.background = hoverTexture;
+        _btnDisabledStyle.border.left = _btnStyle.border.right = _btnStyle.border.bottom = _btnStyle.border.top = 10;
 
         //Scroll buttons
         _downScroll = new GUIStyle();
@@ -792,7 +822,6 @@ public class LinkMenu1 : BaseWindow
                 qrvMenu[i].y = i != 0 ? qrvMenu[i - 1].y + _btnHeight + verticalPadding : verticalPadding + buttonsHeight + 60;
                 qrvMenu[i].width = _btnWidth;
                 qrvMenu[i].height = _btnHeight;
-                qrvMenu[i].Style = _btnStyle;
                 qrvMenu[i].VPadding = verticalPadding;
             }
             _realRect = new Rect(0.0f, 0.0f, rect.width, qrvMenu[qrvMenu.Length - 1].y + _btnHeight + 100);
