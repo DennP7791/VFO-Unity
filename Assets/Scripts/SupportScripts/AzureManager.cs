@@ -12,7 +12,7 @@ using UnityEngine.Networking;
 
 public class AzureManager : MonoBehaviour
 {
-    public static void GetBlob(string blockBlobReference)
+    public IEnumerator GetBlob(string blockBlobReference)
     {
         string requestMethod = "GET";
         String urlPath = string.Format("{0}/{1}", AzureStorageConstants.container, blockBlobReference);
@@ -24,26 +24,33 @@ public class AzureManager : MonoBehaviour
         String authorizationHeader = CreateAuthorizationHeader(stringToSign);
 
         Uri uri = new Uri(AzureStorageConstants.BlobEndPoint + urlPath);
-        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
-        request.Method = requestMethod;
-        request.Headers.Add("x-ms-date", dateInRfc1123Format);
-        request.Headers.Add("x-ms-version", msVersion);
-        request.Headers.Add("Authorization", authorizationHeader);
-        request.Headers.Add("Accept-Charset", "UTF-8");
-        request.Accept = "application/atom+xml,application/xml";
-
         ServicePointManager.ServerCertificateValidationCallback = MyRemoteCertificateValidationCallback;
-        using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+        using (UnityWebRequest webRequest = new UnityWebRequest())
         {
-            using (Stream dataStream = response.GetResponseStream())
+            webRequest.SetRequestHeader("x-ms-date", dateInRfc1123Format);
+            webRequest.SetRequestHeader("x-ms-version", msVersion);
+            webRequest.SetRequestHeader("Authorization", authorizationHeader);
+            webRequest.SetRequestHeader("Accept", "application/json");
+
+            DownloadHandler downloadHandler = new DownloadHandlerBuffer();
+            webRequest.downloadHandler = downloadHandler;
+           
+            webRequest.method = requestMethod;
+            webRequest.url = uri.ToString();
+
+            webRequest.Send();
+
+            while (!webRequest.isDone)
             {
-                using (var fileStream = File.OpenWrite(Application.persistentDataPath + "/video.ogv"))
-                {
-                    CopyStream(dataStream, fileStream);
-                }
-                #if UNITY_STANDALONE_WIN || UNITY_EDITOR
-                //Method for converting .mp4 to .ogv
-                #endif
+                ProgressBar = webRequest.downloadProgress;
+                yield return null;
+            }
+            if (webRequest.isDone && webRequest.error == null)
+            {
+                Debug.Log(Application.persistentDataPath);
+                File.WriteAllBytes(Application.persistentDataPath + "/video.ogv", webRequest.downloadHandler.data);
+                //Hardcoded value to tell the event that this method is done and that the file has been written to the device.
+                ProgressBar = 2;
             }
         }
 
@@ -87,7 +94,7 @@ public class AzureManager : MonoBehaviour
 
             while (!webRequest.isDone)
             {
-                UploadProgress = webRequest.uploadProgress;
+                ProgressBar = webRequest.uploadProgress;
                 yield return null;
             }
         }
@@ -160,30 +167,30 @@ public class AzureManager : MonoBehaviour
         return isOk;
     }
 
-    #region Upload Event
-    private float _uploadProgress;
-    public event EventHandler<UploadProgressEventArgs> UploadProgressChanged;
+    #region Progress Event
+    private float _progress;
+    public event EventHandler<ProgressEventArgs> ProgressChanged;
 
-    public float UploadProgress
+    public float ProgressBar
     {
-        get { return _uploadProgress; }
+        get { return _progress; }
         set
         {
-            _uploadProgress = value;
-            UploadProgressEventArgs e = new UploadProgressEventArgs { Progress = value };
-            OnUploadProgressChanged(e);
+            _progress = value;
+            ProgressEventArgs e = new ProgressEventArgs { Progress = value };
+            OnProgressChanged(e);
         }
     }
 
-    public class UploadProgressEventArgs : EventArgs
+    public class ProgressEventArgs : EventArgs
     {
         public float Progress { get; set; }
     }
 
-    protected virtual void OnUploadProgressChanged(UploadProgressEventArgs e)
+    protected virtual void OnProgressChanged(ProgressEventArgs e)
     {
-        if (UploadProgressChanged != null)
-            UploadProgressChanged(this, e);
+        if (ProgressChanged != null)
+            ProgressChanged(this, e);
     }
     #endregion
 }

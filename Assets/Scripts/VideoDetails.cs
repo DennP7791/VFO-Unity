@@ -188,7 +188,7 @@ public class VideoDetails : MonoBehaviour
                     {
                         _uploadProgressMessage = Util.MessageBox(new Rect(0, 0, 300, 200),
                             "Uploader video: " + _progress + "%", Message.Type.Info, false, true);
-                        am.UploadProgressChanged += Progress;
+                        am.ProgressChanged += Progress;
                         UploadVideoToAzure();
                     }
                     else if (!value)
@@ -205,7 +205,7 @@ public class VideoDetails : MonoBehaviour
         
     }
 
-    private void Progress(object sender, AzureManager.UploadProgressEventArgs e)
+    private void Progress(object sender, AzureManager.ProgressEventArgs e)
     {
         _progress = (e.Progress * 100).ToString();
         int index = _progress.IndexOf(".");
@@ -219,7 +219,7 @@ public class VideoDetails : MonoBehaviour
             _uploadProgressMessage.Text = "Uploader video: " + _progress + "%";
             UploadVideo();
             _uploadProgressMessage.Destroy();
-            am.UploadProgressChanged -= Progress;
+            am.ProgressChanged -= Progress;
 
         }
         

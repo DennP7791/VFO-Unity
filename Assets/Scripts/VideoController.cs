@@ -1,42 +1,80 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.IO;
 
 public class VideoController : MonoBehaviour
 {
-    //string url = "https://welfaredenmark.blob.core.windows.net/vfo-recordings-staging/ogv";
     string url = "";
-    //string url = "http://localhost:59477/Service/DownloadVideoStream?videoName=ogv"; test - forsøgte at kalde www.movie direkte på http get, i håb om at kunne hive videos ud af den stream jeg sender
 
     public RawImage _player;
     public AudioSource _sound;
     MovieTexture video;
     Message loadingBox;
     int progress;
+    AzureManager azureManager;
 
     void Start ()
     {
         loadingBox = Util.MessageBox(new Rect(0, 0, 300, 200), Text.Instance.GetString("data_loader_getting_data"), Message.Type.Info, false, true);
-        //_player = GetComponent<RawImage>();
-        //_sound = GetComponent<AudioSource>();
-        AzureManager.GetBlob(Global.Instance.videoPath);
+        azureManager = new AzureManager();
+        azureManager.ProgressChanged += Progress;
+        StartCoroutine(azureManager.GetBlob(Global.Instance.videoPath));
+
+        
         url = @Application.persistentDataPath + "/video.mp4";
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
         url = "file:///" + Application.persistentDataPath + "/video.ogv";
 #endif
 
-        StartCoroutine(LoadVideo());
+    }
+
+    void Progress(object sender, AzureManager.ProgressEventArgs e)
+    {
+        progress = int.Parse((e.Progress * 100).ToString("F0"));
+        loadingBox.Text = Text.Instance.GetString("sceneloader_downloading") + " " + progress + "%";
+        if(e.Progress == 2)
+        {
+            StartCoroutine(LoadVideo());
+        }
+    }
+
+    void OnDestroy()
+    {
+        DeleteLocalVideo();
+    }
+
+    void DeleteLocalVideo()
+    {
+        string videoPath = @Application.persistentDataPath + "/video";
+#if UNITY_IPHONE
+
+        if (File.Exists("/private" + videoPath + ".mp4"))
+        {
+            File.Delete("/private" + videoPath + ".mp4");
+        }
+#endif
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR
+        if (File.Exists(videoPath + ".ogv"))
+        {
+            File.Delete(videoPath + ".ogv");
+        }
+#endif
+#if UNITY_ANDROID
+        if (File.Exists(videoPath + ".mp4"))
+        {
+            File.Delete(videoPath + ".mp4");
+        }
+#endif
+
+
+
     }
 
     IEnumerator LoadVideo()
     {
         WWW www = new WWW(url);
-
-        while (!www.isDone)
-        {
-            progress = int.Parse((www.progress * 100).ToString("F0"));
-            yield return null;
-        }
+        
 
         if (www.error != null)
         {
@@ -56,28 +94,9 @@ public class VideoController : MonoBehaviour
         }
         
     }
-
-    void OnDestroy()
-    {
-        video.Stop();
-        _sound.Stop();
-    }
-
-    void OnDisable()
-    {
-        video.Pause();
-        _sound.Pause();
-    }
-
-    void ApplicationQuit()
-    {
-        video.Stop();
-        _sound.Stop();
-    }
 	
 	// Update is called once per frame
 	void Update () {
-        loadingBox.Text = Text.Instance.GetString("sceneloader_downloading") + " " + progress + "%";
         if (Input.GetKeyDown(KeyCode.Space) && video.isPlaying)
         {
             video.Pause();
