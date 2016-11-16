@@ -40,11 +40,15 @@ public class VideoDetails : MonoBehaviour
         LocalVideos.enabled = false;
         ErrorMessage.enabled = false;
 
+        Debug.Log("previous scene: " + SceneLoader.Instance.PreviousScene);
+        Debug.Log("current scene: " + SceneLoader.Instance.CurrentScene);
+
         _previousScene = SceneLoader.Instance.PreviousScene;
         GetCategories();
 
         if (_previousScene == _linkMenuScene)
         {
+            Debug.Log("only show this if previous scene is linkmenu");
             GetLocalVideos();
         }
 
@@ -159,7 +163,7 @@ public class VideoDetails : MonoBehaviour
             ErrorMessage.enabled = false;
             if (_previousScene == _recordVideoScene && !_isUploaded)
             {
-                _selectedVideo = new QrVideo(Name.text, Description.text, Global.Instance.videoPath, 0,
+                _selectedVideo = new QrVideo(Guid.NewGuid(), Name.text, Description.text, Global.Instance.videoPath, 0,
                 Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
                 SaveButton.interactable = false; //indicate that button is disabled?
                 StartCoroutine(DataManager.UploadQrVideo(_selectedVideo));
