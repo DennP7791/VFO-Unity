@@ -124,7 +124,7 @@ public class DataManager : MonoBehaviour
 
     public class JsonQrVideoUserView
     {
-        public int VideoId;
+        public Guid VideoId;
         public int UserId;
         public DateTime ViewDate;
 
@@ -133,7 +133,7 @@ public class DataManager : MonoBehaviour
 
         }
 
-        public JsonQrVideoUserView(int videoId, int userId, DateTime viewDate)
+        public JsonQrVideoUserView(Guid videoId, int userId, DateTime viewDate)
         {
             VideoId = videoId;
             UserId = userId;
@@ -168,18 +168,6 @@ public class DataManager : MonoBehaviour
         public JsonQrVideo(Guid id, string name, string description, string path, int count, int userGroupId, int userId, DateTime? releaseDate, int videoCategoryId)
         {
             Id = id;
-            Name = name;
-            Description = description;
-            Path = path;
-            Count = count;
-            UserGroupId = userGroupId;
-            UserId = userId;
-            ReleaseDate = releaseDate;
-            VideoCategoryId = videoCategoryId;
-        }
-
-        public JsonQrVideo(string name, string description, string path, int count, int userGroupId, int userId, DateTime? releaseDate, int videoCategoryId)
-        {
             Name = name;
             Description = description;
             Path = path;
@@ -669,7 +657,7 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    public static IEnumerator UploadQrVideoUserView()
+    public static IEnumerator UploadQrVideoUserView(QrVideoUserView view)
     {
         Debug.Log("UploadQrVideo");
         string url = "https://vfo.welfaredenmark.com/Service/SaveVideoUserViewData/"; //Production environment service
@@ -680,8 +668,7 @@ public class DataManager : MonoBehaviour
         {
             //url = "http://vfo.welfaresverige.se/Service/SaveVideoUserViewData/"; //OutComment if release version
         }
-
-        QrVideoUserView view = new QrVideoUserView(1, 1, DateTime.Now);
+        
         JsonQrVideoUserView qrVideoUserView = QrVideoUserViewToJsonQrVideoUserView(view);
 
         Debug.Log("Converted To Json Container:\n" + qrVideoUserView.ToString());

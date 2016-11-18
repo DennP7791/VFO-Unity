@@ -48,7 +48,14 @@ public class AzureManager : MonoBehaviour
             if (webRequest.isDone && webRequest.error == null)
             {
                 Debug.Log(Application.persistentDataPath);
+
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN
                 File.WriteAllBytes(Application.persistentDataPath + "/video.ogv", webRequest.downloadHandler.data);
+#endif
+#if UNITY_ANDROID || UNITY_IOS
+                File.WriteAllBytes(Application.persistentDataPath + "/video.mp4", webRequest.downloadHandler.data);
+#endif
+
                 //Hardcoded value to tell the event that this method is done and that the file has been written to the device.
                 ProgressBar = 2;
             }
@@ -167,7 +174,7 @@ public class AzureManager : MonoBehaviour
         return isOk;
     }
 
-    #region Progress Event
+#region Progress Event
     private float _progress;
     public event EventHandler<ProgressEventArgs> ProgressChanged;
 
@@ -192,5 +199,5 @@ public class AzureManager : MonoBehaviour
         if (ProgressChanged != null)
             ProgressChanged(this, e);
     }
-    #endregion
+#endregion
 }
