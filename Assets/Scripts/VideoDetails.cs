@@ -24,7 +24,6 @@ public class VideoDetails : MonoBehaviour
     EncryptVideo ev = new EncryptVideo();
     private string _progress = "0";
     private string _localPath = "";
-    private bool isEncrypted = true;
     private bool _isUploaded = false;
     private Message _confirmUploadMessage;
     private Message _uploadProgressMessage;
@@ -41,11 +40,15 @@ public class VideoDetails : MonoBehaviour
         LocalVideos.enabled = false;
         ErrorMessage.enabled = false;
 
+        Debug.Log("previous scene: " + SceneLoader.Instance.PreviousScene);
+        Debug.Log("current scene: " + SceneLoader.Instance.CurrentScene);
+
         _previousScene = SceneLoader.Instance.PreviousScene;
         GetCategories();
 
         if (_previousScene == _linkMenuScene)
         {
+            Debug.Log("only show this if previous scene is linkmenu");
             GetLocalVideos();
         }
 
@@ -160,12 +163,13 @@ public class VideoDetails : MonoBehaviour
             ErrorMessage.enabled = false;
             if (_previousScene == _recordVideoScene && !_isUploaded)
             {
-                _selectedVideo = new QrVideo(Name.text, Description.text, Global.Instance.videoPath, 0,
+                _selectedVideo = new QrVideo(Guid.NewGuid(), Name.text, Description.text, Global.Instance.videoPath, 0,
                 Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
                 SaveButton.interactable = false; //indicate that button is disabled?
                 StartCoroutine(DataManager.UploadQrVideo(_selectedVideo));
                 Global.Instance.localVideos.Add(_selectedVideo); //Add to global - check if UploadQrVideo is successfull first?
                 SaveButton.interactable = true;
+                EncyptVideoFile();
                 _isUploaded = true;
             }
             if (_previousScene == _linkMenuScene || _isUploaded)
@@ -242,17 +246,14 @@ public class VideoDetails : MonoBehaviour
     {
         // Try to upload the video to the Azure blob. If successfull, make the video live (db) and delete the video file. If previous scene was linkmenu, remove from list. If previous scene was record, return to menu.
 
-        if (File.Exists(_selectedVideo.Path) && !isEncrypted)
+        if (File.Exists(_selectedVideo.Path))
         {
             DecryptVideoFile();
+            string blockBlobReference = _selectedVideo.Name.Replace(" ", "") + "_" + _selectedVideo.Id;
+            _localPath = _selectedVideo.Path;
+            _selectedVideo.Path = blockBlobReference;
+            StartCoroutine(am.PutBlob(_localPath, blockBlobReference));
         }
-
-        string blockBlobReference = _selectedVideo.Name.Replace(" ", "") + "_" + _selectedVideo.Id;
-        _localPath = _selectedVideo.Path;
-        _selectedVideo.Path = blockBlobReference;
-        StartCoroutine(am.PutBlob(_localPath, blockBlobReference));
-        ////TODO: dont continue untill the video has been successfully updated
-
     }
 
     void UploadVideo()
@@ -333,15 +334,6 @@ public class VideoDetails : MonoBehaviour
         GetLocalVideos();
     }
 
-    void OnDestroy()
-    {
-        if (File.Exists(_selectedVideo.Path) && !isEncrypted)
-        {
-            EncyptVideoFile();
-        }
-    }
-
-    //Refacotring
     public void EncyptVideoFile()
     {
         byte[] salt;

@@ -152,7 +152,7 @@ public class DataManager : MonoBehaviour
 
     public class JsonQrVideo
     {
-        public int Id;
+        public Guid Id;
         public string Name;
         public string Description;
         public string Path;
@@ -166,7 +166,7 @@ public class DataManager : MonoBehaviour
         {
         }
 
-        public JsonQrVideo(int id, string name, string description, string path, int count, int userGroupId, int userId, DateTime? releaseDate, int videoCategoryId)
+        public JsonQrVideo(Guid id, string name, string description, string path, int count, int userGroupId, int userId, DateTime? releaseDate, int videoCategoryId)
         {
             Id = id;
             Name = name;
@@ -788,7 +788,7 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    public static IEnumerator DeleteVideo(int id)
+    public static IEnumerator DeleteVideo(Guid id)
     {
         InitializeUrl();
         Debug.Log("GetUserGroup");
