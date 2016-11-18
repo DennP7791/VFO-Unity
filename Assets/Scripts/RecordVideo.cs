@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
+using System.IO;
 using CameraShot;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +14,7 @@ public class RecordVideo : MonoBehaviour {
         AndroidCameraShot.LaunchCameraForVideoCapture();
         #endif
         //SceneManager.LoadScene("video_details");
-        StartCoroutine(ChangeScene());
+        //StartCoroutine(ChangeScene());
     }
 
     IEnumerator ChangeScene()
@@ -28,6 +30,7 @@ public class RecordVideo : MonoBehaviour {
 
     void OnVideoSaved(string path)
     {
+        //Move video to specific path?
         Global.Instance.videoPath = path;
         SceneLoader.Instance.CurrentScene = 1004;
     }

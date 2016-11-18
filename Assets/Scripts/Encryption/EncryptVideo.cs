@@ -7,9 +7,33 @@ using System.Text;
 
 public class EncryptVideo {
 
+    private string key = "HR$2pIjHR$2pIj12jh3adTaF3bi23u9n7a";
+    private bool _isDencrpyting = true;
+    public event EventHandler<EventArgs> IsDecryptingChanged;
 
-    public void EncryptFile(string srcPath, string destPath, string key, byte[] salt)
+    public bool IsDecrypting
     {
+        get { return _isDencrpyting; }
+        set
+        {
+            _isDencrpyting = value;
+            OnIsDecryptingChanged(null);
+        }
+    }
+
+    protected virtual void OnIsDecryptingChanged(EventArgs e)
+    {
+        if (IsDecryptingChanged != null)
+            IsDecryptingChanged(this, e);
+    }
+
+    public void EncryptFile(string srcPath)
+    {
+        byte[] salt;
+        new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+        string file = Path.GetFileNameWithoutExtension(srcPath);
+        string destPath = srcPath.Replace(file, file + "-Encrypted");
+
         try
         {
             DeriveBytes rgb = new Rfc2898DeriveBytes(key, Encoding.Unicode.GetBytes(salt.ToString()));
@@ -34,22 +58,30 @@ public class EncryptVideo {
                                 while ((data = fsIn.ReadByte()) != -1)
                                 {
                                     cs.WriteByte((byte)data);
+                                    //yield return cs;
                                 }
+                                //IsEncrypting = true;
                             }
                         }
                     }
                 }
+                OverwriteFile(srcPath, destPath);
             }
         }
         catch (Exception ex)
         {
             // failed to encrypt file
-            Console.Write(ex);
+            Debug.Log(ex);
         }
     }
 
-    public void DecryptFile(string srcPath, string destPath, string key, byte[] salt)
+    public void DecryptFile(string srcPath)
     {
+        byte[] salt;
+        new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+        string file = Path.GetFileNameWithoutExtension(srcPath);
+        string destPath = srcPath.Replace(file, file + "-Encrypted");
+
         try
         {
             DeriveBytes rgb = new Rfc2898DeriveBytes(key, Encoding.Unicode.GetBytes(salt.ToString()));
@@ -79,7 +111,9 @@ public class EncryptVideo {
                         }
                     }
                 }
+                OverwriteFile(srcPath, destPath);
             }
+            IsDecrypting = false;
         }
         catch (Exception ex)
         {
@@ -88,4 +122,13 @@ public class EncryptVideo {
         }
     }
 
+    void OverwriteFile(string originalPath, string encryptedPath)
+    {
+        if (File.Exists(originalPath))
+        {
+            Debug.Log("File exists");
+            File.Delete(originalPath);
+        }
+        File.Move(encryptedPath, originalPath);
+    }
 }

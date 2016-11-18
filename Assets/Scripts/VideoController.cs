@@ -9,7 +9,7 @@ public class VideoController : MonoBehaviour
 
     public RawImage _player;
     public AudioSource _sound;
-    MovieTexture video;
+    //MovieTexture video;
     Message loadingBox;
     int progress;
     AzureManager azureManager;
@@ -95,7 +95,7 @@ public class VideoController : MonoBehaviour
     }
     void PlayVideoOnMovieTexture()
     {
-        video = www.movie;
+        MovieTexture video = www.movie;
         _player.texture = video;
         _sound.clip = video.audioClip;
         video.Play();
