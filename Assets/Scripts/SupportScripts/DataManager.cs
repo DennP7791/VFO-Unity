@@ -16,6 +16,21 @@ public class DataManager : MonoBehaviour
 
     private static bool DEBUG = false;
 
+
+    static void InitializeUrl()
+    {
+        //static string url = "https://vfo.welfaredenmark.com/Service/"; //Production environment service
+
+        //url = "http://localhost:59477/Service/"; //LOCAL SERVICE - Comment for release version
+
+        //static string url = "http://vfo-staging-webapp.azurewebsites.net/Service/"; //STAGING SERVICE - Comment for release version
+        url = "http://vfo-staging-webapp.azurewebsites.net/Service/";
+#if UNITY_EDITOR
+        url = "http://localhost:59477/Service/";
+#endif
+
+    }
+
     //Classes used in Json Data Serialization and Deserialization
     #region Json Data container classes
 
@@ -953,19 +968,7 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    static void InitializeUrl()
-    {
-        //static string url = "https://vfo.welfaredenmark.com/Service/"; //Production environment service
 
-        //static string url = "http://localhost:59477/Service/"; //LOCAL SERVICE - Comment for release version
-
-        //static string url = "http://vfo-staging-webapp.azurewebsites.net/Service/"; //STAGING SERVICE - Comment for release version
-        url = "http://vfo-staging-webapp.azurewebsites.net/Service/";
-#if UNITY_EDITOR
-        //url = "http://localhost:59477/Service/";
-#endif
-
-    }
 
     // Use this for initialization
     void Start()

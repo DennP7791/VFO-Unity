@@ -8,8 +8,7 @@ public class VideoController : MonoBehaviour
     string url = "";
 
     public RawImage _player;
-    public AudioSource _sound;
-    //MovieTexture video;
+    public AudioSource _sound;    
     Message loadingBox;
     int progress;
     AzureManager azureManager;
@@ -87,24 +86,27 @@ public class VideoController : MonoBehaviour
 #if UNITY_IOS || UNITY_ANDROID
             StartCoroutine(PlayVideoOnHandheld());
 #endif
-            /*
+
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
             PlayVideoOnMovieTexture();
             #endif
-            */
+           
         }
 
     }
-    /*
+
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR
     void PlayVideoOnMovieTexture()
     {
 
-        video = www.movie;
+        MovieTexture video = www.movie;
         _player.texture = video;
         _sound.clip = video.audioClip;
         video.Play();
         _sound.Play();
-    }*/
+
+    }
+#endif
 
 
     IEnumerator PlayVideoOnHandheld()
