@@ -7,9 +7,15 @@ using System.Text;
 
 public class EncryptVideo {
 
+    private string key = "HR$2pIjHR$2pIj12jh3adTaF3bi23u9n7a";
 
-    public void EncryptFile(string srcPath, string destPath, string key, byte[] salt)
+    public void EncryptFile(string srcPath)
     {
+        byte[] salt;
+        new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+        string file = Path.GetFileNameWithoutExtension(srcPath);
+        string destPath = srcPath.Replace(file, file + "-Encrypted");
+
         try
         {
             DeriveBytes rgb = new Rfc2898DeriveBytes(key, Encoding.Unicode.GetBytes(salt.ToString()));
@@ -39,17 +45,22 @@ public class EncryptVideo {
                         }
                     }
                 }
+                OverwriteFile(srcPath, destPath);
             }
         }
         catch (Exception ex)
         {
-            // failed to encrypt file
-            Console.Write(ex);
+            Debug.Log(ex);
         }
     }
 
-    public void DecryptFile(string srcPath, string destPath, string key, byte[] salt)
+    public void DecryptFile(string srcPath)
     {
+        byte[] salt;
+        new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
+        string file = Path.GetFileNameWithoutExtension(srcPath);
+        string destPath = srcPath.Replace(file, file + "-Encrypted");
+
         try
         {
             DeriveBytes rgb = new Rfc2898DeriveBytes(key, Encoding.Unicode.GetBytes(salt.ToString()));
@@ -79,13 +90,22 @@ public class EncryptVideo {
                         }
                     }
                 }
+                OverwriteFile(srcPath, destPath);
             }
         }
         catch (Exception ex)
         {
-            // failed to decrypt file
             Console.Write(ex);
         }
     }
 
+    void OverwriteFile(string originalPath, string encryptedPath)
+    {
+        if (File.Exists(originalPath))
+        {
+            Debug.Log("File exists");
+            File.Delete(originalPath);
+        }
+        File.Move(encryptedPath, originalPath);
+    }
 }

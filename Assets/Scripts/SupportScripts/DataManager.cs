@@ -702,7 +702,7 @@ public class DataManager : MonoBehaviour
         {
             //url = "http://vfo.welfaresverige.se/Service/SaveVideoUserViewData/"; //OutComment if release version
         }
-        
+
         JsonQrVideoUserView qrVideoUserView = QrVideoUserViewToJsonQrVideoUserView(view);
 
         Debug.Log("Converted To Json Container:\n" + qrVideoUserView.ToString());
@@ -967,8 +967,6 @@ public class DataManager : MonoBehaviour
             Debug.Log("WWW Error: " + www.error);
         }
     }
-
-
 
     // Use this for initialization
     void Start()

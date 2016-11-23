@@ -25,7 +25,6 @@ public class QrCamController : MonoBehaviour
     DataManager data_manager;
     public UnityEngine.UI.Text errorMessage;
     public InputField passwordInput;
-    public GameObject cameraCanvas;
     public GameObject passwordCanvas;
     public Button SubmibButton;
     private bool isSecureVideo = false;
@@ -129,6 +128,7 @@ public class QrCamController : MonoBehaviour
     {
         _qrThread.Abort();
         _camTexture.Stop();
+        RawImage.material.mainTexture = null;
     }
 
     void OnApplicationQuit()
@@ -162,9 +162,6 @@ public class QrCamController : MonoBehaviour
 
     void LoadVideo(string result)
     {
-        //_qrFound = false;
-        //BlobService.GetBlob("bunny2");
-
         foreach (var vid in videoList)
         {
             if (vid.Path.Equals(result))

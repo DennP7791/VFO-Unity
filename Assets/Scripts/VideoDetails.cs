@@ -1,13 +1,8 @@
 ﻿using System;
-using UnityEngine;
 using System.Collections;
-
+using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
 using System.IO;
-using System.Runtime.CompilerServices;
-using Text = UnityEngine.UI.Text;
-using System.Security.Cryptography;
 
 public class VideoDetails : MonoBehaviour
 {
@@ -18,26 +13,30 @@ public class VideoDetails : MonoBehaviour
     public Button SaveButton;
     public Button UploadButton;
     public Button DeleteButton;
+    public GameObject LocalVideosRow;
     public UnityEngine.UI.Text ErrorMessage;
 
     AzureManager am = new AzureManager();
     EncryptVideo ev = new EncryptVideo();
     private string _progress = "0";
     private string _localPath = "";
-    private bool _isUploaded = false;
+    private bool _isUploaded = false; //make false again
     private Message _confirmUploadMessage;
     private Message _uploadProgressMessage;
+    private string _uploadString;
 
     private QrVideo _selectedVideo;
     private int _previousScene;
     private int _recordVideoScene = 1003;
     private int _linkMenuScene = 0;
 
-    private string key = "HR$2pIjHR$2pIj12jh3adTaF3bi23u9n7a";
+    
 
     void Start()
     {
-        LocalVideos.enabled = false;
+
+        LocalVideosRow.SetActive(false);
+        //LocalVideos.enabled = false;
         ErrorMessage.enabled = false;
 
         Debug.Log("previous scene: " + SceneLoader.Instance.PreviousScene);
@@ -48,7 +47,6 @@ public class VideoDetails : MonoBehaviour
 
         if (_previousScene == _linkMenuScene)
         {
-            Debug.Log("only show this if previous scene is linkmenu");
             GetLocalVideos();
         }
 
@@ -71,8 +69,8 @@ public class VideoDetails : MonoBehaviour
     {
         // If there are any local videos, add them to the LocalVideos list and select the first video. Else go back to the menu.
 
-        if (!LocalVideos.enabled)
-            LocalVideos.enabled = true;
+        if (!LocalVideosRow.activeSelf)
+            LocalVideosRow.SetActive(true);
 
         LocalVideos.ClearOptions();
         if (Global.Instance.localVideos.Count > 0)
@@ -169,7 +167,8 @@ public class VideoDetails : MonoBehaviour
                 StartCoroutine(DataManager.UploadQrVideo(_selectedVideo));
                 Global.Instance.localVideos.Add(_selectedVideo); //Add to global - check if UploadQrVideo is successfull first?
                 SaveButton.interactable = true;
-                EncyptVideoFile();
+                //Thread thread = new Thread(EncyptVideoFile);
+                //thread.Start();
                 _isUploaded = true;
             }
             if (_previousScene == _linkMenuScene || _isUploaded)
@@ -190,7 +189,7 @@ public class VideoDetails : MonoBehaviour
     {
         //confirm if you want to upload the video
 
-        if (ValidInput())
+        if (ValidInput() && File.Exists(_selectedVideo.Path))
         {
             ErrorMessage.enabled = false;
             UpdateSelectedVideoFromInputFields();
@@ -202,10 +201,20 @@ public class VideoDetails : MonoBehaviour
                 {
                     if (value)
                     {
+                        _uploadString = "Uploader video: " + _progress + "%";
                         _uploadProgressMessage = Util.MessageBox(new Rect(0, 0, 300, 200),
-                            "Uploader video: " + _progress + "%", Message.Type.Info, false, true);
+                            _uploadString, Message.Type.Info, false, true);
+                        _uploadString = "";
                         am.ProgressChanged += Progress;
-                        UploadVideoToAzure();
+                        if (_isUploaded)
+                        {
+                            StartCoroutine(DecryptAndUpload());
+                        }
+                        else
+                        {
+                            UploadVideoToAzure();
+                        }
+
                     }
                     else if (!value)
                     {
@@ -221,6 +230,16 @@ public class VideoDetails : MonoBehaviour
 
     }
 
+    IEnumerator DecryptAndUpload()
+    {
+        _uploadProgressMessage.Text = "Trin 1 af 2\n\nDekrypterer video...";
+        yield return new WaitForSeconds(1f); // wait for gui to finish loading before going on to decrypt the video
+        ev.DecryptFile(_selectedVideo.Path);
+        _uploadString = "Trin 2 af 2\n\n";
+        UploadVideoToAzure();
+
+    }
+
     private void Progress(object sender, AzureManager.ProgressEventArgs e)
     {
         _progress = (e.Progress * 100).ToString();
@@ -228,32 +247,24 @@ public class VideoDetails : MonoBehaviour
         if (index > 0)
         {
             _progress = _progress.Substring(0, index);
-            _uploadProgressMessage.Text = "Uploader video: " + _progress + "%";
+            _uploadProgressMessage.Text = _uploadString + "Uploader video: " + _progress + "%";
         }
         else if (e.Progress == 1)
         {
-            _uploadProgressMessage.Text = "Uploader video: " + _progress + "%";
+            _uploadProgressMessage.Text = _uploadString + "Uploader video: " + _progress + "%";
             UploadVideo();
             _uploadProgressMessage.Destroy();
             am.ProgressChanged -= Progress;
         }
-
-        ////int.Parse((webRequest.uploadProgress * 100).ToString("F0"));
-        //Debug.Log(sender.ToString());
     }
 
     void UploadVideoToAzure()
     {
         // Try to upload the video to the Azure blob. If successfull, make the video live (db) and delete the video file. If previous scene was linkmenu, remove from list. If previous scene was record, return to menu.
-
-        if (File.Exists(_selectedVideo.Path))
-        {
-            DecryptVideoFile();
-            string blockBlobReference = _selectedVideo.Name.Replace(" ", "") + "_" + _selectedVideo.Id;
-            _localPath = _selectedVideo.Path;
-            _selectedVideo.Path = blockBlobReference;
-            StartCoroutine(am.PutBlob(_localPath, blockBlobReference));
-        }
+        string blockBlobReference = _selectedVideo.Name.Replace(" ", "") + "_" + _selectedVideo.Id;
+        _localPath = _selectedVideo.Path;
+        _selectedVideo.Path = blockBlobReference;
+        StartCoroutine(am.PutBlob(_localPath, blockBlobReference));
     }
 
     void UploadVideo()
@@ -333,35 +344,4 @@ public class VideoDetails : MonoBehaviour
         Global.Instance.localVideos.Remove(_selectedVideo);
         GetLocalVideos();
     }
-
-    public void EncyptVideoFile()
-    {
-        byte[] salt;
-        new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
-        string orginalFilePath = _selectedVideo.Path;
-        string file = Path.GetFileNameWithoutExtension(_selectedVideo.Path);
-        string newPath = _selectedVideo.Path.Replace(file, file + "-Encrypted");
-        ev.EncryptFile(_selectedVideo.Path, newPath, key, salt);
-        if (File.Exists(_selectedVideo.Path))
-        {
-            File.Delete(_selectedVideo.Path);
-        }
-        File.Move(newPath, orginalFilePath);
-    }
-
-    public void DecryptVideoFile()
-    {
-        byte[] salt;
-        new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
-        string orginalFilePath = _selectedVideo.Path;
-        string file = Path.GetFileNameWithoutExtension(_selectedVideo.Path);
-        string newPath = _selectedVideo.Path.Replace(file, file + "-Decrypted");
-        ev.DecryptFile(_selectedVideo.Path, newPath, key, salt);
-        if (File.Exists(_selectedVideo.Path))
-        {
-            File.Delete(_selectedVideo.Path);
-        }
-        File.Move(newPath, orginalFilePath);
-    }
-
 }
