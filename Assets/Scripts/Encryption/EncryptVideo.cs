@@ -8,24 +8,6 @@ using System.Text;
 public class EncryptVideo {
 
     private string key = "HR$2pIjHR$2pIj12jh3adTaF3bi23u9n7a";
-    private bool _isDencrpyting = true;
-    public event EventHandler<EventArgs> IsDecryptingChanged;
-
-    public bool IsDecrypting
-    {
-        get { return _isDencrpyting; }
-        set
-        {
-            _isDencrpyting = value;
-            OnIsDecryptingChanged(null);
-        }
-    }
-
-    protected virtual void OnIsDecryptingChanged(EventArgs e)
-    {
-        if (IsDecryptingChanged != null)
-            IsDecryptingChanged(this, e);
-    }
 
     public void EncryptFile(string srcPath)
     {
@@ -58,9 +40,7 @@ public class EncryptVideo {
                                 while ((data = fsIn.ReadByte()) != -1)
                                 {
                                     cs.WriteByte((byte)data);
-                                    //yield return cs;
                                 }
-                                //IsEncrypting = true;
                             }
                         }
                     }
@@ -70,7 +50,6 @@ public class EncryptVideo {
         }
         catch (Exception ex)
         {
-            // failed to encrypt file
             Debug.Log(ex);
         }
     }
@@ -113,11 +92,9 @@ public class EncryptVideo {
                 }
                 OverwriteFile(srcPath, destPath);
             }
-            IsDecrypting = false;
         }
         catch (Exception ex)
         {
-            // failed to decrypt file
             Console.Write(ex);
         }
     }

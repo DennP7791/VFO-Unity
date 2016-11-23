@@ -682,6 +682,7 @@ public class DataManager : MonoBehaviour
         Debug.Log("UploadQrVideo");
         string _url = url + "SaveVideoUserViewData/";
 
+
         if (Global.Instance.ProgramLanguage == "sv-SE")
         {
             //url = "http://vfo.welfaresverige.se/Service/SaveVideoUserViewData/"; //OutComment if release version
@@ -716,6 +717,7 @@ public class DataManager : MonoBehaviour
         InitializeUrl();
         Debug.Log("GetUserGroup");
         string _url = url + "GetUserGroup/" + Global.Instance.UserId;
+
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
         {
@@ -960,7 +962,7 @@ public class DataManager : MonoBehaviour
         //static string url = "http://vfo-staging-webapp.azurewebsites.net/Service/"; //STAGING SERVICE - Comment for release version
         url = "http://vfo-staging-webapp.azurewebsites.net/Service/";
 #if UNITY_EDITOR
-        //url = "http://localhost:59477/Service/";
+        url = "http://localhost:59477/Service/";
 #endif
 
     }

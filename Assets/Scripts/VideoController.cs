@@ -87,24 +87,34 @@ public class VideoController : MonoBehaviour
 #if UNITY_IOS || UNITY_ANDROID
             StartCoroutine(PlayVideoOnHandheld());
 #endif
+
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
             PlayVideoOnMovieTexture();
             #endif
+
         }
 
     }
+
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR
     void PlayVideoOnMovieTexture()
     {
+
         MovieTexture video = www.movie;
+
+
+        video = www.movie;
         _player.texture = video;
         _sound.clip = video.audioClip;
         video.Play();
         _sound.Play();
     }
+#endif
 
 
     IEnumerator PlayVideoOnHandheld()
     {
+        Screen.orientation = ScreenOrientation.Landscape;
         Color bgColor = Color.black;
         FullScreenMovieControlMode controlMode = FullScreenMovieControlMode.Full;
         FullScreenMovieScalingMode scalingMode = FullScreenMovieScalingMode.AspectFill;

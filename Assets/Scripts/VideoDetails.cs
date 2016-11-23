@@ -1,15 +1,8 @@
 ﻿using System;
-using UnityEngine;
 using System.Collections;
-
+using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
 using System.IO;
-using System.Runtime.CompilerServices;
-using Text = UnityEngine.UI.Text;
-using System.Security.Cryptography;
-using System.Threading;
-using UnityEditor.VersionControl;
 
 public class VideoDetails : MonoBehaviour
 {
@@ -211,24 +204,17 @@ public class VideoDetails : MonoBehaviour
                         _uploadString = "Uploader video: " + _progress + "%";
                         _uploadProgressMessage = Util.MessageBox(new Rect(0, 0, 300, 200),
                             _uploadString, Message.Type.Info, false, true);
+                        _uploadString = "";
                         am.ProgressChanged += Progress;
-                        //if (_isUploaded)
-                        //{
-                        //    //ev.IsDecryptingChanged += DecryptEvent;
-                        //    //Thread thread = new Thread(DecryptVideoFile);
-                        //    //thread.Start();
-                        //    _uploadProgressMessage.Text = "Trin 1 of 2\n\nDekrypterer video";
-                        //    //_uploadString = "Trin 1 of 2\nDekrypterer video";
-                        //    DecryptVideoFile();
-                        //    //_uploadString = "Trin 2 of 2\nUploader video: " + _progress + "%";
-                        //    _uploadProgressMessage.Text = "Trin 2 of 2\n\nUploader video: " + _progress + "%";
-                        //    UploadVideoToAzure();
-                        //}
-                        //else
-                        //{
+                        if (_isUploaded)
+                        {
+                            StartCoroutine(DecryptAndUpload());
+                        }
+                        else
+                        {
                             UploadVideoToAzure();
-                        //}
-                       
+                        }
+
                     }
                     else if (!value)
                     {
@@ -244,6 +230,16 @@ public class VideoDetails : MonoBehaviour
 
     }
 
+    IEnumerator DecryptAndUpload()
+    {
+        _uploadProgressMessage.Text = "Trin 1 af 2\n\nDekrypterer video...";
+        yield return new WaitForSeconds(1f); // wait for gui to finish loading before going on to decrypt the video
+        ev.DecryptFile(_selectedVideo.Path);
+        _uploadString = "Trin 2 af 2\n\n";
+        UploadVideoToAzure();
+
+    }
+
     private void Progress(object sender, AzureManager.ProgressEventArgs e)
     {
         _progress = (e.Progress * 100).ToString();
@@ -251,18 +247,15 @@ public class VideoDetails : MonoBehaviour
         if (index > 0)
         {
             _progress = _progress.Substring(0, index);
-            _uploadProgressMessage.Text = "Uploader video: " + _progress + "%";
+            _uploadProgressMessage.Text = _uploadString + "Uploader video: " + _progress + "%";
         }
         else if (e.Progress == 1)
         {
-            _uploadProgressMessage.Text = "Uploader video: " + _progress + "%";
+            _uploadProgressMessage.Text = _uploadString + "Uploader video: " + _progress + "%";
             UploadVideo();
             _uploadProgressMessage.Destroy();
             am.ProgressChanged -= Progress;
         }
-
-        ////int.Parse((webRequest.uploadProgress * 100).ToString("F0"));
-        //Debug.Log(sender.ToString());
     }
 
     void UploadVideoToAzure()
@@ -350,21 +343,5 @@ public class VideoDetails : MonoBehaviour
 
         Global.Instance.localVideos.Remove(_selectedVideo);
         GetLocalVideos();
-    }
-
-    void EncyptVideoFile()
-    {
-        ev.EncryptFile(_selectedVideo.Path);
-    }
-
-    public void DecryptVideoFile()
-    {
-        ev.DecryptFile(_selectedVideo.Path);
-    }
-
-    private void DecryptEvent(object sender, EventArgs e)
-    {
-        UploadVideoToAzure();
-        ev.IsDecryptingChanged -= DecryptEvent;
     }
 }

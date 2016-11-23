@@ -360,30 +360,12 @@ public class LinkMenu1 : BaseWindow
             {
                 if (isSubLink && Function != 0)
                 {
-                    //TODO: Delete this after new search scene is implemented
-                    //hardcoded Id for search button
-                    if (Id == 9999)
-                    {
-                        if (!GameObject.Find("SearchMenu(Clone)"))
-                        {
-                            Util.InstantiateResource<SearchMenu>("SearchMenu");
-                        }
-                        else
-                        {
-                            GameObject.Destroy(GameObject.Find("SearchMenu(Clone)"));
-                        }
-
-                        //_searchVideo = true;
-                    }
-                    else
-                    {
                         SceneLoader.Instance.CurrentCategory = Parent != null ? Parent.Id : -1;
                         Debug.Log("Loading Scene: " + Function +
                             "\nCategory: " + SceneLoader.Instance.CurrentCategory +
                             "\nExercise: " + SceneLoader.Instance.CurrentScene);
                         SceneLoader.Instance.CurrentScene = Function;
                         SceneLoader.Instance.CurrentID = Id;
-                    }
                 }
                 else
                 {
@@ -632,11 +614,10 @@ public class LinkMenu1 : BaseWindow
         recordButton.Parent = recordButton;
         LinkButton searchButton = new LinkButton
         {
-            Id = 9999,
             WinParent = this,
             Text = "Search for video",
             Style = _btnStyle,
-            Function = 1001,
+            Function = 1005,
             isSubLink = true
         };
         searchButton.Parent = searchButton;
