@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using System.Linq;
+using System.Threading;
 
 public class VideoDetails : MonoBehaviour
 {
@@ -20,7 +22,7 @@ public class VideoDetails : MonoBehaviour
     EncryptVideo ev = new EncryptVideo();
     private string _progress = "0";
     private string _localPath = "";
-    private bool _isUploaded = false; //make false again
+    private bool _isSavedInDB = false; //make false again
     private Message _confirmUploadMessage;
     private Message _uploadProgressMessage;
     private string _uploadString;
@@ -34,9 +36,7 @@ public class VideoDetails : MonoBehaviour
 
     void Start()
     {
-
         LocalVideosRow.SetActive(false);
-        //LocalVideos.enabled = false;
         ErrorMessage.enabled = false;
 
         Debug.Log("previous scene: " + SceneLoader.Instance.PreviousScene);
@@ -45,8 +45,10 @@ public class VideoDetails : MonoBehaviour
         _previousScene = SceneLoader.Instance.PreviousScene;
         GetCategories();
 
+        _selectedVideo = new QrVideo(Global.Instance.videoPath); //instantiate new QrVideo with only a path. Used to store the path from the recorded video, to be able to use the same Upload/Decrypt methods as with local stored videos.
         if (_previousScene == _linkMenuScene)
         {
+            _isSavedInDB = true;
             GetLocalVideos();
         }
 
@@ -107,6 +109,8 @@ public class VideoDetails : MonoBehaviour
     {
         //If video file has been successfully deleted - delete the video from db and remove from list if previous scene was linkmenu / return to linkmenu if previous scene was record 
 
+        _localPath = _selectedVideo.Path;
+
         //TODO: Add confirmDelete popup
         if (DeleteVideoFile())
         {
@@ -117,6 +121,11 @@ public class VideoDetails : MonoBehaviour
             }
             else if (_previousScene == _recordVideoScene)
             {
+                if (_isSavedInDB)
+                {
+                    Global.Instance.localVideos.RemoveAt(Global.Instance.localVideos.Count-1);
+                    StartCoroutine(DataManager.DeleteVideo(_selectedVideo.Id));
+                }
                 SceneLoader.Instance.CurrentScene = 0;
             }
 
@@ -159,7 +168,7 @@ public class VideoDetails : MonoBehaviour
         if (ValidInput())
         {
             ErrorMessage.enabled = false;
-            if (_previousScene == _recordVideoScene && !_isUploaded)
+            if (!_isSavedInDB)
             {
                 _selectedVideo = new QrVideo(Guid.NewGuid(), Name.text, Description.text, Global.Instance.videoPath, 0,
                 Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
@@ -167,15 +176,26 @@ public class VideoDetails : MonoBehaviour
                 StartCoroutine(DataManager.UploadQrVideo(_selectedVideo));
                 Global.Instance.localVideos.Add(_selectedVideo); //Add to global - check if UploadQrVideo is successfull first?
                 SaveButton.interactable = true;
-                //Thread thread = new Thread(EncyptVideoFile);
-                //thread.Start();
-                _isUploaded = true;
+                Thread thread = new Thread(EncyptVideoFile);
+                thread.Start();
+                _isSavedInDB = true;
             }
-            if (_previousScene == _linkMenuScene || _isUploaded)
+            else if (_isSavedInDB)
             {
                 UpdateSelectedVideoFromInputFields();
                 StartCoroutine(DataManager.UpdateQrVideo(_selectedVideo));
-                UpdateVideoList();
+                if (_previousScene == _linkMenuScene)
+                {
+                    UpdateVideoList();
+                }
+                else
+                {
+                    int lastVideo = Global.Instance.localVideos.Count - 1;
+                    Global.Instance.localVideos[lastVideo].Name = _selectedVideo.Name;
+                    Global.Instance.localVideos[lastVideo].Description = _selectedVideo.Description;
+                    Global.Instance.localVideos[lastVideo].VideoCategoryId = _selectedVideo.VideoCategoryId;
+                }
+
             }
         }
         else
@@ -206,7 +226,7 @@ public class VideoDetails : MonoBehaviour
                             _uploadString, Message.Type.Info, false, true);
                         _uploadString = "";
                         am.ProgressChanged += Progress;
-                        if (_isUploaded)
+                        if (_isSavedInDB || _previousScene == _linkMenuScene)
                         {
                             StartCoroutine(DecryptAndUpload());
                         }
@@ -343,5 +363,10 @@ public class VideoDetails : MonoBehaviour
 
         Global.Instance.localVideos.Remove(_selectedVideo);
         GetLocalVideos();
+    }
+
+    private void EncyptVideoFile()
+    {
+        ev.EncryptFile(_selectedVideo.Path);
     }
 }

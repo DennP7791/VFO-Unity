@@ -341,7 +341,7 @@ public class SceneLoader : MonoBehaviour {
             case 1005:
                 Global.Instance.IsQrVideoMenu = true;
                 Global.Instance.InfoWindowText = "Search Video";
-                s_level = "Search";
+                s_level = "search_menu";
                 break;
             default:
                 s_level = "main";
