@@ -36,6 +36,8 @@ public class VideoDetails : MonoBehaviour
 
     void Start()
     {
+
+        File.WriteAllText(Application.persistentDataPath + "vfo-debug","Debug");
         LocalVideosRow.SetActive(false);
         ErrorMessage.enabled = false;
 
@@ -170,8 +172,10 @@ public class VideoDetails : MonoBehaviour
             ErrorMessage.enabled = false;
             if (!_isSavedInDB)
             {
+                //TODO: only encrypt when leaving scene and no upload was made?
                 _selectedVideo = new QrVideo(Guid.NewGuid(), Name.text, Description.text, Global.Instance.videoPath, 0,
                 Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
+                WriteToError(_selectedVideo.Path);
                 SaveButton.interactable = false; //indicate that button is disabled?
                 StartCoroutine(DataManager.UploadQrVideo(_selectedVideo));
                 Global.Instance.localVideos.Add(_selectedVideo); //Add to global - check if UploadQrVideo is successfull first?
@@ -182,6 +186,7 @@ public class VideoDetails : MonoBehaviour
             }
             else if (_isSavedInDB)
             {
+                WriteToError(_selectedVideo.Path);
                 UpdateSelectedVideoFromInputFields();
                 StartCoroutine(DataManager.UpdateQrVideo(_selectedVideo));
                 if (_previousScene == _linkMenuScene)
@@ -205,10 +210,15 @@ public class VideoDetails : MonoBehaviour
 
     }
 
+    void WriteToError(string msg)
+    {
+        ErrorMessage.enabled = true;
+        ErrorMessage.text = msg;
+    }
+
     void ConfirmUploadVideo()
     {
         //confirm if you want to upload the video
-
         if (ValidInput() && File.Exists(_selectedVideo.Path))
         {
             ErrorMessage.enabled = false;
@@ -232,7 +242,17 @@ public class VideoDetails : MonoBehaviour
                         }
                         else
                         {
-                            UploadVideoToAzure();
+                            try
+                            {
+                                UploadVideoToAzure();
+                            }
+                            catch (Exception e)
+                            {
+                                using (StreamWriter sw = File.AppendText(Application.persistentDataPath + "vfo-debug"))
+                                {
+                                    sw.Write(e);
+                                }
+                            }
                         }
 
                     }
@@ -324,12 +344,12 @@ public class VideoDetails : MonoBehaviour
 
         if (_previousScene == _linkMenuScene)
         {
-
             StartCoroutine(DataManager.UpdateQrVideo(_selectedVideo));
             return true;
         }
         else if (_previousScene == _recordVideoScene)
         {
+            // TODO: online upload if not saved, otherwise update
             StartCoroutine(DataManager.UploadQrVideo(_selectedVideo));
             return true;
         }

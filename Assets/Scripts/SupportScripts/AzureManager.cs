@@ -98,6 +98,13 @@ public class AzureManager : MonoBehaviour
             webRequest.method = "PUT";
 
             webRequest.Send();
+            //if (webRequest.error != null)
+            //{
+            //    using (StreamWriter sw = File.AppendText(Application.persistentDataPath + "vfo-debug"))
+            //    {
+            //        sw.Write(webRequest.error);
+            //    }
+            //}
 
             while (!webRequest.isDone)
             {

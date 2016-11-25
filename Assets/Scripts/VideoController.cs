@@ -9,7 +9,7 @@ public class VideoController : MonoBehaviour
 
     public RawImage _player;
     public AudioSource _sound;
-    //MovieTexture video;
+    MovieTexture video;
     Message loadingBox;
     int progress;
     AzureManager azureManager;
@@ -72,6 +72,8 @@ public class VideoController : MonoBehaviour
     {
         www = new WWW(url);
 
+        yield return www;
+
         if (www.error != null)
         {
             Debug.Log("Error: Can't load video");
@@ -79,16 +81,15 @@ public class VideoController : MonoBehaviour
             Debug.Log(www.error);
             yield break;
         }
-
-
         else
         {
             loadingBox.Destroy();
-#if UNITY_IOS || UNITY_ANDROID
-            StartCoroutine(PlayVideoOnHandheld());
-#endif
 
-#if UNITY_STANDALONE_WIN || UNITY_EDITOR
+            #if UNITY_IOS || UNITY_ANDROID
+            StartCoroutine(PlayVideoOnHandheld());
+            #endif
+
+            #if UNITY_STANDALONE_WIN || UNITY_EDITOR
             PlayVideoOnMovieTexture();
             #endif
 
@@ -99,9 +100,7 @@ public class VideoController : MonoBehaviour
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
     void PlayVideoOnMovieTexture()
     {
-
-        MovieTexture video = www.movie;
-
+        //MovieTexture video = www.movie;
 
         video = www.movie;
         _player.texture = video;
