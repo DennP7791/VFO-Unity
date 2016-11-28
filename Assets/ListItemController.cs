@@ -10,19 +10,23 @@ public class ListItemController : MonoBehaviour
     public InputField inputfield;
     public Dropdown dropdown;
     public Button searchButton;
+    public Button rightButton, leftButton;
     public GameObject listItem;
     public Sprite[] spriteList;
     public GameObject contentPanel;
 
     private List<VideoCategory> videoCatagoryList;
+    private List<VideoCategory> newVideoCatagoryList;
 
     private List<QrVideo> videoList;
     private List<QrVideo> searchList;
+    private List<QrVideo> pagelist;
 
     public static GameObject detailsPanel;
     public static QrVideo _selectedVideo;
     public static UnityEngine.UI.Text _detailsName, _detailsDescription;
     public Button _loadvideoButton, _cancelButton;
+    
 
 
     // Use this for initialization
@@ -56,25 +60,29 @@ public class ListItemController : MonoBehaviour
     void Initialize()
     {
         videoCatagoryList = Global.Instance.videoCategories;
-        videoList = Global.Instance.qrVideos;
+        videoList = Global.Instance.RetrieveReleasedQrVideo;
 
         populateDropdown();
         populateVideoes(videoList);
 
         _cancelButton.onClick.AddListener(DisableDetails);
         _loadvideoButton.onClick.AddListener(ChangeScene);
+
         searchButton.onClick.AddListener(SearchVideo);
+        rightButton.onClick.AddListener(NextPage);
+        leftButton.onClick.AddListener(PreviousPage);
         inputfield.gameObject.GetComponent<InputField>();
         dropdown.gameObject.GetComponent<Dropdown>();
     }
 
     private void populateDropdown()
     {
-
-        var videoCatagoryRemove = videoCatagoryList.SingleOrDefault(r => r.Id == 3);
+        newVideoCatagoryList = new List<VideoCategory>();
+        newVideoCatagoryList = videoCatagoryList;
+        var videoCatagoryRemove = newVideoCatagoryList.SingleOrDefault(r => r.Id == 3);
         if (videoCatagoryRemove != null)
-            videoCatagoryList.Remove(videoCatagoryRemove);
-        foreach (var item in videoCatagoryList)
+            newVideoCatagoryList.Remove(videoCatagoryRemove);
+        foreach (var item in newVideoCatagoryList)
         {
             dropdown.options.Add(new Dropdown.OptionData(item.Name));
         }
@@ -83,6 +91,8 @@ public class ListItemController : MonoBehaviour
     void populateVideoes(List<QrVideo> qrVidList)
     {
         Debug.Log("populateVideoes");
+        //qrVidList.Skip(2).Take(2).ToList();
+
         foreach (var item in qrVidList)
         {
             GameObject newListItem = GameObject.Instantiate(listItem);
@@ -136,9 +146,34 @@ public class ListItemController : MonoBehaviour
                 searchList.Add(item);
             }
         }
+        
         populateVideoes(searchList);
         //Debug.Log(input);
         //Debug.Log(dropdown.value);
+    }
+
+
+
+    private void NextPage()
+    {
+        pagelist = new List<QrVideo>();
+        
+        if (videoList.Count > 24)
+        {
+            for (int i = 0; i < 24; i++)
+            {
+                pagelist = (List<QrVideo>)videoList.Skip(i * 24).Take(25);
+            }
+            DestroyAllListItems();
+            populateVideoes(pagelist);
+        }
+
+
+    }
+
+    private void PreviousPage()
+    {
+
     }
 
 

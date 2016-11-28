@@ -23,8 +23,8 @@ public class DataManager : MonoBehaviour
 
         //url = "http://localhost:59477/Service/"; //LOCAL SERVICE - Comment for release version
 
-        //static string url = "http://vfo-staging-webapp.azurewebsites.net/Service/"; //STAGING SERVICE - Comment for release version
-        url = "http://vfo-staging-webapp.azurewebsites.net/Service/";
+        url = "http://vfo-staging-webapp.azurewebsites.net/Service/"; //STAGING SERVICE - Comment for release version
+        //url = "http://vfo-staging-webapp.azurewebsites.net/Service/";
 #if UNITY_EDITOR
         url = "http://localhost:59477/Service/";
 #endif
@@ -591,7 +591,7 @@ public class DataManager : MonoBehaviour
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
         {
-            //url = "http://vfo.welfaresverige.se/Service/GetQrVideos/" + Global.Instance.UserId + "/" + "sv-SE"; //OutComment if release version
+            //url = "http://vfo.welfaresverige.se/Service/GetVideoPaths/" + Global.Instance.UserId + "/" + "sv-SE"; //OutComment if release version
         }
 
         WWW www = new WWW(_url);
@@ -605,6 +605,40 @@ public class DataManager : MonoBehaviour
             {
                 JsonQrVideoCollection qrvC = JsonReader.Deserialize<JsonQrVideoCollection>(www.text);
                 Global.Instance.localVideos = JsonQrVideoToQrVideo(qrvC);
+            }
+            catch (Exception e)
+            {
+                Util.MessageBox(new Rect(0, 0, 400, 200), "Error: " + e.Message + "\n\nPlease try to restart the application!", Message.Type.Error, false, true);
+            }
+        }
+        else
+        {
+            Debug.Log("WWW Error: " + www.error);
+        }
+    }
+
+    public static IEnumerator RetrieveReleasedQrVideoData()
+    {
+        InitializeUrl();
+        Debug.Log("Retrieving Video Where releaseDate has value");
+        string _url = url + "RetrieveReleasedQrVideo/" + Global.Instance.UserId;
+
+        if (Global.Instance.ProgramLanguage == "sv-SE")
+        {
+            //url = "http://vfo.welfaresverige.se/Service/RetrieveReleasedQrVideo/" + Global.Instance.UserId + "/" + "sv-SE"; //OutComment if release version
+        }
+
+        WWW www = new WWW(_url);
+
+        yield return www;
+
+        if (www.error == null)
+        {
+            Debug.Log("Result:\n" + www.text);
+            try
+            {
+                JsonQrVideoCollection qrvC = JsonReader.Deserialize<JsonQrVideoCollection>(www.text);
+                Global.Instance.RetrieveReleasedQrVideo = JsonQrVideoToQrVideo(qrvC);
             }
             catch (Exception e)
             {
