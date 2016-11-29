@@ -26,7 +26,6 @@ public class DataLoader : MonoBehaviour {
                 StartCoroutine(DataManager.RetrieveQrVideoData());
                 StartCoroutine(DataManager.RetrieveVideoCategoryData());
                 StartCoroutine(DataManager.RetrieveVideoPathData());
-                StartCoroutine(DataManager.RetrieveReleasedQrVideoData());
                 StartCoroutine(DataManager.GetUserGroup());
                 StartCoroutine(DataManager.getUserGroupCredential());
                 

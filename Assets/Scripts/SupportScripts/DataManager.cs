@@ -617,40 +617,6 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    public static IEnumerator RetrieveReleasedQrVideoData()
-    {
-        InitializeUrl();
-        Debug.Log("Retrieving Video Where releaseDate has value");
-        string _url = url + "RetrieveReleasedQrVideo/" + Global.Instance.UserId;
-
-        if (Global.Instance.ProgramLanguage == "sv-SE")
-        {
-            //url = "http://vfo.welfaresverige.se/Service/RetrieveReleasedQrVideo/" + Global.Instance.UserId + "/" + "sv-SE"; //OutComment if release version
-        }
-
-        WWW www = new WWW(_url);
-
-        yield return www;
-
-        if (www.error == null)
-        {
-            Debug.Log("Result:\n" + www.text);
-            try
-            {
-                JsonQrVideoCollection qrvC = JsonReader.Deserialize<JsonQrVideoCollection>(www.text);
-                Global.Instance.RetrieveReleasedQrVideo = JsonQrVideoToQrVideo(qrvC);
-            }
-            catch (Exception e)
-            {
-                Util.MessageBox(new Rect(0, 0, 400, 200), "Error: " + e.Message + "\n\nPlease try to restart the application!", Message.Type.Error, false, true);
-            }
-        }
-        else
-        {
-            Debug.Log("WWW Error: " + www.error);
-        }
-    }
-
     public static IEnumerator UploadQrVideo(QrVideo qrVid)
     {
         InitializeUrl();

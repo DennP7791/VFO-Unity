@@ -60,7 +60,7 @@ public class ListItemController : MonoBehaviour
     void Initialize()
     {
         videoCatagoryList = Global.Instance.videoCategories;
-        videoList = Global.Instance.RetrieveReleasedQrVideo;
+        videoList = Global.Instance.qrVideos;
 
         populateDropdown();
         populateVideoes(videoList);
@@ -108,6 +108,7 @@ public class ListItemController : MonoBehaviour
                 controller._thumbnail.sprite = spriteList[1];
             }
             newListItem.transform.parent = contentPanel.transform;
+            newListItem.transform.localScale = contentPanel.transform.localScale;
         }
     }
 

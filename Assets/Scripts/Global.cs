@@ -11,7 +11,6 @@ public class Global : MonoBehaviour {
     public ExerciseCategoryCollection categoryCollection = new ExerciseCategoryCollection();
     public List<QrVideo> qrVideos = new List<QrVideo>();
     public List<QrVideo> localVideos = new List<QrVideo>();
-    public List<QrVideo> RetrieveReleasedQrVideo = new List<QrVideo>();
     public string videoPath = "";
     public UserGroup userGroup;
     public UserGroupVideoCredential userGroupVideoCredintial;
