@@ -28,6 +28,7 @@ public class DataLoader : MonoBehaviour {
                 StartCoroutine(DataManager.RetrieveVideoPathData());
                 StartCoroutine(DataManager.GetUserGroup());
                 StartCoroutine(DataManager.getUserGroupCredential());
+                
                 checkNewVersion = true;
             }
         }

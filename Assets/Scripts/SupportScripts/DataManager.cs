@@ -23,8 +23,8 @@ public class DataManager : MonoBehaviour
 
         //url = "http://localhost:59477/Service/"; //LOCAL SERVICE - Comment for release version
 
-        //static string url = "http://vfo-staging-webapp.azurewebsites.net/Service/"; //STAGING SERVICE - Comment for release version
-        url = "http://vfo-staging-webapp.azurewebsites.net/Service/";
+        url = "http://vfo-staging-webapp.azurewebsites.net/Service/"; //STAGING SERVICE - Comment for release version
+        //url = "http://vfo-staging-webapp.azurewebsites.net/Service/";
 #if UNITY_EDITOR
         url = "http://localhost:59477/Service/";
 #endif
@@ -591,7 +591,7 @@ public class DataManager : MonoBehaviour
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
         {
-            //url = "http://vfo.welfaresverige.se/Service/GetQrVideos/" + Global.Instance.UserId + "/" + "sv-SE"; //OutComment if release version
+            //url = "http://vfo.welfaresverige.se/Service/GetVideoPaths/" + Global.Instance.UserId + "/" + "sv-SE"; //OutComment if release version
         }
 
         WWW www = new WWW(_url);
