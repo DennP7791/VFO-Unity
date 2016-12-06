@@ -6,13 +6,13 @@ using System.IO;
 public class VideoController : MonoBehaviour
 {
     string url = "";
-
     public RawImage _player;
     public AudioSource _sound;
     Message loadingBox;
     int progress;
     AzureManager azureManager;
     WWW www;
+
 
     void Start ()
     {
@@ -40,6 +40,7 @@ public class VideoController : MonoBehaviour
 
     void OnDestroy()
     {
+        
         DeleteLocalVideo();
     }
 
@@ -88,7 +89,7 @@ public class VideoController : MonoBehaviour
 
             #if UNITY_STANDALONE_WIN || UNITY_EDITOR
             PlayVideoOnMovieTexture();
-            #endif
+#endif
         }
 
     }
@@ -104,7 +105,7 @@ public class VideoController : MonoBehaviour
         _sound.Play();
     }
 #endif
-
+    
 
     IEnumerator PlayVideoOnHandheld()
     {
@@ -114,12 +115,15 @@ public class VideoController : MonoBehaviour
         FullScreenMovieScalingMode scalingMode = FullScreenMovieScalingMode.AspectFill;
 
         Handheld.PlayFullScreenMovie(url, bgColor, controlMode, scalingMode);
+
         yield return new WaitForSeconds(1f); //wait for Handheld to lock Screen.orientation
 
         Screen.orientation = ScreenOrientation.AutoRotation;
-        while (Screen.currentResolution.height < Screen.currentResolution.width)
-        {
-            yield return null;
-        }
+        //while (Screen.currentResolution.height < Screen.currentResolution.width)
+        //{
+        //    yield return null;
+        //}
+
+        SceneLoader.Instance.CurrentScene = 0;
     }
 }

@@ -100,13 +100,17 @@ public class ListItemController : MonoBehaviour
 
     private void populateDropdown()
     {
-        newVideoCatagoryList = new List<VideoCategory>();
-        newVideoCatagoryList = videoCatagoryList;
+        //newVideoCatagoryList = new List<VideoCategory>();
+        List<VideoCategory> newVCL;
+        newVCL = videoCatagoryList;
+        //newVideoCatagoryList = videoCatagoryList;
+        if (newVCL != null)
         {
-            var videoCatagoryRemove = newVideoCatagoryList.SingleOrDefault(r => r.Id == 3);
-            if (videoCatagoryRemove != null)
-                newVideoCatagoryList.Remove(videoCatagoryRemove);
-            foreach (var item in newVideoCatagoryList)
+            //var videoCatagoryRemove = newVCL.SingleOrDefault(r => r.Id == 3);
+            //if (videoCatagoryRemove != null)
+            var videoCatagoryRemove = newVCL.Take(2).ToList();
+            //newVCL.Remove(videoCatagoryRemove);
+            foreach (var item in videoCatagoryRemove)
             {
                 dropdown.options.Add(new Dropdown.OptionData(item.Name));
             }
@@ -123,6 +127,7 @@ public class ListItemController : MonoBehaviour
             GameObject newListItem = GameObject.Instantiate(listItem);
             ListItem controller = newListItem.GetComponent<ListItem>();
             controller._name.text = item.Name;
+            controller._count.text = item.Count.ToString();
             controller._qrVideo = item;
             if (item.VideoCategoryId == 1)
             {
