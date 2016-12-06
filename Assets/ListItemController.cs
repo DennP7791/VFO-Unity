@@ -127,6 +127,7 @@ public class ListItemController : MonoBehaviour
             GameObject newListItem = GameObject.Instantiate(listItem);
             ListItem controller = newListItem.GetComponent<ListItem>();
             controller._name.text = item.Name;
+            controller._count.text = item.Count.ToString();
             controller._qrVideo = item;
             if (item.VideoCategoryId == 1)
             {
