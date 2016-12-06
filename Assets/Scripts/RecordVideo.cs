@@ -10,17 +10,13 @@ public class RecordVideo : MonoBehaviour {
     void Awake()
     {
         CameraShotEventListener.onVideoSaved += OnVideoSaved;
-        #if UNITY_ANDROID
+#if UNITY_ANDROID
         AndroidCameraShot.LaunchCameraForVideoCapture();
-        #endif
-        //SceneManager.LoadScene("video_details");
-        //StartCoroutine(ChangeScene());
-    }
+#endif
 
-    IEnumerator ChangeScene()
-    {
-        yield return new WaitForSeconds(2f);
-        SceneLoader.Instance.CurrentScene = 1004;
+        //SceneLoader.Instance.PreviousScene = 1003;
+        //Global.Instance.videoPath = "C:\\Users\\Dennis\\Desktop\\downloads\\sample.mp4";
+        //SceneManager.LoadScene("video_details");
     }
 
     void OnDisable()
@@ -30,7 +26,7 @@ public class RecordVideo : MonoBehaviour {
 
     void OnVideoSaved(string path)
     {
-        //Move video to specific path?
+        //TODO: Move video to specific path?
         Global.Instance.videoPath = path;
         SceneLoader.Instance.CurrentScene = 1004;
     }

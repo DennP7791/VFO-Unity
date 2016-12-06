@@ -74,10 +74,10 @@ public class AzureManager : MonoBehaviour
         const String blobType = "BlockBlob";
 
         String urlPath = String.Format("{0}/{1}", AzureStorageConstants.container, blockBlobReference);
-        //String msVersion = "2009-09-19";
-        String msVersion = "2015-02-21";
-        //String dateInRfc1123Format = DateTime.UtcNow.AddHours(1).ToString("R", CultureInfo.InvariantCulture);
-        String dateInRfc1123Format = DateTime.Now.ToString("R", CultureInfo.InvariantCulture);
+        String msVersion = "2009-09-19";
+        //String msVersion = "2015-02-21";
+        String dateInRfc1123Format = DateTime.UtcNow.AddHours(1).ToString("R", CultureInfo.InvariantCulture);
+        //String dateInRfc1123Format = DateTime.Now.ToString("R", CultureInfo.InvariantCulture);
 
         String canonicalizedHeaders = String.Format("x-ms-blob-type:{0}\nx-ms-date:{1}\nx-ms-version:{2}", blobType, dateInRfc1123Format, msVersion);
         String canonicalizedResource = String.Format("/{0}/{1}", AzureStorageConstants.Account, urlPath);
@@ -96,21 +96,22 @@ public class AzureManager : MonoBehaviour
             webRequest.SetRequestHeader("Authorization", authorizationHeader);
 
             UploadHandler uploadHandler = new UploadHandlerRaw(blobContent);
-            uploadHandler.contentType = "application/octet-stream";
+            //uploadHandler.contentType = "application/octet-stream";
             webRequest.uploadHandler = uploadHandler;
             webRequest.url = uri.ToString();
             webRequest.method = httpMethod;
-            webRequest.chunkedTransfer = false;
             webRequest.Send();
+
 
             while (!webRequest.isDone)
             {
                 ProgressBar = webRequest.uploadProgress;
+                if (webRequest.isError)
+                {
+                    break;
+                }
                 yield return null;
             }
-
-            string response = webRequest.GetResponseHeader("Authorization");
-            string test;
         }
     }
 
@@ -141,11 +142,10 @@ public class AzureManager : MonoBehaviour
     //    request.Headers.Add("x-ms-date", dateInRfc1123Format);
     //    request.Headers.Add("x-ms-version", msVersion);
     //    request.Headers.Add("Authorization", authorizationHeader);
-    //    //request.ContentLength = blobLength;
 
     //    ServicePointManager.ServerCertificateValidationCallback = MyRemoteCertificateValidationCallback;
 
-    //    using (Stream requestStream = request.GetRequestStream())
+    //    using (Stream requestStream = request.BeginGetRequestStream())
     //    {
     //        requestStream.Write(blobContent, 0, blobLength);
     //        yield return requestStream;

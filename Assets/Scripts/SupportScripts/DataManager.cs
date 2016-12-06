@@ -647,9 +647,11 @@ public class DataManager : MonoBehaviour
         {
             Debug.Log("Result: " + www.text);
             Debug.Log("Upload Complete.");
+            Success = true;
         }
         else
         {
+            Success = false;
             Debug.Log("Upload Error: " + www.error);
         }
     }
@@ -684,9 +686,11 @@ public class DataManager : MonoBehaviour
         {
             Debug.Log("Result: " + www.text);
             Debug.Log("Update Complete.");
+            Success = true;
         }
         else
         {
+            Success = false;
             Debug.Log("Update Error: " + www.error);
         }
     }
@@ -979,4 +983,31 @@ public class DataManager : MonoBehaviour
     {
 
     }
+
+#region Event to check if request was successful
+    private static bool _success;
+    public static event EventHandler<SuccessEventArgs> SuccessChanged;
+
+    public static bool Success
+    {
+        get { return _success; }
+        set
+        {
+            _success = value;
+            SuccessEventArgs e = new SuccessEventArgs { Success = value };
+            OnSuccessChanged(e);
+        }
+    }
+
+    public class SuccessEventArgs : EventArgs
+    {
+        public bool Success { get; set; }
+    }
+
+    protected static void OnSuccessChanged(SuccessEventArgs e)
+    {
+        if (SuccessChanged != null)
+            SuccessChanged(null, e);
+    }
+#endregion
 }
