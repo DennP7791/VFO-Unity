@@ -7,26 +7,31 @@ using UnityEngine.SceneManagement;
 
 public class RecordVideo : MonoBehaviour {
 
+    //On Awake sets up the camera listener, 
+    //so that we can update the video path in Global, 
+    //upon saving the video.
     void Awake()
     {
         CameraShotEventListener.onVideoSaved += OnVideoSaved;
 #if UNITY_ANDROID
         AndroidCameraShot.LaunchCameraForVideoCapture();
 #endif
-
-        //SceneLoader.Instance.PreviousScene = 1003;
-        //Global.Instance.videoPath = "C:\\Users\\Dennis\\Desktop\\downloads\\sample.mp4";
-        //SceneManager.LoadScene("video_details");
+#if UNITY_IPHONE
+        IOSCameraShot.LaunchCameraForVideoCapture(0);
+#endif
     }
 
+    //Removes the event when the user exits the Scene.
     void OnDisable()
     {
         CameraShotEventListener.onVideoSaved -= OnVideoSaved;
     }
 
+    //If the user clicks save, 
+    //the global video path is updated to the video filepath, 
+    //and the scene is changed to video details.
     void OnVideoSaved(string path)
     {
-        //TODO: Move video to specific path?
         Global.Instance.videoPath = path;
         SceneLoader.Instance.CurrentScene = 1004;
     }
