@@ -6,22 +6,12 @@ using System.IO;
 public class VideoController : MonoBehaviour
 {
     string url = "";
-    bool isPaused = false;
-    bool videoPlay = false;
     public RawImage _player;
     public AudioSource _sound;    
     Message loadingBox;
     int progress;
     AzureManager azureManager;
     WWW www;
-
-    void OnApplicationPause(bool appState)
-    {
-        if (videoPlay)
-        {
-            isPaused = appState;
-        }
-    }
 
 
     void Start ()
@@ -36,14 +26,6 @@ public class VideoController : MonoBehaviour
         url = "file:///" + Application.persistentDataPath + "/video.ogv";
 #endif
 
-    }
-
-    void Update()
-    {
-        if (isPaused && videoPlay)
-        {
-            SceneLoader.Instance.CurrentScene = 0;
-        }
     }
 
     void Progress(object sender, AzureManager.ProgressEventArgs e)
@@ -128,7 +110,6 @@ public class VideoController : MonoBehaviour
 
     IEnumerator PlayVideoOnHandheld()
     {
-        videoPlay = true;
         Screen.orientation = ScreenOrientation.Landscape;
         Color bgColor = Color.black;
         FullScreenMovieControlMode controlMode = FullScreenMovieControlMode.Full;
