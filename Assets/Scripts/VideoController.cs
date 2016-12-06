@@ -116,14 +116,15 @@ public class VideoController : MonoBehaviour
         FullScreenMovieScalingMode scalingMode = FullScreenMovieScalingMode.AspectFill;
 
         Handheld.PlayFullScreenMovie(url, bgColor, controlMode, scalingMode);
-        Handheld.StartActivityIndicator();
 
         yield return new WaitForSeconds(1f); //wait for Handheld to lock Screen.orientation
 
         Screen.orientation = ScreenOrientation.AutoRotation;
-        while (Screen.currentResolution.height < Screen.currentResolution.width)
-        {
-            yield return null;
-        }
+        //while (Screen.currentResolution.height < Screen.currentResolution.width)
+        //{
+        //    yield return null;
+        //}
+
+        SceneLoader.Instance.CurrentScene = 0;
     }
 }
