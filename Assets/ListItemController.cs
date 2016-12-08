@@ -36,8 +36,9 @@ public class ListItemController : MonoBehaviour
     private bool nextPageClicked = false;
     private bool isSearched = false;
 
-
-    // Use this for initialization
+    /// <summary>
+    /// Used to initialized variables by finding the correct gameobjects in the hierachy.
+    /// </summary>
     void Start()
     {
         detailsPanel = GameObject.Find("Details");
@@ -47,24 +48,34 @@ public class ListItemController : MonoBehaviour
         Initialize();
     }
 
+    /// <summary>
+    /// Used to enable Details on video click and to set the text of the gameObjects.
+    /// </summary>
     public void EnableDetails()
     {
         detailsPanel.SetActive(true);
         _detailsName.text = _selectedVideo.Name;
         _detailsDescription.text = _selectedVideo.Description;
     }
-
+    /// <summary>
+    /// Disables details.
+    /// </summary>
     public void DisableDetails()
     {
         detailsPanel.SetActive(false);
     }
-
+    /// <summary>
+    /// Sets the correct video path and changes scene to video player, when called.
+    /// </summary>
     public void ChangeScene()
     {
         Global.Instance.videoPath = _selectedVideo.Path;
         SceneLoader.Instance.CurrentScene = 1002;
     }
 
+    /// <summary>
+    /// Used to Initialize variables, and gameObjects.
+    /// </summary>
     void Initialize()
     {
         maxNumberPrPage = new List<QrVideo>();
@@ -82,46 +93,36 @@ public class ListItemController : MonoBehaviour
             setPageNumber(count, videoList); //set pageNumber
         }
 
-
-
         _cancelButton.onClick.AddListener(DisableDetails);
         _loadvideoButton.onClick.AddListener(ChangeScene);
 
         searchButton.onClick.AddListener(SearchVideo);
         rightButton.onClick.AddListener(NextPage);
         leftButton.onClick.AddListener(PreviousPage);
-        inputfield.gameObject.GetComponent<InputField>();
-        dropdown.gameObject.GetComponent<Dropdown>();
-        videoCount.GetComponent<Text>();
-        pageNumber.GetComponent<Text>();
-        noVideoes.GetComponent<Text>();
         noVideoes.enabled = false;
     }
-
+    /// <summary>
+    /// Instantiates list of catagories, and populates our dropdown.
+    /// </summary>
     private void populateDropdown()
     {
-        //newVideoCatagoryList = new List<VideoCategory>();
         List<VideoCategory> newVCL;
         newVCL = videoCatagoryList;
-        //newVideoCatagoryList = videoCatagoryList;
         if (newVCL != null)
         {
-            //var videoCatagoryRemove = newVCL.SingleOrDefault(r => r.Id == 3);
-            //if (videoCatagoryRemove != null)
             var videoCatagoryRemove = newVCL.Take(2).ToList();
-            //newVCL.Remove(videoCatagoryRemove);
             foreach (var item in videoCatagoryRemove)
             {
                 dropdown.options.Add(new Dropdown.OptionData(item.Name));
             }
         }
     }
-
+    /// <summary>
+    /// Instantiates List items from script. 
+    /// </summary>
+    /// <param name="qrVidList"></param>
     void populateVideoes(List<QrVideo> qrVidList)
     {
-        Debug.Log("populateVideoes");
-        //videoCount.text = qrVidList.Count.ToString();
-
         foreach (var item in qrVidList)
         {
             GameObject newListItem = GameObject.Instantiate(listItem);
@@ -142,6 +143,9 @@ public class ListItemController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Used to clear all listItems.
+    /// </summary>
     private void DestroyAllListItems()
     {
         var listItems = GameObject.FindGameObjectsWithTag("list_item");
@@ -152,6 +156,9 @@ public class ListItemController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Search logic, used to search by Text and downdown value.
+    /// </summary>
     private void SearchVideo()
     {
         string input = inputfield.text.ToLower();
@@ -160,8 +167,6 @@ public class ListItemController : MonoBehaviour
         DestroyAllListItems();
         foreach (var item in videoList)
         {
-            Debug.Log(item.VideoCategoryId);
-            Debug.Log(dropdown.value);
             if (dropdown.value == item.VideoCategoryId && item.Name.ToLower().Contains(input))
             {
                 //VEJLEDNING
@@ -206,7 +211,9 @@ public class ListItemController : MonoBehaviour
         }
 
     }
-
+    /// <summary>
+    /// Changes page, and fills the page with the correct list Items.
+    /// </summary>
     private void NextPage()
     {
 
@@ -234,7 +241,9 @@ public class ListItemController : MonoBehaviour
             }
         }
     }
-
+    /// <summary>
+    /// Sets up the list, depending on the page nr.
+    /// </summary>
     private void SetUpList()
     {
         pagelist = new List<QrVideo>();
@@ -271,6 +280,9 @@ public class ListItemController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Reduces page nr by 1, if the page is not page 0.
+    /// </summary>
     private void PreviousPage()
     {
         if (nextPageClicked)
@@ -285,7 +297,11 @@ public class ListItemController : MonoBehaviour
             SetUpList();
         }
     }
-
+    /// <summary>
+    /// Sets the page number in the button of the panel.
+    /// </summary>
+    /// <param name="allPageVideos"></param>
+    /// <param name="allvideos"></param>
     private void setPageNumber(int allPageVideos, List<QrVideo> allvideos)
     {
         if (pageNr == 0)

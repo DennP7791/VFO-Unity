@@ -18,12 +18,9 @@ public class ListItem : MonoBehaviour
         videoDetails.onClick.AddListener(ShowDetails);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    /// <summary>
+    /// Sets up the details panel.
+    /// </summary>
     public void ShowDetails()
     {
         ListItemController lic = new ListItemController();
