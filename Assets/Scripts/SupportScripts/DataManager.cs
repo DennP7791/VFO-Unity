@@ -26,7 +26,7 @@ public class DataManager : MonoBehaviour
         url = "http://vfo-staging-webapp.azurewebsites.net/Service/"; //STAGING SERVICE - Comment for release version
         //url = "http://vfo-staging-webapp.azurewebsites.net/Service/";
 #if UNITY_EDITOR
-        //url = "http://localhost:59477/Service/";
+        url = "http://localhost:59477/Service/";
 #endif
 
     }

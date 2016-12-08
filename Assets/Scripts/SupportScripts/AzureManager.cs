@@ -142,19 +142,63 @@ public class AzureManager : MonoBehaviour
     //    request.Headers.Add("x-ms-date", dateInRfc1123Format);
     //    request.Headers.Add("x-ms-version", msVersion);
     //    request.Headers.Add("Authorization", authorizationHeader);
+    //    request.ContentLength = blobLength;
 
     //    ServicePointManager.ServerCertificateValidationCallback = MyRemoteCertificateValidationCallback;
 
-    //    using (Stream requestStream = request.BeginGetRequestStream())
+    //    request.BeginGetRequestStream(new AsyncCallback(GetRequestStreamCallback), request);
+
+    //    using (Stream requestStream = request.GetRequestStream())
     //    {
     //        requestStream.Write(blobContent, 0, blobLength);
+
     //        yield return requestStream;
     //    }
 
     //    using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
     //    {
+    //        Stream responseStream = response.GetResponseStream();
     //        String ETag = response.Headers["ETag"];
     //    }
+    //}
+
+    //private static void GetRequestStreamCallback(IAsyncResult asyncResult)
+    //{
+    //    Byte[] blobContent = File.ReadAllBytes(filePath);
+
+    //    Int32 blobLength = blobContent.Length;
+
+
+    //    HttpWebRequest request = (HttpWebRequest)asyncResult.AsyncState;
+
+    //    // End the operation
+    //    //Stream postStream = request.EndGetRequestStream(asyncResult);
+
+    //    using (Stream postStream = request.EndGetRequestStream(asyncResult))
+    //    {
+    //        postStream.Write(blobContent, 0, blobLength);
+    //    }
+
+    //    request.BeginGetResponse(new AsyncCallback(GetResponseCallback), request);
+
+    //}
+
+    //private static void GetResponseCallback(IAsyncResult asyncResult)
+    //{
+    //    HttpWebRequest request = (HttpWebRequest) asyncResult.AsyncState;
+
+    //    // End the operation
+    //    using (HttpWebResponse response = (HttpWebResponse) request.EndGetResponse(asyncResult))
+    //    {
+    //        using (Stream responseStream = response.GetResponseStream())
+    //        {
+    //            using (StreamReader streamReader = new StreamReader(responseStream))
+    //            {
+
+    //            }
+    //        }
+    //    }
+
     //}
 
     private static void CopyStream(Stream input, Stream output)
