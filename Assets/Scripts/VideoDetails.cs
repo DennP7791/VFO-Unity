@@ -18,7 +18,7 @@ public class VideoDetails : MonoBehaviour
     EncryptVideo ev = new EncryptVideo();
     private string _progress = "0";
     private string _localPath = "";
-    private bool _isSavedInDB, _encryptOnDestroy = false; //make false again
+    private bool _isSavedInDB, _encryptOnDestroy = false;
     private Message _confirmUploadMessage, _conirmDeleteMessage ,_uploadProgressMessage;
     private string _uploadString;
 
@@ -29,13 +29,11 @@ public class VideoDetails : MonoBehaviour
 
     
 #region Initialization
+    //Initializes the various variables depending on last scene. 
     void Start()
     {
         LocalVideosRow.SetActive(false);
         StatusMessage.enabled = false;
-
-        Debug.Log("previous scene: " + SceneLoader.Instance.PreviousScene);
-        Debug.Log("current scene: " + SceneLoader.Instance.CurrentScene);
 
         _previousScene = SceneLoader.Instance.PreviousScene;
         GetCategories();
@@ -50,6 +48,7 @@ public class VideoDetails : MonoBehaviour
         AddListeners();
     }
 
+    //Gets video Categories
     void GetCategories()
     {
         // Populate the Categories dropdown, and select the first category.
@@ -62,6 +61,7 @@ public class VideoDetails : MonoBehaviour
         Categories.value = 0;
     }
 
+    //Gets local Videos.
     void GetLocalVideos()
     {
         // If there are any local videos, add them to the LocalVideos list and select the first video. Else go back to the menu.
@@ -86,7 +86,7 @@ public class VideoDetails : MonoBehaviour
             SceneLoader.Instance.CurrentScene = 0;
         }
     }
-
+    //Adds Listeners
     void AddListeners()
     {
         // Add the button and dropdown listeners for the view.
@@ -102,10 +102,9 @@ public class VideoDetails : MonoBehaviour
     #endregion
 
 #region Delete button
+    //If video file has been successfully deleted - delete the video from db and remove from list if previous scene was linkmenu / return to linkmenu if previous scene was record 
     void DeleteVideo()
     {
-        //If video file has been successfully deleted - delete the video from db and remove from list if previous scene was linkmenu / return to linkmenu if previous scene was record 
-
         if (File.Exists(_selectedVideo.Path))
         {
             StatusMessage.enabled = false;
