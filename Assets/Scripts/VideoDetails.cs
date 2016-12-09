@@ -12,14 +12,16 @@ public class VideoDetails : MonoBehaviour
     public Dropdown LocalVideos, Categories;
     public Button SaveButton, UploadButton, DeleteButton;
     public GameObject LocalVideosRow;
-    public UnityEngine.UI.Text ErrorMessage;
+    public UnityEngine.UI.Text StatusMessage;
 
     AzureManager am = new AzureManager();
     EncryptVideo ev = new EncryptVideo();
     private string _progress = "0";
     private string _localPath = "";
-    private bool _isSavedInDB, _encryptOnDestroy = false; //make false again
+
+    private bool _isSavedInDB, _encryptOnDestroy = false;
     private Message _confirmUploadMessage, _conirmDeleteMessage, _uploadProgressMessage;
+
     private string _uploadString;
 
     private QrVideo _selectedVideo;
@@ -31,13 +33,11 @@ public class VideoDetails : MonoBehaviour
 
 
     #region Initialization
+    //Initializes the various variables depending on last scene. 
     void Start()
     {
         LocalVideosRow.SetActive(false);
-        ErrorMessage.enabled = false;
-
-        Debug.Log("previous scene: " + SceneLoader.Instance.PreviousScene);
-        Debug.Log("current scene: " + SceneLoader.Instance.CurrentScene);
+        StatusMessage.enabled = false;
 
         _previousScene = SceneLoader.Instance.PreviousScene;
         GetCategories();
@@ -52,6 +52,7 @@ public class VideoDetails : MonoBehaviour
         AddListeners();
     }
 
+    //Gets video Categories
     void GetCategories()
     {
         // Populate the Categories dropdown, and select the first category.
@@ -64,6 +65,7 @@ public class VideoDetails : MonoBehaviour
         Categories.value = 0;
     }
 
+    //Gets local Videos.
     void GetLocalVideos()
     {
         // If there are any local videos, add them to the LocalVideos list and select the first video. Else go back to the menu.
@@ -88,7 +90,7 @@ public class VideoDetails : MonoBehaviour
             SceneLoader.Instance.CurrentScene = 0;
         }
     }
-
+    //Adds Listeners
     void AddListeners()
     {
         // Add the button and dropdown listeners for the view.
@@ -112,13 +114,14 @@ public class VideoDetails : MonoBehaviour
         FileInfo info = new FileInfo(_selectedVideo.Path);
         if (info.Exists || info != null)
         {
-            Debug.Log("[HANS] IOS exists");      
+            Debug.Log("[HANS] IOS exists");
 #else
         if (File.Exists(_selectedVideo.Path))
         {
             Debug.Log("[HANS] Android/Unity exists");      
-#endif       
-            ErrorMessage.enabled = false;
+#endif
+            StatusMessage.enabled = false;
+
             _conirmDeleteMessage = Util.CancellableMessageBox(new Rect(0, 0, 300, 200),
                 "Du er ved at slette din video " + _selectedVideo.Name +
                 ". Er du sikker på at du vil slette denne video?",
@@ -133,7 +136,7 @@ public class VideoDetails : MonoBehaviour
                         {
                             if (_previousScene == _linkMenuScene)
                             {
-                                //StartCoroutine(DataManager.DeleteVideo(_selectedVideo.Id));
+                                StartCoroutine(DataManager.DeleteVideo(_selectedVideo.Id));
                                 RemoveVideoFromList();
                             }
                             else if (_previousScene == _recordVideoScene)
@@ -141,7 +144,7 @@ public class VideoDetails : MonoBehaviour
                                 if (_isSavedInDB)
                                 {
                                     Global.Instance.localVideos.RemoveAt(Global.Instance.localVideos.Count - 1);
-                                    //StartCoroutine(DataManager.DeleteVideo(_selectedVideo.Id));
+                                    StartCoroutine(DataManager.DeleteVideo(_selectedVideo.Id));
                                 }
                                 SceneLoader.Instance.CurrentScene = 0;
                             }
@@ -152,8 +155,7 @@ public class VideoDetails : MonoBehaviour
         }
         else
         {
-            ErrorMessage.text = "Filen du prøver at slette, kunne ikke findes";
-            ErrorMessage.enabled = true;
+            StartCoroutine(DisplayStatusMessage("Filen du prøver at slette, kunne ikke findes", true, 0));
         }
     }
 
@@ -167,22 +169,42 @@ public class VideoDetails : MonoBehaviour
         //Save the new or updated video details in the db.
         if (ValidInput())
         {
-            ErrorMessage.enabled = false;
+            StatusMessage.enabled = false;
+            DataManager.SuccessChanged += SaveVideoStatus;
+            ButtonsInteractable(false);
             if (!_isSavedInDB)
             {
                 _selectedVideo = new QrVideo(Guid.NewGuid(), Name.text, Description.text, Global.Instance.videoPath, 0,
                 Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
-                SaveButton.interactable = false;
                 StartCoroutine(DataManager.UploadQrVideo(_selectedVideo));
-                Global.Instance.localVideos.Add(_selectedVideo); //Add to global - check if UploadQrVideo is successfull first?
-                SaveButton.interactable = true;
-                _encryptOnDestroy = true;
-                _isSavedInDB = true;
             }
             else if (_isSavedInDB)
             {
                 UpdateSelectedVideoFromInputFields();
                 StartCoroutine(DataManager.UpdateQrVideo(_selectedVideo));
+            }
+        }
+        else
+        {
+            StartCoroutine(DisplayStatusMessage("Der skete en fejl, videon blev ikke gemt", true, 0));
+        }
+    }
+
+    void SaveVideoStatus(object sender, DataManager.SuccessEventArgs e)
+    {
+        DataManager.SuccessChanged -= SaveVideoStatus;
+        if (e.Success)
+        {
+            StartCoroutine(DisplayStatusMessage("Videoen blev gemt", false, 5f));
+            ButtonsInteractable(true);
+            if (!_isSavedInDB)
+            {
+                Global.Instance.localVideos.Add(_selectedVideo); //Add to global - check if UploadQrVideo is successfull first?
+                _encryptOnDestroy = true;
+                _isSavedInDB = true;
+            }
+            else
+            {
                 if (_previousScene == _linkMenuScene)
                 {
                     UpdateVideoList();
@@ -194,13 +216,14 @@ public class VideoDetails : MonoBehaviour
                     Global.Instance.localVideos[lastVideo].Description = _selectedVideo.Description;
                     Global.Instance.localVideos[lastVideo].VideoCategoryId = _selectedVideo.VideoCategoryId;
                 }
-
             }
+
         }
         else
         {
-            ErrorMessage.enabled = true;
+            StartCoroutine(DisplayStatusMessage("Der skete en fejl, videon blev ikke gemt.", true, 0));
         }
+
     }
 
     void UpdateVideoList()
@@ -261,8 +284,7 @@ public class VideoDetails : MonoBehaviour
 #endif
         else
         {
-            ErrorMessage.text = "Failed to find the video file you were trying to upload";
-            ErrorMessage.enabled = true;
+            StartCoroutine(DisplayStatusMessage("Fejl: Kunne ikke finde filen du forsøgte at uploade", true, 0));
         }
 
     }
@@ -271,55 +293,56 @@ public class VideoDetails : MonoBehaviour
     {
         if (ValidInput())
         {
-            ErrorMessage.enabled = false;
+            StatusMessage.enabled = false;
             UpdateSelectedVideoFromInputFields();
 
             _confirmUploadMessage = Util.CancellableMessageBox(new Rect(0, 0, 300, 200),
                 "Du er ved at uploade din video " + _selectedVideo.Name + ". Denne video er af typen \"" +
-                Global.Instance.videoCategories[_selectedVideo.VideoCategoryId].Name +
+                Global.Instance.videoCategories[_selectedVideo.VideoCategoryId - 1].Name +
                 "\". Er du sikker på at du vil fortsætte med at uploade videoen?", true, Message.Type.Info,
                 delegate(Message message, bool value)
                 {
                     if (value)
                     {
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_IOS
                         _uploadString = "Uploader video: " + _progress + "%";
+#endif
+#if UNITY_ANDROID
+                            _uploadString = "Uploader video...";
+#endif
                         _uploadProgressMessage = Util.MessageBox(new Rect(0, 0, 300, 200),
                             _uploadString, Message.Type.Info, false, true);
                         _uploadString = "";
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_IOS
                         am.ProgressChanged += AzureUploadProgress;
-                        if (_isSavedInDB || _previousScene == _linkMenuScene)
-                        {
-                            StartCoroutine(DecryptAndUpload());
-                        }
-                        else
-                        {
-                            if (!_isSavedInDB)
-                            {
-                                _selectedVideo = new QrVideo(Guid.NewGuid(), Name.text, Description.text,
-                                    Global.Instance.videoPath, 0,
-                                    Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
-                            }
-                            try
-                            {
-                                UploadVideoToAzure();
-                            }
-                            catch (Exception e)
-                            {
-                                Debug.Log("ConfirmUpLoadVideo [HANS]: " + e.Message);
-                            }
-                        }
+#endif
+#if UNITY_ANDROID
+                            am.ProgressChanged += AzureUploadAndroid;
+#endif
                     }
-                    else if (!value)
+                    if (_isSavedInDB || _previousScene == _linkMenuScene)
                     {
+                        StartCoroutine(DecryptAndUpload());
+                    }
+                    else
+                    {
+                        if (!_isSavedInDB)
+                        {
+                            _selectedVideo = new QrVideo(Guid.NewGuid(), Name.text, Description.text,
+                                Global.Instance.videoPath, 0,
+                                Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
+                        }
+                        UploadVideoToAzure();
 
                     }
+
                     _confirmUploadMessage.Destroy();
                 });
         }
         else
         {
-            ErrorMessage.text = "Please fill out all the forms before trying to upload";
-            ErrorMessage.enabled = true;
+            StartCoroutine(DisplayStatusMessage("Venligst udfyldd alle felter før du forsøger at uploade.", true, 0));
+
         }
     }
 
@@ -328,7 +351,12 @@ public class VideoDetails : MonoBehaviour
         _uploadProgressMessage.Text = "Trin 1 af 2\n\nDekrypterer video...";
         yield return new WaitForSeconds(1f); // wait for gui to finish loading before going on to decrypt the video
         ev.DecryptFile(_selectedVideo.Path);
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_IOS
         _uploadString = "Trin 2 af 2\n\n";
+#endif
+#if UNITY_ANDROID
+        _uploadProgressMessage.Text = "Trin 2 af 2\n\nUploader video...";       
+#endif
         UploadVideoToAzure();
     }
 
@@ -338,9 +366,26 @@ public class VideoDetails : MonoBehaviour
         string blockBlobReference = _selectedVideo.Name.Replace(" ", "") + "_" + _selectedVideo.Id;
         _localPath = _selectedVideo.Path;
         _selectedVideo.Path = blockBlobReference;
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_IOS
         StartCoroutine(am.PutBlob(_localPath, blockBlobReference));
+#endif
+#if UNITY_ANDROID
+        StartCoroutine(am.PutBlobAndroid(_localPath, blockBlobReference));
+#endif
+
     }
 
+
+    private void AzureUploadAndroid(object sender, AzureManager.ProgressEventArgs e)
+    {
+        if (e.Progress == 1)
+        {
+            am.ProgressChanged -= AzureUploadAndroid;
+            am.ProgressBar = 0;
+            _uploadProgressMessage.Destroy();
+            UpdateVideoInDb();
+        }
+    }
 
 #if UNITY_IOS
     private void AzureUploadProgress(object sender, AzureManager.ProgressEventArgs e)
@@ -376,8 +421,10 @@ public class VideoDetails : MonoBehaviour
             UpdateVideoInDb();
             _uploadProgressMessage.Destroy();
             am.ProgressChanged -= AzureUploadProgress;
+            _uploadString = "";
         }
     }
+    
 #endif
 
     void UpdateVideoInDb()
@@ -413,8 +460,7 @@ public class VideoDetails : MonoBehaviour
         }
         else
         {
-            ErrorMessage.text = "Failed to upload video to database";
-            ErrorMessage.enabled = true;
+            StartCoroutine(DisplayStatusMessage("Fejl: Kunne ikke uploade videon til databasen.", true, 0));
         }
     }
     #endregion
@@ -476,11 +522,43 @@ public class VideoDetails : MonoBehaviour
 #endif
         else
         {
-            ErrorMessage.text = "The file you were trying to upload could not be found";
-            ErrorMessage.enabled = true;
-            Debug.Log("File not found");
+            StartCoroutine(DisplayStatusMessage("Fejl: Kunne ikke finde filen du forsøge at uploade", true, 0));
         }
         return false;
+    }
+
+    void ButtonsInteractable(bool enabled)
+    {
+        if (enabled)
+        {
+            SaveButton.interactable = true;
+            UploadButton.interactable = true;
+            DeleteButton.interactable = true;
+        }
+        else
+        {
+            SaveButton.interactable = false;
+            UploadButton.interactable = false;
+            DeleteButton.interactable = false;
+        }
+    }
+
+    IEnumerator DisplayStatusMessage(string message, bool error, float displayDuration)
+    {
+        // Display a status message - if displayDuration is 0, it won't expire
+
+        StatusMessage.text = message;
+        if (error)
+            StatusMessage.color = Color.red;
+        else
+            StatusMessage.color = Color.green;
+        StatusMessage.enabled = true;
+
+        if (displayDuration > 0)
+        {
+            yield return new WaitForSeconds(displayDuration);
+            StatusMessage.enabled = false;
+        }
     }
 
 

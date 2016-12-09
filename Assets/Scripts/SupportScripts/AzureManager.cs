@@ -112,16 +112,13 @@ public class AzureManager : MonoBehaviour
             while (!webRequest.isDone)
             {
                 ProgressBar = webRequest.uploadProgress;
-                Debug.Log("Progress: " + ProgressBar);
                 if (webRequest.isError)
                 {
-                    Debug.Log("PutBlob [HANS]: " + webRequest.error);
                     break;
                 }
 
                 yield return new WaitForSeconds(1f);
             }
-
 
             if (webRequest.isDone)
             {
@@ -159,57 +156,54 @@ public class AzureManager : MonoBehaviour
         
 #endif
     }
-    //public IEnumerator PutBlob(string filePath, string blockBlobReference)
-    //{
-    //    String httpMethod = "PUT";
 
-    //    Byte[] blobContent = File.ReadAllBytes(filePath);
-
-    //    Int32 blobLength = blobContent.Length;
-
-    //    const String blobType = "BlockBlob";
-
-    //    String urlPath = String.Format("{0}/{1}", AzureStorageConstants.container, blockBlobReference);
-    //    String msVersion = "2009-09-19";
-    //    //String msVersion = "2015-02-21";
-    //    String dateInRfc1123Format = DateTime.UtcNow.AddHours(1).ToString("R", CultureInfo.InvariantCulture);
-
-    //    String canonicalizedHeaders = String.Format("x-ms-blob-type:{0}\nx-ms-date:{1}\nx-ms-version:{2}", blobType, dateInRfc1123Format, msVersion);
-    //    String canonicalizedResource = String.Format("/{0}/{1}", AzureStorageConstants.Account, urlPath);
-    //    String stringToSign = String.Format("{0}\n\n\n{1}\n\n\n\n\n\n\n\n\n{2}\n{3}", httpMethod, blobLength, canonicalizedHeaders, canonicalizedResource);
-    //    String authorizationHeader = CreateAuthorizationHeader(stringToSign);
-
-    //    Uri uri = new Uri(AzureStorageConstants.BlobEndPoint + urlPath);
-    //    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
-    //    request.Method = httpMethod;
-    //    request.Headers.Add("x-ms-blob-type", blobType);
-    //    request.Headers.Add("x-ms-date", dateInRfc1123Format);
-    //    request.Headers.Add("x-ms-version", msVersion);
-    //    request.Headers.Add("Authorization", authorizationHeader);
-
-    //    ServicePointManager.ServerCertificateValidationCallback = MyRemoteCertificateValidationCallback;
-
-    //    using (Stream requestStream = request.BeginGetRequestStream())
-    //    {
-    //        requestStream.Write(blobContent, 0, blobLength);
-    //        yield return requestStream;
-    //    }
-
-    //    using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-    //    {
-    //        String ETag = response.Headers["ETag"];
-    //    }
-    //}
-
-    private static void CopyStream(Stream input, Stream output)
+    public IEnumerator PutBlobAndroid(string filePath, string blockBlobReference)
     {
-        byte[] buffer = new byte[32768];
-        int read;
-        while ((read = input.Read(buffer, 0, buffer.Length)) > 0)
+        yield return new WaitForSeconds(1f);
+        String httpMethod = "PUT";
+
+        Byte[] blobContent = File.ReadAllBytes(filePath);
+
+        Int32 blobLength = blobContent.Length;
+
+        const String blobType = "BlockBlob";
+
+        String urlPath = String.Format("{0}/{1}", AzureStorageConstants.container, blockBlobReference);
+        String msVersion = "2009-09-19";
+        //String msVersion = "2015-02-21";
+        String dateInRfc1123Format = DateTime.Now.ToString("R", CultureInfo.InvariantCulture);
+
+        String canonicalizedHeaders = String.Format("x-ms-blob-type:{0}\nx-ms-date:{1}\nx-ms-version:{2}", blobType, dateInRfc1123Format, msVersion);
+        String canonicalizedResource = String.Format("/{0}/{1}", AzureStorageConstants.Account, urlPath);
+        String stringToSign = String.Format("{0}\n\n\n{1}\n\n\n\n\n\n\n\n\n{2}\n{3}", httpMethod, blobLength, canonicalizedHeaders, canonicalizedResource);
+        String authorizationHeader = CreateAuthorizationHeader(stringToSign);
+
+        Uri uri = new Uri(AzureStorageConstants.BlobEndPoint + urlPath);
+        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+        request.Method = httpMethod;
+        request.Headers.Add("x-ms-blob-type", blobType);
+        request.Headers.Add("x-ms-date", dateInRfc1123Format);
+        request.Headers.Add("x-ms-version", msVersion);
+        request.Headers.Add("Authorization", authorizationHeader);
+        request.ContentLength = blobLength;
+
+        ServicePointManager.ServerCertificateValidationCallback = MyRemoteCertificateValidationCallback;
+
+        using (Stream requestStream = request.GetRequestStream())
         {
-            output.Write(buffer, 0, read);
+            requestStream.Write(blobContent, 0, blobLength);
+            yield return requestStream;
+        }
+
+        ProgressBar = 1;
+
+        using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+        {
+            Stream responseStream = response.GetResponseStream();
+            String ETag = response.Headers["ETag"];
         }
     }
+
 
     private static String CreateAuthorizationHeader(String canonicalizedString)
     {

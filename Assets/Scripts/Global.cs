@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using ExerciseCollections;
+using System;
 
 public class Global : MonoBehaviour {
 
@@ -11,7 +12,10 @@ public class Global : MonoBehaviour {
     public ExerciseCategoryCollection categoryCollection = new ExerciseCategoryCollection();
     public List<QrVideo> qrVideos = new List<QrVideo>();
     public List<QrVideo> localVideos = new List<QrVideo>();
+    public List<QrVideoUserView> getVideoUserViewCount = new List<QrVideoUserView>();
+    public bool ready;
     public string videoPath = "";
+    public Guid qrVideoId;
     public UserGroup userGroup;
     public UserGroupVideoCredential userGroupVideoCredintial;
     public List<VideoCategory> videoCategories = new List<VideoCategory>();
@@ -426,10 +430,10 @@ public class Global : MonoBehaviour {
         if (GameObject.Find(name))
             return;
 
-        Object resourceObj = Resources.Load(name);
+        UnityEngine.Object resourceObj = Resources.Load(name);
         if (resourceObj)
         {
-            GameObject go = (GameObject)Object.Instantiate(resourceObj);
+            GameObject go = (GameObject)UnityEngine.Object.Instantiate(resourceObj);
             GameObject.Find(States.Instance.GetStateValue("actionCallbackGameObjectName")).SendMessage("SimCallback", state);
         }
     }

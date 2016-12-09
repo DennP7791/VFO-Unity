@@ -26,7 +26,7 @@ public class DataManager : MonoBehaviour
         url = "http://vfo-staging-webapp.azurewebsites.net/Service/"; //STAGING SERVICE - Comment for release version
         //url = "http://vfo-staging-webapp.azurewebsites.net/Service/";
 #if UNITY_EDITOR
-        //url = "http://localhost:59477/Service/";
+        url = "http://localhost:59477/Service/";
 #endif
 
     }
@@ -138,6 +138,22 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    public class JsonVideoUserViewCollection
+    {
+        public JsonQrVideoUserView[] VideoUserView;
+
+        public override string ToString()
+        {
+            string result = "";
+            foreach (JsonQrVideoUserView jsonVUV in VideoUserView)
+            {
+                result += jsonVUV.ToString() + " ";
+            }
+            result += ">";
+            return result;
+        }
+    }
+
     public class JsonQrVideoUserView
     {
         public Guid VideoId;
@@ -179,6 +195,11 @@ public class DataManager : MonoBehaviour
 
         public JsonQrVideo()
         {
+        }
+
+        public JsonQrVideo(Guid id)
+        {
+            Id = id;
         }
 
         public JsonQrVideo(Guid id, string name, string description, string path, int count, int userGroupId, int userId, DateTime? releaseDate, int videoCategoryId)
@@ -695,18 +716,52 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    public static IEnumerator UpdateVideoCount(Guid id, int count)
+    {
+        InitializeUrl();
+        Debug.Log("UpdateVideoCount");
+        string _url = url + "UpdateVideoCount/"+ id +"?Count=" + count;
+        if (Global.Instance.ProgramLanguage == "sv-SE")
+        {
+            //url = "http://vfo.welfaresverige.se/Service/"UpdateVideoCount/"+ id +"?Count=" + count; //OutComment if release version
+        }
+
+        Debug.Log("Converted To Json Container:\n" + id.ToString() + count.ToString());
+        string serialized = JsonWriter.Serialize(id.ToString() + count.ToString());
+
+        Debug.Log("Serialized:\n" + serialized);
+        Encoding encoding = Encoding.UTF8;
+        byte[] bytes = encoding.GetBytes(serialized);
+
+        var headers = new Dictionary<string, string>();
+        headers.Add("X-HTTP-Method-Override", "PUT");
+
+        WWW www = new WWW(_url, bytes, headers);
+
+        yield return www;
+        // check for errors
+        if (www.error == null)
+        {
+            Debug.Log("Result: " + www.text);
+            Debug.Log("Update Complete.");
+        }
+        else
+        {
+            Debug.Log("Update Error: " + www.error);
+        }
+    }
+
     public static IEnumerator UploadQrVideoUserView(QrVideoUserView view)
     {
         InitializeUrl();
-        Debug.Log("UploadQrVideo");
+        Debug.Log("Upload Video User View");
         string _url = url + "SaveVideoUserViewData/";
-
 
         if (Global.Instance.ProgramLanguage == "sv-SE")
         {
             //url = "http://vfo.welfaresverige.se/Service/SaveVideoUserViewData/"; //OutComment if release version
         }
-
+        
         JsonQrVideoUserView qrVideoUserView = QrVideoUserViewToJsonQrVideoUserView(view);
 
         Debug.Log("Converted To Json Container:\n" + qrVideoUserView.ToString());
@@ -715,7 +770,7 @@ public class DataManager : MonoBehaviour
         Debug.Log("Serialized:\n" + serialized);
         Encoding encoding = Encoding.UTF8;
         byte[] bytes = encoding.GetBytes(serialized);
-
+        
         WWW www = new WWW(_url, bytes);
 
         yield return www;
@@ -728,6 +783,44 @@ public class DataManager : MonoBehaviour
         else
         {
             Debug.Log("Upload Error: " + www.error);
+        }
+    }
+
+    public static IEnumerator GetVideoIdByPath()
+    {
+        InitializeUrl();
+        Debug.Log("GetUserGroup");
+        string _url = url + "GetVideoIdByPath?path=" + Global.Instance.videoPath;
+
+
+        if (Global.Instance.ProgramLanguage == "sv-SE")
+        {
+            //url = "http://vfo.welfaresverige.se/Service/GetVideoIdByPath?path=" + Global.Instance.videoPath + "/" + "sv-SE"; //OutComment if release version
+        }
+
+        WWW www = new WWW(_url);
+
+        yield return www;
+
+
+        if (www.error == null)
+        {
+            Debug.Log("Result:\n" + www.text);
+
+            try
+            {
+
+                JsonQrVideo ug = JsonReader.Deserialize<JsonQrVideo>(www.text);
+                Global.Instance.qrVideoId = ug.Id;
+            }
+            catch (Exception e)
+            {
+                Util.MessageBox(new Rect(0, 0, 400, 200), "Error: " + e.Message + "\n\nPlease try to restart the application!", Message.Type.Error, false, true);
+            }
+        }
+        else
+        {
+            Debug.Log("WWW Error: " + www.error);
         }
     }
 
@@ -761,6 +854,39 @@ public class DataManager : MonoBehaviour
             }
         }
         else
+        {
+            Debug.Log("WWW Error: " + www.error);
+        }
+    }
+
+    public static IEnumerator GetVideoCount()
+    {
+        Global.Instance.ready = false;
+        InitializeUrl();
+        Debug.Log("Getting Video Count");
+        string _url = url + "GetVideoCount/" + Global.Instance.qrVideoId;
+
+        if (Global.Instance.ProgramLanguage == "sv-SE")
+        {
+            //url = "http://vfo.welfaresverige.se/Service/GetUserGroup/" + Global.Instance.UserId + "/" + "sv-SE"; //OutComment if release version
+        }
+        WWW www = new WWW(_url);
+        yield return www;
+
+        if(www.error == null)
+        {
+            Debug.Log("Result:\n" + www.text);
+            try
+            {
+                JsonVideoUserViewCollection jsonVUV = JsonReader.Deserialize<JsonVideoUserViewCollection>(www.text);
+                Global.Instance.getVideoUserViewCount = JsonVideoUserView(jsonVUV);
+                Global.Instance.ready = true;
+            }
+            catch (Exception e)
+            {
+                Util.MessageBox(new Rect(0, 0, 400, 200), "Error: " + e.Message + "\n\nPlease try to restart the application!", Message.Type.Error, false, true);
+            }
+        }else
         {
             Debug.Log("WWW Error: " + www.error);
         }
@@ -871,6 +997,17 @@ public class DataManager : MonoBehaviour
         return qrvList;
     }
 
+    static List<QrVideoUserView> JsonVideoUserView(JsonVideoUserViewCollection qrvCol)
+    {
+        List<QrVideoUserView> qrvList = new List<QrVideoUserView>();
+        foreach(JsonQrVideoUserView qrvuv in qrvCol.VideoUserView)
+        {
+            QrVideoUserView tmpQrVUV = new QrVideoUserView(qrvuv.VideoId, qrvuv.UserId, qrvuv.ViewDate);
+            qrvList.Add(tmpQrVUV);
+        }
+        return qrvList;
+    }
+
     static UserGroup JsonUserGroupToUserGroup(JsonUserGroup ug)
     {
         UserGroup userGroup = new UserGroup(ug.Id, ug.GroupName, ug.CustomerId);
@@ -900,6 +1037,8 @@ public class DataManager : MonoBehaviour
         return jsonQrVideoUserView;
     }
 
+
+
     //
     //Encryption
     //
@@ -909,6 +1048,7 @@ public class DataManager : MonoBehaviour
         UserGroupVideoCredential userGroupVideoCredintial = new UserGroupVideoCredential(ugcv.Id, ugcv.VideoCategoryId, ugcv.UserGroupId, ugcv.Password, ugcv.Salt);
         return userGroupVideoCredintial;
     }
+
 
     public static IEnumerator validateSeureQrVideo(string path)
     {
@@ -971,6 +1111,9 @@ public class DataManager : MonoBehaviour
             Debug.Log("WWW Error: " + www.error);
         }
     }
+
+
+
 
     // Use this for initialization
     void Start()
