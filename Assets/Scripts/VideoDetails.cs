@@ -5,13 +5,14 @@ using UnityEngine.UI;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using UnityEngine.EventSystems;
 
 public class VideoDetails : MonoBehaviour
 {
     public InputField Name, Description;
     public Dropdown LocalVideos, Categories;
     public Button SaveButton, UploadButton, DeleteButton;
-    public GameObject LocalVideosRow;
+    public GameObject LocalVideosRow, EventSystem;
     public UnityEngine.UI.Text StatusMessage;
 
     AzureManager am = new AzureManager();
@@ -36,6 +37,7 @@ public class VideoDetails : MonoBehaviour
     //Initializes the various variables depending on last scene. 
     void Start()
     {
+        EventSystem.GetComponent<EventSystem>().pixelDragThreshold = 20; //makes it easier to click the gameobjects in scroll - default value is 5
         LocalVideosRow.SetActive(false);
         StatusMessage.enabled = false;
 
