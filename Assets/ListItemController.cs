@@ -94,7 +94,7 @@ public class ListItemController : MonoBehaviour
         searchButton.onClick.AddListener(SearchVideo);
         rightButton.onClick.AddListener(NextPage);
         leftButton.onClick.AddListener(PreviousPage);
-        refreshButton.onClick.AddListener(RefreshAll);
+        //refreshButton.onClick.AddListener(RefreshAll); Almost Working
         noVideoes.enabled = false;
     }
     /// <summary>
@@ -320,15 +320,18 @@ public class ListItemController : MonoBehaviour
     }
 
 
+    //REFRESH SEARCH
+    //Not working Fully, almost
+    /*
     private void RefreshDropdown()
     {
         inputfield.text = "";
         dropdown.ClearOptions();
         dropdown.options.Add(new Dropdown.OptionData("All"));
+        populateDropdown();
         dropdown.value = 0;
         dropdown.Select();
         dropdown.RefreshShownValue();
-        populateDropdown();
     }
 
 
@@ -349,5 +352,5 @@ public class ListItemController : MonoBehaviour
         noVideoes.enabled = false;
         StartCoroutine(UpdateVideoUserView());
     }
-
+    */
 }
