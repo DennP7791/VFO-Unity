@@ -7,7 +7,6 @@ using System;
 public class VideoController : MonoBehaviour
 {
     string url = "";
-
     public RawImage _player;
     public AudioSource _sound;
     Message loadingBox;
@@ -42,6 +41,7 @@ public class VideoController : MonoBehaviour
 
     void OnDestroy()
     {
+
         DeleteLocalVideo();
     }
 
@@ -80,16 +80,15 @@ public class VideoController : MonoBehaviour
             Debug.Log(www.error);
             yield break;
         }
-
-
         else
         {
             loadingBox.Destroy();
+
 #if UNITY_IOS || UNITY_ANDROID
             StartCoroutine(PlayVideoOnHandheld());
+
             Debug.Log("LoadVideo [HANS]: " + www.error);
 #endif
-
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
             PlayVideoOnMovieTexture();
 #endif
@@ -123,17 +122,24 @@ public class VideoController : MonoBehaviour
         FullScreenMovieControlMode controlMode = FullScreenMovieControlMode.Full;
         FullScreenMovieScalingMode scalingMode = FullScreenMovieScalingMode.AspectFill;
 
+        //Handheld.PlayFullScreenMovie(url, bgColor, controlMode, scalingMode);
+
+#if UNITY_IOS
         string tempUrl = "file://" + url;
         Debug.Log("PlayVideoOnHandhled [HANS]: " + tempUrl);
-
-        //Handheld.PlayFullScreenMovie(url, bgColor, controlMode, scalingMode);
         Handheld.PlayFullScreenMovie(tempUrl, bgColor, controlMode, scalingMode);
+#else
+        Handheld.PlayFullScreenMovie(url, bgColor, controlMode, scalingMode);
+#endif
+
         yield return new WaitForSeconds(1f); //wait for Handheld to lock Screen.orientation
 
         Screen.orientation = ScreenOrientation.AutoRotation;
-        while (Screen.currentResolution.height < Screen.currentResolution.width)
-        {
-            yield return null;
-        }
+        //while (Screen.currentResolution.height < Screen.currentResolution.width)
+        //{
+        //    yield return null;
+        //}
+
+        SceneLoader.Instance.CurrentScene = 0;
     }
 }

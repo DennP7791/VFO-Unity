@@ -25,4 +25,9 @@ public class QrVideo
         ReleaseDate = releaseDate;
         VideoCategoryId = videoCategoryId;
     }
+
+    public QrVideo(string path)
+    {
+        Path = path;
+    }
 }
