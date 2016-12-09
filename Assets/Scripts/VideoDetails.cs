@@ -319,21 +319,21 @@ public class VideoDetails : MonoBehaviour
 #if UNITY_ANDROID
                             am.ProgressChanged += AzureUploadAndroid;
 #endif
-                    }
-                    if (_isSavedInDB || _previousScene == _linkMenuScene)
-                    {
-                        StartCoroutine(DecryptAndUpload());
-                    }
-                    else
-                    {
-                        if (!_isSavedInDB)
+                        if (_isSavedInDB || _previousScene == _linkMenuScene)
                         {
-                            _selectedVideo = new QrVideo(Guid.NewGuid(), Name.text, Description.text,
-                                Global.Instance.videoPath, 0,
-                                Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
+                            StartCoroutine(DecryptAndUpload());
                         }
-                        UploadVideoToAzure();
+                        else
+                        {
+                            if (!_isSavedInDB)
+                            {
+                                _selectedVideo = new QrVideo(Guid.NewGuid(), Name.text, Description.text,
+                                    Global.Instance.videoPath, 0,
+                                    Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
+                            }
+                            UploadVideoToAzure();
 
+                        }
                     }
 
                     _confirmUploadMessage.Destroy();
