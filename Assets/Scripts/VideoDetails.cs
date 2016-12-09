@@ -250,17 +250,27 @@ public class VideoDetails : MonoBehaviour
                 UpdateSelectedVideoFromInputFields();
                 _confirmUploadMessage = Util.CancellableMessageBox(new Rect(0, 0, 300, 200),
                     "Du er ved at uploade din video " + _selectedVideo.Name + ". Denne video er af typen \"" +
-                    Global.Instance.videoCategories[LocalVideos.value].Name +
+                    Global.Instance.videoCategories[_selectedVideo.VideoCategoryId-1].Name +
                     "\". Er du sikker på at du vil fortsætte med at uploade videoen?", true, Message.Type.Info,
                     delegate(Message message, bool value)
                     {
                         if (value)
                         {
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_IOS
                             _uploadString = "Uploader video: " + _progress + "%";
+#endif
+#if UNITY_ANDROID
+                            _uploadString = "Uploader video...";
+#endif
                             _uploadProgressMessage = Util.MessageBox(new Rect(0, 0, 300, 200),
                                 _uploadString, Message.Type.Info, false, true);
                             _uploadString = "";
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_IOS
                             am.ProgressChanged += AzureUploadProgress;
+#endif
+#if UNITY_ANDROID
+                            am.ProgressChanged += AzureUploadAndroid;
+#endif
                             if (_isSavedInDB || _previousScene == _linkMenuScene)
                             {
                                 StartCoroutine(DecryptAndUpload());
@@ -300,9 +310,15 @@ public class VideoDetails : MonoBehaviour
         _uploadProgressMessage.Text = "Trin 1 af 2\n\nDekrypterer video...";
         yield return new WaitForSeconds(1f); // wait for gui to finish loading before going on to decrypt the video
         ev.DecryptFile(_selectedVideo.Path);
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_IOS
         _uploadString = "Trin 2 af 2\n\n";
+#endif
+#if UNITY_ANDROID
+        _uploadProgressMessage.Text = "Trin 2 af 2\n\nUploader video...";
+         //yield return new WaitForSeconds(1f);
+#endif
         UploadVideoToAzure();
-
+            
     }
 
     void UploadVideoToAzure()
@@ -311,7 +327,13 @@ public class VideoDetails : MonoBehaviour
         string blockBlobReference = _selectedVideo.Name.Replace(" ", "") + "_" + _selectedVideo.Id;
         _localPath = _selectedVideo.Path;
         _selectedVideo.Path = blockBlobReference;
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_IOS
         StartCoroutine(am.PutBlob(_localPath, blockBlobReference));
+#endif
+#if UNITY_ANDROID
+        StartCoroutine(am.PutBlobAndroid(_localPath, blockBlobReference));
+#endif
+
     }
 
     private void AzureUploadProgress(object sender, AzureManager.ProgressEventArgs e)
@@ -329,6 +351,18 @@ public class VideoDetails : MonoBehaviour
             UpdateVideoInDb();
             _uploadProgressMessage.Destroy();
             am.ProgressChanged -= AzureUploadProgress;
+            _uploadString = "";
+        }
+    }
+
+    private void AzureUploadAndroid(object sender, AzureManager.ProgressEventArgs e)
+    {
+        if(e.Progress == 1)
+        {
+            am.ProgressChanged -= AzureUploadAndroid;
+            am.ProgressBar = 0;
+            _uploadProgressMessage.Destroy();
+            UpdateVideoInDb();
         }
     }
 
@@ -384,7 +418,7 @@ public class VideoDetails : MonoBehaviour
     {
         _selectedVideo.Name = Name.text;
         _selectedVideo.Description = Description.text;
-        _selectedVideo.VideoCategoryId = Categories.value + 1;
+        _selectedVideo.VideoCategoryId = Categories.value +1;
     }
 
     bool ValidInput()
