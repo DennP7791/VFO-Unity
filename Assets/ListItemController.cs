@@ -11,7 +11,7 @@ public class ListItemController : MonoBehaviour
     public InputField inputfield;
     public Dropdown dropdown;
     public Button searchButton;
-    public Button rightButton, leftButton;
+    public Button rightButton, leftButton, refreshButton;
     public GameObject listItem;
     public Sprite[] spriteList;
     public GameObject contentPanel;
@@ -86,13 +86,7 @@ public class ListItemController : MonoBehaviour
         populateDropdown();
         maxNumberPrPage = videoList.Take(25).ToList();
         populateVideoes(maxNumberPrPage);
-        videoCount.text = maxNumberPrPage.Count.ToString() + "/" + videoList.Count.ToString();
-        if (pageNr == 1)
-        {
-            var pnb = 0;
-            var count = pnb * 25 + maxNumberPrPage.Count;
-            setPageNumber(count, videoList); //set pageNumber
-        }
+        CalculatePageNumber(maxNumberPrPage, videoList);
 
         _cancelButton.onClick.AddListener(DisableDetails);
         _loadvideoButton.onClick.AddListener(ChangeScene);
@@ -100,6 +94,7 @@ public class ListItemController : MonoBehaviour
         searchButton.onClick.AddListener(SearchVideo);
         rightButton.onClick.AddListener(NextPage);
         leftButton.onClick.AddListener(PreviousPage);
+        refreshButton.onClick.AddListener(RefreshAll);
         noVideoes.enabled = false;
     }
     /// <summary>
@@ -312,5 +307,47 @@ public class ListItemController : MonoBehaviour
         pageNumber.text = Math.Ceiling((double)allPageVideos / 25) + "/" + Math.Ceiling((double)allvideos.Count / 25);
     }
 
+    private void CalculatePageNumber(List<QrVideo> maxNumberPrPage, List<QrVideo> videoList)
+    {
+        pageNr = 1;
+        videoCount.text = maxNumberPrPage.Count.ToString() + "/" + videoList.Count.ToString();
+        if (pageNr == 1)
+        {
+            var pnb = 0;
+            var count = pnb * 25 + maxNumberPrPage.Count;
+            setPageNumber(count, videoList); //set pageNumber
+        }
+    }
+
+
+    private void RefreshDropdown()
+    {
+        inputfield.text = "";
+        dropdown.ClearOptions();
+        dropdown.options.Add(new Dropdown.OptionData("All"));
+        dropdown.value = 0;
+        dropdown.Select();
+        dropdown.RefreshShownValue();
+        populateDropdown();
+    }
+
+
+    private IEnumerator UpdateVideoUserView()
+    {
+        RefreshDropdown();
+        yield return StartCoroutine(DataManager.RetrieveQrVideoData());
+        DestroyAllListItems();
+        videoList = Global.Instance.qrVideos;
+        maxNumberPrPage = videoList.Take(25).ToList();
+        populateVideoes(maxNumberPrPage);
+        CalculatePageNumber(maxNumberPrPage, videoList);
+        
+    }
+
+    private void RefreshAll()
+    {
+        noVideoes.enabled = false;
+        StartCoroutine(UpdateVideoUserView());
+    }
 
 }
