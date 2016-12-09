@@ -2,25 +2,28 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.IO;
+using System;
 
 public class VideoController : MonoBehaviour
 {
     string url = "";
     public RawImage _player;
-    public AudioSource _sound;    
+    public AudioSource _sound;
     Message loadingBox;
     int progress;
     AzureManager azureManager;
     WWW www;
 
 
-    void Start ()
+    void Start()
     {
         loadingBox = Util.MessageBox(new Rect(0, 0, 300, 200), Text.Instance.GetString("data_loader_getting_data"), Message.Type.Info, false, true);
         azureManager = new AzureManager();
         azureManager.ProgressChanged += Progress;
-        StartCoroutine(azureManager.GetBlob(Global.Instance.videoPath));
+        StartCoroutine(DataManager.GetVideoIdByPath());
         
+        StartCoroutine(azureManager.GetBlob(Global.Instance.videoPath));
+
         url = @Application.persistentDataPath + "/video.mp4";
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
         url = "file:///" + Application.persistentDataPath + "/video.ogv";
@@ -32,15 +35,16 @@ public class VideoController : MonoBehaviour
     {
         progress = int.Parse((e.Progress * 100).ToString("F0"));
         loadingBox.Text = Text.Instance.GetString("sceneloader_downloading") + " " + progress + "%";
-        if(e.Progress == 2)
+        if (e.Progress == 2)
         {
+
             StartCoroutine(LoadVideo());
         }
     }
 
     void OnDestroy()
     {
-        
+
         DeleteLocalVideo();
     }
 
@@ -66,10 +70,11 @@ public class VideoController : MonoBehaviour
             File.Delete(videoPath + ".mp4");
         }
 #endif
-        }
+    }
 
     IEnumerator LoadVideo()
     {
+
         www = new WWW(url);
 
         if (www.error != null)
@@ -83,6 +88,9 @@ public class VideoController : MonoBehaviour
 
         else
         {
+            System.Threading.Thread.Sleep(2000);
+            StartCoroutine(DataManager.GetVideoCount());
+            AddVideoUserView();
             loadingBox.Destroy();
 #if UNITY_IOS || UNITY_ANDROID
             StartCoroutine(PlayVideoOnHandheld());
@@ -106,7 +114,7 @@ public class VideoController : MonoBehaviour
         _sound.Play();
     }
 #endif
-    
+
 
     IEnumerator PlayVideoOnHandheld()
     {
@@ -126,5 +134,24 @@ public class VideoController : MonoBehaviour
         //}
 
         SceneLoader.Instance.CurrentScene = 0;
+    }
+
+    void AddVideoUserView()
+    {
+        var userId = Global.Instance.UserId;
+        var videoId = Global.Instance.qrVideoId;
+        var stamp = DateTime.Now;
+
+        var qrVideoUserView = new QrVideoUserView(videoId, userId, stamp);
+        StartCoroutine(DataManager.UploadQrVideoUserView(qrVideoUserView));
+        UpdateVideoCount();
+    }
+
+    void UpdateVideoCount()
+    {
+        
+        Guid id = Global.Instance.qrVideoId;
+        int count = Global.Instance.getVideoUserViewCount.Count;
+        StartCoroutine(DataManager.UpdateVideoCount(id, count));
     }
 }
