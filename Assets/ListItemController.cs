@@ -47,6 +47,7 @@ public class ListItemController : MonoBehaviour
         detailsPanel.SetActive(false);
         Initialize();
     }
+    
 
     /// <summary>
     /// Used to enable Details on video click and to set the text of the gameObjects.
