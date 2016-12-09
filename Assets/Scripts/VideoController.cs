@@ -21,7 +21,7 @@ public class VideoController : MonoBehaviour
         azureManager = new AzureManager();
         azureManager.ProgressChanged += Progress;
         StartCoroutine(DataManager.GetVideoIdByPath());
-        
+
         StartCoroutine(azureManager.GetBlob(Global.Instance.videoPath));
 
         url = @Application.persistentDataPath + "/video.mp4";
@@ -86,16 +86,14 @@ public class VideoController : MonoBehaviour
         }
         else
         {
-            System.Threading.Thread.Sleep(2000);
-            StartCoroutine(DataManager.GetVideoCount());
             AddVideoUserView();
             loadingBox.Destroy();
 
-            #if UNITY_IOS || UNITY_ANDROID
+#if UNITY_IOS || UNITY_ANDROID
             StartCoroutine(PlayVideoOnHandheld());
-            #endif
+#endif
 
-            #if UNITY_STANDALONE_WIN || UNITY_EDITOR
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR
             PlayVideoOnMovieTexture();
 #endif
         }
@@ -137,20 +135,25 @@ public class VideoController : MonoBehaviour
 
     void AddVideoUserView()
     {
+
         var userId = Global.Instance.UserId;
         var videoId = Global.Instance.qrVideoId;
         var stamp = DateTime.Now;
-
         var qrVideoUserView = new QrVideoUserView(videoId, userId, stamp);
-        StartCoroutine(DataManager.UploadQrVideoUserView(qrVideoUserView));
-        UpdateVideoCount();
+
+        StartCoroutine(FadeAndMoveAndShoot(qrVideoUserView));
     }
 
-    void UpdateVideoCount()
+    private IEnumerator FadeAndMoveAndShoot(QrVideoUserView qrVideoUserView)
     {
-        
+        print("Start Uploading VideoUserViev: " + Time.time);
+        yield return StartCoroutine(DataManager.UploadQrVideoUserView(qrVideoUserView));
+        print("Getting VideoUserView: " + Time.time);
+        yield return StartCoroutine(DataManager.GetVideoCount());
+        print("Getting the amount of count VideoUserView: " + Time.time);
         Guid id = Global.Instance.qrVideoId;
         int count = Global.Instance.getVideoUserViewCount.Count;
-        StartCoroutine(DataManager.UpdateVideoCount(id, count));
+        yield return StartCoroutine(DataManager.UpdateVideoCount(id, count));
+        print("Updating Video count: " + Time.time);
     }
 }

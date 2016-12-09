@@ -861,6 +861,7 @@ public class DataManager : MonoBehaviour
 
     public static IEnumerator GetVideoCount()
     {
+        Global.Instance.ready = false;
         InitializeUrl();
         Debug.Log("Getting Video Count");
         string _url = url + "GetVideoCount/" + Global.Instance.qrVideoId;
@@ -879,6 +880,7 @@ public class DataManager : MonoBehaviour
             {
                 JsonVideoUserViewCollection jsonVUV = JsonReader.Deserialize<JsonVideoUserViewCollection>(www.text);
                 Global.Instance.getVideoUserViewCount = JsonVideoUserView(jsonVUV);
+                Global.Instance.ready = true;
             }
             catch (Exception e)
             {
@@ -1109,6 +1111,9 @@ public class DataManager : MonoBehaviour
             Debug.Log("WWW Error: " + www.error);
         }
     }
+
+
+
 
     // Use this for initialization
     void Start()

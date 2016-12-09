@@ -13,6 +13,7 @@ public class Global : MonoBehaviour {
     public List<QrVideo> qrVideos = new List<QrVideo>();
     public List<QrVideo> localVideos = new List<QrVideo>();
     public List<QrVideoUserView> getVideoUserViewCount = new List<QrVideoUserView>();
+    public bool ready;
     public string videoPath = "";
     public Guid qrVideoId;
     public UserGroup userGroup;
