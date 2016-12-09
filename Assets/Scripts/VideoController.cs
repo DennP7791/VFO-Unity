@@ -84,19 +84,18 @@ public class VideoController : MonoBehaviour
             Debug.Log(www.error);
             yield break;
         }
-
-
         else
         {
             System.Threading.Thread.Sleep(2000);
             StartCoroutine(DataManager.GetVideoCount());
             AddVideoUserView();
             loadingBox.Destroy();
-#if UNITY_IOS || UNITY_ANDROID
-            StartCoroutine(PlayVideoOnHandheld());
-#endif
 
-#if UNITY_STANDALONE_WIN || UNITY_EDITOR
+            #if UNITY_IOS || UNITY_ANDROID
+            StartCoroutine(PlayVideoOnHandheld());
+            #endif
+
+            #if UNITY_STANDALONE_WIN || UNITY_EDITOR
             PlayVideoOnMovieTexture();
 #endif
         }
@@ -106,8 +105,8 @@ public class VideoController : MonoBehaviour
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
     void PlayVideoOnMovieTexture()
     {
-
         MovieTexture video = www.movie;
+
         _player.texture = video;
         _sound.clip = video.audioClip;
         video.Play();
