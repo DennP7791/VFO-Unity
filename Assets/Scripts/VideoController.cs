@@ -14,7 +14,10 @@ public class VideoController : MonoBehaviour
     AzureManager azureManager;
     WWW www;
 
-
+    /// <summary>
+    /// Setups up the loading screen while the application downloads the video,
+    /// Sets up the url, depending on the platform.
+    /// </summary>
     void Start()
     {
         loadingBox = Util.MessageBox(new Rect(0, 0, 300, 200), Text.Instance.GetString("data_loader_getting_data"), Message.Type.Info, false, true);
@@ -30,7 +33,11 @@ public class VideoController : MonoBehaviour
 #endif
 
     }
-
+    /// <summary>
+    /// Updates the progress throughout the download, and if the file has been downloaded and saved to the device, it will play the video.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     void Progress(object sender, AzureManager.ProgressEventArgs e)
     {
         progress = int.Parse((e.Progress * 100).ToString("F0"));
@@ -41,13 +48,18 @@ public class VideoController : MonoBehaviour
             StartCoroutine(LoadVideo());
         }
     }
-
+    /// <summary>
+    /// Upon exiting the scene this method is called. 
+    /// </summary>
     void OnDestroy()
     {
 
         DeleteLocalVideo();
     }
 
+    /// <summary>
+    /// Deletes the downloaded file, depending on the platform.
+    /// </summary>
     void DeleteLocalVideo()
     {
         string videoPath = @Application.persistentDataPath + "/video";
@@ -72,6 +84,12 @@ public class VideoController : MonoBehaviour
 #endif
     }
 
+    /// <summary>
+    /// Loads the video,
+    /// Once the video is loaded, 
+    /// Choose a method, depending on platform.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator LoadVideo()
     {
 
@@ -101,6 +119,9 @@ public class VideoController : MonoBehaviour
     }
 
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
+    /// <summary>
+    /// On Windows, sets up the video texture, to display the chosen video.
+    /// </summary>
     void PlayVideoOnMovieTexture()
     {
         MovieTexture video = www.movie;
@@ -112,7 +133,10 @@ public class VideoController : MonoBehaviour
     }
 #endif
 
-
+    /// <summary>
+    /// On Android and IOS, opens the device specific videoplayer.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator PlayVideoOnHandheld()
     {
         Screen.orientation = ScreenOrientation.Landscape;
@@ -133,6 +157,9 @@ public class VideoController : MonoBehaviour
         SceneLoader.Instance.CurrentScene = 0;
     }
 
+    /// <summary>
+    /// Sets up and starts UpdateVideoUserView.
+    /// </summary>
     void AddVideoUserView()
     {
 
@@ -141,19 +168,21 @@ public class VideoController : MonoBehaviour
         var stamp = DateTime.Now;
         var qrVideoUserView = new QrVideoUserView(videoId, userId, stamp);
 
-        StartCoroutine(FadeAndMoveAndShoot(qrVideoUserView));
+        StartCoroutine(UpdateVideoUserView(qrVideoUserView));
     }
-
-    private IEnumerator FadeAndMoveAndShoot(QrVideoUserView qrVideoUserView)
+    /// <summary>
+    /// Saves the VideoUserView,
+    /// Gets the VideoUserView counts,
+    /// Updates the apropriate video, with the new count.
+    /// </summary>
+    /// <param name="qrVideoUserView"></param>
+    /// <returns></returns>
+    private IEnumerator UpdateVideoUserView(QrVideoUserView qrVideoUserView)
     {
-        print("Start Uploading VideoUserViev: " + Time.time);
         yield return StartCoroutine(DataManager.UploadQrVideoUserView(qrVideoUserView));
-        print("Getting VideoUserView: " + Time.time);
         yield return StartCoroutine(DataManager.GetVideoCount());
-        print("Getting the amount of count VideoUserView: " + Time.time);
         Guid id = Global.Instance.qrVideoId;
         int count = Global.Instance.getVideoUserViewCount.Count;
         yield return StartCoroutine(DataManager.UpdateVideoCount(id, count));
-        print("Updating Video count: " + Time.time);
     }
 }
