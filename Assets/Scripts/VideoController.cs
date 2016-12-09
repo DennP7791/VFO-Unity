@@ -32,6 +32,7 @@ public class VideoController : MonoBehaviour
         url = "file:///" + Application.persistentDataPath + "/video.ogv";
 #endif
 
+        Debug.Log("Start [HANS]: " + url);
     }
     /// <summary>
     /// Updates the progress throughout the download, and if the file has been downloaded and saved to the device, it will play the video.
@@ -110,7 +111,6 @@ public class VideoController : MonoBehaviour
 #if UNITY_IOS || UNITY_ANDROID
             StartCoroutine(PlayVideoOnHandheld());
 #endif
-
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
             PlayVideoOnMovieTexture();
 #endif
@@ -124,12 +124,18 @@ public class VideoController : MonoBehaviour
     /// </summary>
     void PlayVideoOnMovieTexture()
     {
-        MovieTexture video = www.movie;
-
-        _player.texture = video;
-        _sound.clip = video.audioClip;
-        video.Play();
-        _sound.Play();
+        try
+        {
+            MovieTexture video = www.movie;
+            _player.texture = video;
+            _sound.clip = video.audioClip;
+            video.Play();
+            _sound.Play();
+        }
+        catch (Exception ex)
+        {
+            Debug.Log("PlayVideoOnMovieTexture [HANS]: " + ex.Message);
+        }
     }
 #endif
 
@@ -144,7 +150,15 @@ public class VideoController : MonoBehaviour
         FullScreenMovieControlMode controlMode = FullScreenMovieControlMode.Full;
         FullScreenMovieScalingMode scalingMode = FullScreenMovieScalingMode.AspectFill;
 
+        //Handheld.PlayFullScreenMovie(url, bgColor, controlMode, scalingMode);
+
+#if UNITY_IOS
+        string tempUrl = "file://" + url;
+        Debug.Log("PlayVideoOnHandhled [HANS]: " + tempUrl);
+        Handheld.PlayFullScreenMovie(tempUrl, bgColor, controlMode, scalingMode);
+#else
         Handheld.PlayFullScreenMovie(url, bgColor, controlMode, scalingMode);
+#endif
 
         yield return new WaitForSeconds(1f); //wait for Handheld to lock Screen.orientation
 

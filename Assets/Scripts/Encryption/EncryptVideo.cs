@@ -96,6 +96,7 @@ public class EncryptVideo {
         catch (Exception ex)
         {
             Console.Write(ex);
+            Debug.Log("DecryptFile [HANS]" + ex.Message);
         }
     }
 

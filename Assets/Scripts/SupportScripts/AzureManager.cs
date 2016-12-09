@@ -8,6 +8,7 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using UnityEngine.Networking;
+using System.Threading;
 
 
 public class AzureManager : MonoBehaviour
@@ -34,7 +35,7 @@ public class AzureManager : MonoBehaviour
 
             DownloadHandler downloadHandler = new DownloadHandlerBuffer();
             webRequest.downloadHandler = downloadHandler;
-           
+
             webRequest.method = requestMethod;
             webRequest.url = uri.ToString();
 
@@ -86,9 +87,48 @@ public class AzureManager : MonoBehaviour
 
         Uri uri = new Uri(AzureStorageConstants.BlobEndPoint + urlPath);
 
+        Debug.Log("PutBlob [HANS]: Does file Exist: " + File.Exists(filePath));
+        Debug.Log("PutBlob [HANS]: File length: " + blobContent.Length);
+        Debug.Log("PutBlob [HANS]: " + uri.ToString());
+
         ServicePointManager.ServerCertificateValidationCallback = MyRemoteCertificateValidationCallback;
 
+#if UNITY_IOS
         using (UnityWebRequest webRequest = new UnityWebRequest())
+        {
+            webRequest.SetRequestHeader("x-ms-blob-type", blobType);
+            webRequest.SetRequestHeader("x-ms-date", dateInRfc1123Format);
+            webRequest.SetRequestHeader("x-ms-version", msVersion);
+            webRequest.SetRequestHeader("Authorization", authorizationHeader);
+
+            UploadHandler uploadHandler = new UploadHandlerRaw(blobContent);
+            //uploadHandler.contentType = "application/octet-stream";
+            webRequest.uploadHandler = uploadHandler;
+            webRequest.url = uri.ToString();
+            webRequest.method = httpMethod;
+
+            webRequest.Send();
+
+            while (!webRequest.isDone)
+            {
+                ProgressBar = webRequest.uploadProgress;
+                if (webRequest.isError)
+                {
+                    break;
+                }
+
+                yield return new WaitForSeconds(1f);
+            }
+
+            if (webRequest.isDone)
+            {
+                ProgressBar = 2;
+            }
+
+        }
+
+#else
+    using (UnityWebRequest webRequest = new UnityWebRequest())
         {
             webRequest.SetRequestHeader("x-ms-blob-type", blobType);
             webRequest.SetRequestHeader("x-ms-date", dateInRfc1123Format);
@@ -113,103 +153,57 @@ public class AzureManager : MonoBehaviour
                 yield return null;
             }
         }
+        
+#endif
     }
 
-    //public IEnumerator PutBlob(string filePath, string blockBlobReference)
-    //{
-    //    String httpMethod = "PUT";
-
-    //    Byte[] blobContent = File.ReadAllBytes(filePath);
-
-    //    Int32 blobLength = blobContent.Length;
-
-    //    const String blobType = "BlockBlob";
-
-    //    String urlPath = String.Format("{0}/{1}", AzureStorageConstants.container, blockBlobReference);
-    //    String msVersion = "2009-09-19";
-    //    //String msVersion = "2015-02-21";
-    //    String dateInRfc1123Format = DateTime.UtcNow.AddHours(1).ToString("R", CultureInfo.InvariantCulture);
-
-    //    String canonicalizedHeaders = String.Format("x-ms-blob-type:{0}\nx-ms-date:{1}\nx-ms-version:{2}", blobType, dateInRfc1123Format, msVersion);
-    //    String canonicalizedResource = String.Format("/{0}/{1}", AzureStorageConstants.Account, urlPath);
-    //    String stringToSign = String.Format("{0}\n\n\n{1}\n\n\n\n\n\n\n\n\n{2}\n{3}", httpMethod, blobLength, canonicalizedHeaders, canonicalizedResource);
-    //    String authorizationHeader = CreateAuthorizationHeader(stringToSign);
-
-    //    Uri uri = new Uri(AzureStorageConstants.BlobEndPoint + urlPath);
-    //    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
-    //    request.Method = httpMethod;
-    //    request.Headers.Add("x-ms-blob-type", blobType);
-    //    request.Headers.Add("x-ms-date", dateInRfc1123Format);
-    //    request.Headers.Add("x-ms-version", msVersion);
-    //    request.Headers.Add("Authorization", authorizationHeader);
-    //    request.ContentLength = blobLength;
-
-    //    ServicePointManager.ServerCertificateValidationCallback = MyRemoteCertificateValidationCallback;
-
-    //    request.BeginGetRequestStream(new AsyncCallback(GetRequestStreamCallback), request);
-
-    //    using (Stream requestStream = request.GetRequestStream())
-    //    {
-    //        requestStream.Write(blobContent, 0, blobLength);
-
-    //        yield return requestStream;
-    //    }
-
-    //    using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-    //    {
-    //        Stream responseStream = response.GetResponseStream();
-    //        String ETag = response.Headers["ETag"];
-    //    }
-    //}
-
-    //private static void GetRequestStreamCallback(IAsyncResult asyncResult)
-    //{
-    //    Byte[] blobContent = File.ReadAllBytes(filePath);
-
-    //    Int32 blobLength = blobContent.Length;
-
-
-    //    HttpWebRequest request = (HttpWebRequest)asyncResult.AsyncState;
-
-    //    // End the operation
-    //    //Stream postStream = request.EndGetRequestStream(asyncResult);
-
-    //    using (Stream postStream = request.EndGetRequestStream(asyncResult))
-    //    {
-    //        postStream.Write(blobContent, 0, blobLength);
-    //    }
-
-    //    request.BeginGetResponse(new AsyncCallback(GetResponseCallback), request);
-
-    //}
-
-    //private static void GetResponseCallback(IAsyncResult asyncResult)
-    //{
-    //    HttpWebRequest request = (HttpWebRequest) asyncResult.AsyncState;
-
-    //    // End the operation
-    //    using (HttpWebResponse response = (HttpWebResponse) request.EndGetResponse(asyncResult))
-    //    {
-    //        using (Stream responseStream = response.GetResponseStream())
-    //        {
-    //            using (StreamReader streamReader = new StreamReader(responseStream))
-    //            {
-
-    //            }
-    //        }
-    //    }
-
-    //}
-
-    private static void CopyStream(Stream input, Stream output)
+    public IEnumerator PutBlobAndroid(string filePath, string blockBlobReference)
     {
-        byte[] buffer = new byte[32768];
-        int read;
-        while ((read = input.Read(buffer, 0, buffer.Length)) > 0)
+        yield return new WaitForSeconds(1f);
+        String httpMethod = "PUT";
+
+        Byte[] blobContent = File.ReadAllBytes(filePath);
+
+        Int32 blobLength = blobContent.Length;
+
+        const String blobType = "BlockBlob";
+
+        String urlPath = String.Format("{0}/{1}", AzureStorageConstants.container, blockBlobReference);
+        String msVersion = "2009-09-19";
+        //String msVersion = "2015-02-21";
+        String dateInRfc1123Format = DateTime.Now.ToString("R", CultureInfo.InvariantCulture);
+
+        String canonicalizedHeaders = String.Format("x-ms-blob-type:{0}\nx-ms-date:{1}\nx-ms-version:{2}", blobType, dateInRfc1123Format, msVersion);
+        String canonicalizedResource = String.Format("/{0}/{1}", AzureStorageConstants.Account, urlPath);
+        String stringToSign = String.Format("{0}\n\n\n{1}\n\n\n\n\n\n\n\n\n{2}\n{3}", httpMethod, blobLength, canonicalizedHeaders, canonicalizedResource);
+        String authorizationHeader = CreateAuthorizationHeader(stringToSign);
+
+        Uri uri = new Uri(AzureStorageConstants.BlobEndPoint + urlPath);
+        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+        request.Method = httpMethod;
+        request.Headers.Add("x-ms-blob-type", blobType);
+        request.Headers.Add("x-ms-date", dateInRfc1123Format);
+        request.Headers.Add("x-ms-version", msVersion);
+        request.Headers.Add("Authorization", authorizationHeader);
+        request.ContentLength = blobLength;
+
+        ServicePointManager.ServerCertificateValidationCallback = MyRemoteCertificateValidationCallback;
+
+        using (Stream requestStream = request.GetRequestStream())
         {
-            output.Write(buffer, 0, read);
+            requestStream.Write(blobContent, 0, blobLength);
+            yield return requestStream;
+        }
+
+        ProgressBar = 1;
+
+        using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+        {
+            Stream responseStream = response.GetResponseStream();
+            String ETag = response.Headers["ETag"];
         }
     }
+
 
     private static String CreateAuthorizationHeader(String canonicalizedString)
     {
@@ -268,7 +262,7 @@ public class AzureManager : MonoBehaviour
         return isOk;
     }
 
-#region Progress Event
+    #region Progress Event
     private float _progress;
     public event EventHandler<ProgressEventArgs> ProgressChanged;
 
@@ -293,5 +287,5 @@ public class AzureManager : MonoBehaviour
         if (ProgressChanged != null)
             ProgressChanged(this, e);
     }
-#endregion
+    #endregion
 }

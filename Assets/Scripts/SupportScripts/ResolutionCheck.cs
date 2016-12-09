@@ -20,11 +20,43 @@ public class ResolutionCheck : MonoBehaviour {
         DontDestroyOnLoad(transform.gameObject);
 	}
 
-    public void CheckResolution(string res)    {        int x, y = 0;        string[] sx = res.Split(new char[] { ' ' });        if (sx.Length == 2)        {            bool t1 = int.TryParse(sx[0], out x);            bool t2 = int.TryParse(sx[1], out y);
+    public void CheckResolution(string res)
+    {
+        int x, y = 0;
+
+        string[] sx = res.Split(new char[] { ' ' });
+        if (sx.Length == 2)
+        {
+            bool t1 = int.TryParse(sx[0], out x);
+            bool t2 = int.TryParse(sx[1], out y);
             
-#if UNITY_ANDROID || UNITY_IOS            mobileDevice = true;
-#endif
-            if (t1 && t2)            {                if ((x < 960 || y < 630) && !fullscreencheck && !Screen.fullScreen && !mobileDevice)                {                    oldResX = x;                    oldResY = y;                    fullscreencheck = true;                    msg = Util.OkMessageBox(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 100, 300, 200), Text.Instance.GetString("resolution_check_too_low"), true, Message.Type.Warning, OkClicked);                }                else if (x >= 960 && y >= 630)                {                    oldResX = x;                    oldResY = y;                    if (msg && msg.Visible)                    {                        fullscreencheck = false;                        msg.Destroy();                    }                }            }        }    }
+#if UNITY_ANDROID || UNITY_IOS
+            mobileDevice = true;
+
+#endif
+
+            if (t1 && t2)
+            {
+                if ((x < 960 || y < 630) && !fullscreencheck && !Screen.fullScreen && !mobileDevice)
+                {
+                    oldResX = x;
+                    oldResY = y;
+                    fullscreencheck = true;
+                    msg = Util.OkMessageBox(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 100, 300, 200), Text.Instance.GetString("resolution_check_too_low"), true, Message.Type.Warning, OkClicked);
+                }
+                else if (x >= 960 && y >= 630)
+                {
+                    oldResX = x;
+                    oldResY = y;
+                    if (msg && msg.Visible)
+                    {
+                        fullscreencheck = false;
+                        msg.Destroy();
+                    }
+                }
+            }
+        }
+    }
 
     public void OkClicked(Message message, bool value)
     {

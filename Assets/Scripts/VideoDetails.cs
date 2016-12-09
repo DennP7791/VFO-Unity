@@ -18,8 +18,10 @@ public class VideoDetails : MonoBehaviour
     EncryptVideo ev = new EncryptVideo();
     private string _progress = "0";
     private string _localPath = "";
+
     private bool _isSavedInDB, _encryptOnDestroy = false;
-    private Message _confirmUploadMessage, _conirmDeleteMessage ,_uploadProgressMessage;
+    private Message _confirmUploadMessage, _conirmDeleteMessage, _uploadProgressMessage;
+
     private string _uploadString;
 
     private QrVideo _selectedVideo;
@@ -27,8 +29,10 @@ public class VideoDetails : MonoBehaviour
     private int _recordVideoScene = 1003;
     private int _linkMenuScene = 0;
 
-    
-#region Initialization
+    private string progressIndicator = "";
+
+
+    #region Initialization
     //Initializes the various variables depending on last scene. 
     void Start()
     {
@@ -101,13 +105,23 @@ public class VideoDetails : MonoBehaviour
     }
     #endregion
 
-#region Delete button
-    //If video file has been successfully deleted - delete the video from db and remove from list if previous scene was linkmenu / return to linkmenu if previous scene was record 
+    #region Delete button
     void DeleteVideo()
     {
+        //If video file has been successfully deleted - delete the video from db and remove from list if previous scene was linkmenu / return to linkmenu if previous scene was record 
+
+#if UNITY_IOS
+        FileInfo info = new FileInfo(_selectedVideo.Path);
+        if (info.Exists || info != null)
+        {
+            Debug.Log("[HANS] IOS exists");
+#else
         if (File.Exists(_selectedVideo.Path))
         {
+            Debug.Log("[HANS] Android/Unity exists");      
+#endif
             StatusMessage.enabled = false;
+
             _conirmDeleteMessage = Util.CancellableMessageBox(new Rect(0, 0, 300, 200),
                 "Du er ved at slette din video " + _selectedVideo.Name +
                 ". Er du sikker på at du vil slette denne video?",
@@ -144,11 +158,14 @@ public class VideoDetails : MonoBehaviour
             StartCoroutine(DisplayStatusMessage("Filen du prøver at slette, kunne ikke findes", true, 0));
         }
     }
+
     #endregion
 
-#region Save button
+    #region Save button
     void SaveVideoDetails()
     {
+        // Remove all '/' as they generate folders on azure
+        Name.text.Replace("/", "-");
         //Save the new or updated video details in the db.
         if (ValidInput())
         {
@@ -185,7 +202,8 @@ public class VideoDetails : MonoBehaviour
                 Global.Instance.localVideos.Add(_selectedVideo); //Add to global - check if UploadQrVideo is successfull first?
                 _encryptOnDestroy = true;
                 _isSavedInDB = true;
-            } else
+            }
+            else
             {
                 if (_previousScene == _linkMenuScene)
                 {
@@ -200,7 +218,8 @@ public class VideoDetails : MonoBehaviour
                 }
             }
 
-        } else
+        }
+        else
         {
             StartCoroutine(DisplayStatusMessage("Der skete en fejl, videon blev ikke gemt.", true, 0));
         }
@@ -238,56 +257,31 @@ public class VideoDetails : MonoBehaviour
     }
     #endregion
 
-#region Upload button
+    #region Upload button
     void ConfirmUploadVideo()
     {
         //confirm if you want to upload the video
+        Debug.Log("ConfirmUpLoadVideo [HANS]: " + _selectedVideo.Path);
+        Debug.Log("[HANS]: " + LocalVideos.value);
+        foreach (VideoCategory category in Global.Instance.videoCategories)
+        {
+            Debug.Log("[HANS] Category: " + "[" + category.Id + "]" + "[" + category.Name + "]");
+        }
+
+#if UNITY_IOS
+        FileInfo info = new FileInfo(_selectedVideo.Path);
+        if (info.Exists || info != null)
+        {
+            Debug.Log("[HANS] IOS exists");
+            ValidateAndUpload();
+        }
+#else
         if (File.Exists(_selectedVideo.Path))
         {
-            if (ValidInput())
-            {
-                StatusMessage.enabled = false;
-                UpdateSelectedVideoFromInputFields();
-                _confirmUploadMessage = Util.CancellableMessageBox(new Rect(0, 0, 300, 200),
-                    "Du er ved at uploade din video " + _selectedVideo.Name + ". Denne video er af typen \"" +
-                    Global.Instance.videoCategories[LocalVideos.value].Name +
-                    "\". Er du sikker på at du vil fortsætte med at uploade videoen?", true, Message.Type.Info,
-                    delegate(Message message, bool value)
-                    {
-                        if (value)
-                        {
-                            _uploadString = "Uploader video: " + _progress + "%";
-                            _uploadProgressMessage = Util.MessageBox(new Rect(0, 0, 300, 200),
-                                _uploadString, Message.Type.Info, false, true);
-                            _uploadString = "";
-                            am.ProgressChanged += AzureUploadProgress;
-                            if (_isSavedInDB || _previousScene == _linkMenuScene)
-                            {
-                                StartCoroutine(DecryptAndUpload());
-                            }
-                            else
-                            {
-                                if (!_isSavedInDB)
-                                {
-                                    _selectedVideo = new QrVideo(Guid.NewGuid(), Name.text, Description.text,
-                                        Global.Instance.videoPath, 0,
-                                        Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
-                                }
-                                UploadVideoToAzure();
-                            }
-                        }
-                        else if (!value)
-                        {
-
-                        }
-                        _confirmUploadMessage.Destroy();
-                    });
-            }
-            else
-            {
-                StartCoroutine(DisplayStatusMessage("Venligst udfyldd alle felter før du forsøger at uploade.", true, 0));
-            }
+            Debug.Log("[HANS] Android/Unity exists");
+            ValidateAndUpload();
         }
+#endif
         else
         {
             StartCoroutine(DisplayStatusMessage("Fejl: Kunne ikke finde filen du forsøgte at uploade", true, 0));
@@ -295,14 +289,75 @@ public class VideoDetails : MonoBehaviour
 
     }
 
+    void ValidateAndUpload()
+    {
+        if (ValidInput())
+        {
+            StatusMessage.enabled = false;
+            UpdateSelectedVideoFromInputFields();
+
+            _confirmUploadMessage = Util.CancellableMessageBox(new Rect(0, 0, 300, 200),
+                "Du er ved at uploade din video " + _selectedVideo.Name + ". Denne video er af typen \"" +
+                Global.Instance.videoCategories[_selectedVideo.VideoCategoryId - 1].Name +
+                "\". Er du sikker på at du vil fortsætte med at uploade videoen?", true, Message.Type.Info,
+                delegate(Message message, bool value)
+                {
+                    if (value)
+                    {
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_IOS
+                        _uploadString = "Uploader video: " + _progress + "%";
+#endif
+#if UNITY_ANDROID
+                            _uploadString = "Uploader video...";
+#endif
+                        _uploadProgressMessage = Util.MessageBox(new Rect(0, 0, 300, 200),
+                            _uploadString, Message.Type.Info, false, true);
+                        _uploadString = "";
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_IOS
+                        am.ProgressChanged += AzureUploadProgress;
+#endif
+#if UNITY_ANDROID
+                            am.ProgressChanged += AzureUploadAndroid;
+#endif
+                    }
+                    if (_isSavedInDB || _previousScene == _linkMenuScene)
+                    {
+                        StartCoroutine(DecryptAndUpload());
+                    }
+                    else
+                    {
+                        if (!_isSavedInDB)
+                        {
+                            _selectedVideo = new QrVideo(Guid.NewGuid(), Name.text, Description.text,
+                                Global.Instance.videoPath, 0,
+                                Global.Instance.userGroup.Id, Global.Instance.UserId, null, Categories.value + 1);
+                        }
+                        UploadVideoToAzure();
+
+                    }
+
+                    _confirmUploadMessage.Destroy();
+                });
+        }
+        else
+        {
+            StartCoroutine(DisplayStatusMessage("Venligst udfyldd alle felter før du forsøger at uploade.", true, 0));
+
+        }
+    }
+
     IEnumerator DecryptAndUpload()
     {
         _uploadProgressMessage.Text = "Trin 1 af 2\n\nDekrypterer video...";
         yield return new WaitForSeconds(1f); // wait for gui to finish loading before going on to decrypt the video
         ev.DecryptFile(_selectedVideo.Path);
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_IOS
         _uploadString = "Trin 2 af 2\n\n";
+#endif
+#if UNITY_ANDROID
+        _uploadProgressMessage.Text = "Trin 2 af 2\n\nUploader video...";       
+#endif
         UploadVideoToAzure();
-
     }
 
     void UploadVideoToAzure()
@@ -311,9 +366,46 @@ public class VideoDetails : MonoBehaviour
         string blockBlobReference = _selectedVideo.Name.Replace(" ", "") + "_" + _selectedVideo.Id;
         _localPath = _selectedVideo.Path;
         _selectedVideo.Path = blockBlobReference;
+#if UNITY_EDITOR || UNITY_STANDALONE_WIN || UNITY_IOS
         StartCoroutine(am.PutBlob(_localPath, blockBlobReference));
+#endif
+#if UNITY_ANDROID
+        StartCoroutine(am.PutBlobAndroid(_localPath, blockBlobReference));
+#endif
+
     }
 
+
+    private void AzureUploadAndroid(object sender, AzureManager.ProgressEventArgs e)
+    {
+        if (e.Progress == 1)
+        {
+            am.ProgressChanged -= AzureUploadAndroid;
+            am.ProgressBar = 0;
+            _uploadProgressMessage.Destroy();
+            UpdateVideoInDb();
+        }
+    }
+
+#if UNITY_IOS
+    private void AzureUploadProgress(object sender, AzureManager.ProgressEventArgs e)
+    {
+        progressIndicator += ".";
+        _uploadProgressMessage.Text = _uploadString + "Uploader video: " + progressIndicator;
+
+        if (progressIndicator.Length == 10)
+        {
+            progressIndicator = "";
+        }
+        else if (e.Progress == 2)
+        {
+            _uploadProgressMessage.Text = _uploadString + "Uploader video: " + progressIndicator;
+            UpdateVideoInDb();
+            _uploadProgressMessage.Destroy();
+            am.ProgressChanged -= AzureUploadProgress;
+        }
+    }
+#else
     private void AzureUploadProgress(object sender, AzureManager.ProgressEventArgs e)
     {
         _progress = (e.Progress * 100).ToString();
@@ -329,8 +421,11 @@ public class VideoDetails : MonoBehaviour
             UpdateVideoInDb();
             _uploadProgressMessage.Destroy();
             am.ProgressChanged -= AzureUploadProgress;
+            _uploadString = "";
         }
     }
+    
+#endif
 
     void UpdateVideoInDb()
     {
@@ -368,7 +463,7 @@ public class VideoDetails : MonoBehaviour
             StartCoroutine(DisplayStatusMessage("Fejl: Kunne ikke uploade videon til databasen.", true, 0));
         }
     }
-#endregion
+    #endregion
 
     void SelectVideo()
     {
@@ -434,11 +529,13 @@ public class VideoDetails : MonoBehaviour
 
     void ButtonsInteractable(bool enabled)
     {
-        if(enabled) {
+        if (enabled)
+        {
             SaveButton.interactable = true;
             UploadButton.interactable = true;
             DeleteButton.interactable = true;
-        } else
+        }
+        else
         {
             SaveButton.interactable = false;
             UploadButton.interactable = false;
